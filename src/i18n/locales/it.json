@@ -1,0 +1,996 @@
+{
+  "brand": {
+    "name": "Muhurtham Collection",
+    "tagline": "L'eleganza indiana senza tempo, presentata con cura in Svizzera.",
+    "collection": "Collezione"
+  },
+
+  "navigation": {
+    "home": "Home",
+    "lehengas": "Lehengas",
+    "sarees": "Sari",
+    "sherwanis": "Sherwani",
+    "collections": "Collezioni",
+    "ourStory": "La nostra storia",
+    "showroom": "Showroom",
+    "appointment": "Appuntamento privato"
+  },
+
+  "common": {
+    "explore": "Esplora",
+    "exploreLehengas": "Esplora i Lehengas",
+    "exploreSarees": "Esplora i Sari",
+    "exploreSherwanis": "Esplora gli Sherwani",
+    "viewCollection": "Scopri la collezione",
+    "discoverMore": "Scopri di più",
+    "discover": "Scopri",
+    "bookAppointment": "Prenota un appuntamento",
+    "customerCare": "Servizio clienti",
+    "search": "Cerca",
+    "menu": "Menu",
+    "close": "Chiudi",
+    "viewAll": "Vedi tutto",
+    "viewDetails": "Vedi dettagli",
+    "back": "Indietro",
+    "next": "Avanti",
+    "previous": "Precedente",
+    "scroll": "Scorri",
+    "readMore": "Leggi di più",
+    "learnMore": "Scopri di più",
+    "submit": "Invia",
+    "send": "Invia",
+    "loading": "Caricamento...",
+    "pieces": "Articoli",
+    "piece": "Articolo",
+    "all": "Tutti",
+    "new": "Nuovo",
+    "newArrival": "Nuovo arrivo",
+    "occasion": "Occasione",
+    "bridal": "Sposa",
+    "groom": "Sposo",
+    "wedding": "Matrimonio",
+    "category": "Categoria",
+    "reference": "Riferimento",
+    "collection": "Collezione",
+    "share": "Condividi",
+    "shareThisProduct": "Condividi questo prodotto",
+    "productDetails": "Dettagli del prodotto",
+    "contactStylist": "Contatta il nostro stylist",
+    "productDeclaration": "Dichiarazione del prodotto",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "chatWhatsApp": "Parla con noi su WhatsApp",
+    "contactUs": "Contattaci",
+    "viewOnInstagram": "Vedi su Instagram",
+    "pieceNotFound": "Prodotto non trovato",
+    "requestedPieceNotFound": "Il capo richiesto non è stato trovato.",
+    "collectionNotFound": "Collezione non trovata",
+    "noPiecesFound": "Nessun prodotto trovato",
+    "backToCollection": "Torna alla collezione",
+    "backToLehengas": "Torna ai Lehengas",
+    "backToSarees": "Torna ai Sari",
+    "backToSherwanis": "Torna agli Sherwani",
+    "backToCollections": "Torna alle collezioni",
+    "previousImage": "Immagine precedente",
+    "nextImage": "Immagine successiva",
+    "zoomImage": "Ingrandisci immagine",
+    "closeImage": "Chiudi immagine"
+  },
+
+  "home": {
+    "title": "Muhurtham",
+
+    "hero": {
+      "eyebrow": "MUHURTHAM COLLECTION",
+      "title": "Il Capitolo del Matrimonio",
+      "titleLine1": "Il Capitolo",
+      "titleLine2": "del Matrimonio",
+      "description": "L'eleganza indiana senza tempo, presentata con cura in Svizzera.",
+      "cta": "Scopri i Lehengas",
+      "lehengaCta": "Scopri i Lehengas",
+      "sherwaniCta": "Scopri gli Sherwani",
+      "scroll": "Scorri",
+      "imageAlt": "Collezione nuziale Muhurtham"
+    },
+
+    "introduction": {
+      "eyebrow": "MUHURTHAM COLLECTION",
+      "title": "Creato per il capitolo del tuo matrimonio.",
+      "titleLine1": "Creato per il capitolo",
+      "titleLine2": "del tuo matrimonio.",
+      "description": "Un luogo in cui spose e sposi possono trasformare i loro sogni matrimoniali in realtà.",
+      "button": "Scopri le nostre collezioni",
+      "cta": "Scopri le collezioni"
+    },
+
+    "story": {
+      "eyebrow": "MUHURTHAM",
+      "title": "Dove la tradizione incontra la raffinatezza.",
+      "titleLine1": "Dove la tradizione",
+      "titleLine2": "incontra la raffinatezza.",
+      "description": "Muhurtham nasce dalla convinzione che l'abbigliamento da cerimonia debba essere profondamente personale.",
+      "paragraph1": "Ogni silhouette, colore e dettaglio è scelto per unire la ricchezza della tradizione indiana a un'eleganza contemporanea e discreta.",
+      "paragraph2": "Dalle celebrazioni nuziali alle occasioni più intime, la nostra collezione è pensata per momenti significativi destinati a essere ricordati.",
+      "cta": "Scopri la nostra storia",
+      "button": "Scopri la nostra storia",
+      "imageAlt": "Abbigliamento nuziale Muhurtham"
+    },
+
+    "philosophy": {
+      "eyebrow": "LA FILOSOFIA DI MUHURTHAM",
+      "title": "Un'eleganza che vive oltre l'occasione.",
+      "titleLine1": "Un'eleganza che vive",
+      "titleLine2": "oltre l'occasione.",
+      "description": "Crediamo nella bellezza senza tempo, nell'artigianalità raffinata e in capi creati per momenti davvero significativi."
+    },
+
+    "collections": {
+      "eyebrow": "COLLEZIONI MUHURTHAM",
+      "title": "Collezioni selezionate",
+      "titleLine1": "Collezioni",
+      "titleLine2": "selezionate",
+      "description": "Esplora le nostre collezioni, dove la tradizione indiana incontra l'eleganza contemporanea e il design raffinato.",
+      "viewAll": "Vedi tutte le collezioni",
+      "viewAllCollections": "Vedi tutte le collezioni",
+      "lehenga": "Lehengas",
+      "saree": "Sari",
+      "sherwani": "Sherwani",
+      "viewCollection": "Scopri la collezione",
+
+      "card1": {
+        "eyebrow": "COLLEZIONE 01",
+        "title": "Lehengas",
+        "description": "Lehengas da sposa che uniscono l'artigianalità indiana alla raffinatezza contemporanea."
+      },
+
+      "card2": {
+        "eyebrow": "COLLEZIONE 02",
+        "title": "Sari",
+        "description": "Sari caratterizzati da bellezza senza tempo e raffinata artigianalità."
+      },
+
+      "card3": {
+        "eyebrow": "COLLEZIONE 03",
+        "title": "Sherwani",
+        "description": "Abiti indiani sofisticati creati per lo sposo moderno."
+      }
+    },
+
+    "edit": {
+      "eyebrow": "LA SELEZIONE DI MUHURTHAM",
+      "title": "Eleganza indiana, presentata con cura.",
+      "titleLine1": "Eleganza indiana,",
+      "titleLine2": "presentata con cura.",
+      "description": "Scopri capi accuratamente selezionati per spose, sposi e invitati. Ogni collezione unisce l'artigianalità tradizionale al design contemporaneo."
+    },
+
+    "selectedPieces": {
+      "eyebrow": "CAPI SELEZIONATI",
+      "title": "Dalla collezione",
+      "description": "Una selezione accurata di silhouette dalla nostra collezione di abiti da sposa e da cerimonia.",
+      "viewAll": "Vedi tutto"
+    },
+
+    "appointment": {
+      "eyebrow": "IL TUO MUHURTHAM",
+      "title": "Scopri il capo creato per il tuo momento.",
+      "titleLine1": "Scopri il capo creato",
+      "titleLine2": "per il tuo momento.",
+      "description": "Vivi la nostra collezione di persona e trova insieme al nostro team la silhouette perfetta per il tuo momento speciale.",
+      "cta": "Prenota un appuntamento"
+    },
+
+    "closing": {
+      "eyebrow": "MUHURTHAM",
+      "title": "La tua celebrazione inizia con una conversazione.",
+      "titleLine1": "La tua celebrazione",
+      "titleLine2": "inizia con una conversazione.",
+      "description": "Visita il nostro showroom a Dagmersellen, Svizzera, e scopri la bellezza dell'eleganza nuziale indiana e tamil."
+    }
+  },
+
+  "lehengas": {
+    "eyebrow": "COLLEZIONE MUHURTHAM",
+    "title": "Lehengas",
+    "description": "Un'espressione raffinata dell'artigianato indiano, delle silhouette senza tempo e dell'eleganza da cerimonia.",
+
+    "filters": {
+      "all": "Tutti",
+      "bridal": "Sposa",
+      "occasion": "Occasione",
+      "wedding": "Matrimonio",
+      "newest": "Più recenti",
+      "oldest": "Più vecchi"
+    },
+
+    "sort": {
+      "label": "Ordina",
+      "newest": "Più recenti",
+      "oldest": "Più vecchi"
+    },
+
+    "category": {
+      "bridal": "Lehenga da sposa",
+      "occasion": "Lehenga da occasione",
+      "wedding": "Lehenga da matrimonio"
+    },
+
+    "view": {
+      "details": "Vedi dettagli",
+      "discover": "Scopri"
+    },
+
+    "empty": {
+      "title": "Nessun prodotto trovato",
+      "description": "Al momento non sono disponibili lehengas in questa categoria."
+    },
+
+    "philosophy": {
+      "eyebrow": "LA FILOSOFIA DI MUHURTHAM",
+      "title": "Un'eleganza che vive oltre l'occasione.",
+      "description": "Ogni lehenga unisce l'artigianalità tradizionale all'eleganza contemporanea, creando capi per momenti destinati a rimanere nel tempo."
+    },
+
+    "yourMuhurtham": {
+      "eyebrow": "IL TUO MUHURTHAM",
+      "title": "Scopri la silhouette creata per il tuo momento.",
+      "description": "Prenota una consulenza privata con il nostro team per trovare il lehenga perfetto per il tuo giorno speciale.",
+      "cta": "Prenota un appuntamento"
+    }
+  },
+
+  "sarees": {
+    "eyebrow": "COLLEZIONE MUHURTHAM",
+    "title": "Sari",
+    "description": "Una selezione raffinata di sari da sposa e da occasione, dedicata alla grazia del drappeggio, ai colori senza tempo e all'artigianalità indiana.",
+
+    "filters": {
+      "all": "Tutti",
+      "bridal": "Sposa",
+      "occasion": "Occasione",
+      "wedding": "Matrimonio",
+      "newest": "Più recenti",
+      "oldest": "Più vecchi"
+    },
+
+    "sort": {
+      "label": "Ordina",
+      "newest": "Più recenti",
+      "oldest": "Più vecchi"
+    },
+
+    "category": {
+      "bridal": "Sari da sposa",
+      "occasion": "Sari da occasione",
+      "wedding": "Sari da matrimonio"
+    },
+
+    "view": {
+      "details": "Vedi dettagli",
+      "discover": "Scopri"
+    },
+
+    "empty": {
+      "title": "Nessun prodotto trovato",
+      "description": "Al momento non sono disponibili sari in questa categoria."
+    },
+
+    "philosophy": {
+      "eyebrow": "LA FILOSOFIA DI MUHURTHAM",
+      "title": "Un'eleganza che vive oltre l'occasione.",
+      "description": "Ogni sari celebra la ricchezza della tradizione indiana unendola alla raffinatezza contemporanea, per momenti davvero significativi."
+    },
+
+    "yourMuhurtham": {
+      "eyebrow": "IL TUO MUHURTHAM",
+      "title": "Trova il sari perfetto per il tuo momento.",
+      "description": "Ricevi una consulenza privata con il nostro team per scegliere il sari perfetto per il tuo giorno speciale.",
+      "cta": "Prenota un appuntamento"
+    }
+  },
+
+  "sherwanis": {
+    "eyebrow": "COLLEZIONE MUHURTHAM",
+    "title": "Sherwani",
+    "description": "Abbigliamento indiano raffinato per lo sposo moderno, caratterizzato da artigianalità senza tempo ed eleganza discreta.",
+
+    "filters": {
+      "all": "Tutti",
+      "groom": "Sposo",
+      "occasion": "Occasione",
+      "wedding": "Matrimonio",
+      "newest": "Più recenti",
+      "oldest": "Più vecchi"
+    },
+
+    "sort": {
+      "label": "Ordina",
+      "newest": "Più recenti",
+      "oldest": "Più vecchi"
+    },
+
+    "category": {
+      "groom": "Sposo",
+      "occasion": "Occasione",
+      "wedding": "Abito da matrimonio"
+    },
+
+    "view": {
+      "details": "Vedi dettagli",
+      "discover": "Scopri"
+    },
+
+    "empty": {
+      "title": "Nessun prodotto trovato",
+      "description": "Al momento non sono disponibili sherwani in questa categoria."
+    },
+
+    "philosophy": {
+      "eyebrow": "LA FILOSOFIA DI MUHURTHAM",
+      "title": "Un'eleganza che vive oltre l'occasione.",
+      "description": "Ogni sherwani unisce la sartoria indiana tradizionale alla raffinatezza contemporanea, pensata per lo sposo moderno."
+    },
+
+    "yourMuhurtham": {
+      "eyebrow": "IL TUO MUHURTHAM",
+      "title": "Trova lo sherwani perfetto per il tuo giorno speciale.",
+      "description": "Consulta il nostro team per scegliere il colore, la silhouette e gli accessori perfetti per il tuo matrimonio.",
+      "cta": "Prenota un appuntamento"
+    }
+  },
+
+  "collections": {
+    "eyebrow": "COLLEZIONE MUHURTHAM",
+    "title": "Collezioni",
+    "description": "Esplora le nostre collezioni selezionate, dove la tradizione indiana incontra l'eleganza contemporanea e il design raffinato.",
+
+    "lehengas": {
+      "title": "Lehengas",
+      "eyebrow": "COLLEZIONE LEHENGA",
+      "description": "Un'espressione raffinata dell'artigianato indiano, delle silhouette senza tempo e dell'eleganza da cerimonia.",
+      "cta": "Scopri i Lehengas"
+    },
+
+    "sarees": {
+      "title": "Sari",
+      "eyebrow": "COLLEZIONE SARI",
+      "description": "Una selezione raffinata di sari da sposa e da occasione, dedicata alla grazia del drappeggio, ai colori senza tempo e all'artigianalità indiana.",
+      "cta": "Scopri i Sari"
+    },
+
+    "sherwanis": {
+      "title": "Sherwani",
+      "eyebrow": "COLLEZIONE SHERWANI",
+      "description": "Un'espressione di artigianalità indiana senza tempo ed eleganza contemporanea, pensata per lo sposo moderno.",
+      "cta": "Scopri gli Sherwani"
+    }
+  },
+
+  "product": {
+    "premiumQuality": "Qualità premium",
+    "exquisiteCraftsmanship": "Artigianalità raffinata",
+    "gracefulComfort": "Comfort e grazia",
+    "lightweightComfort": "Comfort leggero",
+    "comfortableTailoring": "Sartoria confortevole",
+    "timelessElegance": "Eleganza senza tempo",
+    "elegantFinish": "Finitura elegante",
+    "modernElegance": "Eleganza moderna",
+    "regalElegance": "Eleganza regale",
+    "quietLuxury": "Lusso discreto",
+    "bridalComfort": "Comfort da sposa",
+    "modernRoyalty": "Regalità moderna",
+    "contemporaryElegance": "Eleganza contemporanea",
+    "comfortableStructure": "Struttura confortevole",
+    "elegantComfort": "Comfort elegante",
+
+    "descriptions": {
+      "premiumQuality": "Tessuti selezionati e finiture raffinate.",
+      "exquisiteCraftsmanship": "Artigianalità tradizionale curata nei minimi dettagli.",
+      "gracefulComfort": "Pensato per un movimento naturale ed elegante.",
+      "lightweightComfort": "Leggero e progettato per una libertà di movimento naturale.",
+      "comfortableTailoring": "Una sartoria raffinata che non compromette il movimento.",
+      "timelessElegance": "Una silhouette creata per durare nel tempo.",
+      "elegantFinish": "Una raffinata finitura contemporanea.",
+      "modernElegance": "Eleganza contemporanea con un'anima tradizionale.",
+      "quietLuxury": "Un'espressione di lusso discreto e sofisticato.",
+      "bridalComfort": "Creato per offrire comfort ed eleganza durante le celebrazioni.",
+      "modernRoyalty": "Una raffinata interpretazione della moderna regalità.",
+      "contemporaryElegance": "Una silhouette moderna ispirata alla tradizione.",
+      "comfortableStructure": "Una struttura raffinata progettata per il comfort naturale.",
+      "elegantComfort": "Un equilibrio raffinato tra eleganza, struttura e comfort."
+    }
+  },
+
+  "productDetail": {
+    "backToLehengas": "Torna ai Lehengas",
+    "backToSarees": "Torna ai Sari",
+    "backToSherwanis": "Torna agli Sherwani",
+    "backToCollections": "Torna alle collezioni",
+    "productDetails": "Dettagli del prodotto",
+    "contactOurStylist": "Contatta il nostro stylist",
+    "productDeclaration": "Dichiarazione del prodotto",
+    "category": "Categoria",
+    "reference": "Riferimento",
+    "collection": "Collezione",
+    "shareThisProduct": "Condividi questo prodotto",
+    "chatWithUs": "Parla con noi su WhatsApp",
+
+    "stylist": {
+      "description": "Il nostro team di stylist può aiutarti con taglia, styling, abbinamento dei colori e disponibilità degli appuntamenti.",
+      "bookAppointment": "Prenota un appuntamento"
+    },
+
+    "declaration": {
+      "description": "Ogni capo Muhurtham è presentato come una creazione da cerimonia attentamente curata. Piccole variazioni nella ricamatura, nella texture e nella finitura possono verificarsi come parte naturale dell'artigianalità."
+    },
+
+    "gallery": {
+      "image": "Immagine",
+      "previous": "Immagine precedente",
+      "next": "Immagine successiva",
+      "zoom": "Ingrandisci immagine",
+      "close": "Chiudi immagine"
+    }
+  },
+
+  "products": {
+    "royalMaroon": {
+      "title": "Eleganza Scarlatta",
+      "eyebrow": "LEHENGA DA SPOSA",
+      "description": "Una maestosa silhouette da sposa in un intenso tono scarlatto, arricchita da ricami delicati e dall'intramontabile artigianalità indiana.",
+      "longDescription": "Eleganza Scarlatta unisce l'artigianalità tradizionale indiana a una palette di colori profondamente romantica. La silhouette dona alla sposa una presenza elegante, mentre ricami e colore rimangono protagonisti.",
+      "details": [
+        "Ricca palette scarlatta da sposa",
+        "Ricami tradizionali delicati",
+        "Pensato per le celebrazioni nuziali"
+      ]
+    },
+
+    "ivoryGarden": {
+      "title": "Giardino d'Avorio",
+      "eyebrow": "LEHENGA DA SPOSA",
+      "description": "Una raffinata silhouette color avorio, ispirata agli eleganti giardini e arricchita da dettagli delicati e finiture sofisticate.",
+      "longDescription": "Giardino d'Avorio combina tonalità morbide d'avorio con dettagli decorativi raffinati. La silhouette contemporanea crea un'espressione senza tempo ed elegante per le celebrazioni nuziali.",
+      "details": [
+        "Tonalità avorio morbide e luminose",
+        "Dettagli delicati di ricamo",
+        "Silhouette da sposa contemporanea"
+      ]
+    },
+
+    "blushPink": {
+      "title": "Rosa Cipria",
+      "eyebrow": "LEHENGA DA OCCASIONE",
+      "description": "Una delicata interpretazione in rosa cipria con dettagli raffinati e una silhouette contemporanea per occasioni speciali.",
+      "longDescription": "Rosa Cipria nasce da una palette romantica e delicata con proporzioni raffinate. Il risultato è un capo elegante per celebrazioni caratterizzate da una raffinatezza discreta.",
+      "details": [
+        "Delicata palette rosa cipria",
+        "Decorazioni raffinate",
+        "Stile elegante per le celebrazioni"
+      ]
+    },
+
+    "goldenTissue": {
+      "title": "Tessuto Dorato",
+      "eyebrow": "LEHENGA DA OCCASIONE",
+      "description": "Una raffinata silhouette dorata in tonalità calde, arricchita da dettagli ricamati ed eleganza senza tempo.",
+      "longDescription": "Tessuto Dorato combina calde tonalità dorate con dettagli decorativi discreti. La silhouette è pensata per celebrazioni eleganti in cui il lusso discreto è protagonista.",
+      "details": [
+        "Calda palette dorata",
+        "Raffinata lavorazione ricamata",
+        "Ideale per celebrazioni eleganti"
+      ]
+    },
+
+    "champagneGold": {
+      "title": "Oro Champagne",
+      "eyebrow": "LEHENGA DA OCCASIONE",
+      "description": "Una delicata silhouette color champagne con tonalità calde, decorazioni raffinate ed eleganza senza tempo.",
+      "longDescription": "Oro Champagne combina calde tonalità champagne con dettagli decorativi discreti. La silhouette sofisticata è pensata per celebrazioni in cui il lusso discreto si esprime con eleganza.",
+      "details": [
+        "Calde tonalità champagne",
+        "Raffinata lavorazione ricamata",
+        "Ideale per celebrazioni eleganti"
+      ]
+    },
+
+    "ivoryHeritage": {
+      "title": "Eredità d'Avorio",
+      "eyebrow": "SELEZIONE SPOSO",
+      "description": "Uno sherwani raffinato color avorio, caratterizzato da artigianalità tradizionale, ricami eleganti e una silhouette senza tempo per lo sposo moderno.",
+      "longDescription": "Eredità d'Avorio è stato creato per lo sposo moderno che apprezza una grandezza discreta. Ricami raffinati, finiture eleganti e una palette sofisticata creano una presenza distinta.",
+      "details": [
+        "Raffinata tonalità avorio",
+        "Ricami tradizionali delicati",
+        "Creato per lo sposo moderno"
+      ]
+    },
+
+    "royalSand": {
+      "title": "Sabbia Reale",
+      "eyebrow": "SELEZIONE SPOSO",
+      "description": "Uno sherwani in calde tonalità sabbia che unisce dettagli tradizionali a una silhouette contemporanea per celebrazioni eleganti.",
+      "longDescription": "Sabbia Reale combina tonalità sabbia e avorio con raffinati dettagli tradizionali. La silhouette moderna è ideale per celebrazioni formali.",
+      "details": [
+        "Calde tonalità sabbia e avorio",
+        "Ricami tradizionali raffinati",
+        "Elegante per occasioni formali"
+      ]
+    },
+
+    "midnightEmbroidery": {
+      "title": "Ricamo di Mezzanotte",
+      "eyebrow": "SELEZIONE SPOSO",
+      "description": "Uno sherwani sofisticato in blu notte intenso con ricami raffinati, creato per eventi serali caratterizzati da un lusso discreto.",
+      "longDescription": "Ricamo di Mezzanotte reinterpreta con eleganza l'abbigliamento tradizionale dello sposo. Il colore profondo, i dettagli decorativi e le finiture raffinate creano una presenza distinta.",
+      "details": [
+        "Blu notte intenso",
+        "Ricami decorativi raffinati",
+        "Creato per celebrazioni serali"
+      ]
+    },
+
+    "champagneClassic": {
+      "title": "Champagne Classico",
+      "eyebrow": "SELEZIONE DA OCCASIONE",
+      "description": "Uno sherwani color champagne caldo con dettagli raffinati e una silhouette sofisticata per momenti speciali.",
+      "longDescription": "Champagne Classico combina tonalità calde champagne con finiture eleganti e dettagli discreti. Un capo pensato per celebrazioni raffinate.",
+      "details": [
+        "Calda palette champagne",
+        "Dettagli ricamati raffinati",
+        "Silhouette sofisticata per le celebrazioni"
+      ]
+    },
+
+    "regalIvory": {
+      "title": "Avorio Regale",
+      "eyebrow": "SELEZIONE SPOSO",
+      "description": "Una maestosa silhouette color avorio che unisce artigianalità tradizionale, dettagli raffinati ed eleganza moderna.",
+      "longDescription": "Avorio Regale celebra la bellezza della sartoria indiana con una palette luminosa e una silhouette strutturata. Un'espressione elegante per celebrazioni importanti.",
+      "details": [
+        "Regale palette avorio",
+        "Raffinati dettagli tradizionali",
+        "Maestosa silhouette contemporanea"
+      ]
+    },
+
+    "mochaTextured": {
+      "title": "Moka Testurizzato",
+      "eyebrow": "SELEZIONE DA OCCASIONE",
+      "description": "Uno sherwani color moka caldo con texture raffinata, finiture eleganti e stile contemporaneo.",
+      "longDescription": "Moka Testurizzato offre un'interpretazione calda dello sherwani tradizionale. La texture discreta e la silhouette moderna creano un'espressione sofisticata per le celebrazioni.",
+      "details": [
+        "Calde tonalità moka",
+        "Texture raffinata",
+        "Finitura confortevole ed elegante"
+      ]
+    },
+
+    "classicBeige": {
+      "title": "Beige Classico",
+      "eyebrow": "SELEZIONE SPOSO",
+      "description": "Un'elegante silhouette beige con finiture raffinate e dettagli tradizionali indiani.",
+      "longDescription": "Beige Classico offre un'interpretazione morbida e contemporanea dello sherwani tradizionale. La palette neutra e i dettagli raffinati creano un'eleganza senza tempo.",
+      "details": [
+        "Raffinata palette beige",
+        "Delicati dettagli tradizionali",
+        "Silhouette senza tempo per lo sposo moderno"
+      ]
+    },
+
+    "royalCharcoal": {
+      "title": "Antracite Reale",
+      "eyebrow": "SELEZIONE SPOSO",
+      "description": "Una marcata silhouette antracite per lo sposo moderno, che unisce finiture raffinate a dettagli tradizionali indiani.",
+      "longDescription": "Antracite Reale offre un'interpretazione più intensa dell'abbigliamento tradizionale dello sposo. Il colore profondo viene equilibrato da dettagli raffinati e finiture moderne.",
+      "details": [
+        "Tonalità antracite profonda",
+        "Raffinati dettagli tradizionali",
+        "Creato per lo sposo moderno"
+      ]
+    },
+
+    "royalRed": {
+      "title": "Rosso Regale",
+      "eyebrow": "SARI DA SPOSA",
+      "description": "Un sari da sposa rosso senza tempo che celebra l'eleganza indiana tradizionale attraverso un colore intenso, dettagli raffinati e un drappeggio aggraziato.",
+      "longDescription": "Rosso Regale è un iconico sari da sposa in cui il ricco rosso tradizionale è protagonista. Dettagli raffinati e un drappeggio elegante creano una presenza aggraziata per celebrazioni significative.",
+      "details": [
+        "Ricca tonalità rossa da sposa",
+        "Ricami tradizionali raffinati",
+        "Creato per le celebrazioni nuziali"
+      ]
+    },
+
+    "ivoryGold": {
+      "title": "Avorio Dorato",
+      "eyebrow": "SARI DA SPOSA",
+      "description": "Un elegante sari color avorio con delicati dettagli dorati per un'interpretazione raffinata e contemporanea della sposa.",
+      "longDescription": "Avorio Dorato combina una base morbida color avorio con caldi dettagli dorati. La palette sofisticata crea un'espressione discreta e lussuosa per le celebrazioni nuziali.",
+      "details": [
+        "Raffinata palette avorio e oro",
+        "Delicati dettagli dorati",
+        "Elegante espressione da sposa"
+      ]
+    },
+
+    "blushRose": {
+      "title": "Rosa Cipria",
+      "eyebrow": "SARI DA OCCASIONE",
+      "description": "Un romantico sari rosa cipria che unisce una tonalità delicata a raffinati dettagli di lavorazione per occasioni speciali.",
+      "longDescription": "Rosa Cipria è stato progettato attorno a una palette romantica e delicata. Dettagli raffinati e un drappeggio aggraziato creano una silhouette elegante per le celebrazioni.",
+      "details": [
+        "Delicata palette rosa cipria",
+        "Raffinata lavorazione decorativa",
+        "Drappeggio elegante per le celebrazioni"
+      ]
+    },
+
+    "emeraldGrace": {
+      "title": "Grazia di Smeraldo",
+      "eyebrow": "SARI DA OCCASIONE",
+      "description": "Un ricco sari verde smeraldo con drappeggio aggraziato, raffinati dettagli dorati e straordinaria artigianalità indiana.",
+      "longDescription": "Grazia di Smeraldo celebra una profonda tonalità smeraldo abbinata a raffinati dettagli dorati. Il drappeggio elegante crea una presenza sofisticata per occasioni speciali.",
+      "details": [
+        "Profonda tonalità smeraldo",
+        "Raffinati dettagli dorati",
+        "Drappeggio aggraziato per movimenti eleganti"
+      ]
+    },
+
+    "champagneDrape": {
+      "title": "Drappeggio Champagne",
+      "eyebrow": "SARI DA OCCASIONE",
+      "description": "Un elegante sari color champagne con tonalità calde, drappeggio raffinato e dettagli discreti.",
+      "longDescription": "Drappeggio Champagne combina calde tonalità champagne con dettagli decorativi discreti. L'espressione raffinata è ideale per celebrazioni in cui il lusso discreto è protagonista.",
+      "details": [
+        "Calde tonalità champagne",
+        "Raffinata lavorazione ricamata",
+        "Drappeggio elegante per occasioni speciali"
+      ]
+    },
+
+    "midnightBlue": {
+      "title": "Blu Mezzanotte",
+      "eyebrow": "SARI DA OCCASIONE",
+      "description": "Un sofisticato sari blu mezzanotte con dettagli dorati e drappeggio elegante per celebrazioni serali.",
+      "longDescription": "Blu Mezzanotte offre un'interpretazione profonda e sofisticata del sari tradizionale. La palette blu notte, i dettagli raffinati e il drappeggio aggraziato creano una presenza straordinaria.",
+      "details": [
+        "Blu mezzanotte intenso",
+        "Raffinati dettagli decorativi",
+        "Creato per celebrazioni serali"
+      ]
+    }
+  },
+
+  "ourStory": {
+    "hero": {
+      "eyebrow": "COLLEZIONE MUHURTHAM",
+      "title": "La nostra storia",
+      "subtitle": "Dove la tradizione diventa eleganza senza tempo.",
+      "description": "Muhurtham Collection nasce con una semplice visione: portare in Svizzera la bellezza, l'artigianalità e la ricchezza culturale dell'abbigliamento da matrimonio indiano.",
+      "cta": "Scopri la nostra collezione",
+      "imageAlt": "Muhurtham Collection"
+    },
+
+    "concept": {
+      "eyebrow": "IL NOSTRO CONCETTO E LA NOSTRA VISIONE",
+      "title": "Ogni capo racconta una storia — e quella storia inizia con noi."
+    },
+
+    "pillars": {
+      "consultations": {
+        "title": "Consulenze\nprivate",
+        "description": "Dedichiamo tempo a ogni cliente, offrendo consulenze personalizzate per aiutarlo a trovare l'abito da matrimonio o da cerimonia perfetto."
+      },
+
+      "collection": {
+        "title": "Collezione\ncurata",
+        "description": "La nostra collezione unisce raffinatezza tradizionale e design moderno, riflettendo la ricchezza della cultura matrimoniale indiana."
+      },
+
+      "vision": {
+        "title": "La nostra\nvisione",
+        "description": "Vogliamo creare un luogo in cui spose e sposi possano trasformare i loro sogni matrimoniali in realtà attraverso qualità, servizio e attenzione personale."
+      }
+    },
+
+    "philosophy": {
+      "eyebrow": "LA FILOSOFIA DI MUHURTHAM",
+      "title": "Creato per i\nmomenti che contano.",
+      "imageAlt": "Collezione sposa e sposo Muhurtham",
+      "paragraph1": "La nostra visione è creare uno spazio in cui spose e sposi possano trasformare i loro sogni matrimoniali in realtà.",
+      "paragraph2": "Vogliamo ispirare e soddisfare i nostri clienti non solo attraverso la qualità dei nostri capi, ma anche attraverso un'atmosfera accogliente, professionale e personale.",
+      "paragraph3": "La missione di Muhurtham Collection è semplice ma potente: portare la bellezza, la raffinatezza e la ricchezza culturale dell'abbigliamento da matrimonio indiano e tamil in Svizzera, dando valore all'autenticità, all'individualità e al servizio personale."
+    },
+
+    "founder": {
+      "eyebrow": "LA PERSONA DIETRO MUHURTHAM",
+      "title": "Incontra la fondatrice",
+      "name": "Kavisha Kamalanathan",
+      "role": "Fondatrice e Direttrice Creativa",
+      "imageAlt": "Fondatrice di Muhurtham Collection",
+      "paragraph1": "Muhurtham Collection è nata dalla passione di portare in Svizzera la vera raffinatezza dell'abbigliamento da matrimonio indiano.",
+      "paragraph2": "Con una profonda attenzione all'artigianalità, alla cultura e al servizio personale, la visione era quella di creare un luogo in cui ogni sposa e ogni sposo potessero trovare capi significativi, personali e senza tempo.",
+      "paragraph3": "Dalla selezione di ogni capo all'attenzione personale dedicata a ogni cliente, ogni dettaglio dell'esperienza Muhurtham viene pensato con cura.",
+      "quote": "“Ogni celebrazione merita qualcosa di indimenticabile.”",
+      "quoteAuthor": "Kavisha Kamalanathan"
+    },
+
+    "promise": {
+      "eyebrow": "CIÒ CHE RAPPRESENTIAMO",
+      "title": "La nostra promessa",
+
+      "authenticity": {
+        "title": "Autenticità",
+        "description": "Celebriamo l'autentica artigianalità, la cultura e la tradizione."
+      },
+
+      "exclusivity": {
+        "title": "Esclusività",
+        "description": "Capi accuratamente selezionati per i momenti che contano davvero."
+      },
+
+      "personalService": {
+        "title": "Servizio personale",
+        "description": "Un'esperienza personale e attenta, dalla scelta del capo all'appuntamento."
+      },
+
+      "timelessElegance": {
+        "title": "Eleganza senza tempo",
+        "description": "Design creati per rimanere belli anche oltre la celebrazione."
+      }
+    },
+
+    "cta": {
+      "eyebrow": "IL TUO MUHURTHAM",
+      "title": "La tua celebrazione\ninizia qui.",
+      "description": "Scopri la nostra collezione curata con attenzione per le celebrazioni più importanti della vita.",
+      "exploreLehengas": "Scopri i Lehengas",
+      "exploreSherwanis": "Scopri gli Sherwani",
+      "bookAppointment": "Prenota un appuntamento"
+    },
+
+    "legacy": {
+      "eyebrow": "LA NOSTRA EREDITÀ",
+      "title": "L'eleganza non passa mai di moda.",
+      "description": "Il vero lusso non risiede nell'eccesso, ma nei dettagli giusti, nell'artigianalità eccellente e in un design ricco di significato."
+    },
+
+    "eyebrow": "LA NOSTRA STORIA",
+    "title": "Dove la tradizione incontra la raffinatezza.",
+    "description": "Muhurtham nasce da una visione che unisce la ricchezza della tradizione indiana alla raffinatezza discreta del design contemporaneo.",
+    "paragraph1": "L'abbigliamento da matrimonio non è semplicemente un capo. È un ricordo, un'emozione e parte di un momento destinato a essere ricordato per tutta la vita.",
+    "paragraph2": "Per questo ogni silhouette, colore, tessuto e dettaglio viene scelto con attenzione.",
+    "paragraph3": "Il nostro obiettivo è portare la ricchezza dell'artigianato indiano alle famiglie e alle nuove generazioni in Svizzera, attraverso un'esperienza raffinata e contemporanea.",
+
+    "philosophyLegacy": {
+      "eyebrow": "LA NOSTRA FILOSOFIA",
+      "title": "L'eleganza non passa mai di moda.",
+      "description": "Il vero lusso non risiede nell'eccesso, ma nei dettagli giusti, nell'artigianalità eccellente e in un design ricco di significato."
+    },
+
+    "craftsmanship": {
+      "eyebrow": "ARTIGIANALITÀ",
+      "title": "Una storia in ogni dettaglio.",
+      "description": "Ogni capo viene curato con attenzione, unendo l'artigianalità tradizionale al design contemporaneo."
+    },
+
+    "legacyCta": "Scopri la nostra collezione"
+  },
+
+  "showroom": {
+    "eyebrow": "IL NOSTRO SHOWROOM",
+    "title": "Vivi il tuo Muhurtham di persona.",
+    "description": "Visita il nostro showroom per scoprire una selezione curata di abiti da matrimonio e da occasione indiani in un ambiente elegante e riservato.",
+
+    "visit": {
+      "title": "Vieni a trovarci",
+      "description": "Il nostro team è a tua disposizione per offrirti una consulenza privata e un'esperienza di styling personalizzata."
+    },
+
+    "hours": {
+      "title": "Orari di apertura",
+      "monday": "Lunedì",
+      "tuesday": "Martedì",
+      "wednesday": "Mercoledì",
+      "thursday": "Giovedì",
+      "friday": "Venerdì",
+      "saturday": "Sabato",
+      "sunday": "Domenica",
+      "closed": "Chiuso"
+    },
+
+    "contact": {
+      "title": "Contatti",
+      "phone": "Telefono",
+      "email": "Email",
+      "address": "Indirizzo"
+    },
+
+    "cta": "Prenota un appuntamento",
+    "directions": "Ottieni indicazioni"
+  },
+
+  "appointment": {
+    "eyebrow": "APPUNTAMENTO PRIVATO",
+    "title": "Dedica del tempo al tuo Muhurtham.",
+    "titleLine1": "Dedica del tempo",
+    "titleLine2": "al tuo Muhurtham.",
+    "description": "Prenota una consulenza privata con il nostro team per trovare il capo perfetto per il tuo matrimonio o la tua occasione speciale.",
+
+    "hero": {
+      "eyebrow": "IL TUO MUHURTHAM",
+      "title": "Prenota la tua visita.",
+      "titleLine1": "Prenota la tua",
+      "titleLine2": "visita.",
+      "description": "Prenota un momento dedicato a te nel nostro showroom.",
+      "imageAlt": "Showroom Muhurtham"
+    },
+
+    "steps": {
+      "label": "Passaggio",
+      "stepOne": "Primo passaggio",
+      "stepTwo": "Secondo passaggio",
+      "stepThree": "Terzo passaggio",
+      "stepOfThree": "1 di 3",
+      "stepOneOfThree": "1 di 3",
+      "stepTwoOfThree": "2 di 3",
+      "stepThreeOfThree": "3 di 3"
+    },
+
+    "serviceSelection": {
+      "eyebrow": "PRIMO PASSAGGIO",
+      "title": "Seleziona il servizio",
+      "description": "Scegli la consulenza privata più adatta alle tue esigenze."
+    },
+
+    "services": {
+      "bridal": {
+        "title": "Consulenza sposa",
+        "description": "Una consulenza privata dedicata ai nostri lehengas da sposa, allo styling e alle esigenze del matrimonio."
+      },
+      "groom": {
+        "title": "Consulenza sposo",
+        "description": "Scopri sherwani raffinati, sartoria tradizionale e opzioni di styling per lo sposo moderno."
+      },
+      "bridalGroom": {
+        "title": "Consulenza sposa e sposo",
+        "description": "Una consulenza completa per entrambi, con una selezione curata per la vostra celebrazione."
+      },
+      "private": {
+        "title": "Appuntamento privato",
+        "description": "Prova privata, modifiche e regolazioni finali per un capo Muhurtham Collection."
+      }
+    },
+
+    "form": {
+      "title": "Richiedi un appuntamento",
+      "name": "Nome completo",
+      "email": "Indirizzo email",
+      "phone": "Numero di telefono",
+      "date": "Data preferita",
+      "time": "Orario preferito",
+      "occasion": "Occasione",
+      "message": "Messaggio",
+      "selectOccasion": "Seleziona l'occasione",
+      "selectDate": "Seleziona la data",
+      "selectTime": "Seleziona l'orario",
+      "submit": "Richiedi appuntamento",
+      "submitting": "Invio in corso...",
+      "success": "La tua richiesta di appuntamento è stata inviata con successo.",
+      "error": "Si è verificato un errore. Riprova."
+    },
+
+    "occasions": {
+      "wedding": "Matrimonio",
+      "engagement": "Fidanzamento",
+      "reception": "Ricevimento",
+      "preWedding": "Evento pre-matrimoniale",
+      "other": "Altro"
+    },
+
+    "privateAtelier": {
+      "eyebrow": "ESPERIENZA PRIVATA",
+      "title": "Atelier\nprivato",
+      "titleLine1": "Atelier",
+      "titleLine2": "privato",
+      "description": "Vivi una consulenza privata con i nostri stylist in un ambiente tranquillo e raffinato."
+    },
+
+    "nextStep": "Passaggio successivo",
+    "previousStep": "Passaggio precedente",
+    "continue": "Continua",
+    "back": "Indietro",
+    "confirm": "Conferma",
+    "finish": "Termina",
+
+    "closing": {
+      "eyebrow": "MUHURTHAM",
+      "title": "La tua celebrazione\ninizia con una conversazione.",
+      "titleLine1": "La tua celebrazione",
+      "titleLine2": "inizia con una conversazione.",
+      "description": "Visita il nostro showroom a Dagmersellen, Svizzera, e scopri la bellezza dell'eleganza nuziale indiana e tamil."
+    },
+
+    "privacy": "Le tue informazioni saranno utilizzate esclusivamente in relazione al tuo appuntamento.",
+
+    "success": {
+      "title": "Richiesta ricevuta",
+      "description": "Abbiamo ricevuto la tua richiesta di appuntamento. Il nostro team ti contatterà presto.",
+      "backHome": "Torna alla home"
+    },
+
+    "errors": {
+      "required": "Questo campo è obbligatorio.",
+      "invalidEmail": "Inserisci un indirizzo email valido.",
+      "invalidPhone": "Inserisci un numero di telefono valido.",
+      "invalidDate": "Seleziona una data valida.",
+      "submitFailed": "Impossibile inviare la richiesta di appuntamento. Riprova."
+    }
+  },
+
+  "search": {
+    "title": "Cerca",
+    "placeholder": "Cerca prodotti...",
+    "searchResults": "Risultati della ricerca",
+    "resultsFor": "Risultati per:",
+    "noResults": "Nessun prodotto trovato per la tua ricerca.",
+    "clear": "Cancella ricerca",
+    "close": "Chiudi ricerca"
+  },
+
+  "megaMenu": {
+    "collections": "Collezioni",
+    "exploreLehengas": "Esplora i Lehengas",
+    "exploreSarees": "Esplora i Sari",
+    "exploreSherwanis": "Esplora gli Sherwani",
+    "bridalLehengas": "Lehengas da sposa",
+    "occasionLehengas": "Lehengas da occasione",
+    "bridalSarees": "Sari da sposa",
+    "occasionSarees": "Sari da occasione",
+    "groomSherwanis": "Sherwani da sposo",
+    "occasionSherwanis": "Sherwani da occasione",
+    "discoverCollection": "Scopri la collezione"
+  },
+
+  "footer": {
+    "description": "Una collezione curata di abiti da matrimonio e da occasione che presenta l'eleganza indiana senza tempo in Svizzera.",
+    "navigation": "Navigazione",
+    "quickLinks": "Link rapidi",
+    "collections": "Collezioni",
+    "contact": "Contatti",
+    "followUs": "Seguici",
+    "privacyPolicy": "Informativa sulla privacy",
+    "terms": "Termini e condizioni",
+    "copyright": "Tutti i diritti riservati.",
+    "rights": "Tutti i diritti riservati."
+  },
+
+  "whatsapp": {
+    "greeting": "Ciao Muhurtham Collection,",
+    "interest": "Sono interessato/a a questo prodotto:",
+    "knowMore": "Vorrei saperne di più.",
+    "chat": "Parla con noi su WhatsApp"
+  },
+
+  "instagram": {
+    "follow": "Seguici su Instagram",
+    "visit": "Visita Instagram"
+  },
+
+  "language": {
+    "english": "English",
+    "german": "Deutsch",
+    "french": "Français",
+    "italian": "Italiano",
+    "tamil": "தமிழ்"
+  },
+
+  "errors": {
+    "pageNotFound": "Pagina non trovata",
+    "somethingWentWrong": "Qualcosa è andato storto.",
+    "tryAgain": "Riprova",
+    "goHome": "Torna alla home"
+  }
+}

@@ -1,0 +1,1051 @@
+{
+  "brand": {
+    "name": "Muhurtham Collection",
+    "tagline": "Zeitlose indische Eleganz, sorgfältig präsentiert in der Schweiz.",
+    "collection": "Kollektion"
+  },
+
+  "navigation": {
+    "home": "Startseite",
+    "lehengas": "Lehengas",
+    "sarees": "Saris",
+    "sherwanis": "Sherwanis",
+    "collections": "Kollektionen",
+    "ourStory": "Unsere Geschichte",
+    "showroom": "Showroom",
+    "appointment": "Private Beratung"
+  },
+
+  "common": {
+    "explore": "Entdecken",
+    "exploreLehengas": "Lehengas entdecken",
+    "exploreSarees": "Saris entdecken",
+    "exploreSherwanis": "Sherwanis entdecken",
+
+    "viewCollection": "Kollektion ansehen",
+    "discoverMore": "Mehr entdecken",
+    "discover": "Entdecken",
+
+    "bookAppointment": "Termin vereinbaren",
+    "customerCare": "Kundenservice",
+
+    "search": "Suche",
+    "menu": "Menü",
+    "close": "Schließen",
+
+    "viewAll": "Alle ansehen",
+    "viewDetails": "Details ansehen",
+
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Zurück",
+
+    "scroll": "Scrollen",
+    "readMore": "Mehr lesen",
+    "learnMore": "Mehr erfahren",
+
+    "submit": "Absenden",
+    "send": "Senden",
+
+    "loading": "Wird geladen...",
+
+    "pieces": "Stücke",
+    "piece": "Stück",
+
+    "all": "Alle",
+    "new": "Neu",
+    "newArrival": "Neu eingetroffen",
+
+    "occasion": "Anlass",
+    "bridal": "Braut",
+    "groom": "Bräutigam",
+    "wedding": "Hochzeit",
+
+    "category": "Kategorie",
+    "reference": "Referenz",
+    "collection": "Kollektion",
+
+    "share": "Teilen",
+    "shareThisProduct": "Dieses Produkt teilen",
+
+    "productDetails": "Produktdetails",
+    "contactStylist": "Unsere Stylistin kontaktieren",
+    "productDeclaration": "Produktinformationen",
+
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "chatWhatsApp": "Chatten Sie mit uns auf WhatsApp",
+
+    "contactUs": "Kontaktieren Sie uns",
+    "viewOnInstagram": "Auf Instagram ansehen",
+
+    "pieceNotFound": "Produkt nicht gefunden",
+    "requestedPieceNotFound": "Das angeforderte Kleidungsstück wurde nicht gefunden.",
+
+    "collectionNotFound": "Kollektion nicht gefunden",
+    "noPiecesFound": "Keine Produkte gefunden",
+
+    "backToCollection": "Zurück zur Kollektion",
+    "backToLehengas": "Zurück zu den Lehengas",
+    "backToSarees": "Zurück zu den Saris",
+    "backToSherwanis": "Zurück zu den Sherwanis",
+    "backToCollections": "Zurück zu den Kollektionen",
+
+    "previousImage": "Vorheriges Bild",
+    "nextImage": "Nächstes Bild",
+    "zoomImage": "Bild vergrößern",
+    "closeImage": "Bild schließen"
+  },
+
+  "home": {
+    "title": "Muhurtham",
+
+    "hero": {
+      "eyebrow": "MUHURTHAM COLLECTION",
+      "title": "Das Hochzeitskapitel",
+      "titleLine1": "Das Hochzeitskapitel",
+      "titleLine2": "",
+      "description": "Zeitlose indische Eleganz, stilvoll präsentiert in der Schweiz.",
+      "cta": "Lehengas entdecken",
+      "lehengaCta": "Lehengas entdecken",
+      "sherwaniCta": "Sherwanis entdecken",
+      "scroll": "Scrollen",
+      "imageAlt": "Muhurtham Hochzeitskollektion"
+    },
+
+    "introduction": {
+      "eyebrow": "MUHURTHAM COLLECTION",
+      "title": "Geschaffen für Ihr Hochzeitskapitel.",
+      "titleLine1": "Geschaffen für Ihr",
+      "titleLine2": "Hochzeitskapitel.",
+      "description": "Ein Ort, an dem Bräute und Bräutigame ihre Hochzeitsträume verwirklichen können.",
+      "button": "Unsere Kollektionen entdecken",
+      "cta": "Kollektionen entdecken"
+    },
+
+    "story": {
+      "eyebrow": "MUHURTHAM",
+      "title": "Wo Tradition auf Raffinesse trifft.",
+      "titleLine1": "Wo Tradition auf",
+      "titleLine2": "Raffinesse trifft.",
+      "description": "Muhurtham entstand aus der Überzeugung, dass Hochzeitsmode etwas ganz Persönliches sein sollte.",
+      "paragraph1": "Jede Silhouette, jede Farbe und jedes Detail wird ausgewählt, um den Reichtum der indischen Tradition mit einer ruhigen, modernen Eleganz zu verbinden.",
+      "paragraph2": "Von Hochzeitsfeiern bis hin zu intimen Anlässen – unsere Kollektion ist für bedeutungsvolle Momente geschaffen, die in Erinnerung bleiben.",
+      "cta": "Unsere Geschichte entdecken",
+      "button": "Unsere Geschichte entdecken",
+      "imageAlt": "Muhurtham Hochzeitsmode"
+    },
+
+    "philosophy": {
+      "eyebrow": "DIE MUHURTHAM PHILOSOPHIE",
+      "title": "Eleganz, die über den Anlass hinaus Bestand hat.",
+      "titleLine1": "Eleganz, die über den",
+      "titleLine2": "Anlass hinaus Bestand hat.",
+      "description": "Wir glauben an zeitlose Schönheit, erstklassige Handwerkskunst und Kleidungsstücke, die für wirklich besondere Momente geschaffen werden."
+    },
+
+    "collections": {
+      "eyebrow": "MUHURTHAM KOLLEKTIONEN",
+      "title": "Ausgewählte Kollektionen",
+      "titleLine1": "Ausgewählte",
+      "titleLine2": "Kollektionen",
+      "description": "Entdecken Sie unsere ausgewählten Kollektionen, in denen indische Tradition auf moderne Eleganz und klares Design trifft.",
+      "viewAll": "Alle Kollektionen ansehen",
+      "viewAllCollections": "Alle Kollektionen ansehen",
+      "lehenga": "Lehengas",
+      "saree": "Saris",
+      "sherwani": "Sherwanis",
+      "viewCollection": "Kollektion ansehen",
+
+      "card1": {
+        "eyebrow": "KOLLEKTION 01",
+        "title": "Lehengas",
+        "description": "Braut-Lehengas, die indische Handwerkskunst mit zeitgemäßer Raffinesse verbinden."
+      },
+
+      "card2": {
+        "eyebrow": "KOLLEKTION 02",
+        "title": "Saris",
+        "description": "Saris mit zeitloser Schönheit und raffinierter Handwerkskunst."
+      },
+
+      "card3": {
+        "eyebrow": "KOLLEKTION 03",
+        "title": "Sherwanis",
+        "description": "Anspruchsvolle indische Festmode für den modernen Bräutigam."
+      }
+    },
+
+    "edit": {
+      "eyebrow": "DIE MUHURTHAM AUSWAHL",
+      "title": "Indische Eleganz, sorgfältig präsentiert.",
+      "titleLine1": "Indische Eleganz,",
+      "titleLine2": "sorgfältig präsentiert.",
+      "description": "Entdecken Sie sorgfältig ausgewählte Stücke für Bräute, Bräutigame und ihre Gäste. Jede Kollektion verbindet traditionelle Handwerkskunst mit modernem Design."
+    },
+
+    "selectedPieces": {
+      "eyebrow": "AUSGEWÄHLTE STÜCKE",
+      "title": "Aus der Kollektion",
+      "description": "Eine raffinierte Auswahl an Silhouetten aus unserer Braut- und Festmodekollektion.",
+      "viewAll": "Alle ansehen"
+    },
+
+    "appointment": {
+      "eyebrow": "IHR MUHURTHAM",
+      "title": "Entdecken Sie das Kleidungsstück für Ihren besonderen Moment.",
+      "titleLine1": "Entdecken Sie das Kleidungsstück",
+      "titleLine2": "für Ihren besonderen Moment.",
+      "description": "Erleben Sie unsere Kollektion persönlich und finden Sie gemeinsam mit unserem Team die perfekte Silhouette für Ihre Feier.",
+      "cta": "Termin vereinbaren"
+    },
+
+    "closing": {
+      "eyebrow": "MUHURTHAM",
+      "title": "Ihre Feier beginnt mit einem Gespräch.",
+      "titleLine1": "Ihre Feier",
+      "titleLine2": "beginnt mit einem Gespräch.",
+      "description": "Besuchen Sie unseren Showroom in Dagmersellen, Schweiz, und entdecken Sie die Schönheit indischer und tamilischer Brautmode."
+    }
+  },
+
+  "lehengas": {
+    "eyebrow": "MUHURTHAM KOLLEKTION",
+    "title": "Lehengas",
+    "description": "Eine sorgfältig ausgewählte Verbindung aus indischer Handwerkskunst, zeitlosen Silhouetten und raffinierter Festmode.",
+
+    "filters": {
+      "all": "Alle",
+      "bridal": "Braut",
+      "occasion": "Anlass",
+      "wedding": "Hochzeit",
+      "newest": "Neueste",
+      "oldest": "Älteste"
+    },
+
+    "sort": {
+      "label": "Sortieren",
+      "newest": "Neueste",
+      "oldest": "Älteste"
+    },
+
+    "category": {
+      "bridal": "Braut-Lehenga",
+      "occasion": "Lehenga für besondere Anlässe",
+      "wedding": "Hochzeits-Lehenga"
+    },
+
+    "view": {
+      "details": "Details ansehen",
+      "discover": "Entdecken"
+    },
+
+    "empty": {
+      "title": "Keine Produkte gefunden",
+      "description": "Derzeit sind in dieser Kategorie keine Lehengas verfügbar."
+    },
+
+    "philosophy": {
+      "eyebrow": "DIE MUHURTHAM PHILOSOPHIE",
+      "title": "Eleganz, die über den Anlass hinaus Bestand hat.",
+      "description": "Jedes Lehenga verbindet traditionelle Handwerkskunst mit moderner Eleganz und wird für Momente geschaffen, die ein Leben lang in Erinnerung bleiben."
+    },
+
+    "yourMuhurtham": {
+      "eyebrow": "IHR MUHURTHAM",
+      "title": "Entdecken Sie die Silhouette für Ihren besonderen Moment.",
+      "description": "Vereinbaren Sie eine persönliche Beratung mit unserem Team und finden Sie das perfekte Lehenga für Ihren besonderen Tag.",
+      "cta": "Termin vereinbaren"
+    }
+  },
+
+  "sarees": {
+    "eyebrow": "MUHURTHAM KOLLEKTION",
+    "title": "Saris",
+    "description": "Eine raffinierte Auswahl an Braut- und Anlass-Saris, die eleganten Fall, zeitlose Farben und indische Handwerkskunst zelebrieren.",
+
+    "filters": {
+      "all": "Alle",
+      "bridal": "Braut",
+      "occasion": "Anlass",
+      "wedding": "Hochzeit",
+      "newest": "Neueste",
+      "oldest": "Älteste"
+    },
+
+    "sort": {
+      "label": "Sortieren",
+      "newest": "Neueste",
+      "oldest": "Älteste"
+    },
+
+    "category": {
+      "bridal": "Braut-Sari",
+      "occasion": "Sari für besondere Anlässe",
+      "wedding": "Hochzeits-Sari"
+    },
+
+    "view": {
+      "details": "Details ansehen",
+      "discover": "Entdecken"
+    },
+
+    "empty": {
+      "title": "Keine Produkte gefunden",
+      "description": "Derzeit sind in dieser Kategorie keine Saris verfügbar."
+    },
+
+    "philosophy": {
+      "eyebrow": "DIE MUHURTHAM PHILOSOPHIE",
+      "title": "Eleganz, die über den Anlass hinaus Bestand hat.",
+      "description": "Jeder Sari verbindet den Reichtum der indischen Tradition mit moderner Raffinesse und wird für bedeutungsvolle Momente ausgewählt."
+    },
+
+    "yourMuhurtham": {
+      "eyebrow": "IHR MUHURTHAM",
+      "title": "Finden Sie den perfekten Sari für Ihren besonderen Moment.",
+      "description": "Lassen Sie sich persönlich von unserem Team beraten und finden Sie den perfekten Sari für Ihren besonderen Tag.",
+      "cta": "Termin vereinbaren"
+    }
+  },
+
+  "sherwanis": {
+    "eyebrow": "MUHURTHAM KOLLEKTION",
+    "title": "Sherwanis",
+    "description": "Raffinierte indische Festmode für den modernen Bräutigam, geprägt von zeitloser Handwerkskunst und zurückhaltender Eleganz.",
+
+    "filters": {
+      "all": "Alle",
+      "groom": "Bräutigam",
+      "occasion": "Anlass",
+      "wedding": "Hochzeit",
+      "newest": "Neueste",
+      "oldest": "Älteste"
+    },
+
+    "sort": {
+      "label": "Sortieren",
+      "newest": "Neueste",
+      "oldest": "Älteste"
+    },
+
+    "category": {
+      "groom": "Bräutigam",
+      "occasion": "Festmode",
+      "wedding": "Hochzeitsmode"
+    },
+
+    "view": {
+      "details": "Details ansehen",
+      "discover": "Entdecken"
+    },
+
+    "empty": {
+      "title": "Keine Produkte gefunden",
+      "description": "Derzeit sind in dieser Kategorie keine Sherwanis verfügbar."
+    },
+
+    "philosophy": {
+      "eyebrow": "DIE MUHURTHAM PHILOSOPHIE",
+      "title": "Eleganz, die über den Anlass hinaus Bestand hat.",
+      "description": "Jeder Sherwani verbindet traditionelle indische Schneiderkunst mit moderner Eleganz und ist für den modernen Bräutigam geschaffen."
+    },
+
+    "yourMuhurtham": {
+      "eyebrow": "IHR MUHURTHAM",
+      "title": "Finden Sie den perfekten Sherwani für Ihren besonderen Tag.",
+      "description": "Lassen Sie sich von unserem Team beraten, um die perfekte Farbe, Silhouette und Accessoires für Ihre Hochzeit zu wählen.",
+      "cta": "Termin vereinbaren"
+    }
+  },
+
+  "collections": {
+    "eyebrow": "MUHURTHAM KOLLEKTION",
+    "title": "Kollektionen",
+    "description": "Entdecken Sie unsere sorgfältig ausgewählten Kollektionen, in denen indische Tradition auf moderne Eleganz und raffiniertes Design trifft.",
+
+    "lehengas": {
+      "title": "Lehengas",
+      "eyebrow": "LEHENGA KOLLEKTION",
+      "description": "Eine raffinierte Verbindung aus indischer Handwerkskunst, zeitlosen Silhouetten und eleganter Festmode.",
+      "longDescription": "Entdecken Sie unsere Lehenga-Kollektion mit Braut- und Festmode in einer raffinierten Interpretation indischer Handwerkskunst.",
+      "cta": "Lehengas entdecken",
+      "details": [
+        "Braut-Lehengas",
+        "Lehengas für besondere Anlässe",
+        "Raffinierte indische Handwerkskunst"
+      ]
+    },
+
+    "sarees": {
+      "title": "Saris",
+      "eyebrow": "SARI KOLLEKTION",
+      "description": "Eine raffinierte Auswahl an Braut- und Anlass-Saris, die eleganten Fall, zeitlose Farben und indische Handwerkskunst zelebrieren.",
+      "longDescription": "Entdecken Sie eine Auswahl raffinierter Saris, die den eleganten Fall, zeitlose Farben und die reiche indische Handwerkskunst zelebrieren.",
+      "cta": "Saris entdecken",
+      "details": [
+        "Braut-Saris",
+        "Saris für besondere Anlässe",
+        "Raffinierte Drapierungen und Verarbeitung"
+      ]
+    },
+
+    "sherwanis": {
+      "title": "Sherwanis",
+      "eyebrow": "SHERWANI KOLLEKTION",
+      "description": "Eine Verbindung aus zeitloser indischer Handwerkskunst und moderner Eleganz, geschaffen für den modernen Bräutigam.",
+      "longDescription": "Entdecken Sie unsere Sherwani-Kollektion für den modernen Bräutigam mit raffinierten Silhouetten, traditioneller Handwerkskunst und zeitgemäßer Eleganz.",
+      "cta": "Sherwanis entdecken",
+      "details": [
+        "Sherwanis für den Bräutigam",
+        "Sherwanis für besondere Anlässe",
+        "Raffinierte indische Verarbeitung"
+      ]
+    }
+  },
+
+  "product": {
+    "premiumQuality": "Premium-Qualität",
+    "exquisiteCraftsmanship": "Exquisite Handwerkskunst",
+    "gracefulComfort": "Komfort und Eleganz",
+    "lightweightComfort": "Leichter Tragekomfort",
+    "comfortableTailoring": "Komfortable Maßarbeit",
+    "timelessElegance": "Zeitlose Eleganz",
+    "elegantFinish": "Elegante Verarbeitung",
+    "modernElegance": "Moderne Eleganz",
+    "regalElegance": "Königliche Eleganz",
+    "quietLuxury": "Dezenter Luxus",
+    "bridalComfort": "Komfort für die Braut",
+    "modernRoyalty": "Moderne königliche Eleganz",
+    "contemporaryElegance": "Zeitgemäße Eleganz",
+    "comfortableStructure": "Komfortable Struktur",
+    "elegantComfort": "Eleganter Komfort",
+
+    "descriptions": {
+      "premiumQuality": "Ausgewählte Stoffe und sorgfältige Verarbeitung.",
+      "exquisiteCraftsmanship": "Traditionelle Handwerkskunst mit Liebe zum Detail.",
+      "gracefulComfort": "Für natürliche und elegante Bewegungen geschaffen.",
+      "lightweightComfort": "Leicht und für mühelose Bewegungsfreiheit entwickelt.",
+      "comfortableTailoring": "Raffinierte Schneiderkunst ohne Einschränkung der Bewegungsfreiheit.",
+      "timelessElegance": "Eine Silhouette, die zeitlos bleibt.",
+      "elegantFinish": "Eine raffinierte, moderne Verarbeitung.",
+      "modernElegance": "Zeitgemäße Eleganz mit traditioneller Seele.",
+      "quietLuxury": "Ein Ausdruck von dezentem und raffiniertem Luxus.",
+      "bridalComfort": "Für Komfort und Eleganz während der Feierlichkeiten geschaffen.",
+      "modernRoyalty": "Eine raffinierte Interpretation moderner königlicher Eleganz.",
+      "contemporaryElegance": "Eine moderne Silhouette mit traditioneller Inspiration.",
+      "comfortableStructure": "Eine strukturierte Verarbeitung für natürlichen Komfort.",
+      "elegantComfort": "Eine ausgewogene Verbindung aus Eleganz, Struktur und Komfort."
+    }
+  },
+
+  "products": {
+    "royalMaroon": {
+      "title": "Scharlachrote Eleganz",
+      "eyebrow": "BRAUT-LEHENGA",
+      "description": "Eine majestätische Brautsilhouette in tiefem Scharlachrot, veredelt mit zarten Stickereien und zeitloser indischer Handwerkskunst.",
+      "longDescription": "Scharlachrote Eleganz verbindet traditionelle indische Handwerkskunst mit einer tief romantischen Farbpalette. Die Silhouette schafft eine anmutige Präsenz für die Braut, während Stickerei und Farbe im Mittelpunkt stehen.",
+      "details": [
+        "Reiche scharlachrote Brautpalette",
+        "Zarte traditionelle Stickereien",
+        "Für Hochzeitsfeierlichkeiten geschaffen"
+      ]
+    },
+
+    "ivoryGarden": {
+      "title": "Elfenbeingarten",
+      "eyebrow": "BRAUT-LEHENGA",
+      "description": "Eine raffinierte Elfenbein-Silhouette, inspiriert von eleganten Gärten und veredelt mit zarten Details und einer anspruchsvollen Verarbeitung.",
+      "longDescription": "Elfenbeingarten verbindet sanfte Elfenbeintöne mit raffinierten dekorativen Details. Die moderne Silhouette schafft eine zeitlose und elegante Ausdruckskraft für Hochzeitsfeierlichkeiten.",
+      "details": [
+        "Sanfte und leuchtende Elfenbeintöne",
+        "Zarte Stickereidetails",
+        "Zeitgemäße Brautsilhouette"
+      ]
+    },
+
+    "blushPink": {
+      "title": "Puderrosa",
+      "eyebrow": "LEHENGA FÜR BESONDERE ANLÄSSE",
+      "description": "Eine zarte Interpretation in Puderrosa mit raffinierten Details und einer modernen Silhouette für besondere Anlässe.",
+      "longDescription": "Puderrosa basiert auf einer romantischen und sanften Farbpalette mit raffinierten Proportionen. Das Ergebnis ist ein elegantes Kleidungsstück für Feierlichkeiten mit dezenter Raffinesse.",
+      "details": [
+        "Zarte Puderrosa-Palette",
+        "Raffinierte Verzierungen",
+        "Eleganter Stil für Feierlichkeiten"
+      ]
+    },
+
+    "goldenTissue": {
+      "title": "Goldenes Gewebe",
+      "eyebrow": "LEHENGA FÜR BESONDERE ANLÄSSE",
+      "description": "Eine raffinierte goldene Silhouette in warmen Tönen, veredelt mit Stickereidetails und zeitloser Eleganz.",
+      "longDescription": "Goldenes Gewebe verbindet warme Goldtöne mit dezenten dekorativen Details. Die Silhouette ist für elegante Feierlichkeiten geschaffen, bei denen dezenter Luxus im Mittelpunkt steht.",
+      "details": [
+        "Warme goldene Farbpalette",
+        "Raffinierte Stickereiverarbeitung",
+        "Ideal für elegante Feierlichkeiten"
+      ]
+    },
+
+    "champagneGold": {
+      "title": "Champagnergold",
+      "eyebrow": "LEHENGA FÜR BESONDERE ANLÄSSE",
+      "description": "Eine zarte Champagner-Silhouette mit warmen Tönen, raffinierter Verzierung und zeitloser Eleganz.",
+      "longDescription": "Champagnergold verbindet warme Champagnertöne mit dezenten dekorativen Details. Die anspruchsvolle Silhouette ist für Feierlichkeiten geschaffen, bei denen dezenter Luxus elegant zum Ausdruck kommt.",
+      "details": [
+        "Warme Champagnertöne",
+        "Raffinierte Stickereiverarbeitung",
+        "Ideal für elegante Feierlichkeiten"
+      ]
+    },
+
+    "ivoryHeritage": {
+      "title": "Elfenbein-Erbe",
+      "eyebrow": "AUSWAHL FÜR DEN BRÄUTIGAM",
+      "description": "Ein raffinierter Elfenbein-Sherwani, geprägt von traditioneller Handwerkskunst, eleganten Stickereien und einer zeitlosen Silhouette für den modernen Bräutigam.",
+      "longDescription": "Elfenbein-Erbe wurde für den modernen Bräutigam geschaffen, der dezente Grandezza schätzt. Raffinierte Stickereien, elegante Verarbeitung und eine anspruchsvolle Farbpalette erzeugen eine distinguierte Präsenz.",
+      "details": [
+        "Raffinierter Elfenbeinton",
+        "Zarte traditionelle Stickereien",
+        "Für den modernen Bräutigam geschaffen"
+      ]
+    },
+
+    "royalSand": {
+      "title": "Königlicher Sand",
+      "eyebrow": "AUSWAHL FÜR DEN BRÄUTIGAM",
+      "description": "Ein Sherwani in warmen Sandtönen, der traditionelle Details mit einer zeitgemäßen Silhouette für elegante Feierlichkeiten verbindet.",
+      "longDescription": "Königlicher Sand verbindet Sand- und Elfenbeintöne mit raffinierten traditionellen Details. Die moderne Silhouette eignet sich ideal für formelle Feierlichkeiten.",
+      "details": [
+        "Warme Sand- und Elfenbeintöne",
+        "Raffinierte traditionelle Stickereien",
+        "Elegant für formelle Anlässe"
+      ]
+    },
+
+    "midnightEmbroidery": {
+      "title": "Mitternachtsstickerei",
+      "eyebrow": "AUSWAHL FÜR DEN BRÄUTIGAM",
+      "description": "Ein anspruchsvoller Sherwani in tiefem Nachtblau mit raffinierter Stickerei, geschaffen für Abendveranstaltungen mit dezentem Luxus.",
+      "longDescription": "Mitternachtsstickerei interpretiert traditionelle Bräutigamsmode auf elegante Weise neu. Die tiefe Farbe, dekorativen Details und raffinierte Verarbeitung schaffen eine distinguierte Präsenz.",
+      "details": [
+        "Tiefes Nachtblau",
+        "Raffinierte dekorative Stickereien",
+        "Für Abendfeierlichkeiten geschaffen"
+      ]
+    },
+
+    "champagneClassic": {
+      "title": "Klassisches Champagner",
+      "eyebrow": "AUSWAHL FÜR BESONDERE ANLÄSSE",
+      "description": "Ein warmer Champagner-Sherwani mit raffinierten Details und einer anspruchsvollen Silhouette für besondere Momente.",
+      "longDescription": "Klassisches Champagner verbindet warme Champagnertöne mit eleganter Verarbeitung und dezenten Details. Ein Kleidungsstück für raffinierte Feierlichkeiten.",
+      "details": [
+        "Warme Champagnerpalette",
+        "Raffinierte Stickereidetails",
+        "Anspruchsvolle Silhouette für Feierlichkeiten"
+      ]
+    },
+
+    "regalIvory": {
+      "title": "Königliches Elfenbein",
+      "eyebrow": "AUSWAHL FÜR DEN BRÄUTIGAM",
+      "description": "Eine majestätische Elfenbein-Silhouette, die traditionelle Handwerkskunst, raffinierte Details und moderne Eleganz verbindet.",
+      "longDescription": "Königliches Elfenbein zelebriert die Schönheit indischer Schneiderkunst mit einer hellen Farbpalette und strukturierten Silhouette. Ein eleganter Ausdruck für große Feierlichkeiten.",
+      "details": [
+        "Königliche Elfenbeinpalette",
+        "Raffinierte traditionelle Details",
+        "Majestätische zeitgemäße Silhouette"
+      ]
+    },
+
+    "mochaTextured": {
+      "title": "Texturiertes Mokka",
+      "eyebrow": "AUSWAHL FÜR BESONDERE ANLÄSSE",
+      "description": "Ein warmer Mokka-Sherwani mit raffinierter Textur, eleganter Verarbeitung und zeitgemäßem Stil.",
+      "longDescription": "Texturiertes Mokka bietet eine warme Interpretation des traditionellen Sherwani. Die dezente Textur und moderne Silhouette schaffen eine anspruchsvolle Ausdruckskraft für Feierlichkeiten.",
+      "details": [
+        "Warme Mokkatöne",
+        "Raffinierte Textur",
+        "Komfortable und elegante Verarbeitung"
+      ]
+    },
+
+    "classicBeige": {
+      "title": "Klassisches Beige",
+      "eyebrow": "AUSWAHL FÜR DEN BRÄUTIGAM",
+      "description": "Eine elegante beige Silhouette mit raffinierter Verarbeitung und traditionellen indischen Details.",
+      "longDescription": "Klassisches Beige bietet eine sanfte und zeitgemäße Interpretation des traditionellen Sherwani. Die neutrale Farbpalette und raffinierten Details schaffen zeitlose Eleganz.",
+      "details": [
+        "Raffinierte Beige-Palette",
+        "Zarte traditionelle Details",
+        "Zeitlose Silhouette für den modernen Bräutigam"
+      ]
+    },
+
+    "royalCharcoal": {
+      "title": "Königliches Anthrazit",
+      "eyebrow": "AUSWAHL FÜR DEN BRÄUTIGAM",
+      "description": "Eine markante Anthrazit-Silhouette für den modernen Bräutigam, die raffinierte Verarbeitung mit traditionellen indischen Details verbindet.",
+      "longDescription": "Königliches Anthrazit bietet eine dunklere Interpretation traditioneller Bräutigamsmode. Die tiefe Farbe wird durch raffinierte Details und moderne Verarbeitung ausgeglichen.",
+      "details": [
+        "Tiefer Anthrazitton",
+        "Raffinierte traditionelle Details",
+        "Für den modernen Bräutigam geschaffen"
+      ]
+    },
+
+    "royalRed": {
+      "title": "Königliches Rot",
+      "eyebrow": "BRAUT-SARI",
+      "description": "Ein zeitloser roter Braut-Sari, der traditionelle indische Eleganz durch eine reiche Farbgebung, raffinierte Details und einen anmutigen Fall zelebriert.",
+      "longDescription": "Königliches Rot ist ein ikonischer Braut-Sari, dessen Mittelpunkt das traditionelle satte Rot bildet. Raffinierte Details und ein eleganter Fall schaffen eine anmutige Präsenz für bedeutungsvolle Feierlichkeiten.",
+      "details": [
+        "Reiche rote Brautpalette",
+        "Traditionelle raffinierte Stickereien",
+        "Für Hochzeitsfeierlichkeiten geschaffen"
+      ]
+    },
+
+    "ivoryGold": {
+      "title": "Goldenes Elfenbein",
+      "eyebrow": "BRAUT-SARI",
+      "description": "Ein eleganter Elfenbein-Sari mit dezenten goldenen Details für eine raffinierte und moderne Brautinterpretation.",
+      "longDescription": "Goldenes Elfenbein verbindet eine sanfte Elfenbeinbasis mit warmen goldenen Details. Die raffinierte Farbpalette schafft einen dezenten und luxuriösen Ausdruck für Hochzeitsfeierlichkeiten.",
+      "details": [
+        "Raffinierte Elfenbein- und Goldpalette",
+        "Dezente goldene Details",
+        "Eleganter Ausdruck für die Braut"
+      ]
+    },
+
+    "blushRose": {
+      "title": "Puderrosa",
+      "eyebrow": "SARI FÜR BESONDERE ANLÄSSE",
+      "description": "Ein romantischer Puderrosa-Sari, der eine zarte Farbgebung mit raffinierten Verarbeitungsdetails für besondere Anlässe verbindet.",
+      "longDescription": "Puderrosa wurde rund um eine romantische und sanfte Farbpalette gestaltet. Zarte Details und ein anmutiger Fall schaffen eine elegante Silhouette für Feierlichkeiten.",
+      "details": [
+        "Zarte Puderrosa-Palette",
+        "Raffinierte dekorative Verarbeitung",
+        "Eleganter Fall für Feierlichkeiten"
+      ]
+    },
+
+    "emeraldGrace": {
+      "title": "Smaragdgrüne Anmut",
+      "eyebrow": "SARI FÜR BESONDERE ANLÄSSE",
+      "description": "Ein satter smaragdgrüner Sari mit anmutigem Fall, raffinierten goldenen Details und außergewöhnlicher indischer Handwerkskunst.",
+      "longDescription": "Smaragdgrüne Anmut zelebriert einen tiefen Smaragdton in Verbindung mit raffinierten goldenen Details. Der elegante Fall schafft eine anspruchsvolle Präsenz für besondere Anlässe.",
+      "details": [
+        "Tiefer Smaragdton",
+        "Raffinierte goldene Details",
+        "Anmutiger Fall für elegante Bewegungen"
+      ]
+    },
+
+    "champagneDrape": {
+      "title": "Champagner-Drapierung",
+      "eyebrow": "SARI FÜR BESONDERE ANLÄSSE",
+      "description": "Ein eleganter Champagner-Sari mit warmen Tönen, raffinierter Drapierung und dezenten Details.",
+      "longDescription": "Champagner-Drapierung verbindet warme Champagnertöne mit dezenten dekorativen Details. Der raffinierte Ausdruck eignet sich für Feierlichkeiten, bei denen dezenter Luxus im Mittelpunkt steht.",
+      "details": [
+        "Warme Champagnertöne",
+        "Raffinierte Stickereiverarbeitung",
+        "Elegante Drapierung für besondere Anlässe"
+      ]
+    },
+
+    "midnightBlue": {
+      "title": "Mitternachtsblau",
+      "eyebrow": "SARI FÜR BESONDERE ANLÄSSE",
+      "description": "Ein anspruchsvoller Mitternachtsblau-Sari mit goldenen Details und eleganter Drapierung für Abendfeierlichkeiten.",
+      "longDescription": "Mitternachtsblau bietet eine tiefe und anspruchsvolle Interpretation des traditionellen Sari. Die Mitternachtsblau-Palette, raffinierten Details und anmutige Drapierung schaffen eine beeindruckende Präsenz.",
+      "details": [
+        "Tiefes Mitternachtsblau",
+        "Raffinierte dekorative Details",
+        "Für Abendfeierlichkeiten geschaffen"
+      ]
+    }
+  },
+
+  "productDetail": {
+    "backToLehengas": "Zurück zu den Lehengas",
+    "backToSarees": "Zurück zu den Saris",
+    "backToSherwanis": "Zurück zu den Sherwanis",
+    "backToCollections": "Zurück zu den Kollektionen",
+
+    "productDetails": "Produktdetails",
+    "contactOurStylist": "Unsere Stylistin kontaktieren",
+    "productDeclaration": "Produktinformationen",
+
+    "category": "Kategorie",
+    "reference": "Referenz",
+    "collection": "Kollektion",
+
+    "shareThisProduct": "Dieses Produkt teilen",
+
+    "chatWithUs": "Chatten Sie mit uns auf WhatsApp",
+
+    "stylist": {
+      "description": "Unser Styling-Team unterstützt Sie gerne bei Größe, Styling, Farbabstimmung und Terminverfügbarkeit.",
+      "bookAppointment": "Termin vereinbaren"
+    },
+
+    "declaration": {
+      "description": "Jedes Muhurtham-Stück wird als sorgfältig ausgewählte Festmode präsentiert. Kleine Abweichungen bei Stickerei, Struktur und Verarbeitung können Teil der natürlichen Handwerkskunst sein."
+    },
+
+    "gallery": {
+      "image": "Bild",
+      "previous": "Vorheriges Bild",
+      "next": "Nächstes Bild",
+      "zoom": "Bild vergrößern",
+      "close": "Bild schließen"
+    }
+  },
+
+  "ourStory": {
+    "hero": {
+      "eyebrow": "MUHURTHAM COLLECTION",
+      "title": "Unsere Geschichte",
+      "subtitle": "Wo Tradition zu zeitloser Eleganz wird.",
+      "description": "Muhurtham Collection entstand aus einer einfachen Vision: die Schönheit, Handwerkskunst und kulturelle Vielfalt indischer Brautmode in die Schweiz zu bringen.",
+      "cta": "Unsere Kollektion entdecken",
+      "imageAlt": "Muhurtham Collection"
+    },
+
+    "concept": {
+      "eyebrow": "UNSER KONZEPT & UNSERE VISION",
+      "title": "Jedes Kleidungsstück erzählt eine Geschichte – und diese Geschichte beginnt bei uns."
+    },
+
+    "pillars": {
+      "consultations": {
+        "title": "Persönliche\nBeratung",
+        "description": "Wir nehmen uns Zeit für jeden Kunden und bieten eine individuelle Beratung, damit Sie das perfekte Outfit für Hochzeit oder besondere Anlässe finden."
+      },
+
+      "collection": {
+        "title": "Eine einzigartige\nKollektion",
+        "description": "Unsere Kollektion verbindet traditionelle Eleganz mit modernem Design und spiegelt den Reichtum der indischen Hochzeitskultur wider."
+      },
+
+      "vision": {
+        "title": "Unsere\nVision",
+        "description": "Ein Ort, an dem Bräute und Bräutigame ihre Hochzeitsträume durch Qualität, Herzlichkeit und persönlichen Service verwirklichen können."
+      }
+    },
+
+    "philosophy": {
+      "eyebrow": "UNSERE VISION",
+      "title": "Ihr besonderer Moment verdient\nes, unvergesslich zu sein.",
+      "imageAlt": "Muhurtham Braut- und Bräutigamkollektion",
+
+      "paragraph1": "Unsere Vision ist es, einen Ort zu schaffen, an dem Bräute und Bräutigame ihre Hochzeitsträume verwirklichen können.",
+
+      "paragraph2": "Wir möchten unsere Kunden nicht nur durch die Qualität unserer Kleidung inspirieren und begeistern, sondern auch durch eine warme, professionelle und einladende Atmosphäre.",
+
+      "paragraph3": "Bei Muhurtham Collection ist unser Konzept einfach, aber kraftvoll: die Schönheit, Eleganz und kulturelle Vielfalt indischer und tamilischer Brautmode in die Schweiz zu bringen – mit besonderem Augenmerk auf Authentizität, Exklusivität und persönlichen Service."
+    },
+
+    "founder": {
+      "eyebrow": "DIE PERSON HINTER MUHURTHAM",
+      "title": "Lernen Sie die Gründerin kennen",
+      "name": "Kavisha Kamalanathan",
+      "role": "GRÜNDERIN & CREATIVE DIRECTOR",
+      "imageAlt": "Gründerin von Muhurtham Collection",
+
+      "paragraph1": "Muhurtham Collection wurde aus der Leidenschaft heraus gegründet, authentische indische Brautmode in die Schweiz zu bringen.",
+
+      "paragraph2": "Mit einer tiefen Wertschätzung für Handwerkskunst, Kultur und persönlichen Service entstand die Vision, einen Ort zu schaffen, an dem jede Braut und jeder Bräutigam Stücke entdecken kann, die ihre Persönlichkeit widerspiegeln, Bedeutung haben und zeitlos bleiben.",
+
+      "paragraph3": "Jedes Detail des Muhurtham-Erlebnisses wird sorgfältig durchdacht – von der Auswahl jedes Kleidungsstücks bis zur persönlichen Aufmerksamkeit für jeden Kunden.",
+
+      "quote": "„Jede Feier verdient etwas Unvergessliches.“",
+      "quoteAuthor": "Kavisha Kamalanathan"
+    },
+
+    "promise": {
+      "eyebrow": "WOFÜR WIR STEHEN",
+      "title": "Unser Versprechen",
+
+      "authenticity": {
+        "title": "Authentizität",
+        "description": "Wir feiern authentische Handwerkskunst, Kultur und kulturelles Erbe."
+      },
+
+      "exclusivity": {
+        "title": "Exklusivität",
+        "description": "Sorgfältig ausgewählte Stücke für die Momente, die wirklich zählen."
+      },
+
+      "personalService": {
+        "title": "Persönlicher Service",
+        "description": "Ein privates und herzliches Erlebnis – von der Auswahl bis zur Beratung."
+      },
+
+      "timelessElegance": {
+        "title": "Zeitlose Eleganz",
+        "description": "Kreationen, die weit über eine einzelne Feier hinaus schön bleiben."
+      }
+    },
+
+    "cta": {
+      "eyebrow": "IHR MUHURTHAM",
+      "title": "Ihre Feier\nbeginnt hier.",
+      "description": "Entdecken Sie eine Kollektion, die sorgfältig für die wichtigsten Feiern des Lebens geschaffen wurde.",
+      "exploreLehengas": "LEHENGAS ENTDECKEN",
+      "exploreSherwanis": "SHERWANIS ENTDECKEN",
+      "bookAppointment": "TERMIN VEREINBAREN"
+    },
+
+    "legacy": {
+      "eyebrow": "UNSER ERBE",
+      "title": "Eleganz kommt nie aus der Mode.",
+      "description": "Wahrer Luxus liegt nicht im Übermaß, sondern in den richtigen Details, herausragender Handwerkskunst und einem Design mit Bedeutung."
+    },
+
+    "eyebrow": "UNSERE GESCHICHTE",
+    "title": "Wo Tradition auf Raffinesse trifft.",
+    "description": "Muhurtham entstand aus einer Vision, die den Reichtum der indischen Tradition mit der ruhigen Raffinesse modernen Designs verbindet.",
+
+    "paragraph1": "Hochzeitsmode ist mehr als nur ein Kleidungsstück. Sie ist eine Erinnerung, ein Gefühl und Teil eines Moments, der ein Leben lang in Erinnerung bleibt.",
+
+    "paragraph2": "Deshalb wird jede Silhouette, jede Farbe, jeder Stoff und jedes Detail mit großer Sorgfalt ausgewählt.",
+
+    "paragraph3": "Unser Ziel ist es, die Schönheit der indischen Handwerkskunst Familien und neuen Generationen in der Schweiz auf eine raffinierte und zeitgemäße Weise näherzubringen.",
+
+    "philosophyLegacy": {
+      "eyebrow": "UNSERE PHILOSOPHIE",
+      "title": "Eleganz kommt nie aus der Mode.",
+      "description": "Wahrer Luxus liegt nicht im Übermaß, sondern in den richtigen Details, herausragender Handwerkskunst und einem Design mit Bedeutung."
+    },
+
+    "craftsmanship": {
+      "eyebrow": "HANDWERKSKUNST",
+      "title": "Eine Geschichte in jedem Detail.",
+      "description": "Jedes Kleidungsstück wird sorgfältig gefertigt und verbindet traditionelle Handwerkskunst mit zeitgemäßem Design."
+    },
+
+    "legacyCta": "Unsere Kollektion entdecken"
+  },
+
+  "showroom": {
+    "eyebrow": "UNSER SHOWROOM",
+    "title": "Erleben Sie Ihr Muhurtham persönlich.",
+    "description": "Besuchen Sie unseren Showroom und entdecken Sie eine sorgfältig ausgewählte Auswahl indischer Hochzeits- und Festmode in einer eleganten und privaten Atmosphäre.",
+
+    "visit": {
+      "title": "Besuchen Sie uns",
+      "description": "Unser Team steht Ihnen für eine persönliche Beratung und ein individuelles Styling-Erlebnis zur Verfügung."
+    },
+
+    "hours": {
+      "title": "Öffnungszeiten",
+      "monday": "Montag",
+      "tuesday": "Dienstag",
+      "wednesday": "Mittwoch",
+      "thursday": "Donnerstag",
+      "friday": "Freitag",
+      "saturday": "Samstag",
+      "sunday": "Sonntag",
+      "closed": "Geschlossen"
+    },
+
+    "contact": {
+      "title": "Kontakt",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "address": "Adresse"
+    },
+
+    "cta": "Termin vereinbaren",
+    "directions": "Route anzeigen"
+  },
+
+  "appointment": {
+    "eyebrow": "PRIVATE BERATUNG",
+    "title": "Nehmen Sie sich Zeit für Ihr Muhurtham.",
+    "titleLine1": "Nehmen Sie sich Zeit",
+    "titleLine2": "für Ihr Muhurtham.",
+    "description": "Vereinbaren Sie eine persönliche Beratung mit unserem Team, um das perfekte Kleidungsstück für Ihre Hochzeit oder Ihren besonderen Anlass zu finden.",
+
+    "hero": {
+      "eyebrow": "IHR MUHURTHAM",
+      "title": "Reservieren Sie Ihren Besuch.",
+      "titleLine1": "Reservieren Sie Ihren",
+      "titleLine2": "Besuch.",
+      "description": "Reservieren Sie einen persönlichen Moment für sich in unserem Showroom.",
+      "imageAlt": "Muhurtham Showroom"
+    },
+
+    "steps": {
+      "label": "Schritt",
+      "stepOne": "Erster Schritt",
+      "stepTwo": "Zweiter Schritt",
+      "stepThree": "Dritter Schritt",
+      "stepOfThree": "1 von 3",
+      "stepOneOfThree": "1 von 3",
+      "stepTwoOfThree": "2 von 3",
+      "stepThreeOfThree": "3 von 3"
+    },
+
+    "serviceSelection": {
+      "eyebrow": "ERSTER SCHRITT",
+      "title": "Service auswählen",
+      "description": "Wählen Sie die private Beratung, die am besten zu Ihren Bedürfnissen passt."
+    },
+
+    "services": {
+      "bridal": {
+        "title": "Brautberatung",
+        "description": "Eine persönliche Beratung für unsere Braut-Lehengas, Styling und alle Fragen rund um Ihre Hochzeit."
+      },
+
+      "groom": {
+        "title": "Bräutigamberatung",
+        "description": "Entdecken Sie raffinierte Sherwanis, traditionelle Handwerkskunst und Styling-Optionen für den modernen Bräutigam."
+      },
+
+      "bridalGroom": {
+        "title": "Braut- und Bräutigamberatung",
+        "description": "Eine umfassende Beratung für Sie beide mit einer sorgfältig ausgewählten Zusammenstellung für Ihre Feier."
+      },
+
+      "private": {
+        "title": "Private Beratung",
+        "description": "Private Anprobe, Anpassungen und letzte Änderungen für ein Kleidungsstück von Muhurtham Collection."
+      }
+    },
+
+    "form": {
+      "title": "Termin anfragen",
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "date": "Bevorzugtes Datum",
+      "time": "Bevorzugte Uhrzeit",
+      "occasion": "Anlass",
+      "message": "Nachricht",
+      "selectOccasion": "Anlass auswählen",
+      "selectDate": "Datum auswählen",
+      "selectTime": "Uhrzeit auswählen",
+      "submit": "Termin anfragen",
+      "submitting": "Wird gesendet...",
+      "success": "Ihre Terminanfrage wurde erfolgreich gesendet.",
+      "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+    },
+
+    "occasions": {
+      "wedding": "Hochzeit",
+      "engagement": "Verlobung",
+      "reception": "Empfang",
+      "preWedding": "Vorhochzeitsveranstaltung",
+      "other": "Andere"
+    },
+
+    "privateAtelier": {
+      "eyebrow": "PRIVATE ERFAHRUNG",
+      "title": "Privates\nAtelier",
+      "titleLine1": "Privates",
+      "titleLine2": "Atelier",
+      "description": "Erleben Sie eine persönliche Beratung mit unseren Stylisten in einer ruhigen und raffinierten Umgebung."
+    },
+
+    "nextStep": "Nächster Schritt",
+    "previousStep": "Vorheriger Schritt",
+    "continue": "Weiter",
+    "back": "Zurück",
+    "confirm": "Bestätigen",
+    "finish": "Fertigstellen",
+
+    "closing": {
+      "eyebrow": "MUHURTHAM",
+      "title": "Ihre Feier\nbeginnt mit einem Gespräch.",
+      "titleLine1": "Ihre Feier",
+      "titleLine2": "beginnt mit einem Gespräch.",
+      "description": "Besuchen Sie unseren Showroom in Dagmersellen, Schweiz, und entdecken Sie die Schönheit indischer und tamilischer Brautmode."
+    },
+
+    "privacy": "Ihre Informationen werden ausschließlich im Zusammenhang mit Ihrem Termin verwendet.",
+
+    "success": {
+      "title": "Anfrage erhalten",
+      "description": "Wir haben Ihre Terminanfrage erhalten. Unser Team wird sich in Kürze mit Ihnen in Verbindung setzen.",
+      "backHome": "Zur Startseite"
+    },
+
+    "errors": {
+      "required": "Dieses Feld ist erforderlich.",
+      "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "invalidPhone": "Bitte geben Sie eine gültige Telefonnummer ein.",
+      "invalidDate": "Bitte wählen Sie ein gültiges Datum.",
+      "submitFailed": "Ihre Terminanfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+    }
+  },
+
+  "search": {
+    "title": "Suche",
+    "placeholder": "Produkte suchen...",
+    "searchResults": "Suchergebnisse",
+    "resultsFor": "Ergebnisse für:",
+    "noResults": "Für Ihre Suche wurden keine Produkte gefunden.",
+    "clear": "Suche löschen",
+    "close": "Suche schließen"
+  },
+
+  "megaMenu": {
+    "collections": "Kollektionen",
+    "exploreLehengas": "Lehengas entdecken",
+    "exploreSarees": "Saris entdecken",
+    "exploreSherwanis": "Sherwanis entdecken",
+    "bridalLehengas": "Braut-Lehengas",
+    "occasionLehengas": "Lehengas für besondere Anlässe",
+    "bridalSarees": "Braut-Saris",
+    "occasionSarees": "Saris für besondere Anlässe",
+    "groomSherwanis": "Sherwanis für den Bräutigam",
+    "occasionSherwanis": "Sherwanis für besondere Anlässe",
+    "discoverCollection": "Kollektion entdecken"
+  },
+
+  "footer": {
+    "description": "Eine sorgfältig ausgewählte Kollektion indischer Hochzeits- und Festmode, die zeitlose indische Eleganz in der Schweiz präsentiert.",
+    "navigation": "Navigation",
+    "quickLinks": "Schnellzugriff",
+    "collections": "Kollektionen",
+    "contact": "Kontakt",
+    "followUs": "Folgen Sie uns",
+    "privacyPolicy": "Datenschutzerklärung",
+    "terms": "Allgemeine Geschäftsbedingungen",
+    "copyright": "Alle Rechte vorbehalten.",
+    "rights": "Alle Rechte vorbehalten."
+  },
+
+  "whatsapp": {
+    "greeting": "Hallo Muhurtham Collection,",
+    "interest": "Ich interessiere mich für dieses Produkt:",
+    "knowMore": "Ich würde gerne mehr darüber erfahren.",
+    "chat": "Chatten Sie mit uns auf WhatsApp"
+  },
+
+  "instagram": {
+    "follow": "Folgen Sie uns auf Instagram",
+    "visit": "Instagram besuchen"
+  },
+
+  "language": {
+    "english": "English",
+    "german": "Deutsch",
+    "french": "Français",
+    "italian": "Italiano",
+    "tamil": "தமிழ்"
+  },
+
+  "errors": {
+    "pageNotFound": "Seite nicht gefunden",
+    "somethingWentWrong": "Etwas ist schiefgelaufen.",
+    "tryAgain": "Erneut versuchen",
+    "goHome": "Zur Startseite"
+  }
+}

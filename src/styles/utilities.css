@@ -1,0 +1,44 @@
+.page-container {
+  width: min(100% - 40px, 1440px);
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    width: min(100% - 80px, 1440px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .page-container {
+    width: min(100% - 120px, 1520px);
+  }
+}
+
+.luxury-heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.editorial-copy {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

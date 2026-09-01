@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@300;400;500;600&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #faf8f3;
+  --color-warm-white: #ffffff;
+  --color-ink: #171513;
+  --color-brown: #74533c;
+  --color-brown-dark: #3d2b20;
+  --color-beige: #e8e0d6;
+  --color-taupe: #cfc3b7;
+
+  --font-display: "Bodoni Moda", serif;
+  --font-serif: "EB Garamond", serif;
+  --font-sans: "Manrope", sans-serif;
+}
+
+:root {
+  font-family: "Manrope", sans-serif;
+  color: #171513;
+  background: #faf8f3;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #faf8f3;
+  color: #171513;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #74533c;
+  color: #ffffff;
+}

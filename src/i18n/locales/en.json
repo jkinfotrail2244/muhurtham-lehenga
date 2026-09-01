@@ -1,0 +1,36 @@
+{
+  "brand": {
+    "name": "Muhurtham Collection",
+    "tagline": "Timeless Indian elegance, thoughtfully presented in Switzerland."
+  },
+
+  "navigation": {
+    "home": "Home",
+    "lehengas": "Lehengas",
+    "sherwanis": "Sherwanis",
+    "collections": "Collections",
+    "ourStory": "Our Story",
+    "showroom": "Showroom",
+    "appointment": "Appointment"
+  },
+
+  "common": {
+    "explore": "Explore",
+    "viewCollection": "View Collection",
+    "discoverMore": "Discover More",
+    "bookAppointment": "Book an Appointment",
+    "customerCare": "Customer Care",
+    "search": "Search",
+    "menu": "Menu",
+    "close": "Close",
+    "viewAll": "View All"
+  },
+
+  "home": {
+    "hero": {
+      "title": "The Wedding Chapter",
+      "description": "Timeless Indian elegance, thoughtfully presented in Switzerland.",
+      "cta": "Explore Lehengas"
+    }
+  }
+}
