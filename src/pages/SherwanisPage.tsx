@@ -45,21 +45,6 @@ type Sherwani = {
 
 /* ============================================================
    SHERWANI DATA
-
-   IMPORTANT:
-   ------------------------------------------------------------
-   Do NOT store customer-facing English text here.
-
-   Titles and descriptions are translated below using:
-
-   products.ivoryHeritage.*
-   products.royalSand.*
-   products.midnightEmbroidery.*
-   products.champagneClassic.*
-   products.regalIvory.*
-   products.mochaTextured.*
-   products.classicBeige.*
-   products.royalCharcoal.*
 ============================================================ */
 
 const sherwanis: Sherwani[] = [
@@ -140,8 +125,6 @@ const sherwanis: Sherwani[] = [
 
 /* ============================================================
    CATEGORY FALLBACKS
-
-   Used only if the corresponding JSON key is missing.
 ============================================================ */
 
 const categoryFallbacks: Record<
@@ -182,7 +165,10 @@ const productFallbacks: Record<
   {
     title: Record<SupportedLanguage, string>;
     category: Record<SupportedLanguage, string>;
-    description: Record<SupportedLanguage, string>;
+    description: Record<
+      SupportedLanguage,
+      string
+    >;
   }
 > = {
   ivoryHeritage: {
@@ -637,13 +623,7 @@ function SherwanisPage() {
   const { i18n } = useTranslation();
 
   /* ==========================================================
-     LANGUAGE FROM URL
-
-     /en/sherwanis → en
-     /ta/sherwanis → ta
-     /fr/sherwanis → fr
-     /de/sherwanis → de
-     /it/sherwanis → it
+     LANGUAGE
   ========================================================== */
 
   const language = resolveLanguage(
@@ -651,16 +631,9 @@ function SherwanisPage() {
   );
 
   /* ==========================================================
-     IMPORTANT TRANSLATION FIX
+     FIXED TRANSLATOR
 
-     getFixedT() forces this page to use the language
-     from the URL.
-
-     This prevents situations where:
-
-     URL = /ta/sherwanis
-
-     but i18next internally remains "en".
+     Forces this page to follow the language in the URL.
   ========================================================== */
 
   const fixedT =
@@ -671,13 +644,6 @@ function SherwanisPage() {
 
   /* ==========================================================
      SAFE TRANSLATION
-
-     Never show:
-
-     navigation.sherwanis
-     products.ivoryHeritage.title
-
-     on the actual page.
   ========================================================== */
 
   const translate = (
@@ -700,7 +666,7 @@ function SherwanisPage() {
   };
 
   /* ==========================================================
-     CATEGORY FROM URL
+     CATEGORY
   ========================================================== */
 
   const categoryFromUrl =
@@ -810,9 +776,7 @@ function SherwanisPage() {
               "
             >
 
-              {/* =================================================
-                  TITLE
-              ================================================= */}
+              {/* TITLE */}
 
               <div className="max-w-3xl">
 
@@ -849,13 +813,9 @@ function SherwanisPage() {
 
               </div>
 
-              {/* =================================================
-                  FILTER + SORT
-              ================================================= */}
+              {/* FILTER + SORT */}
 
               <div className="flex shrink-0 items-center gap-2">
-
-                {/* FILTER */}
 
                 <button
                   type="button"
@@ -890,8 +850,6 @@ function SherwanisPage() {
                   )}
 
                 </button>
-
-                {/* SORT */}
 
                 <div className="relative">
 
@@ -958,8 +916,6 @@ function SherwanisPage() {
 
                   </button>
 
-                  {/* SORT MENU */}
-
                   {showSort && (
                     <motion.div
                       initial={{
@@ -983,8 +939,6 @@ function SherwanisPage() {
                         shadow-xl
                       "
                     >
-
-                      {/* NEWEST */}
 
                       <button
                         type="button"
@@ -1011,8 +965,6 @@ function SherwanisPage() {
                         )}
                       </button>
 
-                      {/* FEATURED */}
-
                       <button
                         type="button"
                         onClick={() => {
@@ -1037,8 +989,6 @@ function SherwanisPage() {
                           fallback.featured,
                         )}
                       </button>
-
-                      {/* OLDEST */}
 
                       <button
                         type="button"
@@ -1111,8 +1061,6 @@ function SherwanisPage() {
             }}
           >
 
-            {/* ALL */}
-
             {(
               [
                 "all",
@@ -1177,8 +1125,6 @@ function SherwanisPage() {
               );
             })}
 
-            {/* PIECE COUNT */}
-
             <div className="ml-auto hidden shrink-0 sm:block">
 
               <span className="text-[8px] uppercase tracking-[0.24em] text-black/35">
@@ -1233,10 +1179,6 @@ function SherwanisPage() {
                       item.translationKey
                     ];
 
-                  /* =================================================
-                     PRODUCT NAME
-                  ================================================= */
-
                   const productName =
                     translate(
                       `products.${item.translationKey}.title`,
@@ -1245,10 +1187,6 @@ function SherwanisPage() {
                       ],
                     );
 
-                  /* =================================================
-                     PRODUCT CATEGORY
-                  ================================================= */
-
                   const productCategory =
                     translate(
                       `products.${item.translationKey}.category`,
@@ -1256,10 +1194,6 @@ function SherwanisPage() {
                         language
                       ],
                     );
-
-                  /* =================================================
-                     PRODUCT DESCRIPTION
-                  ================================================= */
 
                   const productDescription =
                     translate(
@@ -1295,10 +1229,6 @@ function SherwanisPage() {
                       className="group"
                     >
 
-                      {/* =================================================
-                          PRODUCT LINK
-                      ================================================= */}
-
                       <Link
                         to={`/${language}/sherwanis/${item.slug}`}
                         className="block"
@@ -1306,8 +1236,6 @@ function SherwanisPage() {
                           productName
                         }
                       >
-
-                        {/* IMAGE */}
 
                         <div
                           className="
@@ -1337,8 +1265,6 @@ function SherwanisPage() {
                             "
                           />
 
-                          {/* OVERLAY */}
-
                           <div
                             className="
                               absolute
@@ -1349,8 +1275,6 @@ function SherwanisPage() {
                               group-hover:bg-black/10
                             "
                           />
-
-                          {/* NUMBER */}
 
                           <div className="absolute left-4 top-4">
 
@@ -1367,8 +1291,6 @@ function SherwanisPage() {
                             </span>
 
                           </div>
-
-                          {/* FEATURED */}
 
                           {item.featured && (
                             <div className="absolute left-4 top-10">
@@ -1395,8 +1317,6 @@ function SherwanisPage() {
 
                             </div>
                           )}
-
-                          {/* HOVER ARROW */}
 
                           <div
                             className="
@@ -1439,17 +1359,11 @@ function SherwanisPage() {
 
                       </Link>
 
-                      {/* =================================================
-                          PRODUCT INFORMATION
-                      ================================================= */}
-
                       <div className="pt-4">
 
                         <div className="flex items-start justify-between gap-4">
 
                           <div className="min-w-0">
-
-                            {/* CATEGORY */}
 
                             <p
                               className="
@@ -1463,8 +1377,6 @@ function SherwanisPage() {
                               {productCategory}
                             </p>
 
-                            {/* PRODUCT NAME */}
-
                             <h2
                               className="
                                 font-display
@@ -1475,8 +1387,6 @@ function SherwanisPage() {
                             >
                               {productName}
                             </h2>
-
-                            {/* DESCRIPTION */}
 
                             <p
                               className="
@@ -1491,8 +1401,6 @@ function SherwanisPage() {
                             </p>
 
                           </div>
-
-                          {/* VIEW */}
 
                           <span
                             className="
@@ -1514,8 +1422,6 @@ function SherwanisPage() {
                           </span>
 
                         </div>
-
-                        {/* DIVIDER */}
 
                         <div
                           className="
@@ -1539,10 +1445,6 @@ function SherwanisPage() {
             </motion.div>
 
           ) : (
-
-            /* =================================================
-               EMPTY STATE
-            ================================================= */
 
             <motion.div
               initial={{
@@ -1659,16 +1561,12 @@ function SherwanisPage() {
             }}
           >
 
-            {/* PHILOSOPHY */}
-
             <p className="eyebrow text-brown">
               {translate(
                 "sherwanis.philosophy.eyebrow",
                 fallback.philosophy,
               )}
             </p>
-
-            {/* TITLE */}
 
             <h2
               className="
@@ -1685,8 +1583,6 @@ function SherwanisPage() {
                 fallback.philosophyTitle,
               )}
             </h2>
-
-            {/* DESCRIPTION */}
 
             <p
               className="
@@ -1710,9 +1606,15 @@ function SherwanisPage() {
 
       {/* =====================================================
           APPOINTMENT CTA
+          
+          FIXED:
+          -----------------------------------------------------
+          The global `.luxury-heading` class was making the
+          heading dark on the dark `bg-ink` background.
 
-          IMPORTANT:
-          Everything here is now translated.
+          We explicitly use `!text-white` on the heading.
+
+          The eyebrow uses a warm luxury beige.
       ===================================================== */}
 
       <section
@@ -1760,21 +1662,34 @@ function SherwanisPage() {
               }}
             >
 
-              {/* YOUR MUHURTHAM */}
+              {/* EYEBROW */}
 
-              <p className="eyebrow text-brown">
+              <p
+                className="
+                  eyebrow
+                  text-[#C8B09B]!
+                "
+              >
                 {translate(
                   "sherwanis.appointment.eyebrow",
                   fallback.appointmentEyebrow,
                 )}
               </p>
 
-              {/* CTA TITLE */}
+              {/* =================================================
+                  APPOINTMENT HEADING
+
+                  IMPORTANT:
+                  text-white! overrides the global
+                  `.luxury-heading` color.
+              ================================================= */}
 
               <h2
                 className="
                   luxury-heading
                   mt-4
+                  max-w-3xl
+                  text-white!
                   text-4xl
                   leading-[1.05]
                   sm:text-5xl
@@ -1826,10 +1741,11 @@ function SherwanisPage() {
                   font-medium
                   uppercase
                   tracking-[0.25em]
+                  text-white!
                   transition-all
                   duration-500
                   hover:bg-white
-                  hover:text-ink
+                  hover:text-ink!
                 "
               >
 

@@ -29,7 +29,9 @@ import Header from "./components/layout/Header";
    SUPPORTED LANGUAGES
 ============================================================ */
 
-const languages = ["en", "de", "fr", "it", "ta"];
+const languages = ["en", "de", "fr", "it", "ta"] as const;
+
+type Language = (typeof languages)[number];
 
 /* ============================================================
    APP CONTENT
@@ -40,43 +42,31 @@ function AppContent() {
   const location = useLocation();
 
   /*
-   * Prevent the refresh redirect from running again
-   * after React Router navigation.
+   * Prevent the refresh redirect from running more than once
+   * during the initial application load.
    */
   const refreshChecked = useRef(false);
 
   /* ==========================================================
      REFRESH → LANGUAGE HOME
-     
-     IMPORTANT:
-     
-     This check runs ONLY ONCE when the application
-     initially loads.
-     
-     Example:
-     
-     Browser refresh:
+
+     On an actual browser refresh:
+
        /en/sherwanis
-              ↓
+             ↓
        /en
-     
-     Browser refresh:
-       /en/sarees
-              ↓
-       /en
-     
-     Browser refresh:
-       /de/collections
-              ↓
-       /de
-     
-     But normal navigation:
-     
+
+       /ta/collections
+             ↓
+       /ta
+
+     Normal React Router navigation is NOT affected.
+
        /en
         ↓ click Collections
        /en/collections
-     
-     WILL NOT redirect back to /en.
+
+     remains /en/collections.
   ========================================================== */
 
   useEffect(() => {
@@ -87,15 +77,13 @@ function AppContent() {
     refreshChecked.current = true;
 
     const navigationEntry =
-      performance.getEntriesByType(
-        "navigation",
-      )[0] as
+      performance.getEntriesByType("navigation")[0] as
         | PerformanceNavigationTiming
         | undefined;
 
     /*
-     * Only continue when the browser actually
-     * performed a page reload.
+     * Only perform the redirect when the browser
+     * navigation was an actual reload.
      */
     if (navigationEntry?.type !== "reload") {
       return;
@@ -105,20 +93,19 @@ function AppContent() {
       .split("/")
       .filter(Boolean);
 
-    const currentLanguage =
-      pathParts[0];
+    const currentLanguage = pathParts[0];
 
-    const language = languages.includes(
-      currentLanguage,
+    const language: Language = languages.includes(
+      currentLanguage as Language,
     )
-      ? currentLanguage
+      ? (currentLanguage as Language)
       : "en";
 
     const homePath = `/${language}`;
 
     /*
-     * If the refreshed page is deeper than
-     * the language home, return to the home page.
+     * If the user refreshed a deeper page,
+     * return to the language home page.
      */
     if (location.pathname !== homePath) {
       navigate(homePath, {
@@ -136,13 +123,15 @@ function AppContent() {
       <LoadingScreen />
 
       {/* =====================================================
-          LANGUAGE SYNC
+          GLOBAL LANGUAGE SYNCHRONIZATION
       ===================================================== */}
 
       <LanguageSync />
 
       {/* =====================================================
           GLOBAL HEADER
+
+          Header is available throughout the website.
       ===================================================== */}
 
       <Header />
@@ -155,6 +144,8 @@ function AppContent() {
 
         {/* ===================================================
             ROOT
+
+            / → /en
         =================================================== */}
 
         <Route
@@ -179,6 +170,11 @@ function AppContent() {
 
             {/* ===============================================
                 HOME
+                /en
+                /de
+                /fr
+                /it
+                /ta
             =============================================== */}
 
             <Route
@@ -190,8 +186,28 @@ function AppContent() {
                 LEHENGAS
             =============================================== */}
 
+            {/* Main Lehenga Catalogue */}
+
             <Route
               path="lehengas"
+              element={
+                <LehengasPage />
+              }
+            />
+
+            {/* Lehenga Bridal Category */}
+
+            <Route
+              path="lehengas/bridal"
+              element={
+                <LehengasPage />
+              }
+            />
+
+            {/* Lehenga Occasion Category */}
+
+            <Route
+              path="lehengas/occasion"
               element={
                 <LehengasPage />
               }
@@ -205,45 +221,33 @@ function AppContent() {
                 <CollectionDetailPage />
               }
             />
-            <Route path="lehengas" element={<LehengasPage />} />
-<Route path="lehengas/bridal" element={<LehengasPage />} />
-<Route path="lehengas/occasion" element={<LehengasPage />} />
-
-<Route path="lehengas/:slug" element={<CollectionDetailPage />} />
-
-            {/* ===============================================
-                SHERWANIS
-            =============================================== */}
-
-            <Route
-              path="sherwanis"
-              element={
-                <SherwanisPage />
-              }
-            />
-
-            {/* Individual Sherwani */}
-
-            <Route
-              path="sherwanis/:slug"
-              element={
-                <CollectionDetailPage />
-              }
-            />
-            <Route path="sherwanis" element={<SherwanisPage />} />
-<Route path="sherwanis/groom" element={<SherwanisPage />} />
-<Route path="sherwanis/occasion" element={<SherwanisPage />} />
-
-<Route path="sherwanis/:slug" element={<CollectionDetailPage />} />
 
             {/* ===============================================
                 SAREES
             =============================================== */}
 
-            {/* Main Saree catalogue */}
+            {/* Main Saree Catalogue */}
 
             <Route
               path="sarees"
+              element={
+                <SareesPage />
+              }
+            />
+
+            {/* Bridal Sarees */}
+
+            <Route
+              path="sarees/bridal"
+              element={
+                <SareesPage />
+              }
+            />
+
+            {/* Occasion Sarees */}
+
+            <Route
+              path="sarees/occasion"
               element={
                 <SareesPage />
               }
@@ -257,15 +261,52 @@ function AppContent() {
                 <CollectionDetailPage />
               }
             />
-            <Route path="sarees" element={<SareesPage />} />
-<Route path="sarees/bridal" element={<SareesPage />} />
-<Route path="sarees/occasion" element={<SareesPage />} />
 
-<Route path="sarees/:slug" element={<CollectionDetailPage />} />
+            {/* ===============================================
+                SHERWANIS
+            =============================================== */}
+
+            {/* Main Sherwani Catalogue */}
+
+            <Route
+              path="sherwanis"
+              element={
+                <SherwanisPage />
+              }
+            />
+
+            {/* Groom Sherwanis */}
+
+            <Route
+              path="sherwanis/groom"
+              element={
+                <SherwanisPage />
+              }
+            />
+
+            {/* Occasion Sherwanis */}
+
+            <Route
+              path="sherwanis/occasion"
+              element={
+                <SherwanisPage />
+              }
+            />
+
+            {/* Individual Sherwani */}
+
+            <Route
+              path="sherwanis/:slug"
+              element={
+                <CollectionDetailPage />
+              }
+            />
 
             {/* ===============================================
                 COLLECTIONS
             =============================================== */}
+
+            {/* Main Collections Page */}
 
             <Route
               path="collections"
@@ -274,7 +315,7 @@ function AppContent() {
               }
             />
 
-            {/* Collection category/detail pages */}
+            {/* Individual Collection */}
 
             <Route
               path="collections/:slug"
@@ -317,7 +358,7 @@ function AppContent() {
             />
 
             {/* ===============================================
-                LANGUAGE 404
+                LANGUAGE-SPECIFIC 404
             =============================================== */}
 
             <Route
@@ -351,7 +392,9 @@ function AppContent() {
 ============================================================ */
 
 function App() {
-  return <AppContent />;
+  return (
+    <AppContent />
+  );
 }
 
 export default App;

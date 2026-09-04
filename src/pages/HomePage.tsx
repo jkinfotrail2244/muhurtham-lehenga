@@ -92,21 +92,6 @@ function HomePage() {
 
   /* ==========================================================
      PRODUCT TRANSLATION HELPER
-
-     IMPORTANT:
-     Featured products MUST use products.* because the
-     product JSON already contains these translations.
-
-     Example:
-
-     products.royalRed.title
-     products.royalRed.eyebrow
-
-     products.royalMaroon.title
-     products.royalMaroon.eyebrow
-
-     products.ivoryHeritage.title
-     products.ivoryHeritage.eyebrow
   ========================================================== */
 
   const productText = (
@@ -145,8 +130,6 @@ function HomePage() {
 
   /* ==========================================================
      FEATURED PRODUCT DATA
-
-     All visible product text is translated dynamically.
   ========================================================== */
 
   const royalRedName =
@@ -191,18 +174,37 @@ function HomePage() {
       "Groom Edit",
     );
 
-  /* ==========================================================
+  /* ============================================================
      MAIN PAGE
-  ========================================================== */
+  ============================================================ */
 
   return (
     <main className="min-h-screen bg-ivory text-ink">
 
       {/* =====================================================
           HERO
+          
+          IMPORTANT:
+          HeroSection contains the actual hero heading and
+          subtitle. The scoped CSS below forces the hero
+          heading to white and the subtitle to warm beige.
       ===================================================== */}
 
-      <HeroSection />
+      <div className="muhurtham-home-hero">
+
+        <style>{`
+          .muhurtham-home-hero h1 {
+            color: #ffffff !important;
+          }
+
+          .muhurtham-home-hero h1 + p {
+            color: #E8D8C8 !important;
+          }
+        `}</style>
+
+        <HeroSection />
+
+      </div>
 
       {/* =====================================================
           INTRODUCTION
@@ -214,16 +216,12 @@ function HomePage() {
 
           <div className="mx-auto max-w-4xl text-center">
 
-            {/* EYEBROW */}
-
             <p className="text-[9px] font-medium uppercase tracking-[0.32em] text-[#8F6D52]">
               {homeText(
                 "hero.eyebrow",
                 "THE MUHURTHAM COLLECTION",
               )}
             </p>
-
-            {/* DIVIDER */}
 
             <div className="mx-auto mt-6 flex items-center justify-center gap-3">
 
@@ -239,27 +237,19 @@ function HomePage() {
 
             </div>
 
-            {/* TITLE */}
-
-            <h2 className="mt-8 font-display text-4xl leading-[1.12] text-[#181615] sm:text-5xl lg:text-6xl">
-
+            <h2 className="mt-8 font-display text-4xl leading-[1.12] text-[#181615]! sm:text-5xl lg:text-6xl">
               {homeText(
                 "hero.title",
                 "The Wedding Chapter",
               )}
-
             </h2>
 
-            {/* DESCRIPTION */}
-
-            <p className="mx-auto mt-7 max-w-2xl text-[14px] leading-8 text-black/55 sm:text-[15px]">
+            <p className="mx-auto mt-7 max-w-2xl text-[14px] leading-8 text-black/55! sm:text-[15px]">
               {homeText(
                 "hero.description",
                 "Timeless Indian elegance, thoughtfully presented in Switzerland.",
               )}
             </p>
-
-            {/* BUTTON */}
 
             <Link
               to={localizedPath(
@@ -267,7 +257,6 @@ function HomePage() {
               )}
               className="group mt-9 inline-flex items-center gap-3 border border-black/20 px-7 py-4 text-[9px] font-medium uppercase tracking-[0.22em] transition-all duration-500 hover:bg-[#181615] hover:text-white"
             >
-
               {commonText(
                 "viewCollection",
                 "Discover Our Collections",
@@ -278,7 +267,6 @@ function HomePage() {
                 strokeWidth={1}
                 className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
               />
-
             </Link>
 
           </div>
@@ -295,8 +283,6 @@ function HomePage() {
 
         <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12 lg:py-28">
 
-          {/* SECTION HEADER */}
-
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
 
             <div>
@@ -308,14 +294,14 @@ function HomePage() {
                 )}
               </p>
 
-              <h2 className="mt-4 font-display text-4xl text-[#181615] sm:text-5xl">
+              <h2 className="mt-4 font-display text-4xl text-[#181615]! sm:text-5xl">
                 {homeText(
                   "collections.title",
                   "Selected Collections",
                 )}
               </h2>
 
-              <p className="mt-4 max-w-xl text-[13px] leading-7 text-black/50">
+              <p className="mt-4 max-w-xl text-[13px] leading-7 text-black/50!">
                 {homeText(
                   "collections.description",
                   "Explore our collections, where Indian tradition meets contemporary elegance and refined design.",
@@ -328,9 +314,8 @@ function HomePage() {
               to={localizedPath(
                 "/collections",
               )}
-              className="group inline-flex items-center gap-3 text-[9px] font-medium uppercase tracking-[0.2em] text-black/65 transition-colors duration-300 hover:text-black"
+              className="group inline-flex items-center gap-3 text-[9px] font-medium uppercase tracking-[0.2em] text-black/65! transition-colors duration-300 hover:text-black!"
             >
-
               {commonText(
                 "viewAll",
                 "View All Collections",
@@ -341,12 +326,9 @@ function HomePage() {
                 strokeWidth={1}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
-
             </Link>
 
           </div>
-
-          {/* COLLECTION CARDS */}
 
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
 
@@ -382,14 +364,14 @@ function HomePage() {
 
                   <div className="mt-3 flex items-end justify-between gap-5">
 
-                    <h3 className="font-display text-3xl text-white sm:text-4xl">
+                    <h3 className="font-display text-3xl text-white! sm:text-4xl">
                       {homeText(
                         "collections.lehenga",
                         "Lehengas",
                       )}
                     </h3>
 
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/50 text-white transition-all duration-500 group-hover:bg-white group-hover:text-black">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/50 text-white! transition-all duration-500 group-hover:bg-white group-hover:text-black!">
 
                       <ArrowUpRight
                         size={15}
@@ -438,14 +420,14 @@ function HomePage() {
 
                   <div className="mt-3 flex items-end justify-between gap-5">
 
-                    <h3 className="font-display text-3xl text-white sm:text-4xl">
+                    <h3 className="font-display text-3xl text-white! sm:text-4xl">
                       {homeText(
                         "collections.saree",
                         "Sarees",
                       )}
                     </h3>
 
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/50 text-white transition-all duration-500 group-hover:bg-white group-hover:text-black">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/50 text-white! transition-all duration-500 group-hover:bg-white group-hover:text-black!">
 
                       <ArrowUpRight
                         size={15}
@@ -494,14 +476,14 @@ function HomePage() {
 
                   <div className="mt-3 flex items-end justify-between gap-5">
 
-                    <h3 className="font-display text-3xl text-white sm:text-4xl">
+                    <h3 className="font-display text-3xl text-white! sm:text-4xl">
                       {homeText(
                         "collections.sherwani",
                         "Sherwanis",
                       )}
                     </h3>
 
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/50 text-white transition-all duration-500 group-hover:bg-white group-hover:text-black">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/50 text-white! transition-all duration-500 group-hover:bg-white group-hover:text-black!">
 
                       <ArrowUpRight
                         size={15}
@@ -532,8 +514,6 @@ function HomePage() {
 
         <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
 
-          {/* IMAGE */}
-
           <div className="relative min-h-130 overflow-hidden lg:min-h-170">
 
             <img
@@ -549,15 +529,13 @@ function HomePage() {
 
             <div className="absolute bottom-7 left-7 border border-white/40 bg-black/10 px-5 py-3 backdrop-blur-sm sm:bottom-10 sm:left-10">
 
-              <p className="text-[8px] uppercase tracking-[0.24em] text-white">
+              <p className="text-[8px] uppercase tracking-[0.24em] text-white!">
                 {brandName}
               </p>
 
             </div>
 
           </div>
-
-          {/* CONTENT */}
 
           <div className="flex items-center px-7 py-20 sm:px-12 lg:px-20 lg:py-24">
 
@@ -570,7 +548,7 @@ function HomePage() {
                 )}
               </p>
 
-              <h2 className="mt-5 font-display text-4xl leading-[1.15] text-[#181615] sm:text-5xl">
+              <h2 className="mt-5 font-display text-4xl leading-[1.15] text-[#181615]! sm:text-5xl">
                 {homeText(
                   "story.title",
                   "Where tradition meets refinement.",
@@ -587,21 +565,21 @@ function HomePage() {
 
               </div>
 
-              <p className="text-[14px] leading-8 text-black/55">
+              <p className="text-[14px] leading-8 text-black/55!">
                 {homeText(
                   "story.description",
                   "Muhurtham is built around the belief that weddingwear should feel deeply personal.",
                 )}
               </p>
 
-              <p className="mt-5 text-[14px] leading-8 text-black/55">
+              <p className="mt-5 text-[14px] leading-8 text-black/55!">
                 {homeText(
                   "story.paragraph1",
                   "Every silhouette, colour and detail is selected to bring together the richness of Indian tradition with quiet contemporary elegance.",
                 )}
               </p>
 
-              <p className="mt-5 text-[14px] leading-8 text-black/55">
+              <p className="mt-5 text-[14px] leading-8 text-black/55!">
                 {homeText(
                   "story.paragraph2",
                   "From bridal celebrations to intimate occasions, our collection is created for meaningful moments that deserve to be remembered.",
@@ -612,7 +590,7 @@ function HomePage() {
                 to={localizedPath(
                   "/our-story",
                 )}
-                className="group mt-8 inline-flex items-center gap-3 border-b border-black/25 pb-3 text-[9px] font-medium uppercase tracking-[0.2em] text-black/70 transition-colors duration-300 hover:text-black"
+                className="group mt-8 inline-flex items-center gap-3 border-b border-black/25 pb-3 text-[9px] font-medium uppercase tracking-[0.2em] text-black/70! transition-colors duration-300 hover:text-black!"
               >
 
                 {homeText(
@@ -669,14 +647,14 @@ function HomePage() {
 
             <div>
 
-              <h2 className="font-display text-4xl leading-[1.18] text-[#181615] sm:text-5xl lg:text-6xl">
+              <h2 className="font-display text-4xl leading-[1.18] text-[#181615]! sm:text-5xl lg:text-6xl">
                 {homeText(
                   "philosophy.title",
                   "Elegance that lives beyond the occasion.",
                 )}
               </h2>
 
-              <p className="mt-7 max-w-2xl text-[14px] leading-8 text-black/50">
+              <p className="mt-7 max-w-2xl text-[14px] leading-8 text-black/50!">
                 {homeText(
                   "philosophy.description",
                   "We believe in timeless beauty, refined craftsmanship and pieces created for truly meaningful moments.",
@@ -693,17 +671,11 @@ function HomePage() {
 
       {/* =====================================================
           FEATURED PRODUCTS
-          
-          IMPORTANT FIX:
-          Product names/categories now come from
-          products.* instead of home.featured.products.*
       ===================================================== */}
 
       <section className="bg-white">
 
         <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12 lg:py-28">
-
-          {/* HEADER */}
 
           <div className="text-center">
 
@@ -714,14 +686,14 @@ function HomePage() {
               )}
             </p>
 
-            <h2 className="mt-4 font-display text-4xl text-[#181615] sm:text-5xl">
+            <h2 className="mt-4 font-display text-4xl text-[#181615]! sm:text-5xl">
               {commonText(
                 "selectedPieces",
                 "From the Collection",
               )}
             </h2>
 
-            <p className="mx-auto mt-5 max-w-xl text-[13px] leading-7 text-black/50">
+            <p className="mx-auto mt-5 max-w-xl text-[13px] leading-7 text-black/50!">
               {homeText(
                 "collections.description",
                 "A few considered pieces from our bridal and occasionwear collections.",
@@ -730,13 +702,9 @@ function HomePage() {
 
           </div>
 
-          {/* PRODUCTS */}
-
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
-            {/* =================================================
-                PRODUCT 1 — ROYAL RED
-            ================================================= */}
+            {/* ROYAL RED */}
 
             <Link
               to={localizedPath(
@@ -761,7 +729,7 @@ function HomePage() {
 
                 </div>
 
-                <div className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black opacity-0 shadow-lg transition-all duration-500 group-hover:opacity-100">
+                <div className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black! opacity-0 shadow-lg transition-all duration-500 group-hover:opacity-100">
 
                   <ArrowUpRight
                     size={15}
@@ -778,7 +746,7 @@ function HomePage() {
                   {royalRedCategory}
                 </p>
 
-                <h3 className="mt-2 font-display text-2xl text-[#181615]">
+                <h3 className="mt-2 font-display text-2xl text-[#181615]!">
                   {royalRedName}
                 </h3>
 
@@ -786,9 +754,7 @@ function HomePage() {
 
             </Link>
 
-            {/* =================================================
-                PRODUCT 2 — ROYAL MAROON
-            ================================================= */}
+            {/* ROYAL MAROON */}
 
             <Link
               to={localizedPath(
@@ -813,7 +779,7 @@ function HomePage() {
 
                 </div>
 
-                <div className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black opacity-0 shadow-lg transition-all duration-500 group-hover:opacity-100">
+                <div className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black! opacity-0 shadow-lg transition-all duration-500 group-hover:opacity-100">
 
                   <ArrowUpRight
                     size={15}
@@ -830,7 +796,7 @@ function HomePage() {
                   {royalMaroonCategory}
                 </p>
 
-                <h3 className="mt-2 font-display text-2xl text-[#181615]">
+                <h3 className="mt-2 font-display text-2xl text-[#181615]!">
                   {royalMaroonName}
                 </h3>
 
@@ -838,9 +804,7 @@ function HomePage() {
 
             </Link>
 
-            {/* =================================================
-                PRODUCT 3 — IVORY HERITAGE
-            ================================================= */}
+            {/* IVORY HERITAGE */}
 
             <Link
               to={localizedPath(
@@ -865,7 +829,7 @@ function HomePage() {
 
                 </div>
 
-                <div className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black opacity-0 shadow-lg transition-all duration-500 group-hover:opacity-100">
+                <div className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black! opacity-0 shadow-lg transition-all duration-500 group-hover:opacity-100">
 
                   <ArrowUpRight
                     size={15}
@@ -882,7 +846,7 @@ function HomePage() {
                   {ivoryHeritageCategory}
                 </p>
 
-                <h3 className="mt-2 font-display text-2xl text-[#181615]">
+                <h3 className="mt-2 font-display text-2xl text-[#181615]!">
                   {ivoryHeritageName}
                 </h3>
 
@@ -891,8 +855,6 @@ function HomePage() {
             </Link>
 
           </div>
-
-          {/* EXPLORE ALL */}
 
           <div className="mt-12 flex justify-center">
 
@@ -926,27 +888,27 @@ function HomePage() {
           SHOWROOM / APPOINTMENT
       ===================================================== */}
 
-      <section className="relative overflow-hidden bg-[#1C1917] text-white">
+      <section className="relative overflow-hidden bg-[#1C1917]">
 
         <div className="mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-12 lg:py-32">
 
           <div className="mx-auto max-w-3xl text-center">
 
-            <p className="text-[9px] font-medium uppercase tracking-[0.32em] text-white/55">
+            <p className="text-[9px] font-medium uppercase tracking-[0.32em] text-[#C8B09B]!">
               {homeText(
                 "appointment.eyebrow",
                 "YOUR MUHURTHAM",
               )}
             </p>
 
-            <h2 className="mt-6 font-display text-4xl leading-[1.15] sm:text-5xl lg:text-6xl">
+            <h2 className="mt-6 font-display text-4xl leading-[1.15] text-white! sm:text-5xl lg:text-6xl">
               {homeText(
                 "appointment.title",
                 "Find the piece made for your moment.",
               )}
             </h2>
 
-            <p className="mx-auto mt-7 max-w-xl text-[14px] leading-8 text-white/55">
+            <p className="mx-auto mt-7 max-w-xl text-[14px] leading-8 text-white/60!">
               {homeText(
                 "appointment.description",
                 "Discover the collection in person and receive personalised guidance for your special occasion.",
@@ -955,13 +917,11 @@ function HomePage() {
 
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
 
-              {/* SHOWROOM */}
-
               <Link
                 to={localizedPath(
                   "/showroom",
                 )}
-                className="group inline-flex items-center justify-center gap-3 border border-white/35 px-8 py-4 text-[9px] font-medium uppercase tracking-[0.22em] transition-all duration-500 hover:bg-transparent hover:text-white"
+                className="group inline-flex items-center justify-center gap-3 border border-white/35 px-8 py-4 text-[9px] font-medium uppercase tracking-[0.22em] text-white! transition-all duration-500 hover:bg-white hover:text-[#181615]!"
               >
 
                 {t(
@@ -980,13 +940,11 @@ function HomePage() {
 
               </Link>
 
-              {/* APPOINTMENT */}
-
               <Link
                 to={localizedPath(
                   "/appointment",
                 )}
-                className="group inline-flex items-center justify-center gap-3 border border-white/35 bg-transparent px-8 py-4 text-[9px] font-medium uppercase tracking-[0.22em] text-black transition-all duration-500 hover:bg-transparent hover:text-white"
+                className="group inline-flex items-center justify-center gap-3 border border-white/35 bg-transparent px-8 py-4 text-[9px] font-medium uppercase tracking-[0.22em] text-white! transition-all duration-500 hover:bg-white hover:text-[#181615]!"
               >
 
                 {homeText(
@@ -1025,14 +983,12 @@ function HomePage() {
             )}
           </p>
 
-          <h2 className="mt-5 font-display text-4xl leading-[1.15] text-[#181615] sm:text-5xl lg:text-6xl">
+          <h2 className="mt-5 font-display text-4xl leading-[1.15] text-[#181615]! sm:text-5xl lg:text-6xl">
             {homeText(
               "appointment.title",
               "Find something made for your moment.",
             )}
           </h2>
-
-          {/* DIVIDER */}
 
           <div className="mx-auto mt-7 flex items-center justify-center gap-3">
 
@@ -1048,7 +1004,7 @@ function HomePage() {
 
           </div>
 
-          <p className="mx-auto mt-7 max-w-xl text-[13px] leading-7 text-black/50">
+          <p className="mx-auto mt-7 max-w-xl text-[13px] leading-7 text-black/50!">
             {homeText(
               "appointment.description",
               "Explore our collections and discover the piece that becomes part of your wedding story.",
@@ -1059,7 +1015,7 @@ function HomePage() {
             to={localizedPath(
               "/appointment",
             )}
-            className="group mt-9 inline-flex items-center gap-3 bg-[#f5c7b0] px-9 py-4 text-[9px] font-medium uppercase tracking-[0.22em] text-white transition-all duration-500 hover:bg-[#f5b575]"
+            className="group mt-9 inline-flex items-center gap-3 bg-[#74533C] px-9 py-4 text-[9px] font-medium uppercase tracking-[0.22em] text-white! transition-all duration-500 hover:bg-[#3D2B20]"
           >
 
             {homeText(

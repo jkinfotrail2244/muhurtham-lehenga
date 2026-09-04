@@ -1465,6 +1465,15 @@ function CollectionsPage() {
 
       {/* =====================================================
           APPOINTMENT CTA
+          
+          FIXED:
+          -----------------------------------------------------
+          The global `.luxury-heading` class was making the
+          heading dark on the dark `bg-ink` background.
+
+          We explicitly use `!text-white` on the heading.
+
+          The eyebrow uses a warm luxury beige.
       ===================================================== */}
 
       <section
@@ -1492,7 +1501,7 @@ function CollectionsPage() {
           >
 
             {/* =================================================
-                CTA CONTENT
+                CTA TEXT
             ================================================= */}
 
             <motion.div
@@ -1512,17 +1521,34 @@ function CollectionsPage() {
               }}
             >
 
-              <p className="eyebrow text-brown">
+              {/* EYEBROW */}
+
+              <p
+                className="
+                  eyebrow
+                  text-[#C8B09B]!
+                "
+              >
                 {translate(
-                  "collections.appointment.eyebrow",
+                  "sherwanis.appointment.eyebrow",
                   fallback.appointmentEyebrow,
                 )}
               </p>
+
+              {/* =================================================
+                  APPOINTMENT HEADING
+
+                  IMPORTANT:
+                  text-white! overrides the global
+                  `.luxury-heading` color.
+              ================================================= */}
 
               <h2
                 className="
                   luxury-heading
                   mt-4
+                  max-w-3xl
+                  text-white!
                   text-4xl
                   leading-[1.05]
                   sm:text-5xl
@@ -1530,7 +1556,7 @@ function CollectionsPage() {
                 "
               >
                 {translate(
-                  "collections.appointment.title",
+                  "sherwanis.appointment.title",
                   fallback.appointmentTitle,
                 )}
               </h2>
@@ -1538,7 +1564,7 @@ function CollectionsPage() {
             </motion.div>
 
             {/* =================================================
-                CTA BUTTON
+                APPOINTMENT BUTTON
             ================================================= */}
 
             <motion.div
@@ -1574,10 +1600,11 @@ function CollectionsPage() {
                   font-medium
                   uppercase
                   tracking-[0.25em]
+                  text-white!
                   transition-all
                   duration-500
                   hover:bg-white
-                  hover:text-ink
+                  hover:text-ink!
                 "
               >
 

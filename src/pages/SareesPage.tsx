@@ -94,12 +94,6 @@ const supportedLanguages: SupportedLanguage[] = [
 
 /* ============================================================
    CATEGORY NAVIGATION
-
-   These keys match the current translation structure:
-
-   sarees.categories.all
-   sarees.categories.bridal
-   sarees.categories.occasion
 ============================================================ */
 
 const categories: {
@@ -155,17 +149,6 @@ const categories: {
 
 /* ============================================================
    PRODUCT FALLBACK TRANSLATIONS
-
-   These are used ONLY when the corresponding JSON key does
-   not exist.
-
-   This guarantees that the page will not show:
-
-   "royalRed"
-   "products.royalRed.title"
-   "Royal Red"
-
-   while the user is browsing another language.
 ============================================================ */
 
 const productFallbacks: Record<
@@ -387,10 +370,6 @@ const productFallbacks: Record<
 
 /* ============================================================
    PAGE FALLBACK TRANSLATIONS
-
-   These are intentionally kept here as a safety net.
-
-   JSON translations will always be preferred.
 ============================================================ */
 
 const pageFallbacks: Record<
@@ -518,26 +497,6 @@ function SareesPage() {
   const [searchParams, setSearchParams] =
     useSearchParams();
 
-  /*
-   * IMPORTANT:
-   *
-   * getFixedT() is the key fix.
-   *
-   * It forces this page to use the language contained
-   * in the URL instead of whatever language i18next
-   * happens to have internally.
-   *
-   * Example:
-   *
-   * /ta/sarees
-   *      ↓
-   * getFixedT("ta")
-   *
-   * /fr/sarees
-   *      ↓
-   * getFixedT("fr")
-   */
-
   const { i18n } = useTranslation();
 
   const language = resolveLanguage(
@@ -545,29 +504,18 @@ function SareesPage() {
   );
 
   /*
-   * Fixed translator for the CURRENT URL language.
+   * Fixed translator for the language in the URL.
    */
-
   const fixedT = i18n.getFixedT(language);
 
   /*
    * Page fallback for current language.
    */
-
   const fallback =
     pageFallbacks[language];
 
   /* ==========================================================
      SAFE TRANSLATION FUNCTION
-
-     This function prevents:
-
-     products.royalRed.title
-
-     from ever appearing on the screen.
-
-     It also prevents English from appearing just because
-     another language key is missing.
   ========================================================== */
 
   const translate = (
@@ -663,12 +611,7 @@ function SareesPage() {
     );
 
   /* ==========================================================
-     APPOINTMENT SECTION
-
-     IMPORTANT:
-     The previous version could still show English here.
-
-     We now explicitly translate using fixedT(language).
+     APPOINTMENT TRANSLATIONS
   ========================================================== */
 
   const appointmentEyebrow =
@@ -740,8 +683,6 @@ function SareesPage() {
             className="max-w-4xl"
           >
 
-            {/* EYEBROW */}
-
             <p
               className="
                 text-[9px]
@@ -753,8 +694,6 @@ function SareesPage() {
             >
               {pageEyebrow}
             </p>
-
-            {/* TITLE */}
 
             <h1
               className="
@@ -769,8 +708,6 @@ function SareesPage() {
             >
               {pageTitle}
             </h1>
-
-            {/* DECORATIVE LINE */}
 
             <div
               className="
@@ -808,8 +745,6 @@ function SareesPage() {
               />
 
             </div>
-
-            {/* DESCRIPTION */}
 
             <p
               className="
@@ -859,8 +794,6 @@ function SareesPage() {
             "
           >
 
-            {/* PIECE COUNT */}
-
             <p
               className="
                 whitespace-nowrap
@@ -875,8 +808,6 @@ function SareesPage() {
               ).padStart(2, "0")}{" "}
               {piecesLabel}
             </p>
-
-            {/* CATEGORY BUTTONS */}
 
             <div
               className="
@@ -996,13 +927,6 @@ function SareesPage() {
                   saree.translationKey
                 ];
 
-              /* ==================================================
-                 PRODUCT TRANSLATIONS
-
-                 IMPORTANT:
-                 getFixedT(language) is used through translate().
-              ================================================== */
-
               const productName =
                 translate(
                   `products.${saree.translationKey}.title`,
@@ -1067,10 +991,6 @@ function SareesPage() {
                     className="group block"
                   >
 
-                    {/* ==================================================
-                        IMAGE
-                    ================================================== */}
-
                     <div
                       className="
                         relative
@@ -1100,8 +1020,6 @@ function SareesPage() {
                         "
                       />
 
-                      {/* OVERLAY */}
-
                       <div
                         className="
                           pointer-events-none
@@ -1117,8 +1035,6 @@ function SareesPage() {
                           group-hover:opacity-90
                         "
                       />
-
-                      {/* NUMBER */}
 
                       <div
                         className="
@@ -1141,10 +1057,6 @@ function SareesPage() {
                         </span>
 
                       </div>
-
-                      {/* ==================================================
-                          TRANSLATED CATEGORY
-                      ================================================== */}
 
                       <div
                         className="
@@ -1172,8 +1084,6 @@ function SareesPage() {
                         </span>
 
                       </div>
-
-                      {/* HOVER VIEW BUTTON */}
 
                       <div
                         className="
@@ -1220,10 +1130,6 @@ function SareesPage() {
 
                     </div>
 
-                    {/* ==================================================
-                        PRODUCT CONTENT
-                    ================================================== */}
-
                     <div className="px-1 pt-5">
 
                       <div
@@ -1237,8 +1143,6 @@ function SareesPage() {
 
                         <div>
 
-                          {/* CATEGORY */}
-
                           <p
                             className="
                               text-[8px]
@@ -1250,10 +1154,6 @@ function SareesPage() {
                           >
                             {productEyebrow}
                           </p>
-
-                          {/* ==================================================
-                              PRODUCT NAME
-                          ================================================== */}
 
                           <h2
                             className="
@@ -1273,8 +1173,6 @@ function SareesPage() {
 
                         </div>
 
-                        {/* NUMBER */}
-
                         <span
                           className="
                             pt-1
@@ -1289,8 +1187,6 @@ function SareesPage() {
 
                       </div>
 
-                      {/* DESCRIPTION */}
-
                       <p
                         className="
                           mt-3
@@ -1302,8 +1198,6 @@ function SareesPage() {
                       >
                         {productDescription}
                       </p>
-
-                      {/* COLOR + DETAILS */}
 
                       <div
                         className="
@@ -1406,7 +1300,18 @@ function SareesPage() {
       {/* ======================================================
           APPOINTMENT CTA
 
-          THIS IS NOW FULLY TRANSLATED.
+          COLOR FIX:
+          ------------------------------------------------------
+          The global `.luxury-heading` class was overriding
+          the heading color.
+
+          We explicitly force:
+          - Eyebrow = warm beige
+          - Heading = white
+          - Button = white
+
+          This prevents the dark-on-dark issue shown in
+          the screenshot.
       ====================================================== */}
 
       <section
@@ -1434,7 +1339,7 @@ function SareesPage() {
           >
 
             {/* ==================================================
-                CTA TEXT
+                APPOINTMENT TEXT
             ================================================== */}
 
             <motion.div
@@ -1454,29 +1359,23 @@ function SareesPage() {
               }}
             >
 
-              {/* ==================================================
-                  TRANSLATED EYEBROW
-
-                  TA:
-                  உங்கள் முகூர்த்தம்
-              ================================================== */}
+              {/* EYEBROW */}
 
               <p
                 className="
                   eyebrow
-                  text-brown
+                  text-[#C8B09B]!
                 "
               >
                 {appointmentEyebrow}
               </p>
 
               {/* ==================================================
-                  TRANSLATED TITLE
+                  TITLE
 
-                  TA:
-                  உங்கள் சிறப்பான தருணத்திற்காக
-                  உருவாக்கப்பட்ட புடவையைத்
-                  தேர்ந்தெடுக்குங்கள்.
+                  IMPORTANT:
+                  text-white! overrides the global luxury-heading
+                  color so the title remains clearly visible.
               ================================================== */}
 
               <h2
@@ -1486,6 +1385,7 @@ function SareesPage() {
                   max-w-3xl
                   text-4xl
                   leading-[1.05]
+                  text-white!
                   sm:text-5xl
                   md:text-6xl
                 "
@@ -1532,10 +1432,11 @@ function SareesPage() {
                   font-medium
                   uppercase
                   tracking-[0.25em]
+                  text-white!
                   transition-all
                   duration-500
                   hover:bg-white
-                  hover:text-ink
+                  hover:text-ink!
                 "
               >
 

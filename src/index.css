@@ -1,30 +1,93 @@
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap");
 
 @import "tailwindcss";
 
+/* =========================================================
+   MUHURTHAM — GLOBAL LUXURY DESIGN SYSTEM
+   Light Ivory + White + Warm Beige + Refined Brown
+   ========================================================= */
+
 @theme {
-  --color-ivory: #faf8f3;
+  /* ---------- Brand Colors ---------- */
+
+  --color-ivory: #faf8f4;
+  --color-ivory-deep: #f5f0e9;
+
   --color-warm-white: #ffffff;
-  --color-ink: #171513;
-  --color-brown: #74533c;
-  --color-brown-dark: #3d2b20;
-  --color-beige: #e8e0d6;
-  --color-taupe: #cfc3b7;
+  --color-soft-white: #fdfcf9;
+
+  --color-beige: #efe7dc;
+  --color-beige-light: #f6f1e9;
+  --color-beige-dark: #ded1c2;
+
+  --color-brown: #6b4a36;
+  --color-brown-light: #92745d;
+  --color-brown-muted: #a88f79;
+  --color-brown-dark: #3e2a20;
+  --color-brown-deep: #2c1e17;
+
+  --color-taupe: #cdbfaf;
+  --color-taupe-light: #ded5ca;
+
+  --color-ink: #2c211b;
+  --color-ink-soft: #493a30;
+  --color-muted: #78685b;
+
+  --color-border: #d9cdbf;
+  --color-border-light: #e8dfd5;
+
+  /* ---------- Typography ---------- */
 
   --font-display: "Bodoni Moda", serif;
   --font-serif: "EB Garamond", serif;
   --font-sans: "Manrope", sans-serif;
 }
 
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
 :root {
   font-family: "Manrope", sans-serif;
-  color: #171513;
-  background: #faf8f3;
+
+  color: #2c211b;
+  background-color: #faf8f4;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --muh-ivory: #faf8f4;
+  --muh-ivory-deep: #f5f0e9;
+
+  --muh-white: #ffffff;
+  --muh-soft-white: #fdfcf9;
+
+  --muh-beige: #efe7dc;
+  --muh-beige-light: #f6f1e9;
+  --muh-beige-dark: #ded1c2;
+
+  --muh-brown: #6b4a36;
+  --muh-brown-light: #92745d;
+  --muh-brown-muted: #a88f79;
+  --muh-brown-dark: #3e2a20;
+  --muh-brown-deep: #2c1e17;
+
+  --muh-ink: #2c211b;
+  --muh-ink-soft: #493a30;
+  --muh-muted: #78685b;
+
+  --muh-border: #d9cdbf;
+  --muh-border-light: #e8dfd5;
 }
+
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
 
 * {
   box-sizing: border-box;
@@ -32,14 +95,92 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--muh-ivory);
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  background: #faf8f3;
-  color: #171513;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--muh-ivory) 0%,
+      var(--muh-soft-white) 48%,
+      var(--muh-ivory-deep) 100%
+    );
+
+  color: var(--muh-ink);
+
+  font-family: "Manrope", sans-serif;
+
+  line-height: 1.6;
+
+  overflow-x: hidden;
 }
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+
+  color: var(--muh-brown-deep);
+
+  font-family: "Bodoni Moda", serif;
+
+  font-weight: 400;
+
+  letter-spacing: -0.025em;
+
+  text-wrap: balance;
+}
+
+p {
+  color: var(--muh-muted);
+}
+
+.display-font {
+  font-family: "Bodoni Moda", serif;
+}
+
+.serif-font {
+  font-family: "EB Garamond", serif;
+}
+
+.sans-font {
+  font-family: "Manrope", sans-serif;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  transition:
+    color 300ms ease,
+    opacity 300ms ease;
+}
+
+a:hover {
+  color: var(--muh-brown);
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 
 button,
 a,
@@ -53,17 +194,370 @@ button {
   cursor: pointer;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 1px solid var(--muh-brown);
+  outline-offset: 4px;
 }
+
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
 
 img {
   display: block;
   max-width: 100%;
 }
 
+img,
+picture {
+  user-select: none;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
 ::selection {
-  background: #74533c;
-  color: #ffffff;
+  background: var(--muh-brown);
+  color: var(--muh-white);
+}
+
+
+/* =========================================================
+   GLOBAL LUXURY SURFACES
+   ========================================================= */
+
+.muh-ivory {
+  background-color: var(--muh-ivory);
+}
+
+.muh-white {
+  background-color: var(--muh-white);
+}
+
+.muh-beige {
+  background-color: var(--muh-beige);
+}
+
+.muh-soft-beige {
+  background-color: var(--muh-beige-light);
+}
+
+.muh-brown {
+  background-color: var(--muh-brown);
+  color: var(--muh-white);
+}
+
+.muh-dark {
+  background-color: var(--muh-brown-dark);
+  color: var(--muh-white);
+}
+
+
+/* =========================================================
+   LUXURY BORDERS
+   ========================================================= */
+
+.muh-border {
+  border-color: var(--muh-border);
+}
+
+.muh-border-light {
+  border-color: var(--muh-border-light);
+}
+
+
+/* =========================================================
+   PREMIUM BUTTON SYSTEM
+   ========================================================= */
+
+.muh-btn-primary {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding: 0 30px;
+
+  background: var(--muh-brown-dark);
+
+  color: var(--muh-white);
+
+  border: 1px solid var(--muh-brown-dark);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+
+  transition:
+    background 350ms ease,
+    color 350ms ease,
+    border-color 350ms ease,
+    transform 350ms ease;
+}
+
+.muh-btn-primary:hover {
+  background: var(--muh-brown);
+
+  border-color: var(--muh-brown);
+
+  transform: translateY(-2px);
+}
+
+
+.muh-btn-secondary {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  padding: 0 30px;
+
+  background: transparent;
+
+  color: var(--muh-brown-dark);
+
+  border: 1px solid var(--muh-brown-muted);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+
+  transition:
+    background 350ms ease,
+    color 350ms ease,
+    border-color 350ms ease;
+}
+
+.muh-btn-secondary:hover {
+  background: var(--muh-beige);
+
+  border-color: var(--muh-brown);
+
+  color: var(--muh-brown-dark);
+}
+
+
+/* =========================================================
+   PREMIUM CARD
+   ========================================================= */
+
+.muh-card {
+  background: var(--muh-white);
+
+  border: 1px solid var(--muh-border-light);
+
+  transition:
+    border-color 350ms ease,
+    background 350ms ease,
+    transform 350ms ease,
+    box-shadow 350ms ease;
+}
+
+.muh-card:hover {
+  border-color: var(--muh-border);
+
+  background: var(--muh-soft-white);
+
+  box-shadow: 0 18px 50px rgba(62, 42, 32, 0.07);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   INPUTS / FORMS
+   ========================================================= */
+
+input,
+textarea,
+select {
+  color: var(--muh-ink);
+
+  background-color: var(--muh-white);
+
+  border: 1px solid var(--muh-border);
+
+  border-radius: 0;
+
+  transition:
+    border-color 250ms ease,
+    background-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muh-brown-muted);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--muh-brown-muted);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+
+  border-color: var(--muh-brown);
+
+  background-color: var(--muh-soft-white);
+
+  box-shadow: 0 0 0 3px rgba(107, 74, 54, 0.06);
+}
+
+
+/* =========================================================
+   SECTION HELPERS
+   ========================================================= */
+
+.section-ivory {
+  background: var(--muh-ivory);
+}
+
+.section-white {
+  background: var(--muh-white);
+}
+
+.section-beige {
+  background: var(--muh-beige-light);
+}
+
+.section-deep-brown {
+  background: var(--muh-brown-dark);
+  color: var(--muh-white);
+}
+
+
+/* =========================================================
+   DECORATIVE LUXURY ELEMENTS
+   ========================================================= */
+
+.muh-line {
+  width: 60px;
+  height: 1px;
+
+  background: var(--muh-brown-muted);
+}
+
+.muh-line-long {
+  width: 100%;
+  height: 1px;
+
+  background: var(--muh-border);
+}
+
+.muh-diamond {
+  width: 7px;
+  height: 7px;
+
+  border: 1px solid var(--muh-brown-muted);
+
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muh-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muh-taupe, #cdbfaf);
+
+  border-radius: 10px;
+
+  border: 2px solid var(--muh-ivory);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muh-brown-muted);
+}
+
+
+/* =========================================================
+   HR
+   ========================================================= */
+
+hr {
+  border: 0;
+
+  border-top: 1px solid var(--muh-border);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  body {
+    background:
+      linear-gradient(
+        180deg,
+        var(--muh-ivory) 0%,
+        var(--muh-soft-white) 60%,
+        var(--muh-ivory-deep) 100%
+      );
+  }
+
+  .muh-btn-primary,
+  .muh-btn-secondary {
+    min-height: 48px;
+
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

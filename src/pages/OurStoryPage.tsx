@@ -662,7 +662,7 @@ function OurStoryPage() {
 
         </motion.div>
 
-        <div className="grid overflow-hidden border border-black/7 bg-[#f5f0e9] lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid overflow-hidden border border-black/7 bg-ivory-deep lg:grid-cols-[0.9fr_1.1fr]">
 
           {/* FOUNDER PHOTO */}
 
@@ -798,7 +798,7 @@ function OurStoryPage() {
           OUR PROMISE
       ===================================================== */}
 
-      <section className="border-y border-black/6 bg-[#f5f0e9] py-24 sm:py-28 lg:py-32">
+      <section className="border-y border-black/6 bg-ivory-deep py-24 sm:py-28 lg:py-32">
 
         <div className="page-container">
 
@@ -999,123 +999,259 @@ function OurStoryPage() {
 
       </section>
 
-      {/* =====================================================
-          FINAL CTA
-      ===================================================== */}
+    {/* =====================================================
+    FINAL CTA
+===================================================== */}
 
-      <section className="bg-ink px-6 py-24 text-white sm:py-28 lg:py-32">
+<section className="bg-ink px-6 py-24 text-white sm:py-28 lg:py-32">
 
-        <div className="page-container">
+  <div className="page-container">
 
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 25,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.8,
-            }}
-            className="text-center"
-          >
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 25,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+      }}
+      transition={{
+        duration: 0.8,
+      }}
+      className="text-center"
+    >
 
-            <p className="text-[9px] font-medium uppercase tracking-[0.32em] text-brown">
-              {text(
-                "cta.eyebrow",
-                "YOUR MUHURTHAM",
-              )}
-            </p>
+      {/* =================================================
+          EYEBROW
+      ================================================= */}
 
-            <h2 className="luxury-heading mx-auto mt-5 max-w-4xl whitespace-pre-line text-4xl leading-tight sm:text-5xl lg:text-6xl">
-              {text(
-                "cta.title",
-                "Your celebration\nbegins here.",
-              )}
-            </h2>
+      <p
+        className="
+          text-[9px]
+          font-medium
+          uppercase
+          tracking-[0.32em]
+          text-[#C8B09B]!
+        "
+      >
+        {text(
+          "cta.eyebrow",
+          "YOUR MUHURTHAM",
+        )}
+      </p>
 
-            <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-white/55">
-              {text(
-                "cta.description",
-                "Discover a collection thoughtfully created for life's most meaningful celebrations.",
-              )}
-            </p>
+      {/* =================================================
+          CTA TITLE
+          IMPORTANT:
+          !text-center prevents luxury-heading from
+          overriding the alignment.
+      ================================================= */}
 
-            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+     <div className="flex w-full flex-col items-center">
+  <h2
+    className="
+      mx-auto
+      mt-5
+      w-full
+      max-w-4xl
+      text-center
+      font-display
+      text-4xl
+      font-normal
+      leading-[1.05]
+      tracking-normal
+      text-white!
+      sm:text-5xl
+      lg:text-6xl
+    "
+  >
+    {text("cta.title", "Your celebration\nbegins here.").split("\n").map(
+      (line, index) => (
+        <span key={index} className="block text-center">
+          {line}
+        </span>
+      ),
+    )}
+  </h2>
+</div>
 
-              {/* LEHENGAS */}
+      {/* =================================================
+          DESCRIPTION
+      ================================================= */}
 
-              <Link
-                to={getPath("lehengas")}
-                className="group inline-flex items-center justify-center gap-5 border border-brown px-7 py-4 text-[8px] font-medium uppercase tracking-[0.25em] text-white transition-all duration-500 hover:bg-brown hover:text-white"
-              >
+      <p
+        className="
+          mx-auto
+          mt-6
+          max-w-xl
+          text-center
+          text-sm
+          leading-7
+          text-white/70!
+        "
+      >
+        {text(
+          "cta.description",
+          "Discover a collection thoughtfully created for life's most meaningful celebrations.",
+        )}
+      </p>
 
-                {text(
-                  "cta.exploreLehengas",
-                  "Explore Lehengas",
-                )}
+      {/* =================================================
+          BUTTONS
+      ================================================= */}
 
-                <ArrowUpRight
-                  size={14}
-                  strokeWidth={1}
-                  className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
+      <div
+        className="
+          mt-9
+          flex
+          flex-col
+          items-center
+          justify-center
+          gap-3
+          sm:flex-row
+        "
+      >
 
-              </Link>
+        {/* LEHENGAS */}
 
-              {/* SHERWANIS */}
+        <Link
+          to={getPath("lehengas")}
+          className="
+            group
+            inline-flex
+            items-center
+            justify-center
+            gap-5
+            border
+            border-brown
+            px-7
+            py-4
+            text-[8px]
+            font-medium
+            uppercase
+            tracking-[0.25em]
+            text-white!
+            transition-all
+            duration-500
+            hover:bg-brown
+            hover:text-white!
+          "
+        >
+          {text(
+            "cta.exploreLehengas",
+            "Explore Lehengas",
+          )}
 
-              <Link
-                to={getPath("sherwanis")}
-                className="group inline-flex items-center justify-center gap-5 border border-brown px-7 py-4 text-[8px] font-medium uppercase tracking-[0.25em] text-white transition-all duration-500 hover:bg-brown hover:text-white"
-              >
+          <ArrowUpRight
+            size={14}
+            strokeWidth={1}
+            className="
+              text-white!
+              transition-transform
+              duration-500
+              group-hover:translate-x-1
+              group-hover:-translate-y-1
+            "
+          />
+        </Link>
 
-                {text(
-                  "cta.exploreSherwanis",
-                  "Explore Sherwanis",
-                )}
+        {/* SHERWANIS */}
 
-                <ArrowUpRight
-                  size={14}
-                  strokeWidth={1}
-                  className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
+        <Link
+          to={getPath("sherwanis")}
+          className="
+            group
+            inline-flex
+            items-center
+            justify-center
+            gap-5
+            border
+            border-brown
+            px-7
+            py-4
+            text-[8px]
+            font-medium
+            uppercase
+            tracking-[0.25em]
+            text-white!
+            transition-all
+            duration-500
+            hover:bg-brown
+            hover:text-white!
+          "
+        >
+          {text(
+            "cta.exploreSherwanis",
+            "Explore Sherwanis",
+          )}
 
-              </Link>
+          <ArrowUpRight
+            size={14}
+            strokeWidth={1}
+            className="
+              text-white!
+              transition-transform
+              duration-500
+              group-hover:translate-x-1
+              group-hover:-translate-y-1
+            "
+          />
+        </Link>
 
-              {/* APPOINTMENT */}
+        {/* APPOINTMENT */}
 
-              <Link
-                to={getPath("appointment")}
-                className="group inline-flex items-center justify-center gap-5 border border-brown px-7 py-4 text-[8px] font-medium uppercase tracking-[0.25em] text-white transition-all duration-500 hover:bg-brown hover:text-white"
-              >
+        <Link
+          to={getPath("appointment")}
+          className="
+            group
+            inline-flex
+            items-center
+            justify-center
+            gap-5
+            border
+            border-brown
+            px-7
+            py-4
+            text-[8px]
+            font-medium
+            uppercase
+            tracking-[0.25em]
+            text-white!
+            transition-all
+            duration-500
+            hover:bg-brown
+            hover:text-white!
+          "
+        >
+          {text(
+            "cta.bookAppointment",
+            "Book an Appointment",
+          )}
 
-                {text(
-                  "cta.bookAppointment",
-                  "Book an Appointment",
-                )}
+          <ArrowUpRight
+            size={14}
+            strokeWidth={1}
+            className="
+              text-white!
+              transition-transform
+              duration-500
+              group-hover:translate-x-1
+              group-hover:-translate-y-1
+            "
+          />
+        </Link>
 
-                <ArrowUpRight
-                  size={14}
-                  strokeWidth={1}
-                  className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
+      </div>
 
-              </Link>
+    </motion.div>
 
-            </div>
+  </div>
 
-          </motion.div>
-
-        </div>
-
-      </section>
-
+</section>
     </main>
   );
 }

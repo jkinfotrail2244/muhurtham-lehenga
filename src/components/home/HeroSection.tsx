@@ -12,6 +12,7 @@ function HeroSection() {
 
   return (
     <section
+      key={location.pathname}
       className="relative min-h-[calc(100vh-185px)] overflow-hidden bg-ink"
     >
       {/* =====================================================
@@ -33,11 +34,11 @@ function HeroSection() {
           }}
           transition={{
             opacity: {
-              duration: 0.6,
+              duration: 1.2,
               ease: "easeOut",
             },
             scale: {
-              duration: 1.6,
+              duration: 2,
               ease: [0.22, 1, 0.36, 1],
             },
           }}
@@ -62,39 +63,43 @@ function HeroSection() {
           ================================================= */}
 
           <motion.p
-            className="mb-5 text-[9px] font-medium uppercase tracking-[0.38em] opacity-90"
+            className="mb-5 text-[9px] font-medium uppercase tracking-[0.38em] text-white/90!"
             initial={{
               opacity: 0,
               y: 18,
-            }}
-            animate={{
-              opacity: 0.9,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.6,
-              delay: 0.15,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          />
-
-          {/* =================================================
-              MAIN HEADING
-          ================================================= */}
-
-          <motion.h1
-            className="font-display text-5xl leading-[0.95] tracking-[0.03em] sm:text-6xl md:text-7xl lg:text-[88px]"
-            initial={{
-              opacity: 0,
-              y: 45,
             }}
             animate={{
               opacity: 1,
               y: 0,
             }}
             transition={{
-              duration: 0.9,
-              delay: 0.3,
+              duration: 0.8,
+              delay: 0.35,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            YOUR MUHURTHAM
+          </motion.p>
+
+          {/* =================================================
+              MAIN HEADING
+          ================================================= */}
+
+          <motion.h1
+            className="font-display text-5xl leading-[0.95] tracking-[0.03em] text-white! sm:text-6xl md:text-7xl lg:text-[88px]"
+            initial={{
+              opacity: 0,
+              y: 40,
+              filter: "blur(8px)",
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              filter: "blur(0px)",
+            }}
+            transition={{
+              duration: 1.1,
+              delay: 0.55,
               ease: [0.22, 1, 0.36, 1],
             }}
           >
@@ -106,18 +111,20 @@ function HeroSection() {
           ================================================= */}
 
           <motion.p
-            className="mx-auto mt-7 max-w-xl text-sm leading-7 text-white/85 sm:text-base"
+            className="mx-auto mt-7 max-w-xl text-sm leading-7 text-white/85! sm:text-base"
             initial={{
               opacity: 0,
-              y: 25,
+              y: 22,
+              filter: "blur(5px)",
             }}
             animate={{
               opacity: 1,
               y: 0,
+              filter: "blur(0px)",
             }}
             transition={{
-              duration: 0.75,
-              delay: 0.65,
+              duration: 0.9,
+              delay: 0.9,
               ease: [0.22, 1, 0.36, 1],
             }}
           >
@@ -132,23 +139,28 @@ function HeroSection() {
             className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
             initial={{
               opacity: 0,
-              y: 25,
+              y: 22,
+              filter: "blur(4px)",
             }}
             animate={{
               opacity: 1,
               y: 0,
+              filter: "blur(0px)",
             }}
             transition={{
-              duration: 0.75,
-              delay: 0.9,
+              duration: 0.9,
+              delay: 1.15,
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            {/* Lehengas */}
+
+            {/* =================================================
+                LEHENGAS
+            ================================================= */}
 
             <Link
               to={`/${language}/lehengas`}
-              className="group inline-flex items-center gap-5 border border-white/75 px-8 py-4 text-[9px] font-medium uppercase tracking-[0.25em] transition-all duration-500 hover:bg-white hover:text-ink"
+              className="group inline-flex items-center gap-5 border border-white/75 px-8 py-4 text-[9px] font-medium uppercase tracking-[0.25em] text-white! transition-all duration-500 hover:bg-white hover:text-ink!"
             >
               {t("home.hero.cta")}
 
@@ -159,11 +171,13 @@ function HeroSection() {
               />
             </Link>
 
-            {/* Sherwanis */}
+            {/* =================================================
+                SHERWANIS
+            ================================================= */}
 
             <Link
               to={`/${language}/sherwanis`}
-              className="group inline-flex items-center gap-5 border border-white/40 px-8 py-4 text-[9px] font-medium uppercase tracking-[0.25em] text-white/90 transition-all duration-500 hover:border-white hover:bg-white hover:text-ink"
+              className="group inline-flex items-center gap-5 border border-white/40 px-8 py-4 text-[9px] font-medium uppercase tracking-[0.25em] text-white/90! transition-all duration-500 hover:border-white hover:bg-white hover:text-ink!"
             >
               {t("navigation.sherwanis")}
 
@@ -173,6 +187,7 @@ function HeroSection() {
                 className="transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
               />
             </Link>
+
           </motion.div>
         </div>
       </div>
@@ -182,7 +197,7 @@ function HeroSection() {
       ===================================================== */}
 
       <motion.div
-        className="absolute bottom-7 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 text-white/70"
+        className="absolute bottom-7 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 text-white/70!"
         initial={{
           opacity: 0,
           y: 10,
@@ -192,8 +207,8 @@ function HeroSection() {
           y: 0,
         }}
         transition={{
-          duration: 0.6,
-          delay: 1.3,
+          duration: 0.7,
+          delay: 1.6,
           ease: [0.22, 1, 0.36, 1],
         }}
       >

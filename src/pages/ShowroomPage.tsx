@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import {
-  ArrowDown,
+  
   ArrowUpRight,
   Mail,
   MapPin,
@@ -2217,10 +2217,10 @@ function ShowroomPage() {
           <p
             className="
               mb-5
+              text-[#c49a78]!
               text-[9px]
               uppercase
               tracking-[0.4em]
-              text-[#b98962]
             "
           >
             {translations.appointmentEyebrow}
@@ -2231,6 +2231,7 @@ function ShowroomPage() {
           <h2
             className="
               font-serif
+              text-white!
               text-5xl
               leading-[1.05]
               tracking-[-0.04em]
@@ -2243,7 +2244,7 @@ function ShowroomPage() {
 
             <br />
 
-            <span className="italic">
+            <span className="italic text-white!">
               {translations.appointmentTitle2}
             </span>
 
@@ -2262,11 +2263,11 @@ function ShowroomPage() {
             "
           >
 
-            <span className="h-px w-16 bg-[#a87850]/70" />
+            <span className="h-px w-16 bg-[#c49a78]/80" />
 
-            <span className="h-2 w-2 rotate-45 border border-[#a87850]" />
+            <span className="h-2 w-2 rotate-45 border border-[#c49a78]" />
 
-            <span className="h-px w-16 bg-[#a87850]/70" />
+            <span className="h-px w-16 bg-[#c49a78]/80" />
 
           </div>
 
@@ -2277,9 +2278,9 @@ function ShowroomPage() {
               mx-auto
               max-w-155
               font-serif
+              text-white/75!
               text-base
               leading-7
-              text-white/60
               sm:text-lg
             "
           >
@@ -2298,7 +2299,7 @@ function ShowroomPage() {
               justify-center
               gap-7
               border
-              border-white/40
+              border-white/50
               px-8
               py-4
               text-[10px]
@@ -2336,30 +2337,6 @@ function ShowroomPage() {
         </motion.div>
 
       </section>
-
-      {/* =========================================================
-          SCROLL INDICATOR
-      ========================================================= */}
-
-      <div
-        className="
-          flex
-          items-center
-          justify-center
-          py-8
-        "
-      >
-
-        <ArrowDown
-          size={15}
-          strokeWidth={1}
-          className="
-            animate-bounce
-            text-[#95623f]
-          "
-        />
-
-      </div>
 
     </main>
   );

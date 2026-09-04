@@ -45,18 +45,6 @@ type Lehenga = {
 
 /* ============================================================
    LEHENGA DATA
-
-   IMPORTANT:
-   Customer-facing text is NOT stored directly here.
-
-   Translation keys are used instead so the same page works
-   correctly for:
-
-   /en/lehengas
-   /ta/lehengas
-   /fr/lehengas
-   /de/lehengas
-   /it/lehengas
 ============================================================ */
 
 const lehengas: Lehenga[] = [
@@ -69,7 +57,6 @@ const lehengas: Lehenga[] = [
     image: "/images/lehenga-bridal.png",
     featured: true,
   },
-
   {
     id: 2,
     number: "02",
@@ -78,7 +65,6 @@ const lehengas: Lehenga[] = [
     category: "bridal",
     image: "/images/lehenga-wedding.png",
   },
-
   {
     id: 3,
     number: "03",
@@ -87,7 +73,6 @@ const lehengas: Lehenga[] = [
     category: "occasion",
     image: "/images/lehenga-occasion.png",
   },
-
   {
     id: 4,
     number: "04",
@@ -282,30 +267,19 @@ const pageFallbacks: Record<
     viewAll: string;
   }
 > = {
-  /* ==========================================================
-     ENGLISH
-  ========================================================== */
-
   en: {
     eyebrow: "The Lehenga Edit",
-
     title: "Lehengas",
 
     description:
       "A considered selection of Indian bridal and occasion lehengas, chosen for their craftsmanship, character and timeless elegance.",
 
     filter: "Filter",
-
     sort: "Sort",
-
     newest: "New Arrivals",
-
     oldest: "Oldest",
-
     featured: "Featured",
-
     pieces: "Pieces",
-
     view: "View",
 
     philosophy: "Muhurtham Philosophy",
@@ -326,36 +300,23 @@ const pageFallbacks: Record<
       "Book an Appointment",
 
     emptyEyebrow: "Collection",
-
     emptyTitle: "No pieces found",
-
     viewAll: "View All Lehengas",
   },
 
-  /* ==========================================================
-     TAMIL
-  ========================================================== */
-
   ta: {
     eyebrow: "முகூர்த்தம் லெஹங்கா தொகுப்பு",
-
     title: "லெஹங்காக்கள்",
 
     description:
       "கைவினைத்திறன், தனித்துவம் மற்றும் காலத்தால் அழியாத நேர்த்திக்காகத் தேர்ந்தெடுக்கப்பட்ட இந்திய மணமகள் மற்றும் விழா லெஹங்காக்களின் சிறப்பான தொகுப்பு.",
 
     filter: "வடிகட்டி",
-
     sort: "வரிசைப்படுத்து",
-
     newest: "புதிய வரவுகள்",
-
     oldest: "பழையவை",
-
     featured: "சிறப்புத் தேர்வுகள்",
-
     pieces: "ஆடைகள்",
-
     view: "பார்க்க",
 
     philosophy: "முகூர்த்தம் தத்துவம்",
@@ -384,30 +345,19 @@ const pageFallbacks: Record<
       "அனைத்து லெஹங்காக்களையும் பார்க்க",
   },
 
-  /* ==========================================================
-     FRENCH
-  ========================================================== */
-
   fr: {
     eyebrow: "L'Édition Lehenga",
-
     title: "Lehengas",
 
     description:
       "Une sélection raffinée de lehengas indiens de mariée et de cérémonie, choisis pour leur savoir-faire, leur caractère et leur élégance intemporelle.",
 
     filter: "Filtrer",
-
     sort: "Trier",
-
     newest: "Nouveautés",
-
     oldest: "Plus anciens",
-
     featured: "Sélection",
-
     pieces: "Pièces",
-
     view: "Voir",
 
     philosophy: "Philosophie Muhurtham",
@@ -428,38 +378,23 @@ const pageFallbacks: Record<
       "Prendre rendez-vous",
 
     emptyEyebrow: "Collection",
-
-    emptyTitle:
-      "Aucune pièce trouvée",
-
-    viewAll:
-      "Voir tous les lehengas",
+    emptyTitle: "Aucune pièce trouvée",
+    viewAll: "Voir tous les lehengas",
   },
-
-  /* ==========================================================
-     GERMAN
-  ========================================================== */
 
   de: {
     eyebrow: "Die Lehenga-Auswahl",
-
     title: "Lehengas",
 
     description:
       "Eine ausgewählte Kollektion indischer Braut- und Anlass-Lehengas, ausgesucht für ihre Handwerkskunst, ihren Charakter und ihre zeitlose Eleganz.",
 
     filter: "Filtern",
-
     sort: "Sortieren",
-
     newest: "Neuheiten",
-
     oldest: "Älteste",
-
     featured: "Ausgewählt",
-
     pieces: "Stücke",
-
     view: "Ansehen",
 
     philosophy: "Muhurtham Philosophie",
@@ -480,38 +415,23 @@ const pageFallbacks: Record<
       "Termin vereinbaren",
 
     emptyEyebrow: "Kollektion",
-
-    emptyTitle:
-      "Keine Stücke gefunden",
-
-    viewAll:
-      "Alle Lehengas ansehen",
+    emptyTitle: "Keine Stücke gefunden",
+    viewAll: "Alle Lehengas ansehen",
   },
-
-  /* ==========================================================
-     ITALIAN
-  ========================================================== */
 
   it: {
     eyebrow: "L'Edizione Lehenga",
-
     title: "Lehenga",
 
     description:
       "Una selezione raffinata di lehenga indiani da sposa e da cerimonia, scelti per la loro lavorazione artigianale, il carattere e l'eleganza senza tempo.",
 
     filter: "Filtra",
-
     sort: "Ordina",
-
     newest: "Nuovi arrivi",
-
     oldest: "Più vecchi",
-
     featured: "In evidenza",
-
     pieces: "Capi",
-
     view: "Vedi",
 
     philosophy: "Filosofia Muhurtham",
@@ -532,12 +452,8 @@ const pageFallbacks: Record<
       "Prenota un appuntamento",
 
     emptyEyebrow: "Collezione",
-
-    emptyTitle:
-      "Nessun capo trovato",
-
-    viewAll:
-      "Scopri tutti i lehenga",
+    emptyTitle: "Nessun capo trovato",
+    viewAll: "Scopri tutti i lehenga",
   },
 };
 
@@ -577,27 +493,12 @@ function LehengasPage() {
   const { i18n } = useTranslation();
 
   /* ==========================================================
-     LANGUAGE FROM URL
+     LANGUAGE
   ========================================================== */
 
   const language = resolveLanguage(
     location.pathname,
   );
-
-  /* ==========================================================
-     FIXED TRANSLATOR
-
-     This is important.
-
-     If the URL is:
-
-     /ta/lehengas
-
-     this page ALWAYS translates using "ta".
-
-     It does not depend on the current global i18next
-     language state.
-  ========================================================== */
 
   const fixedT =
     i18n.getFixedT(language);
@@ -606,14 +507,7 @@ function LehengasPage() {
     pageFallbacks[language];
 
   /* ==========================================================
-     SAFE TRANSLATION FUNCTION
-
-     If the JSON translation exists, use it.
-
-     If the JSON key does not exist, use the built-in
-     language-specific fallback.
-
-     This prevents English from appearing unexpectedly.
+     SAFE TRANSLATION
   ========================================================== */
 
   const translate = (
@@ -636,7 +530,7 @@ function LehengasPage() {
   };
 
   /* ==========================================================
-     CATEGORY FROM URL
+     CATEGORY
   ========================================================== */
 
   const categoryFromUrl =
@@ -746,10 +640,6 @@ function LehengasPage() {
               "
             >
 
-              {/* =================================================
-                  TITLE
-              ================================================= */}
-
               <div className="max-w-3xl">
 
                 <p className="eyebrow text-brown">
@@ -785,13 +675,9 @@ function LehengasPage() {
 
               </div>
 
-              {/* =================================================
-                  FILTER + SORT
-              ================================================= */}
+              {/* FILTER + SORT */}
 
               <div className="flex shrink-0 items-center gap-2">
-
-                {/* FILTER */}
 
                 <button
                   type="button"
@@ -826,8 +712,6 @@ function LehengasPage() {
                   )}
 
                 </button>
-
-                {/* SORT */}
 
                 <div className="relative">
 
@@ -894,8 +778,6 @@ function LehengasPage() {
 
                   </button>
 
-                  {/* SORT MENU */}
-
                   {showSort && (
                     <motion.div
                       initial={{
@@ -919,8 +801,6 @@ function LehengasPage() {
                         shadow-xl
                       "
                     >
-
-                      {/* NEWEST */}
 
                       <button
                         type="button"
@@ -947,8 +827,6 @@ function LehengasPage() {
                         )}
                       </button>
 
-                      {/* FEATURED */}
-
                       <button
                         type="button"
                         onClick={() => {
@@ -973,8 +851,6 @@ function LehengasPage() {
                           fallback.featured,
                         )}
                       </button>
-
-                      {/* OLDEST */}
 
                       <button
                         type="button"
@@ -1111,8 +987,6 @@ function LehengasPage() {
               );
             })}
 
-            {/* PIECE COUNT */}
-
             <div className="ml-auto hidden shrink-0 sm:block">
 
               <span className="text-[8px] uppercase tracking-[0.24em] text-black/35">
@@ -1167,10 +1041,6 @@ function LehengasPage() {
                       item.translationKey
                     ];
 
-                  /* =================================================
-                     TRANSLATED PRODUCT NAME
-                  ================================================= */
-
                   const productName =
                     translate(
                       `products.${item.translationKey}.title`,
@@ -1179,10 +1049,6 @@ function LehengasPage() {
                       ],
                     );
 
-                  /* =================================================
-                     TRANSLATED PRODUCT CATEGORY
-                  ================================================= */
-
                   const productCategory =
                     translate(
                       `products.${item.translationKey}.category`,
@@ -1190,10 +1056,6 @@ function LehengasPage() {
                         language
                       ],
                     );
-
-                  /* =================================================
-                     TRANSLATED PRODUCT DESCRIPTION
-                  ================================================= */
 
                   const productDescription =
                     translate(
@@ -1228,10 +1090,6 @@ function LehengasPage() {
                       }}
                       className="group"
                     >
-
-                      {/* =================================================
-                          PRODUCT IMAGE
-                      ================================================= */}
 
                       <Link
                         to={`/${language}/lehengas/${item.slug}`}
@@ -1269,8 +1127,6 @@ function LehengasPage() {
                             "
                           />
 
-                          {/* IMAGE OVERLAY */}
-
                           <div
                             className="
                               absolute
@@ -1281,8 +1137,6 @@ function LehengasPage() {
                               group-hover:bg-black/10
                             "
                           />
-
-                          {/* NUMBER */}
 
                           <div
                             className="
@@ -1307,8 +1161,6 @@ function LehengasPage() {
                             </span>
 
                           </div>
-
-                          {/* FEATURED BADGE */}
 
                           {item.featured && (
                             <div
@@ -1343,8 +1195,6 @@ function LehengasPage() {
 
                             </div>
                           )}
-
-                          {/* HOVER ARROW */}
 
                           <div
                             className="
@@ -1391,10 +1241,6 @@ function LehengasPage() {
 
                       </Link>
 
-                      {/* =================================================
-                          PRODUCT INFORMATION
-                      ================================================= */}
-
                       <div className="pt-4 sm:pt-5">
 
                         <div
@@ -1408,8 +1254,6 @@ function LehengasPage() {
 
                           <div className="min-w-0">
 
-                            {/* CATEGORY */}
-
                             <p
                               className="
                                 mb-2
@@ -1422,8 +1266,6 @@ function LehengasPage() {
                               {productCategory}
                             </p>
 
-                            {/* PRODUCT NAME */}
-
                             <h2
                               className="
                                 font-display
@@ -1434,8 +1276,6 @@ function LehengasPage() {
                             >
                               {productName}
                             </h2>
-
-                            {/* DESCRIPTION */}
 
                             <p
                               className="
@@ -1450,8 +1290,6 @@ function LehengasPage() {
                             </p>
 
                           </div>
-
-                          {/* VIEW */}
 
                           <span
                             className="
@@ -1473,8 +1311,6 @@ function LehengasPage() {
                           </span>
 
                         </div>
-
-                        {/* DIVIDER */}
 
                         <div
                           className="
@@ -1498,10 +1334,6 @@ function LehengasPage() {
             </motion.div>
 
           ) : (
-
-            /* =================================================
-               EMPTY STATE
-            ================================================= */
 
             <motion.div
               initial={{
@@ -1627,16 +1459,17 @@ function LehengasPage() {
             }}
           >
 
-            {/* PHILOSOPHY EYEBROW */}
+            {/* FIXED:
+                Do NOT use text-white here because
+                this section has a light background.
+            */}
 
-            <p className="eyebrow text-brown">
+            <p className="eyebrow text-brown!">
               {translate(
                 "lehengas.philosophy.eyebrow",
                 fallback.philosophy,
               )}
             </p>
-
-            {/* PHILOSOPHY TITLE */}
 
             <h2
               className="
@@ -1646,6 +1479,7 @@ function LehengasPage() {
                 leading-[1.05]
                 sm:text-5xl
                 md:text-6xl
+                text-ink!
               "
             >
               {translate(
@@ -1654,14 +1488,13 @@ function LehengasPage() {
               )}
             </h2>
 
-            {/* PHILOSOPHY DESCRIPTION */}
-
             <p
               className="
                 editorial-copy
                 mx-auto
                 mt-6
                 max-w-2xl
+                text-black/55!
               "
             >
               {translate(
@@ -1678,14 +1511,22 @@ function LehengasPage() {
 
       {/* =====================================================
           APPOINTMENT CTA
+          
+          IMPORTANT FIX:
+          
+          Global .luxury-heading appears to be applying a dark
+          color. Because this section is dark, we explicitly
+          force the appointment heading to white using text-white!.
+          
+          This guarantees visibility regardless of the global
+          luxury-heading CSS.
       ===================================================== */}
 
       <section
         className="
-          bg-ink
+          bg-brown-dark
           px-6
           py-20
-          text-white
           sm:py-24
           lg:py-28
         "
@@ -1697,18 +1538,17 @@ function LehengasPage() {
             className="
               flex
               flex-col
-              gap-8
+              gap-10
               lg:flex-row
               lg:items-center
               lg:justify-between
             "
           >
 
-            {/* =================================================
-                CTA CONTENT
-            ================================================= */}
+            {/* CTA CONTENT */}
 
             <motion.div
+              className="max-w-3xl"
               initial={{
                 opacity: 0,
                 y: 20,
@@ -1719,15 +1559,27 @@ function LehengasPage() {
               }}
               viewport={{
                 once: true,
+                amount: 0.2,
               }}
               transition={{
                 duration: 0.7,
+                ease: [
+                  0.22,
+                  1,
+                  0.36,
+                  1,
+                ],
               }}
             >
 
               {/* CTA EYEBROW */}
 
-              <p className="eyebrow text-brown">
+              <p
+                className="
+                  eyebrow
+                  text-[#D8C7B8]!
+                "
+              >
                 {translate(
                   "lehengas.appointment.eyebrow",
                   fallback.appointmentEyebrow,
@@ -1740,10 +1592,13 @@ function LehengasPage() {
                 className="
                   luxury-heading
                   mt-4
+                  max-w-3xl
                   text-4xl
                   leading-[1.05]
+                  text-white!
                   sm:text-5xl
                   md:text-6xl
+                  lg:text-7xl
                 "
               >
                 {translate(
@@ -1754,11 +1609,10 @@ function LehengasPage() {
 
             </motion.div>
 
-            {/* =================================================
-                APPOINTMENT BUTTON
-            ================================================= */}
+            {/* APPOINTMENT BUTTON */}
 
             <motion.div
+              className="shrink-0"
               initial={{
                 opacity: 0,
                 y: 20,
@@ -1769,10 +1623,17 @@ function LehengasPage() {
               }}
               viewport={{
                 once: true,
+                amount: 0.2,
               }}
               transition={{
                 duration: 0.7,
                 delay: 0.1,
+                ease: [
+                  0.22,
+                  1,
+                  0.36,
+                  1,
+                ],
               }}
             >
 
@@ -1781,32 +1642,40 @@ function LehengasPage() {
                 className="
                   group
                   inline-flex
+                  min-h-16
+                  min-w-65
                   items-center
-                  gap-5
+                  justify-between
+                  gap-8
                   border
-                  border-white/50
+                  border-white/45
                   px-8
-                  py-4
+                  py-5
                   text-[9px]
                   font-medium
                   uppercase
                   tracking-[0.25em]
+                  text-white!
                   transition-all
                   duration-500
+                  hover:border-white
                   hover:bg-white
-                  hover:text-ink
+                  hover:text-ink!
                 "
               >
 
-                {translate(
-                  "common.bookAppointment",
-                  fallback.appointmentButton,
-                )}
+                <span className="max-w-45">
+                  {translate(
+                    "common.bookAppointment",
+                    fallback.appointmentButton,
+                  )}
+                </span>
 
                 <ArrowUpRight
-                  size={14}
+                  size={15}
                   strokeWidth={1.1}
                   className="
+                    shrink-0
                     transition-transform
                     duration-500
                     group-hover:translate-x-1

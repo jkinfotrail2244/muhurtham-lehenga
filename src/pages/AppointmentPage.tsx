@@ -1319,7 +1319,7 @@ function AppointmentPage() {
   return (
     <main className="min-h-screen bg-[#f7f3ed] text-[#171514]">
       <section className="px-4 py-8 sm:px-8 sm:py-12 lg:px-12 xl:px-20">
-        <div className="mx-auto grid max-w-375 overflow-hidden border border-[#ddd4ca] bg-[#faf8f4] lg:grid-cols-[46%_54%]">
+        <div className="mx-auto grid max-w-375 overflow-hidden border border-[#ddd4ca] bg-ivory lg:grid-cols-[46%_54%]">
 
           {/* =====================================================
               LEFT IMAGE
@@ -1614,7 +1614,7 @@ function AppointmentPage() {
 
                     {/* CALENDAR */}
 
-                    <div className="border border-[#d8cec4] bg-[#faf8f4] p-5 sm:p-7">
+                    <div className="border border-[#d8cec4] bg-ivory p-5 sm:p-7">
 
                       {/* CALENDAR HEADER */}
 
@@ -1752,7 +1752,7 @@ function AppointmentPage() {
                                     ? "cursor-not-allowed bg-[#f8f5f1] text-[#c7beb6]"
                                     : selected
                                     ? "bg-[#eadcca] text-[#6f4c2f]"
-                                    : "bg-[#faf8f4] text-[#2d2926] hover:bg-[#f1e8de]"
+                                    : "bg-ivory text-[#2d2926] hover:bg-[#f1e8de]"
                                 }`}
                               >
                                 <span
@@ -1801,7 +1801,7 @@ function AppointmentPage() {
                         </div>
 
                         <div className="flex items-center gap-2">
-                          <span className="h-2.5 w-2.5 border border-[#d5c9be] bg-[#faf8f4]" />
+                          <span className="h-2.5 w-2.5 border border-[#d5c9be] bg-ivory" />
 
                           <span className="text-[8px] uppercase tracking-[0.15em] text-[#81776f]">
                             {text(
