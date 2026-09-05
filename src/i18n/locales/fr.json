@@ -110,7 +110,19 @@
       "lehengaCta": "Découvrir les Lehengas",
       "sherwaniCta": "Découvrir les Sherwanis",
       "scroll": "Défiler",
-      "imageAlt": "Collection nuptiale Muhurtham"
+      "imageAlt": "Collection nuptiale Muhurtham",
+
+      "slide2": {
+        "title": "Pour votre moment unique.",
+        "description": "Une élégance nuptiale raffinée, créée pour des célébrations inoubliables."
+      },
+
+      "slide3": {
+        "title": "Le marié moderne.",
+        "description": "Un style cérémoniel contemporain aux accents indiens intemporels."
+      },
+
+      "goToSlide": "Aller à la diapositive {{slide}}"
     },
 
     "introduction": {

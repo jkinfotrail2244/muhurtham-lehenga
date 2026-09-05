@@ -101,16 +101,36 @@
     "title": "Muhurtham",
 
     "hero": {
-      "eyebrow": "MUHURTHAM COLLECTION",
+      "eyebrow": "IHR MUHURTHAM",
+
       "title": "Das Hochzeitskapitel",
+
       "titleLine1": "Das Hochzeitskapitel",
       "titleLine2": "",
+
       "description": "Zeitlose indische Eleganz, stilvoll präsentiert in der Schweiz.",
+
       "cta": "Lehengas entdecken",
+
       "lehengaCta": "Lehengas entdecken",
+
       "sherwaniCta": "Sherwanis entdecken",
+
       "scroll": "Scrollen",
-      "imageAlt": "Muhurtham Hochzeitskollektion"
+
+      "imageAlt": "Muhurtham Hochzeitskollektion",
+
+      "slide2": {
+        "title": "Für Ihren besonderen Moment.",
+        "description": "Raffinierte Brauteleganz, geschaffen für unvergessliche Feierlichkeiten."
+      },
+
+      "slide3": {
+        "title": "Der moderne Bräutigam.",
+        "description": "Zeitgemäßer zeremonieller Stil mit zeitlosem indischem Charakter."
+      },
+
+      "goToSlide": "Zu Folie {{slide}}"
     },
 
     "introduction": {

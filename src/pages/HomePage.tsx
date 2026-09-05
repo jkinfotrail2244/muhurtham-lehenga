@@ -22,6 +22,7 @@ const supportedLanguages = [
   "fr",
   "de",
   "it",
+  "ta",
 ] as const;
 
 type SupportedLanguage =
@@ -54,7 +55,7 @@ const sectionReveal: Variants = {
 function HomePage() {
   const location = useLocation();
 
-  const { t, i18n } =
+  const { i18n } =
     useTranslation();
 
   /* ==========================================================
@@ -85,6 +86,17 @@ function HomePage() {
   }, [language, i18n]);
 
   /* ==========================================================
+     FIXED TRANSLATOR
+     
+     Always reads directly from the language in the URL.
+     This prevents the page from temporarily showing the
+     previous language after changing language.
+  ========================================================== */
+
+  const fixedT =
+    i18n.getFixedT(language);
+
+  /* ==========================================================
      HOME TRANSLATION HELPER
   ========================================================== */
 
@@ -92,9 +104,16 @@ function HomePage() {
     key: string,
     fallback: string,
   ): string => {
-    return t(`home.${key}`, {
-      defaultValue: fallback,
-    });
+    const value = fixedT(
+      `home.${key}`,
+      {
+        defaultValue: fallback,
+      },
+    );
+
+    return typeof value === "string"
+      ? value
+      : fallback;
   };
 
   /* ==========================================================
@@ -105,9 +124,16 @@ function HomePage() {
     key: string,
     fallback: string,
   ): string => {
-    return t(`common.${key}`, {
-      defaultValue: fallback,
-    });
+    const value = fixedT(
+      `common.${key}`,
+      {
+        defaultValue: fallback,
+      },
+    );
+
+    return typeof value === "string"
+      ? value
+      : fallback;
   };
 
   /* ==========================================================
@@ -119,12 +145,16 @@ function HomePage() {
     field: string,
     fallback: string,
   ): string => {
-    return t(
+    const value = fixedT(
       `products.${productKey}.${field}`,
       {
         defaultValue: fallback,
       },
     );
+
+    return typeof value === "string"
+      ? value
+      : fallback;
   };
 
   /* ==========================================================
@@ -143,10 +173,109 @@ function HomePage() {
   };
 
   /* ==========================================================
+     LOCALIZED SMALL LABELS
+     
+     These are intentionally handled here because they were
+     previously hardcoded directly inside the JSX.
+  ========================================================== */
+
+  const collectionLabel =
+    fixedT(
+      "common.collection",
+      {
+        defaultValue:
+          language === "fr"
+            ? "COLLECTION"
+            : language === "de"
+              ? "KOLLEKTION"
+              : language === "it"
+                ? "COLLEZIONE"
+                : language === "ta"
+                  ? "தொகுப்பு"
+                  : "COLLECTION",
+      },
+    );
+
+  const collection01 =
+    language === "fr"
+      ? "COLLECTION 01"
+      : language === "de"
+        ? "KOLLEKTION 01"
+        : language === "it"
+          ? "COLLEZIONE 01"
+          : language === "ta"
+            ? "தொகுப்பு 01"
+            : "COLLECTION 01";
+
+  const collection02 =
+    language === "fr"
+      ? "COLLECTION 02"
+      : language === "de"
+        ? "KOLLEKTION 02"
+        : language === "it"
+          ? "COLLEZIONE 02"
+          : language === "ta"
+            ? "தொகுப்பு 02"
+            : "COLLECTION 02";
+
+  const collection03 =
+    language === "fr"
+      ? "COLLECTION 03"
+      : language === "de"
+        ? "KOLLEKTION 03"
+        : language === "it"
+          ? "COLLEZIONE 03"
+          : language === "ta"
+            ? "தொகுப்பு 03"
+            : "COLLECTION 03";
+
+  const sareeLabel =
+    language === "fr"
+      ? "SARI"
+      : language === "de"
+        ? "SARI"
+        : language === "it"
+          ? "SARI"
+          : language === "ta"
+            ? "புடவை"
+            : "SAREE";
+
+  const lehengaLabel =
+    language === "fr"
+      ? "LEHENGA"
+      : language === "de"
+        ? "LEHENGA"
+        : language === "it"
+          ? "LEHENGA"
+          : language === "ta"
+            ? "லெஹங்கா"
+            : "LEHENGA";
+
+  const sherwaniLabel =
+    language === "fr"
+      ? "SHERWANI"
+      : language === "de"
+        ? "SHERWANI"
+        : language === "it"
+          ? "SHERWANI"
+          : language === "ta"
+            ? "ஷெர்வானி"
+            : "SHERWANI";
+
+  /* ==========================================================
      BRAND
   ========================================================== */
 
-  const brandName = "Muhurtham";
+  const brandName =
+    fixedT(
+      "brand.name",
+      {
+        defaultValue:
+          language === "ta"
+            ? "முகூர்த்தம்"
+            : "Muhurtham",
+      },
+    );
 
   /* ==========================================================
      FEATURED PRODUCT DATA
@@ -156,42 +285,72 @@ function HomePage() {
     productText(
       "royalRed",
       "title",
-      "Royal Red",
+      language === "ta"
+        ? "ராயல் ரெட்"
+        : "Royal Red",
     );
 
   const royalRedCategory =
     productText(
       "royalRed",
       "eyebrow",
-      "Bridal Saree",
+      language === "fr"
+        ? "Sari de mariée"
+        : language === "de"
+          ? "Brautsari"
+          : language === "it"
+            ? "Sari da sposa"
+            : language === "ta"
+              ? "திருமணப் புடவை"
+              : "Bridal Saree",
     );
 
   const royalMaroonName =
     productText(
       "royalMaroon",
       "title",
-      "Royal Maroon",
+      language === "ta"
+        ? "ராயல் மரூன்"
+        : "Royal Maroon",
     );
 
   const royalMaroonCategory =
     productText(
       "royalMaroon",
       "eyebrow",
-      "Bridal Lehenga",
+      language === "fr"
+        ? "Lehenga de mariée"
+        : language === "de"
+          ? "Braut-Lehenga"
+          : language === "it"
+            ? "Lehenga da sposa"
+            : language === "ta"
+              ? "திருமண லெஹங்கா"
+              : "Bridal Lehenga",
     );
 
   const ivoryHeritageName =
     productText(
       "ivoryHeritage",
       "title",
-      "Ivory Heritage",
+      language === "ta"
+        ? "ஐவரி ஹெரிடேஜ்"
+        : "Ivory Heritage",
     );
 
   const ivoryHeritageCategory =
     productText(
       "ivoryHeritage",
       "eyebrow",
-      "Groom Edit",
+      language === "fr"
+        ? "Collection marié"
+        : language === "de"
+          ? "Bräutigam-Kollektion"
+          : language === "it"
+            ? "Collezione sposo"
+            : language === "ta"
+              ? "மணமகன் தொகுப்பு"
+              : "Groom Edit",
     );
 
   /* ============================================================
@@ -384,7 +543,9 @@ function HomePage() {
                   src="/images/lehenga-collection.png"
                   alt={homeText(
                     "collections.lehenga",
-                    "Lehengas",
+                    language === "ta"
+                      ? "லெஹங்காக்கள்"
+                      : "Lehengas",
                   )}
                   className="h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.04]"
                 />
@@ -394,7 +555,7 @@ function HomePage() {
                 <div className="absolute inset-x-0 bottom-0 p-7 sm:p-8">
 
                   <p className="text-[8px] uppercase tracking-[0.25em] text-white/70">
-                    COLLECTION 01
+                    {collection01}
                   </p>
 
                   <div className="mt-3 flex items-end justify-between gap-5">
@@ -402,7 +563,9 @@ function HomePage() {
                     <h3 className="font-display text-3xl text-white! sm:text-4xl">
                       {homeText(
                         "collections.lehenga",
-                        "Lehengas",
+                        language === "ta"
+                          ? "லெஹங்காக்கள்"
+                          : "Lehengas",
                       )}
                     </h3>
 
@@ -440,7 +603,9 @@ function HomePage() {
                   src="/images/saree-collection.png"
                   alt={homeText(
                     "collections.saree",
-                    "Sarees",
+                    language === "ta"
+                      ? "புடவைகள்"
+                      : "Sarees",
                   )}
                   className="h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.04]"
                 />
@@ -450,7 +615,7 @@ function HomePage() {
                 <div className="absolute inset-x-0 bottom-0 p-7 sm:p-8">
 
                   <p className="text-[8px] uppercase tracking-[0.25em] text-white/70">
-                    COLLECTION 02
+                    {collection02}
                   </p>
 
                   <div className="mt-3 flex items-end justify-between gap-5">
@@ -458,7 +623,9 @@ function HomePage() {
                     <h3 className="font-display text-3xl text-white! sm:text-4xl">
                       {homeText(
                         "collections.saree",
-                        "Sarees",
+                        language === "ta"
+                          ? "புடவைகள்"
+                          : "Sarees",
                       )}
                     </h3>
 
@@ -496,7 +663,9 @@ function HomePage() {
                   src="/images/sherwani-collection.png"
                   alt={homeText(
                     "collections.sherwani",
-                    "Sherwanis",
+                    language === "ta"
+                      ? "ஷெர்வானிகள்"
+                      : "Sherwanis",
                   )}
                   className="h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.04]"
                 />
@@ -506,7 +675,7 @@ function HomePage() {
                 <div className="absolute inset-x-0 bottom-0 p-7 sm:p-8">
 
                   <p className="text-[8px] uppercase tracking-[0.25em] text-white/70">
-                    COLLECTION 03
+                    {collection03}
                   </p>
 
                   <div className="mt-3 flex items-end justify-between gap-5">
@@ -514,7 +683,9 @@ function HomePage() {
                     <h3 className="font-display text-3xl text-white! sm:text-4xl">
                       {homeText(
                         "collections.sherwani",
-                        "Sherwanis",
+                        language === "ta"
+                          ? "ஷெர்வானிகள்"
+                          : "Sherwanis",
                       )}
                     </h3>
 
@@ -565,7 +736,7 @@ function HomePage() {
               src="/images/new.png"
               alt={homeText(
                 "story.eyebrow",
-                "Muhurtham",
+                brandName,
               )}
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -589,7 +760,9 @@ function HomePage() {
               <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#8F6D52]">
                 {homeText(
                   "story.eyebrow",
-                  "MUHURTHAM",
+                  language === "ta"
+                    ? "முகூர்த்தம்"
+                    : "MUHURTHAM",
                 )}
               </p>
 
@@ -745,10 +918,7 @@ function HomePage() {
           <div className="text-center">
 
             <p className="text-[9px] font-medium uppercase tracking-[0.3em] text-[#8F6D52]">
-              {commonText(
-                "collection",
-                "SELECTED PIECES",
-              )}
+              {collectionLabel}
             </p>
 
             <h2 className="mt-4 font-display text-4xl text-[#181615]! sm:text-5xl">
@@ -769,7 +939,9 @@ function HomePage() {
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
-            {/* ROYAL RED */}
+            {/* =================================================
+                ROYAL RED
+            ================================================= */}
 
             <Link
               to={localizedPath(
@@ -789,7 +961,7 @@ function HomePage() {
                 <div className="absolute left-5 top-5 bg-white/90 px-3 py-2 backdrop-blur">
 
                   <span className="text-[8px] uppercase tracking-[0.18em] text-black/55">
-                    SAREE · 01
+                    {sareeLabel} · 01
                   </span>
 
                 </div>
@@ -819,7 +991,9 @@ function HomePage() {
 
             </Link>
 
-            {/* ROYAL MAROON */}
+            {/* =================================================
+                ROYAL MAROON
+            ================================================= */}
 
             <Link
               to={localizedPath(
@@ -839,7 +1013,7 @@ function HomePage() {
                 <div className="absolute left-5 top-5 bg-white/90 px-3 py-2 backdrop-blur">
 
                   <span className="text-[8px] uppercase tracking-[0.18em] text-black/55">
-                    LEHENGA · 01
+                    {lehengaLabel} · 01
                   </span>
 
                 </div>
@@ -869,7 +1043,9 @@ function HomePage() {
 
             </Link>
 
-            {/* IVORY HERITAGE */}
+            {/* =================================================
+                IVORY HERITAGE
+            ================================================= */}
 
             <Link
               to={localizedPath(
@@ -889,7 +1065,7 @@ function HomePage() {
                 <div className="absolute left-5 top-5 bg-white/90 px-3 py-2 backdrop-blur">
 
                   <span className="text-[8px] uppercase tracking-[0.18em] text-black/55">
-                    SHERWANI · 01
+                    {sherwaniLabel} · 01
                   </span>
 
                 </div>
@@ -999,11 +1175,19 @@ function HomePage() {
                 className="group inline-flex items-center justify-center gap-3 border border-white/35 px-8 py-4 text-[9px] font-medium uppercase tracking-[0.22em] text-white! transition-all duration-500 hover:bg-white hover:text-[#181615]!"
               >
 
-                {t(
+                {fixedT(
                   "navigation.showroom",
                   {
                     defaultValue:
-                      "Visit Showroom",
+                      language === "fr"
+                        ? "Visiter le showroom"
+                        : language === "de"
+                          ? "Showroom besuchen"
+                          : language === "it"
+                            ? "Visita lo showroom"
+                            : language === "ta"
+                              ? "ஷோரூமைப் பார்வையிடுங்கள்"
+                              : "Visit Showroom",
                   },
                 )}
 
@@ -1024,7 +1208,15 @@ function HomePage() {
 
                 {homeText(
                   "appointment.cta",
-                  "Book an Appointment",
+                  language === "fr"
+                    ? "Prendre rendez-vous"
+                    : language === "de"
+                      ? "Termin vereinbaren"
+                      : language === "it"
+                        ? "Prenota un appuntamento"
+                        : language === "ta"
+                          ? "சந்திப்பை முன்பதிவு செய்யுங்கள்"
+                          : "Book an Appointment",
                 )}
 
                 <ArrowUpRight
@@ -1105,7 +1297,15 @@ function HomePage() {
 
             {homeText(
               "appointment.cta",
-              "Book an Appointment",
+              language === "fr"
+                ? "Prendre rendez-vous"
+                : language === "de"
+                  ? "Termin vereinbaren"
+                  : language === "it"
+                    ? "Prenota un appuntamento"
+                    : language === "ta"
+                      ? "சந்திப்பை முன்பதிவு செய்யுங்கள்"
+                      : "Book an Appointment",
             )}
 
             <ArrowRight

@@ -24,11 +24,20 @@ type HeroSlide = {
 };
 
 function HeroSection() {
-  const { t } = useTranslation();
+  const { i18n } = useTranslation();
   const location = useLocation();
 
   const language =
     location.pathname.split("/")[1] || "en";
+
+  /*
+   * Always read translations from the language
+   * contained in the current URL.
+   *
+   * This prevents the hero from temporarily using
+   * the previous language when changing languages.
+   */
+  const fixedT = i18n.getFixedT(language);
 
   /* =====================================================
      HERO SLIDES
@@ -38,10 +47,10 @@ function HeroSection() {
     {
       id: 1,
       image: "/images/hero.png",
-      title: t("home.hero.title", {
+      title: fixedT("home.hero.title", {
         defaultValue: "The Wedding Chapter",
       }),
-      description: t("home.hero.description", {
+      description: fixedT("home.hero.description", {
         defaultValue:
           "Timeless Indian elegance, thoughtfully presented in Switzerland.",
       }),
@@ -51,10 +60,10 @@ function HeroSection() {
     {
       id: 2,
       image: "/images/hero-2.png",
-      title: t("home.hero.slide2.title", {
+      title: fixedT("home.hero.slide2.title", {
         defaultValue: "Made for Your Moment.",
       }),
-      description: t(
+      description: fixedT(
         "home.hero.slide2.description",
         {
           defaultValue:
@@ -67,10 +76,10 @@ function HeroSection() {
     {
       id: 3,
       image: "/images/hero-3.png",
-      title: t("home.hero.slide3.title", {
+      title: fixedT("home.hero.slide3.title", {
         defaultValue: "The Modern Groom.",
       }),
-      description: t(
+      description: fixedT(
         "home.hero.slide3.description",
         {
           defaultValue:
@@ -172,7 +181,9 @@ function HeroSection() {
           <motion.img
             key={activeSlide.id}
             src={activeSlide.image}
-            alt="Muhurtham Collection"
+            alt={fixedT("home.hero.imageAlt", {
+              defaultValue: "Muhurtham Collection",
+            })}
             className="absolute inset-0 h-full w-full object-cover object-[center_10%]"
             initial={{
               opacity: 0,
@@ -235,7 +246,7 @@ function HeroSection() {
             initial={false}
           >
             <motion.div
-              key={activeSlide.id}
+              key={`${language}-${activeSlide.id}`}
               initial={{
                 opacity: 0,
               }}
@@ -277,7 +288,9 @@ function HeroSection() {
                   color: activeSlide.accent,
                 }}
               >
-                YOUR MUHURTHAM
+                {fixedT("home.hero.eyebrow", {
+                  defaultValue: "YOUR MUHURTHAM",
+                })}
               </motion.p>
 
               {/* =================================================
@@ -373,12 +386,22 @@ function HeroSection() {
 
                 <Link
                   to={`/${language}/lehengas`}
+                  aria-label={fixedT(
+                    "home.hero.lehengaCta",
+                    {
+                      defaultValue:
+                        "Explore Lehengas",
+                    },
+                  )}
                   className="group inline-flex items-center gap-5 border border-white/75 px-8 py-4 text-[9px] font-medium uppercase tracking-[0.25em] text-white! transition-all duration-500 hover:bg-white hover:text-ink!"
                 >
-                  {t("home.hero.cta", {
-                    defaultValue:
-                      "Explore Lehengas",
-                  })}
+                  {fixedT(
+                    "home.hero.lehengaCta",
+                    {
+                      defaultValue:
+                        "Explore Lehengas",
+                    },
+                  )}
 
                   <ArrowUpRight
                     size={14}
@@ -393,12 +416,22 @@ function HeroSection() {
 
                 <Link
                   to={`/${language}/sherwanis`}
+                  aria-label={fixedT(
+                    "home.hero.sherwaniCta",
+                    {
+                      defaultValue:
+                        "Sherwanis",
+                    },
+                  )}
                   className="group inline-flex items-center gap-5 border border-white/40 px-8 py-4 text-[9px] font-medium uppercase tracking-[0.25em] text-white/90! transition-all duration-500 hover:border-white hover:bg-white hover:text-ink!"
                 >
-                  {t("navigation.sherwanis", {
-                    defaultValue:
-                      "Sherwanis",
-                  })}
+                  {fixedT(
+                    "home.hero.sherwaniCta",
+                    {
+                      defaultValue:
+                        "Sherwanis",
+                    },
+                  )}
 
                   <ArrowUpRight
                     size={14}
@@ -423,7 +456,13 @@ function HeroSection() {
         <button
           type="button"
           onClick={previousSlide}
-          aria-label="Previous slide"
+          aria-label={fixedT(
+            "common.previous",
+            {
+              defaultValue:
+                "Previous slide",
+            },
+          )}
           className="group flex h-10 w-10 items-center justify-center border border-white/35 text-white/80 transition-all duration-300 hover:border-white hover:bg-white hover:text-ink"
         >
           <ArrowLeft
@@ -438,7 +477,13 @@ function HeroSection() {
         <button
           type="button"
           onClick={nextSlide}
-          aria-label="Next slide"
+          aria-label={fixedT(
+            "common.next",
+            {
+              defaultValue:
+                "Next slide",
+            },
+          )}
           className="group flex h-10 w-10 items-center justify-center border border-white/35 text-white/80 transition-all duration-300 hover:border-white hover:bg-white hover:text-ink"
         >
           <ArrowRight
@@ -459,6 +504,22 @@ function HeroSection() {
             const active =
               currentSlide === index;
 
+            /*
+             * IMPORTANT:
+             * Keep this as a single fixedT call.
+             * Passing a third argument causes the
+             * TS2345 error with the current i18next types.
+             */
+            const slideLabel =
+              fixedT(
+                "home.hero.goToSlide",
+                {
+                  defaultValue:
+                    `Go to slide ${index + 1}`,
+                  slide: index + 1,
+                },
+              );
+
             return (
               <button
                 key={slide.id}
@@ -466,9 +527,7 @@ function HeroSection() {
                 onClick={() =>
                   selectSlide(index)
                 }
-                aria-label={`Go to slide ${
-                  index + 1
-                }`}
+                aria-label={slideLabel}
                 className="group flex items-center justify-center py-2"
               >
                 <span
@@ -530,7 +589,7 @@ function HeroSection() {
         {/* TOTAL SLIDES */}
 
         <span className="text-[7px] uppercase tracking-[0.3em] text-white/50">
-          03
+          {String(slides.length).padStart(2, "0")}
         </span>
       </div>
 
@@ -560,7 +619,9 @@ function HeroSection() {
         }}
       >
         <span className="text-[7px] uppercase tracking-[0.3em]">
-          Scroll
+          {fixedT("home.hero.scroll", {
+            defaultValue: "Scroll",
+          })}
         </span>
 
         <motion.div
@@ -589,7 +650,7 @@ function HeroSection() {
           {String(
             currentSlide + 1,
           ).padStart(2, "0")}{" "}
-          / 03
+          / {String(slides.length).padStart(2, "0")}
         </span>
       </div>
     </section>

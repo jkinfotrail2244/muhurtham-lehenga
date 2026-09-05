@@ -56,7 +56,7 @@
     "shareThisProduct": "Condividi questo prodotto",
     "productDetails": "Dettagli del prodotto",
     "contactStylist": "Contatta il nostro stylist",
-    "productDeclaration": "Dichiarazione del prodotto",
+    "productDeclaration": "Informazioni sul prodotto",
     "instagram": "Instagram",
     "whatsapp": "WhatsApp",
     "chatWhatsApp": "Parla con noi su WhatsApp",
@@ -90,7 +90,19 @@
       "lehengaCta": "Scopri i Lehengas",
       "sherwaniCta": "Scopri gli Sherwani",
       "scroll": "Scorri",
-      "imageAlt": "Collezione nuziale Muhurtham"
+      "imageAlt": "Collezione nuziale Muhurtham",
+
+      "slide2": {
+        "title": "Creato per il tuo momento.",
+        "description": "Un'eleganza nuziale raffinata, creata per celebrazioni indimenticabili."
+      },
+
+      "slide3": {
+        "title": "Lo sposo moderno.",
+        "description": "Uno stile cerimoniale contemporaneo con un carattere indiano senza tempo."
+      },
+
+      "goToSlide": "Vai alla diapositiva {{slide}}"
     },
 
     "introduction": {
@@ -311,8 +323,8 @@
 
     "category": {
       "groom": "Sposo",
-      "occasion": "Occasione",
-      "wedding": "Abito da matrimonio"
+      "occasion": "Sherwani da cerimonia",
+      "wedding": "Sherwani da matrimonio"
     },
 
     "view": {
@@ -348,21 +360,39 @@
       "title": "Lehengas",
       "eyebrow": "COLLEZIONE LEHENGA",
       "description": "Un'espressione raffinata dell'artigianato indiano, delle silhouette senza tempo e dell'eleganza da cerimonia.",
-      "cta": "Scopri i Lehengas"
+      "longDescription": "Esplora la nostra collezione di Lehengas, che riunisce silhouette da sposa e da cerimonia in un'espressione raffinata dell'artigianalità indiana.",
+      "cta": "Scopri i Lehengas",
+      "details": [
+        "Lehengas da sposa",
+        "Lehengas da cerimonia",
+        "Artigianalità indiana raffinata"
+      ]
     },
 
     "sarees": {
       "title": "Sari",
       "eyebrow": "COLLEZIONE SARI",
       "description": "Una selezione raffinata di sari da sposa e da occasione, dedicata alla grazia del drappeggio, ai colori senza tempo e all'artigianalità indiana.",
-      "cta": "Scopri i Sari"
+      "longDescription": "Scopri una selezione di sari raffinati che celebrano la grazia del drappeggio, i colori senza tempo e la ricchezza dell'artigianalità indiana.",
+      "cta": "Scopri i Sari",
+      "details": [
+        "Sari da sposa",
+        "Sari da cerimonia",
+        "Drappeggi e finiture raffinate"
+      ]
     },
 
     "sherwanis": {
       "title": "Sherwani",
       "eyebrow": "COLLEZIONE SHERWANI",
       "description": "Un'espressione di artigianalità indiana senza tempo ed eleganza contemporanea, pensata per lo sposo moderno.",
-      "cta": "Scopri gli Sherwani"
+      "longDescription": "Esplora la nostra collezione di Sherwani, pensata per lo sposo moderno con silhouette raffinate, artigianalità tradizionale ed eleganza contemporanea.",
+      "cta": "Scopri gli Sherwani",
+      "details": [
+        "Sherwani da sposo",
+        "Sherwani da cerimonia",
+        "Sartoria indiana raffinata"
+      ]
     }
   },
 
@@ -406,13 +436,17 @@
     "backToSarees": "Torna ai Sari",
     "backToSherwanis": "Torna agli Sherwani",
     "backToCollections": "Torna alle collezioni",
+
     "productDetails": "Dettagli del prodotto",
     "contactOurStylist": "Contatta il nostro stylist",
-    "productDeclaration": "Dichiarazione del prodotto",
+    "productDeclaration": "Informazioni sul prodotto",
+
     "category": "Categoria",
     "reference": "Riferimento",
     "collection": "Collezione",
+
     "shareThisProduct": "Condividi questo prodotto",
+
     "chatWithUs": "Parla con noi su WhatsApp",
 
     "stylist": {
@@ -850,14 +884,17 @@
         "title": "Consulenza sposa",
         "description": "Una consulenza privata dedicata ai nostri lehengas da sposa, allo styling e alle esigenze del matrimonio."
       },
+
       "groom": {
         "title": "Consulenza sposo",
         "description": "Scopri sherwani raffinati, sartoria tradizionale e opzioni di styling per lo sposo moderno."
       },
+
       "bridalGroom": {
         "title": "Consulenza sposa e sposo",
         "description": "Una consulenza completa per entrambi, con una selezione curata per la vostra celebrazione."
       },
+
       "private": {
         "title": "Appuntamento privato",
         "description": "Prova privata, modifiche e regolazioni finali per un capo Muhurtham Collection."
@@ -950,7 +987,7 @@
     "bridalSarees": "Sari da sposa",
     "occasionSarees": "Sari da occasione",
     "groomSherwanis": "Sherwani da sposo",
-    "occasionSherwanis": "Sherwani da occasione",
+    "occasionSherwanis": "Sherwani da cerimonia",
     "discoverCollection": "Scopri la collezione"
   },
 
