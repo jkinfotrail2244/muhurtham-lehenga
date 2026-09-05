@@ -25,6 +25,7 @@ import {
   useState,
   type CSSProperties,
   type ReactNode,
+  type SyntheticEvent,
 } from "react";
 
 import { useTranslation } from "react-i18next";
@@ -146,7 +147,6 @@ const productNameFallbacks: Record<
 > = {
   "royal-maroon": {
     en: "Royal Maroon",
-    ta: "ராயல் மெரூன்",
     de: "Königliches Maroon",
     fr: "Royal Maroon",
     it: "Royal Maroon",
@@ -154,7 +154,6 @@ const productNameFallbacks: Record<
 
   "ivory-garden": {
     en: "Ivory Garden",
-    ta: "ஐவரி கார்டன்",
     de: "Ivory Garden",
     fr: "Ivory Garden",
     it: "Ivory Garden",
@@ -162,7 +161,6 @@ const productNameFallbacks: Record<
 
   "blush-pink": {
     en: "Blush Pink",
-    ta: "பிளஷ் பிங்க்",
     de: "Blush Pink",
     fr: "Blush Pink",
     it: "Blush Pink",
@@ -170,39 +168,34 @@ const productNameFallbacks: Record<
 
   "golden-tissue": {
     en: "Golden Tissue",
-    ta: "கோல்டன் டிஷ்யூ",
     de: "Goldenes Tissue",
     fr: "Golden Tissue",
-    it: "Golden Tissue",
+    it: "Tessuto Dorato",
   },
 
   "ivory-heritage": {
     en: "Ivory Heritage",
-    ta: "ஐவரி ஹெரிடேஜ்",
     de: "Ivory Heritage",
     fr: "Ivory Heritage",
-    it: "Ivory Heritage",
+    it: "Eredità d'Avorio",
   },
 
   "royal-sand": {
     en: "Royal Sand",
-    ta: "ராயல் சாண்ட்",
-    de: "Königliches Sand",
+    de: "Königlicher Sand",
     fr: "Royal Sand",
-    it: "Royal Sand",
+    it: "Sabbia Reale",
   },
 
   "midnight-embroidery": {
     en: "Midnight Embroidery",
-    ta: "மிட்நைட் எம்பிராய்டரி",
     de: "Mitternachtsstickerei",
-    fr: "Broderie Midnight",
-    it: "Ricamo Midnight",
+    fr: "Broderie de Minuit",
+    it: "Ricamo di Mezzanotte",
   },
 
   "champagne-classic": {
     en: "Champagne Classic",
-    ta: "சாம்பெயின் கிளாசிக்",
     de: "Champagner Klassik",
     fr: "Champagne Classique",
     it: "Champagne Classico",
@@ -210,7 +203,6 @@ const productNameFallbacks: Record<
 
   "regal-ivory": {
     en: "Regal Ivory",
-    ta: "ரீகல் ஐவரி",
     de: "Königliches Ivory",
     fr: "Ivoire Royal",
     it: "Avorio Regale",
@@ -218,15 +210,13 @@ const productNameFallbacks: Record<
 
   "mocha-textured": {
     en: "Mocha Textured",
-    ta: "மோக்கா டெக்ஸ்சர்ட்",
     de: "Texturiertes Mocha",
     fr: "Mocha Texturé",
-    it: "Mocha Testurizzato",
+    it: "Moka Testurizzato",
   },
 
   "classic-beige": {
     en: "Classic Beige",
-    ta: "கிளாசிக் பெய்ஜ்",
     de: "Klassisches Beige",
     fr: "Beige Classique",
     it: "Beige Classico",
@@ -234,7 +224,6 @@ const productNameFallbacks: Record<
 
   "royal-charcoal": {
     en: "Royal Charcoal",
-    ta: "ராயல் சார்கோல்",
     de: "Königliches Anthrazit",
     fr: "Charbon Royal",
     it: "Antracite Regale",
@@ -242,7 +231,6 @@ const productNameFallbacks: Record<
 
   "royal-red": {
     en: "Royal Red",
-    ta: "ராயல் ரெட்",
     de: "Königliches Rot",
     fr: "Rouge Royal",
     it: "Rosso Regale",
@@ -250,7 +238,6 @@ const productNameFallbacks: Record<
 
   "ivory-gold": {
     en: "Ivory Gold",
-    ta: "ஐவரி கோல்ட்",
     de: "Ivory Gold",
     fr: "Ivoire Doré",
     it: "Avorio Dorato",
@@ -258,7 +245,6 @@ const productNameFallbacks: Record<
 
   "blush-rose": {
     en: "Blush Rose",
-    ta: "பிளஷ் ரோஸ்",
     de: "Blush Rose",
     fr: "Rose Poudré",
     it: "Rosa Cipria",
@@ -266,15 +252,13 @@ const productNameFallbacks: Record<
 
   "emerald-grace": {
     en: "Emerald Grace",
-    ta: "எமரால்ட் கிரேஸ்",
     de: "Smaragdgrüne Eleganz",
     fr: "Grâce Émeraude",
-    it: "Grazia Smeraldo",
+    it: "Grazia di Smeraldo",
   },
 
   "champagne-drape": {
     en: "Champagne Drape",
-    ta: "சாம்பெயின் ட்ரேப்",
     de: "Champagner-Drape",
     fr: "Drapé Champagne",
     it: "Drappeggio Champagne",
@@ -282,10 +266,9 @@ const productNameFallbacks: Record<
 
   "midnight-blue": {
     en: "Midnight Blue",
-    ta: "மிட்நைட் ப்ளூ",
     de: "Mitternachtsblau",
     fr: "Bleu Nuit",
-    it: "Blu Notte",
+    it: "Blu Mezzanotte",
   },
 };
 
@@ -299,7 +282,6 @@ const collectionNameFallbacks: Record<
 > = {
   lehengas: {
     en: "Lehenga Collection",
-    ta: "லெஹங்கா தொகுப்பு",
     de: "Lehenga Kollektion",
     fr: "Collection Lehenga",
     it: "Collezione Lehenga",
@@ -307,7 +289,6 @@ const collectionNameFallbacks: Record<
 
   sherwanis: {
     en: "Sherwani Collection",
-    ta: "ஷெர்வானி தொகுப்பு",
     de: "Sherwani Kollektion",
     fr: "Collection Sherwani",
     it: "Collezione Sherwani",
@@ -315,10 +296,392 @@ const collectionNameFallbacks: Record<
 
   sarees: {
     en: "Saree Collection",
-    ta: "சேலை தொகுப்பு",
     de: "Sari Kollektion",
     fr: "Collection de Saris",
     it: "Collezione Saree",
+  },
+};
+
+/* ============================================================
+   FEATURE FALLBACK COPY
+============================================================ */
+
+const featureFallbacks: Record<
+  SupportedLanguage,
+  Record<
+    FeatureKey,
+    {
+      title: string;
+      description: string;
+    }
+  >
+> = {
+  en: {
+    premiumQuality: {
+      title: "Premium Quality",
+      description:
+        "Selected fabrics and refined finishing.",
+    },
+
+    exquisiteCraftsmanship: {
+      title: "Exquisite Craftsmanship",
+      description:
+        "Traditional Indian craftsmanship, refined in every detail.",
+    },
+
+    gracefulComfort: {
+      title: "Graceful Comfort",
+      description:
+        "Designed for natural movement and effortless elegance.",
+    },
+
+    lightweightComfort: {
+      title: "Lightweight Comfort",
+      description:
+        "Lightweight construction for natural freedom of movement.",
+    },
+
+    comfortableTailoring: {
+      title: "Comfortable Tailoring",
+      description:
+        "Refined tailoring designed for comfortable movement.",
+    },
+
+    timelessElegance: {
+      title: "Timeless Elegance",
+      description:
+        "A silhouette designed to remain beautiful beyond the occasion.",
+    },
+
+    elegantFinish: {
+      title: "Elegant Finish",
+      description:
+        "A refined contemporary finish with subtle sophistication.",
+    },
+
+    modernElegance: {
+      title: "Modern Elegance",
+      description:
+        "Contemporary elegance with a timeless Indian character.",
+    },
+
+    regalElegance: {
+      title: "Regal Elegance",
+      description:
+        "A refined expression of ceremony and modern royalty.",
+    },
+
+    quietLuxury: {
+      title: "Quiet Luxury",
+      description:
+        "An understated expression of sophisticated luxury.",
+    },
+
+    bridalComfort: {
+      title: "Bridal Comfort",
+      description:
+        "Created to balance comfort and elegance throughout the celebration.",
+    },
+
+    modernRoyalty: {
+      title: "Modern Royalty",
+      description:
+        "A refined interpretation of contemporary ceremonial royalty.",
+    },
+
+    contemporaryElegance: {
+      title: "Contemporary Elegance",
+      description:
+        "A modern silhouette inspired by traditional craftsmanship.",
+    },
+
+    comfortableStructure: {
+      title: "Comfortable Structure",
+      description:
+        "Refined construction designed for natural comfort.",
+    },
+
+    elegantComfort: {
+      title: "Elegant Comfort",
+      description:
+        "A refined balance of structure, comfort and elegance.",
+    },
+  },
+
+  de: {
+    premiumQuality: {
+      title: "Premiumqualität",
+      description:
+        "Ausgewählte Stoffe und eine raffinierte Verarbeitung.",
+    },
+
+    exquisiteCraftsmanship: {
+      title: "Exquisite Handwerkskunst",
+      description:
+        "Traditionelle indische Handwerkskunst, bis ins Detail verfeinert.",
+    },
+
+    gracefulComfort: {
+      title: "Anmutiger Komfort",
+      description:
+        "Für natürliche Bewegungsfreiheit und mühelose Eleganz.",
+    },
+
+    lightweightComfort: {
+      title: "Leichter Komfort",
+      description:
+        "Leichte Verarbeitung für natürliche Bewegungsfreiheit.",
+    },
+
+    comfortableTailoring: {
+      title: "Komfortable Schneiderkunst",
+      description:
+        "Raffinierte Schneiderkunst für angenehme Bewegungsfreiheit.",
+    },
+
+    timelessElegance: {
+      title: "Zeitlose Eleganz",
+      description:
+        "Eine Silhouette, die über den Anlass hinaus schön bleibt.",
+    },
+
+    elegantFinish: {
+      title: "Elegante Verarbeitung",
+      description:
+        "Eine raffinierte, zeitgemäße Ausführung mit dezenter Eleganz.",
+    },
+
+    modernElegance: {
+      title: "Moderne Eleganz",
+      description:
+        "Zeitgemäße Eleganz mit zeitlosem indischem Charakter.",
+    },
+
+    regalElegance: {
+      title: "Regale Eleganz",
+      description:
+        "Eine raffinierte Verbindung von Zeremonie und moderner Königlichkeit.",
+    },
+
+    quietLuxury: {
+      title: "Dezenter Luxus",
+      description:
+        "Eine zurückhaltende Form anspruchsvollen Luxus.",
+    },
+
+    bridalComfort: {
+      title: "Brautkomfort",
+      description:
+        "Entwickelt für Komfort und Eleganz während der gesamten Feier.",
+    },
+
+    modernRoyalty: {
+      title: "Moderne Königlichkeit",
+      description:
+        "Eine raffinierte Interpretation zeitgemäßer zeremonieller Königlichkeit.",
+    },
+
+    contemporaryElegance: {
+      title: "Zeitgemäße Eleganz",
+      description:
+        "Eine moderne Silhouette, inspiriert von traditioneller Handwerkskunst.",
+    },
+
+    comfortableStructure: {
+      title: "Komfortable Struktur",
+      description:
+        "Raffinierte Konstruktion für natürlichen Komfort.",
+    },
+
+    elegantComfort: {
+      title: "Eleganter Komfort",
+      description:
+        "Eine raffinierte Balance aus Struktur, Komfort und Eleganz.",
+    },
+  },
+
+  fr: {
+    premiumQuality: {
+      title: "Qualité premium",
+      description:
+        "Des tissus sélectionnés et des finitions raffinées.",
+    },
+
+    exquisiteCraftsmanship: {
+      title: "Savoir-faire d'exception",
+      description:
+        "Un artisanat indien traditionnel, raffiné dans chaque détail.",
+    },
+
+    gracefulComfort: {
+      title: "Confort et grâce",
+      description:
+        "Pensé pour un mouvement naturel et une élégance fluide.",
+    },
+
+    lightweightComfort: {
+      title: "Confort léger",
+      description:
+        "Une construction légère pour une liberté de mouvement naturelle.",
+    },
+
+    comfortableTailoring: {
+      title: "Confection confortable",
+      description:
+        "Une confection raffinée pensée pour accompagner vos mouvements.",
+    },
+
+    timelessElegance: {
+      title: "Élégance intemporelle",
+      description:
+        "Une silhouette conçue pour rester belle au-delà de l'occasion.",
+    },
+
+    elegantFinish: {
+      title: "Finition élégante",
+      description:
+        "Une finition contemporaine raffinée et subtile.",
+    },
+
+    modernElegance: {
+      title: "Élégance moderne",
+      description:
+        "Une élégance contemporaine au caractère indien intemporel.",
+    },
+
+    regalElegance: {
+      title: "Élégance royale",
+      description:
+        "Une expression raffinée de la cérémonie et de la modernité.",
+    },
+
+    quietLuxury: {
+      title: "Luxe discret",
+      description:
+        "Une expression sobre et sophistiquée du luxe.",
+    },
+
+    bridalComfort: {
+      title: "Confort de la mariée",
+      description:
+        "Créé pour associer confort et élégance pendant la célébration.",
+    },
+
+    modernRoyalty: {
+      title: "Royauté moderne",
+      description:
+        "Une interprétation raffinée de la royauté cérémonielle contemporaine.",
+    },
+
+    contemporaryElegance: {
+      title: "Élégance contemporaine",
+      description:
+        "Une silhouette moderne inspirée du savoir-faire traditionnel.",
+    },
+
+    comfortableStructure: {
+      title: "Structure confortable",
+      description:
+        "Une construction raffinée pensée pour un confort naturel.",
+    },
+
+    elegantComfort: {
+      title: "Confort élégant",
+      description:
+        "Un équilibre raffiné entre structure, confort et élégance.",
+    },
+  },
+
+  it: {
+    premiumQuality: {
+      title: "Qualità premium",
+      description:
+        "Tessuti selezionati e finiture raffinate.",
+    },
+
+    exquisiteCraftsmanship: {
+      title: "Artigianalità raffinata",
+      description:
+        "Artigianalità indiana tradizionale curata in ogni dettaglio.",
+    },
+
+    gracefulComfort: {
+      title: "Comfort e grazia",
+      description:
+        "Pensato per un movimento naturale e un'eleganza fluida.",
+    },
+
+    lightweightComfort: {
+      title: "Comfort leggero",
+      description:
+        "Una struttura leggera per una libertà di movimento naturale.",
+    },
+
+    comfortableTailoring: {
+      title: "Sartoria confortevole",
+      description:
+        "Una sartoria raffinata pensata per accompagnare il movimento.",
+    },
+
+    timelessElegance: {
+      title: "Eleganza senza tempo",
+      description:
+        "Una silhouette creata per rimanere bella oltre l'occasione.",
+    },
+
+    elegantFinish: {
+      title: "Finitura elegante",
+      description:
+        "Una raffinata finitura contemporanea e discreta.",
+    },
+
+    modernElegance: {
+      title: "Eleganza moderna",
+      description:
+        "Eleganza contemporanea con un carattere indiano senza tempo.",
+    },
+
+    regalElegance: {
+      title: "Eleganza regale",
+      description:
+        "Una raffinata espressione della cerimonia e della regalità moderna.",
+    },
+
+    quietLuxury: {
+      title: "Lusso discreto",
+      description:
+        "Un'espressione sobria e sofisticata del lusso.",
+    },
+
+    bridalComfort: {
+      title: "Comfort da sposa",
+      description:
+        "Creato per unire comfort ed eleganza durante la celebrazione.",
+    },
+
+    modernRoyalty: {
+      title: "Regalità moderna",
+      description:
+        "Una raffinata interpretazione della regalità cerimoniale contemporanea.",
+    },
+
+    contemporaryElegance: {
+      title: "Eleganza contemporanea",
+      description:
+        "Una silhouette moderna ispirata all'artigianalità tradizionale.",
+    },
+
+    comfortableStructure: {
+      title: "Struttura confortevole",
+      description:
+        "Una struttura raffinata progettata per il comfort naturale.",
+    },
+
+    elegantComfort: {
+      title: "Comfort elegante",
+      description:
+        "Un equilibrio raffinato tra struttura, comfort ed eleganza.",
+    },
   },
 };
 
@@ -333,7 +696,10 @@ const lehengaProducts: Record<
   "royal-maroon": {
     titleKey: productText("royalMaroon", "title"),
     eyebrowKey: productText("royalMaroon", "eyebrow"),
-    descriptionKey: productText("royalMaroon", "description"),
+    descriptionKey: productText(
+      "royalMaroon",
+      "description",
+    ),
     longDescriptionKey: productText(
       "royalMaroon",
       "longDescription",
@@ -367,7 +733,10 @@ const lehengaProducts: Record<
     background: "#FBF7F3",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -386,7 +755,10 @@ const lehengaProducts: Record<
   "ivory-garden": {
     titleKey: productText("ivoryGarden", "title"),
     eyebrowKey: productText("ivoryGarden", "eyebrow"),
-    descriptionKey: productText("ivoryGarden", "description"),
+    descriptionKey: productText(
+      "ivoryGarden",
+      "description",
+    ),
     longDescriptionKey: productText(
       "ivoryGarden",
       "longDescription",
@@ -420,7 +792,10 @@ const lehengaProducts: Record<
     background: "#FBF9F5",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -439,7 +814,10 @@ const lehengaProducts: Record<
   "blush-pink": {
     titleKey: productText("blushPink", "title"),
     eyebrowKey: productText("blushPink", "eyebrow"),
-    descriptionKey: productText("blushPink", "description"),
+    descriptionKey: productText(
+      "blushPink",
+      "description",
+    ),
     longDescriptionKey: productText(
       "blushPink",
       "longDescription",
@@ -473,7 +851,10 @@ const lehengaProducts: Record<
     background: "#FCF8F7",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -492,7 +873,10 @@ const lehengaProducts: Record<
   "golden-tissue": {
     titleKey: productText("goldenTissue", "title"),
     eyebrowKey: productText("goldenTissue", "eyebrow"),
-    descriptionKey: productText("goldenTissue", "description"),
+    descriptionKey: productText(
+      "goldenTissue",
+      "description",
+    ),
     longDescriptionKey: productText(
       "goldenTissue",
       "longDescription",
@@ -526,7 +910,10 @@ const lehengaProducts: Record<
     background: "#FCF8F1",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -591,7 +978,10 @@ const sherwaniProducts: Record<
     background: "#FBF8F2",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -610,7 +1000,10 @@ const sherwaniProducts: Record<
   "royal-sand": {
     titleKey: productText("royalSand", "title"),
     eyebrowKey: productText("royalSand", "eyebrow"),
-    descriptionKey: productText("royalSand", "description"),
+    descriptionKey: productText(
+      "royalSand",
+      "description",
+    ),
     longDescriptionKey: productText(
       "royalSand",
       "longDescription",
@@ -644,7 +1037,10 @@ const sherwaniProducts: Record<
     background: "#FCF8F1",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -715,7 +1111,10 @@ const sherwaniProducts: Record<
     background: "#F7F8F8",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -786,7 +1185,10 @@ const sherwaniProducts: Record<
     background: "#FBF8F1",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -842,7 +1244,10 @@ const sherwaniProducts: Record<
     background: "#FBF9F4",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -859,7 +1264,10 @@ const sherwaniProducts: Record<
   },
 
   "mocha-textured": {
-    titleKey: productText("mochaTextured", "title"),
+    titleKey: productText(
+      "mochaTextured",
+      "title",
+    ),
     eyebrowKey: productText(
       "mochaTextured",
       "eyebrow",
@@ -901,7 +1309,10 @@ const sherwaniProducts: Record<
     background: "#FAF7F2",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -918,7 +1329,10 @@ const sherwaniProducts: Record<
   },
 
   "classic-beige": {
-    titleKey: productText("classicBeige", "title"),
+    titleKey: productText(
+      "classicBeige",
+      "title",
+    ),
     eyebrowKey: productText(
       "classicBeige",
       "eyebrow",
@@ -960,7 +1374,10 @@ const sherwaniProducts: Record<
     background: "#FBF8F3",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -1022,7 +1439,10 @@ const sherwaniProducts: Record<
     background: "#F7F7F7",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -1050,7 +1470,10 @@ const sareeProducts: Record<
   "royal-red": {
     titleKey: productText("royalRed", "title"),
     eyebrowKey: productText("royalRed", "eyebrow"),
-    descriptionKey: productText("royalRed", "description"),
+    descriptionKey: productText(
+      "royalRed",
+      "description",
+    ),
     longDescriptionKey: productText(
       "royalRed",
       "longDescription",
@@ -1084,7 +1507,10 @@ const sareeProducts: Record<
     background: "#FBF7F3",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -1140,7 +1566,10 @@ const sareeProducts: Record<
     background: "#FBF8F2",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -1196,7 +1625,10 @@ const sareeProducts: Record<
     background: "#FCF8F7",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -1258,7 +1690,10 @@ const sareeProducts: Record<
     background: "#F8FAF7",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -1329,7 +1764,10 @@ const sareeProducts: Record<
     background: "#FBF8F2",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -1400,7 +1838,10 @@ const sareeProducts: Record<
     background: "#F7F8F9",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -1428,7 +1869,8 @@ const collections: Record<
   lehengas: {
     titleKey: "collections.lehengas.title",
     eyebrowKey: "collections.lehengas.eyebrow",
-    descriptionKey: "collections.lehengas.description",
+    descriptionKey:
+      "collections.lehengas.description",
     longDescriptionKey:
       "collections.lehengas.longDescription",
 
@@ -1463,7 +1905,10 @@ const collections: Record<
     background: "#FBF7F3",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -1481,7 +1926,8 @@ const collections: Record<
 
   sherwanis: {
     titleKey: "collections.sherwanis.title",
-    eyebrowKey: "collections.sherwanis.eyebrow",
+    eyebrowKey:
+      "collections.sherwanis.eyebrow",
     descriptionKey:
       "collections.sherwanis.description",
     longDescriptionKey:
@@ -1518,7 +1964,10 @@ const collections: Record<
     background: "#FBF8F2",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -1537,7 +1986,8 @@ const collections: Record<
   sarees: {
     titleKey: "collections.sarees.title",
     eyebrowKey: "collections.sarees.eyebrow",
-    descriptionKey: "collections.sarees.description",
+    descriptionKey:
+      "collections.sarees.description",
     longDescriptionKey:
       "collections.sarees.longDescription",
 
@@ -1572,7 +2022,10 @@ const collections: Record<
     background: "#FBF7F3",
 
     features: [
-      { icon: "leaf", featureKey: "premiumQuality" },
+      {
+        icon: "leaf",
+        featureKey: "premiumQuality",
+      },
       {
         icon: "diamond",
         featureKey: "exquisiteCraftsmanship",
@@ -1673,15 +2126,15 @@ function AccordionRow({
   children: ReactNode;
 }) {
   return (
-    <div className="border-b border-black/7 last:border-b-0">
+    <div className="group border-b border-black/7 last:border-b-0">
       <button
         type="button"
         onClick={onClick}
-        className="flex w-full items-center justify-between px-5 py-5 text-left transition-colors duration-300 hover:bg-black/2"
+        className="flex w-full items-center justify-between px-5 py-5 text-left transition-all duration-500 hover:-translate-y-0.5 hover:bg-black/2"
         aria-expanded={open}
       >
         <span className="flex items-center gap-4">
-          <span className="flex h-8 w-8 items-center justify-center">
+          <span className="flex h-8 w-8 items-center justify-center transition-transform duration-500 group-hover:scale-110">
             {icon}
           </span>
 
@@ -1690,17 +2143,19 @@ function AccordionRow({
           </span>
         </span>
 
-        {open ? (
-          <ChevronUp
-            size={18}
-            strokeWidth={1}
-          />
-        ) : (
-          <Plus
-            size={18}
-            strokeWidth={1}
-          />
-        )}
+        <span className="transition-transform duration-500">
+          {open ? (
+            <ChevronUp
+              size={18}
+              strokeWidth={1}
+            />
+          ) : (
+            <Plus
+              size={18}
+              strokeWidth={1}
+            />
+          )}
+        </span>
       </button>
 
       <div
@@ -1812,16 +2267,15 @@ function CollectionDetailPage() {
   ========================================================== */
 
   const pathLanguage =
-    location.pathname.split("/")[1]?.toLowerCase() ||
-    "";
+    location.pathname
+      .split("/")[1]
+      ?.toLowerCase() || "";
 
-  const i18nLanguage =
-    (
-      i18n.language ||
-      "en"
-    )
-      .split("-")[0]
-      .toLowerCase();
+  const i18nLanguage = (
+    i18n.language || "en"
+  )
+    .split("-")[0]
+    .toLowerCase();
 
   const language: SupportedLanguage =
     SUPPORTED_LANGUAGES.includes(
@@ -2021,11 +2475,7 @@ function CollectionDetailPage() {
   };
 
   /* ==========================================================
-     LANGUAGE-SPECIFIC UI LABELS
-     
-     These are intentionally handled here so that an English
-     value accidentally left inside fr.json / it.json / ta.json
-     cannot appear on the website.
+     LOCALIZED LABELS
   ========================================================== */
 
   const uiLabels: Record<
@@ -2065,36 +2515,58 @@ function CollectionDetailPage() {
     }
   > = {
     en: {
-      visitInstagram: "Visit Our Instagram",
-      shareProduct: "Visit Our Instagram",
-      exploreLehengas: "Explore Lehengas",
-      exploreSherwanis: "Explore Sherwanis",
-      exploreSarees: "Explore Sarees",
-      exploreCollection: "Explore Collection",
-      productDetails: "Product Details",
-      contactStylist: "Contact Our Stylist",
+      visitInstagram:
+        "Visit Our Instagram",
+      shareProduct:
+        "Visit Our Instagram",
+      exploreLehengas:
+        "Explore Lehengas",
+      exploreSherwanis:
+        "Explore Sherwanis",
+      exploreSarees:
+        "Explore Sarees",
+      exploreCollection:
+        "Explore Collection",
+      productDetails:
+        "Product Details",
+      contactStylist:
+        "Contact Our Stylist",
       stylistDescription:
         "Our stylist team can help you with sizing, styling, colour coordination and appointment availability.",
-      bookAppointment: "Book an Appointment",
-      productDeclaration: "Product Information",
+      bookAppointment:
+        "Book an Appointment",
+      productDeclaration:
+        "Product Information",
       productDeclarationText:
         "Each Muhurtham piece is presented as a considered occasionwear creation. Variations in embroidery, texture and finish may occur as part of the craftsmanship.",
-      chatWhatsapp: "Chat with us on WhatsApp",
+      chatWhatsapp:
+        "Chat with us on WhatsApp",
       category: "Category",
       reference: "Reference",
       collection: "Collection",
-      backToLehengas: "Back to Lehengas",
-      backToSherwanis: "Back to Sherwanis",
-      backToSarees: "Back to Sarees",
-      backToCollections: "Back to Collections",
-      backToCollection: "Back to Collection",
-      viewImage: "View Image",
-      nextImage: "Next Image",
-      previousImage: "Previous Image",
-      zoomImage: "Zoom Image",
-      imagePreview: "Image Preview",
+      backToLehengas:
+        "Back to Lehengas",
+      backToSherwanis:
+        "Back to Sherwanis",
+      backToSarees:
+        "Back to Sarees",
+      backToCollections:
+        "Back to Collections",
+      backToCollection:
+        "Back to Collection",
+      viewImage:
+        "View Image",
+      nextImage:
+        "Next Image",
+      previousImage:
+        "Previous Image",
+      zoomImage:
+        "Zoom Image",
+      imagePreview:
+        "Image Preview",
       close: "Close",
-      pieceNotFound: "Piece Not Found",
+      pieceNotFound:
+        "Piece Not Found",
       requestedPieceNotFound:
         "The requested collection piece could not be found.",
       instagram: "Instagram",
@@ -2152,14 +2624,12 @@ function CollectionDetailPage() {
         "Bild vergrößern",
       imagePreview:
         "Bildvorschau",
-      close:
-        "Schließen",
+      close: "Schließen",
       pieceNotFound:
         "Stück nicht gefunden",
       requestedPieceNotFound:
         "Das angeforderte Stück konnte nicht gefunden werden.",
-      instagram:
-        "Instagram",
+      instagram: "Instagram",
       whatsappMessage:
         "Hallo Muhurtham Collection, ich interessiere mich für dieses Stück.",
     },
@@ -2214,14 +2684,12 @@ function CollectionDetailPage() {
         "Agrandir l’image",
       imagePreview:
         "Aperçu de l’image",
-      close:
-        "Fermer",
+      close: "Fermer",
       pieceNotFound:
         "Pièce introuvable",
       requestedPieceNotFound:
         "La pièce demandée est introuvable.",
-      instagram:
-        "Instagram",
+      instagram: "Instagram",
       whatsappMessage:
         "Bonjour Muhurtham Collection, cette pièce m’intéresse.",
     },
@@ -2276,14 +2744,12 @@ function CollectionDetailPage() {
         "Ingrandisci immagine",
       imagePreview:
         "Anteprima immagine",
-      close:
-        "Chiudi",
+      close: "Chiudi",
       pieceNotFound:
         "Articolo non trovato",
       requestedPieceNotFound:
         "L'articolo richiesto non è stato trovato.",
-      instagram:
-        "Instagram",
+      instagram: "Instagram",
       whatsappMessage:
         "Ciao Muhurtham Collection, sono interessato a questo capo.",
     },
@@ -2430,7 +2896,7 @@ function CollectionDetailPage() {
                   `/${language}/lehengas`,
                 );
               }}
-              className="mt-8 border border-ink px-7 py-4 text-[9px] uppercase tracking-[0.22em] transition-all duration-300 hover:bg-ink hover:text-white"
+              className="mt-8 border border-ink px-7 py-4 text-[9px] uppercase tracking-[0.22em] transition-all duration-500 hover:-translate-y-1 hover:bg-ink hover:text-white"
             >
               {labels.backToCollection}
             </button>
@@ -2492,7 +2958,7 @@ function CollectionDetailPage() {
     );
 
   /* ==========================================================
-     FIXED LOCALIZED LABELS
+     LABELS
   ========================================================== */
 
   const productDetailsLabel =
@@ -2515,10 +2981,6 @@ function CollectionDetailPage() {
 
   /* ==========================================================
      EXPLORE LABEL
-     
-     IMPORTANT:
-     Do NOT use translateString() here because an English
-     value in the JSON can override the fallback.
   ========================================================== */
 
   const getExploreLabel = (): string => {
@@ -2616,6 +3078,34 @@ function CollectionDetailPage() {
     detail.images[
       safeSelectedImage
     ];
+
+  /* ==========================================================
+     BROKEN IMAGE HANDLER
+  ========================================================== */
+
+  const handleImageError = (
+    event: SyntheticEvent<HTMLImageElement>,
+    fallbackImage?: string,
+  ) => {
+    const image =
+      event.currentTarget;
+
+    if (
+      fallbackImage &&
+      image.dataset.fallbackUsed !==
+        "true"
+    ) {
+      image.dataset.fallbackUsed =
+        "true";
+
+      image.src =
+        fallbackImage;
+
+      return;
+    }
+
+    image.style.opacity = "0";
+  };
 
   /* ==========================================================
      IMAGE NAVIGATION
@@ -2722,8 +3212,10 @@ function CollectionDetailPage() {
   const themeStyle = {
     "--product-accent":
       detail.accent,
+
     "--product-accent-light":
       detail.accentLight,
+
     "--product-accent-dark":
       detail.accentDark,
   } as CSSProperties;
@@ -2734,6 +3226,7 @@ function CollectionDetailPage() {
       style={{
         backgroundColor:
           detail.background,
+
         ...themeStyle,
       }}
     >
@@ -2750,7 +3243,7 @@ function CollectionDetailPage() {
                 getBackPath(),
               )
             }
-            className="group inline-flex items-center gap-3 text-[9px] font-medium uppercase tracking-[0.22em] transition-colors duration-300"
+            className="group inline-flex items-center gap-3 text-[9px] font-medium uppercase tracking-[0.22em] transition-all duration-500 hover:-translate-x-0.5"
             style={{
               color:
                 detail.accentDark,
@@ -2759,7 +3252,7 @@ function CollectionDetailPage() {
             <ArrowLeft
               size={15}
               strokeWidth={1}
-              className="transition-transform duration-300 group-hover:-translate-x-1"
+              className="transition-transform duration-500 group-hover:-translate-x-1"
             />
 
             {backLabel}
@@ -2807,7 +3300,7 @@ function CollectionDetailPage() {
                               index,
                             )
                           }
-                          className={`relative h-23 w-17 overflow-hidden rounded-lg border bg-white p-0.5 transition-all duration-500 ${
+                          className={`group relative h-23 w-17 overflow-hidden rounded-lg border bg-white p-0.5 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg ${
                             safeSelectedImage ===
                             index
                               ? "shadow-lg"
@@ -2831,7 +3324,15 @@ function CollectionDetailPage() {
                             alt={`${title} ${
                               index + 1
                             }`}
-                            className="h-full w-full rounded object-cover"
+                            className="h-full w-full rounded object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                            onError={(
+                              event,
+                            ) =>
+                              handleImageError(
+                                event,
+                                detail.images[0],
+                              )
+                            }
                             loading={
                               index ===
                               0
@@ -2848,7 +3349,7 @@ function CollectionDetailPage() {
                       onClick={
                         nextImage
                       }
-                      className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition-all duration-300 hover:scale-105"
+                      className="group flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition-all duration-500 hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg"
                       style={{
                         color:
                           detail.accentDark,
@@ -2860,12 +3361,17 @@ function CollectionDetailPage() {
                       <ChevronDown
                         size={18}
                         strokeWidth={1}
+                        className="transition-transform duration-300 group-hover:translate-y-0.5"
                       />
                     </button>
                   </div>
                 )}
 
-                <div className="relative min-w-0 flex-1 overflow-hidden rounded-2xl bg-[#E9E2D8]">
+                {/* =================================================
+                    MAIN IMAGE
+                ================================================= */}
+
+                <div className="group relative min-w-0 flex-1 overflow-hidden rounded-2xl bg-[#E9E2D8] shadow-[0_18px_50px_rgba(0,0,0,0.06)]">
                   {currentImage && (
                     <img
                       key={
@@ -2875,13 +3381,21 @@ function CollectionDetailPage() {
                         currentImage
                       }
                       alt={title}
-                      className="min-h-140 w-full object-cover object-center transition-transform duration-1000 hover:scale-[1.015] sm:min-h-175 lg:min-h-195"
+                      className="min-h-140 w-full object-cover object-center transition-transform duration-1400 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04] sm:min-h-175 lg:min-h-195"
+                      onError={(
+                        event,
+                      ) =>
+                        handleImageError(
+                          event,
+                          detail.images[0],
+                        )
+                      }
                     />
                   )}
 
                   <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/10 via-transparent to-transparent" />
 
-                  <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1.5 text-[8px] uppercase tracking-[0.18em] text-black/55 backdrop-blur">
+                  <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1.5 text-[8px] uppercase tracking-[0.18em] text-black/55 backdrop-blur transition-all duration-500 group-hover:bg-white">
                     {String(
                       safeSelectedImage +
                         1,
@@ -2905,7 +3419,7 @@ function CollectionDetailPage() {
                         true,
                       )
                     }
-                    className="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-300 hover:scale-105"
+                    className="group/zoom absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-500 hover:-translate-y-1 hover:scale-105"
                     style={{
                       color:
                         detail.accentDark,
@@ -2917,18 +3431,19 @@ function CollectionDetailPage() {
                     <Search
                       size={17}
                       strokeWidth={1.2}
+                      className="transition-transform duration-500 group-hover/zoom:scale-110"
                     />
                   </button>
 
                   {imageCount >
                     1 && (
-                    <div className="absolute top-5 right-5 flex gap-2">
+                    <div className="absolute right-5 top-5 flex gap-2">
                       <button
                         type="button"
                         onClick={
                           previousImage
                         }
-                        className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-md transition-transform hover:scale-105"
+                        className="group/previous flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-md transition-all duration-500 hover:-translate-y-0.5 hover:scale-105"
                         aria-label={
                           labels.previousImage
                         }
@@ -2938,6 +3453,7 @@ function CollectionDetailPage() {
                           strokeWidth={
                             1
                           }
+                          className="transition-transform duration-300 group-hover/previous:-translate-x-0.5"
                         />
                       </button>
 
@@ -2946,7 +3462,7 @@ function CollectionDetailPage() {
                         onClick={
                           nextImage
                         }
-                        className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-md transition-transform hover:scale-105"
+                        className="group/next flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-md transition-all duration-500 hover:-translate-y-0.5 hover:scale-105"
                         aria-label={
                           labels.nextImage
                         }
@@ -2956,6 +3472,7 @@ function CollectionDetailPage() {
                           strokeWidth={
                             1
                           }
+                          className="transition-transform duration-300 group-hover/next:translate-x-0.5"
                         />
                       </button>
                     </div>
@@ -2963,7 +3480,9 @@ function CollectionDetailPage() {
                 </div>
               </div>
 
-              {/* MOBILE THUMBNAILS */}
+              {/* =================================================
+                  MOBILE THUMBNAILS
+              ================================================= */}
 
               {imageCount >
                 1 && (
@@ -2981,7 +3500,7 @@ function CollectionDetailPage() {
                             index,
                           )
                         }
-                        className="h-20 w-16 shrink-0 overflow-hidden rounded-md border bg-white p-0.5"
+                        className="group h-20 w-16 shrink-0 overflow-hidden rounded-md border bg-white p-0.5 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-md"
                         style={{
                           borderColor:
                             safeSelectedImage ===
@@ -2995,8 +3514,18 @@ function CollectionDetailPage() {
                       >
                         <img
                           src={image}
-                          alt=""
-                          className="h-full w-full rounded object-cover"
+                          alt={`${title} ${
+                            index + 1
+                          }`}
+                          className="h-full w-full rounded object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                          onError={(
+                            event,
+                          ) =>
+                            handleImageError(
+                              event,
+                              detail.images[0],
+                            )
+                          }
                           loading="lazy"
                         />
                       </button>
@@ -3013,7 +3542,7 @@ function CollectionDetailPage() {
             <div className="flex flex-col px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-16 xl:px-20">
               {/* EYEBROW */}
 
-              <div className="flex items-center gap-3">
+              <div className="group/eyebrow flex items-center gap-3">
                 <Sparkles
                   size={21}
                   strokeWidth={1}
@@ -3021,10 +3550,11 @@ function CollectionDetailPage() {
                     color:
                       detail.accent,
                   }}
+                  className="transition-transform duration-500 group-hover/eyebrow:rotate-12 group-hover/eyebrow:scale-110"
                 />
 
                 <span
-                  className="text-[9px] uppercase tracking-[0.28em]"
+                  className="text-[9px] uppercase tracking-[0.28em] transition-all duration-500"
                   style={{
                     color:
                       detail.accentDark,
@@ -3036,7 +3566,7 @@ function CollectionDetailPage() {
 
               {/* TITLE */}
 
-              <h1 className="mt-6 max-w-2xl font-display text-4xl leading-[1.12] text-ink sm:text-5xl lg:text-[52px]">
+              <h1 className="mt-6 max-w-2xl font-display text-4xl leading-[1.12] text-ink transition-transform duration-700 hover:translate-x-0.5 sm:text-5xl lg:text-[52px]">
                 {title}
               </h1>
 
@@ -3044,7 +3574,7 @@ function CollectionDetailPage() {
 
               <div className="my-7 flex items-center gap-3">
                 <span
-                  className="h-px w-16"
+                  className="h-px w-16 transition-all duration-700 hover:w-20"
                   style={{
                     backgroundColor:
                       detail.accent,
@@ -3052,7 +3582,7 @@ function CollectionDetailPage() {
                 />
 
                 <span
-                  className="h-2.5 w-2.5 rotate-45 border"
+                  className="h-2.5 w-2.5 rotate-45 border transition-transform duration-700 hover:rotate-90"
                   style={{
                     borderColor:
                       detail.accent,
@@ -3060,7 +3590,7 @@ function CollectionDetailPage() {
                 />
 
                 <span
-                  className="h-px w-16"
+                  className="h-px w-16 transition-all duration-700 hover:w-20"
                   style={{
                     backgroundColor:
                       detail.accent,
@@ -3071,12 +3601,14 @@ function CollectionDetailPage() {
               {/* DESCRIPTION */}
 
               {description && (
-                <p className="max-w-2xl text-[14px] leading-7 text-black/55 sm:text-[15px]">
+                <p className="max-w-2xl text-[14px] leading-7 text-black/55">
                   {description}
                 </p>
               )}
 
-              {/* FEATURES */}
+              {/* =================================================
+                  FEATURES
+              ================================================= */}
 
               <div className="mt-7 grid grid-cols-2 overflow-hidden rounded-xl border border-black/7 sm:grid-cols-4">
                 {detail.features.map(
@@ -3084,12 +3616,25 @@ function CollectionDetailPage() {
                     feature,
                     index,
                   ) => {
+                    const fallback =
+                      featureFallbacks[
+                        currentLanguage
+                      ][
+                        feature
+                          .featureKey
+                      ] ??
+                      featureFallbacks
+                        .en[
+                        feature
+                          .featureKey
+                      ];
+
                     const featureTitle =
                       translateString(
                         featureTitleText(
                           feature.featureKey,
                         ),
-                        "",
+                        fallback.title,
                       );
 
                     const featureDescription =
@@ -3097,13 +3642,13 @@ function CollectionDetailPage() {
                         featureDescriptionText(
                           feature.featureKey,
                         ),
-                        "",
+                        fallback.description,
                       );
 
                     return (
                       <div
                         key={`${feature.featureKey}-${index}`}
-                        className={`flex min-h-30 flex-col items-center justify-center px-3 py-5 text-center ${
+                        className={`group relative flex min-h-30 flex-col items-center justify-center overflow-hidden px-3 py-5 text-center transition-all duration-500 hover:-translate-y-1 hover:bg-white/80 hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)] ${
                           index !==
                           detail.features
                             .length -
@@ -3117,37 +3662,45 @@ function CollectionDetailPage() {
                             : ""
                         }`}
                       >
-                        <FeatureIcon
-                          type={
-                            feature.icon
+                        <span className="transition-transform duration-500 ease-out group-hover:-translate-y-1 group-hover:scale-110">
+                          <FeatureIcon
+                            type={
+                              feature.icon
+                            }
+                            color={
+                              detail.accent
+                            }
+                          />
+                        </span>
+
+                        <p className="mt-4 text-[11px] font-medium transition-transform duration-500 group-hover:-translate-y-0.5">
+                          {
+                            featureTitle
                           }
-                          color={
-                            detail.accent
+                        </p>
+
+                        <p className="mt-1 max-w-30 text-[9px] leading-4 text-black/45 transition-colors duration-500 group-hover:text-black/60">
+                          {
+                            featureDescription
                           }
+                        </p>
+
+                        <span
+                          className="pointer-events-none absolute bottom-0 left-1/2 h-px w-0 -translate-x-1/2 transition-all duration-700 group-hover:w-12"
+                          style={{
+                            backgroundColor:
+                              detail.accent,
+                          }}
                         />
-
-                        {featureTitle && (
-                          <p className="mt-4 text-[11px] font-medium">
-                            {
-                              featureTitle
-                            }
-                          </p>
-                        )}
-
-                        {featureDescription && (
-                          <p className="mt-1 max-w-30 text-[9px] leading-4 text-black/45">
-                            {
-                              featureDescription
-                            }
-                          </p>
-                        )}
                       </div>
                     );
                   },
                 )}
               </div>
 
-              {/* WHATSAPP */}
+              {/* =================================================
+                  WHATSAPP
+              ================================================= */}
 
               <a
                 href={
@@ -3155,14 +3708,16 @@ function CollectionDetailPage() {
                 }
                 target="_blank"
                 rel="noreferrer"
-                className="group mt-7 flex min-h-15.5 items-center justify-between rounded-xl px-6 text-white shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-0.5"
+                className="group mt-7 flex min-h-15.5 items-center justify-between rounded-xl px-6 text-white shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-[0_16px_38px_rgba(0,0,0,0.16)]"
                 style={{
                   backgroundColor:
                     detail.accentDark,
                 }}
               >
                 <span className="flex items-center gap-4">
-                  <WhatsAppIcon />
+                  <span className="transition-transform duration-500 group-hover:scale-110">
+                    <WhatsAppIcon />
+                  </span>
 
                   <span className="text-[11px] font-medium uppercase tracking-[0.14em]">
                     {
@@ -3182,7 +3737,7 @@ function CollectionDetailPage() {
                   ACCORDIONS
               ================================================= */}
 
-              <div className="mt-4 overflow-hidden rounded-xl border border-black/7 bg-white/45">
+              <div className="mt-4 overflow-hidden rounded-xl border border-black/7 bg-white/45 shadow-[0_8px_25px_rgba(0,0,0,0.02)]">
                 {/* PRODUCT DETAILS */}
 
                 <AccordionRow
@@ -3262,7 +3817,7 @@ function CollectionDetailPage() {
                           ) => (
                             <div
                               key={`${item}-${index}`}
-                              className="flex items-start gap-3"
+                              className="flex items-start gap-3 transition-transform duration-300 hover:translate-x-1"
                             >
                               <span
                                 className="mt-2 h-1 w-1 shrink-0 rounded-full"
@@ -3318,7 +3873,7 @@ function CollectionDetailPage() {
 
                   <Link
                     to={`/${language}/appointment`}
-                    className="mt-4 inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.16em]"
+                    className="group/appointment mt-4 inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.16em] transition-all duration-500 hover:translate-x-1"
                     style={{
                       color:
                         detail.accentDark,
@@ -3331,6 +3886,7 @@ function CollectionDetailPage() {
                     <ArrowUpRight
                       size={13}
                       strokeWidth={1}
+                      className="transition-transform duration-500 group-hover/appointment:translate-x-1 group-hover/appointment:-translate-y-1"
                     />
                   </Link>
                 </AccordionRow>
@@ -3379,7 +3935,7 @@ function CollectionDetailPage() {
             <div className="mx-auto flex max-w-375 flex-col items-center">
               <div className="flex w-full max-w-md items-center gap-3">
                 <span
-                  className="h-px flex-1"
+                  className="h-px flex-1 transition-all duration-700"
                   style={{
                     backgroundColor:
                       `${detail.accent}55`,
@@ -3397,7 +3953,7 @@ function CollectionDetailPage() {
                 </span>
 
                 <span
-                  className="h-px flex-1"
+                  className="h-px flex-1 transition-all duration-700"
                   style={{
                     backgroundColor:
                       `${detail.accent}55`,
@@ -3410,7 +3966,7 @@ function CollectionDetailPage() {
                 onClick={
                   handleInstagram
                 }
-                className="mt-6 flex h-12 w-12 items-center justify-center rounded-full border bg-white shadow-[0_7px_20px_rgba(0,0,0,0.07)] transition-all duration-300 hover:-translate-y-1"
+                className="group mt-6 flex h-12 w-12 items-center justify-center rounded-full border bg-white shadow-[0_7px_20px_rgba(0,0,0,0.07)] transition-all duration-500 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_12px_28px_rgba(0,0,0,0.10)]"
                 style={{
                   borderColor:
                     `${detail.accent}35`,
@@ -3421,7 +3977,9 @@ function CollectionDetailPage() {
                   labels.instagram
                 }
               >
-                <InstagramIcon />
+                <span className="transition-transform duration-500 group-hover:scale-110">
+                  <InstagramIcon />
+                </span>
               </button>
             </div>
           </div>
@@ -3441,7 +3999,7 @@ function CollectionDetailPage() {
                 getBackPath(),
               )
             }
-            className="group inline-flex items-center gap-3 text-[9px] font-medium uppercase tracking-[0.2em]"
+            className="group inline-flex items-center gap-3 text-[9px] font-medium uppercase tracking-[0.2em] transition-all duration-500 hover:-translate-x-1"
             style={{
               color:
                 detail.accentDark,
@@ -3458,7 +4016,7 @@ function CollectionDetailPage() {
 
           <Link
             to={`/${language}/${detail.explorePath}`}
-            className="group inline-flex items-center gap-4 border px-7 py-3.5 text-[9px] font-medium uppercase tracking-[0.2em] transition-all duration-500"
+            className="group inline-flex items-center gap-4 border px-7 py-3.5 text-[9px] font-medium uppercase tracking-[0.2em] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(0,0,0,0.06)]"
             style={{
               borderColor:
                 detail.accentDark,
@@ -3521,7 +4079,7 @@ function CollectionDetailPage() {
                   false,
                 )
               }
-              className="absolute right-5 top-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-black"
+              className="group absolute right-5 top-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-black transition-all duration-500 hover:scale-105 hover:bg-white"
               aria-label={
                 labels.close
               }
@@ -3529,6 +4087,7 @@ function CollectionDetailPage() {
               <X
                 size={19}
                 strokeWidth={1.2}
+                className="transition-transform duration-500 group-hover:rotate-90"
               />
             </button>
 
@@ -3542,7 +4101,7 @@ function CollectionDetailPage() {
                   event.stopPropagation();
                   previousImage();
                 }}
-                className="absolute left-4 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/90 p-3 text-black md:flex"
+                className="group absolute left-4 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/90 p-3 text-black transition-all duration-500 hover:scale-105 hover:bg-white md:flex"
                 aria-label={
                   labels.previousImage
                 }
@@ -3550,6 +4109,7 @@ function CollectionDetailPage() {
                 <ArrowLeft
                   size={20}
                   strokeWidth={1}
+                  className="transition-transform duration-300 group-hover:-translate-x-0.5"
                 />
               </button>
             )}
@@ -3559,11 +4119,19 @@ function CollectionDetailPage() {
                 currentImage
               }
               alt={title}
-              className="max-h-[90vh] max-w-[92vw] rounded-xl object-contain shadow-2xl"
+              className="max-h-[90vh] max-w-[92vw] rounded-xl object-contain shadow-2xl transition-transform duration-700 hover:scale-[1.01]"
               onClick={(
                 event,
               ) =>
                 event.stopPropagation()
+              }
+              onError={(
+                event,
+              ) =>
+                handleImageError(
+                  event,
+                  detail.images[0],
+                )
               }
             />
 
@@ -3577,7 +4145,7 @@ function CollectionDetailPage() {
                   event.stopPropagation();
                   nextImage();
                 }}
-                className="absolute right-4 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/90 p-3 text-black md:flex"
+                className="group absolute right-4 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/90 p-3 text-black transition-all duration-500 hover:scale-105 hover:bg-white md:flex"
                 aria-label={
                   labels.nextImage
                 }
@@ -3585,6 +4153,7 @@ function CollectionDetailPage() {
                 <ArrowRight
                   size={20}
                   strokeWidth={1}
+                  className="transition-transform duration-300 group-hover:translate-x-0.5"
                 />
               </button>
             )}
@@ -3600,7 +4169,7 @@ function CollectionDetailPage() {
                     event.stopPropagation();
                     previousImage();
                   }}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-black"
+                  className="group flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-black transition-all duration-500 hover:scale-105"
                   aria-label={
                     labels.previousImage
                   }
@@ -3608,6 +4177,7 @@ function CollectionDetailPage() {
                   <ArrowLeft
                     size={17}
                     strokeWidth={1}
+                    className="transition-transform duration-300 group-hover:-translate-x-0.5"
                   />
                 </button>
 
@@ -3619,7 +4189,7 @@ function CollectionDetailPage() {
                     event.stopPropagation();
                     nextImage();
                   }}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-black"
+                  className="group flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-black transition-all duration-500 hover:scale-105"
                   aria-label={
                     labels.nextImage
                   }
@@ -3627,6 +4197,7 @@ function CollectionDetailPage() {
                   <ArrowRight
                     size={17}
                     strokeWidth={1}
+                    className="transition-transform duration-300 group-hover:translate-x-0.5"
                   />
                 </button>
               </div>
