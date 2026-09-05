@@ -9,7 +9,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import HeroSection from "../components/home/HeroSection";
 
@@ -32,7 +32,7 @@ type SupportedLanguage =
    SECTION FADE ANIMATION
 ============================================================ */
 
-const sectionReveal = {
+const sectionReveal: Variants = {
   hidden: {
     opacity: 0,
     y: 36,
