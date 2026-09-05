@@ -137,7 +137,6 @@ function Header() {
     "de",
     "fr",
     "it",
-    "ta",
   ];
 
   const language = supportedLanguages.includes(

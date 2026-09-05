@@ -23,7 +23,6 @@ type Category =
 
 type SupportedLanguage =
   | "en"
-  | "ta"
   | "fr"
   | "de"
   | "it";
@@ -63,7 +62,7 @@ const lehengas: Lehenga[] = [
     translationKey: "ivoryGarden",
     slug: "ivory-garden",
     category: "bridal",
-    image: "/images/lehenga-wedding.png",
+    image: "/images/lehenga-collection.png",
   },
   {
     id: 3,
@@ -79,7 +78,7 @@ const lehengas: Lehenga[] = [
     translationKey: "goldenTissue",
     slug: "golden-tissue",
     category: "occasion",
-    image: "/images/lehenga-collection.png",
+    image: "/images/lehenga-wedding.png",
   },
 ];
 
@@ -93,7 +92,6 @@ const categoryFallbacks: Record<
 > = {
   all: {
     en: "All",
-    ta: "அனைத்தும்",
     fr: "Tous",
     de: "Alle",
     it: "Tutti",
@@ -101,7 +99,6 @@ const categoryFallbacks: Record<
 
   bridal: {
     en: "Bridal",
-    ta: "மணமகள்",
     fr: "Mariée",
     de: "Braut",
     it: "Sposa",
@@ -109,7 +106,6 @@ const categoryFallbacks: Record<
 
   occasion: {
     en: "Occasion",
-    ta: "விழா",
     fr: "Cérémonie",
     de: "Anlass",
     it: "Occasione",
@@ -131,7 +127,6 @@ const productFallbacks: Record<
   royalMaroon: {
     title: {
       en: "Royal Maroon",
-      ta: "ராயல் மரூன்",
       fr: "Maroon Royal",
       de: "Königliches Maroon",
       it: "Maroon Regale",
@@ -139,7 +134,6 @@ const productFallbacks: Record<
 
     category: {
       en: "Bridal",
-      ta: "மணமகள்",
       fr: "Mariée",
       de: "Braut",
       it: "Sposa",
@@ -147,7 +141,6 @@ const productFallbacks: Record<
 
     description: {
       en: "A richly embroidered bridal lehenga in deep ceremonial maroon.",
-      ta: "ஆழமான மரூன் நிறத்தில் செழுமையான எம்பிராய்டரி அலங்காரத்துடன் உருவாக்கப்பட்ட மணமகள் லெஹங்கா.",
       fr: "Un lehenga de mariée richement brodé dans un profond maroon cérémoniel.",
       de: "Ein reich bestickter Braut-Lehenga in tiefem, festlichem Maroon.",
       it: "Un lehenga da sposa riccamente ricamato in un profondo maroon cerimoniale.",
@@ -157,7 +150,6 @@ const productFallbacks: Record<
   ivoryGarden: {
     title: {
       en: "Ivory Garden",
-      ta: "ஐவரி கார்டன்",
       fr: "Jardin Ivoire",
       de: "Elfenbeingarten",
       it: "Giardino d'Avorio",
@@ -165,7 +157,6 @@ const productFallbacks: Record<
 
     category: {
       en: "Bridal",
-      ta: "மணமகள்",
       fr: "Mariée",
       de: "Braut",
       it: "Sposa",
@@ -173,7 +164,6 @@ const productFallbacks: Record<
 
     description: {
       en: "Soft ivory embroidery shaped for an elegant bridal silhouette.",
-      ta: "நேர்த்தியான மணமகள் தோற்றத்திற்காக வடிவமைக்கப்பட்ட மென்மையான ஐவரி எம்பிராய்டரி.",
       fr: "Une broderie ivoire délicate conçue pour une silhouette de mariée élégante.",
       de: "Sanfte Elfenbein-Stickerei für eine elegante Brautsilhouette.",
       it: "Morbidi ricami color avorio pensati per un'elegante silhouette da sposa.",
@@ -183,7 +173,6 @@ const productFallbacks: Record<
   blushPink: {
     title: {
       en: "Blush Pink",
-      ta: "பிளஷ் பிங்க்",
       fr: "Rose Poudré",
       de: "Blush Pink",
       it: "Rosa Cipria",
@@ -191,7 +180,6 @@ const productFallbacks: Record<
 
     category: {
       en: "Occasion",
-      ta: "விழா",
       fr: "Cérémonie",
       de: "Anlass",
       it: "Occasione",
@@ -199,7 +187,6 @@ const productFallbacks: Record<
 
     description: {
       en: "A delicate occasion lehenga with graceful detailing and movement.",
-      ta: "நேர்த்தியான அலங்கார விவரங்களுடனும் அழகான அசைவுடனும் வடிவமைக்கப்பட்ட விழா லெஹங்கா.",
       fr: "Un lehenga de cérémonie délicat aux détails raffinés et au mouvement gracieux.",
       de: "Ein zarter Anlass-Lehenga mit eleganten Details und anmutiger Bewegung.",
       it: "Un delicato lehenga da occasione con dettagli raffinati e movimento elegante.",
@@ -209,7 +196,6 @@ const productFallbacks: Record<
   goldenTissue: {
     title: {
       en: "Golden Tissue",
-      ta: "கோல்டன் டிஷ்யூ",
       fr: "Tissu Doré",
       de: "Goldenes Gewebe",
       it: "Tessuto Dorato",
@@ -217,7 +203,6 @@ const productFallbacks: Record<
 
     category: {
       en: "Occasion",
-      ta: "விழா",
       fr: "Cérémonie",
       de: "Anlass",
       it: "Occasione",
@@ -225,7 +210,6 @@ const productFallbacks: Record<
 
     description: {
       en: "Luminous golden tissue crafted for unforgettable celebrations.",
-      ta: "மறக்க முடியாத கொண்டாட்டங்களுக்காக உருவாக்கப்பட்ட ஒளிரும் தங்க நிற டிஷ்யூ துணி லெஹங்கா.",
       fr: "Un tissu doré lumineux créé pour des célébrations inoubliables.",
       de: "Leuchtendes goldenes Gewebe für unvergessliche Feierlichkeiten.",
       it: "Un luminoso tessuto dorato creato per celebrazioni indimenticabili.",
@@ -302,47 +286,6 @@ const pageFallbacks: Record<
     emptyEyebrow: "Collection",
     emptyTitle: "No pieces found",
     viewAll: "View All Lehengas",
-  },
-
-  ta: {
-    eyebrow: "முகூர்த்தம் லெஹங்கா தொகுப்பு",
-    title: "லெஹங்காக்கள்",
-
-    description:
-      "கைவினைத்திறன், தனித்துவம் மற்றும் காலத்தால் அழியாத நேர்த்திக்காகத் தேர்ந்தெடுக்கப்பட்ட இந்திய மணமகள் மற்றும் விழா லெஹங்காக்களின் சிறப்பான தொகுப்பு.",
-
-    filter: "வடிகட்டி",
-    sort: "வரிசைப்படுத்து",
-    newest: "புதிய வரவுகள்",
-    oldest: "பழையவை",
-    featured: "சிறப்புத் தேர்வுகள்",
-    pieces: "ஆடைகள்",
-    view: "பார்க்க",
-
-    philosophy: "முகூர்த்தம் தத்துவம்",
-
-    philosophyTitle:
-      "விழாவைத் தாண்டியும் நிலைத்திருக்கும் நேர்த்தி.",
-
-    philosophyDescription:
-      "ஒவ்வொரு ஆடையும் நுணுக்கம், அளவுத்தன்மை மற்றும் காலத்தால் அழியாத இந்திய கைவினைத்திறனை மதித்து தேர்ந்தெடுக்கப்படுகிறது — இன்று நேர்த்தியாகவும் நாளை நினைவாகவும் இருக்கும் ஒரு தொகுப்பை உருவாக்குகிறது.",
-
-    appointmentEyebrow:
-      "உங்கள் முகூர்த்தம்",
-
-    appointmentTitle:
-      "உங்கள் சிறப்பான தருணத்திற்காக உருவாக்கப்பட்ட ஆடையைத் தேர்ந்தெடுக்குங்கள்.",
-
-    appointmentButton:
-      "சந்திப்பு முன்பதிவு செய்யுங்கள்",
-
-    emptyEyebrow: "தொகுப்பு",
-
-    emptyTitle:
-      "ஆடைகள் எதுவும் கிடைக்கவில்லை",
-
-    viewAll:
-      "அனைத்து லெஹங்காக்களையும் பார்க்க",
   },
 
   fr: {
@@ -469,7 +412,6 @@ function resolveLanguage(
 
   if (
     firstSegment === "en" ||
-    firstSegment === "ta" ||
     firstSegment === "fr" ||
     firstSegment === "de" ||
     firstSegment === "it"

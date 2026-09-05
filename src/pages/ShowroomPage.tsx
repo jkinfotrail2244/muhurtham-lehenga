@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import {
-  
   ArrowUpRight,
   Mail,
   MapPin,
@@ -16,7 +15,6 @@ import { useTranslation } from "react-i18next";
 
 type SupportedLanguage =
   | "en"
-  | "ta"
   | "fr"
   | "de"
   | "it";
@@ -56,7 +54,6 @@ function resolveLanguage(
 
   if (
     firstSegment === "en" ||
-    firstSegment === "ta" ||
     firstSegment === "fr" ||
     firstSegment === "de" ||
     firstSegment === "it"
@@ -220,111 +217,6 @@ const showroomTranslations: Record<
 
     since:
       "Since 2020",
-  },
-
-  /* =======================================================
-     TAMIL
-  ======================================================= */
-
-  ta: {
-    eyebrow:
-      "முகூர்த்தம் ஆடைத் தொகுப்பு",
-
-    title:
-      "எங்கள் ஷோரூம்",
-
-    description:
-      "மணமக்கள் மற்றும் குடும்பத்தினர் காலத்தால் அழியாத இந்திய மற்றும் தமிழ் திருமண ஆடைகளை தனிப்பட்ட சூழலில் அனுபவிக்கக்கூடிய சிறப்பு இடம்.",
-
-    appointment:
-      "தனிப்பட்ட சந்திப்பை முன்பதிவு செய்யுங்கள்",
-
-    experienceEyebrow:
-      "முகூர்த்தம் அனுபவம்",
-
-    experienceTitle:
-      "உங்கள் கொண்டாட்டத்தை மையமாகக் கொண்டு உருவாக்கப்பட்ட ஷோரூம்.",
-
-    experienceParagraph1:
-      "முகூர்த்தம் கலெக்ஷன் இந்திய மற்றும் தமிழ் திருமண ஆடைகளுக்காக அர்ப்பணிக்கப்பட்ட பிரத்யேக மணமகள் ஆடை நிலையமாகும். மணமகள், மணமகன் மற்றும் அவர்களின் குடும்பத்தினருக்காக கவனமாகத் தேர்ந்தெடுக்கப்பட்ட ஆடைகளை எங்கள் ஷோரூம் வழங்குகிறது.",
-
-    experienceParagraph2:
-      "ஒவ்வொரு வருகையும் தனிப்பட்ட அனுபவமாக இருக்க வேண்டும் என்பதே எங்கள் நோக்கம். முதல் ஆலோசனையிலிருந்து சரியான ஆடை வடிவத்தைத் தேர்ந்தெடுப்பது வரை, உங்கள் கொண்டாட்டம், உங்கள் பாணி மற்றும் உங்களுக்கு முக்கியமான பாரம்பரியங்களைப் புரிந்துகொள்ள எங்கள் குழு நேரம் ஒதுக்குகிறது.",
-
-    experienceParagraph3:
-      "எங்கள் தொகுப்பு பாரம்பரிய கைவினைத்திறனையும் நவீன நேர்த்தியையும் இணைத்து, உங்கள் திருமணத்தின் அர்த்தமுள்ள தருணங்களுக்கான சிறப்பாகத் தேர்ந்தெடுக்கப்பட்ட அனுபவத்தை உருவாக்குகிறது.",
-
-    arrangeVisit:
-      "உங்கள் வருகையை ஏற்பாடு செய்யுங்கள்",
-
-    stepInside:
-      "உள்ளே வாருங்கள்",
-
-    stepTitle:
-      "முகூர்த்தம்",
-
-    stepSubtitle:
-      "ஆடைத் தொகுப்புகள்",
-
-    stepDescription:
-      "மணமகளின் நேர்த்தி, சிறந்த தையல் மற்றும் காலத்தால் அழியாத இந்திய கைவினைத்திறன் நிறைந்த சிறப்பாகத் தேர்ந்தெடுக்கப்பட்ட உலகத்தை அனுபவியுங்கள்.",
-
-    visitShowroom:
-      "எங்கள் ஷோரூமைப் பார்வையிடுங்கள்",
-
-    location:
-      "டாக்மெர்செல்லன் · சுவிட்சர்லாந்து",
-
-    findUs:
-      "எங்களைக் கண்டறியுங்கள்",
-
-    visitMuhurtham:
-      "முகூர்த்தத்தைப் பார்வையிடுங்கள்",
-
-    showroomDetails:
-      "ஷோரூம் விவரங்கள்",
-
-    experienceInPerson:
-      "நேரில் அனுபவியுங்கள்.",
-
-    showroomDescription:
-      "எங்கள் ஷோரூமில் நீங்கள் எங்கள் ஆடைத் தொகுப்புகளை நேரில் பார்வையிட்டு, உங்கள் விருப்பங்களைப் பற்றி கலந்துரையாடி, உங்கள் கொண்டாட்டத்திற்கான சரியான தோற்றத்தைத் தேர்ந்தெடுக்கலாம்.",
-
-    address:
-      "முகவரி",
-
-    phone:
-      "தொலைபேசி",
-
-    email:
-      "மின்னஞ்சல்",
-
-    openMaps:
-      "Google Maps-ல் திறக்கவும்",
-
-    mapTitle:
-      "முகூர்த்தம் கலெக்ஷன்",
-
-    mapLocation:
-      "டாக்மெர்செல்லன், சுவிட்சர்லாந்து",
-
-    appointmentEyebrow:
-      "உங்கள் முகூர்த்தம்",
-
-    appointmentTitle1:
-      "உங்கள் கொண்டாட்டம்",
-
-    appointmentTitle2:
-      "இங்கே தொடங்குகிறது.",
-
-    appointmentDescription:
-      "முகூர்த்தம் கலெக்ஷனைப் பார்வையிட்டு, எங்கள் மணமகள் மற்றும் மணமகன் ஆடைத் தொகுப்புகளை தனிப்பட்ட சூழலில் அனுபவியுங்கள்.",
-
-    bookAppointment:
-      "சந்திப்பை முன்பதிவு செய்யுங்கள்",
-
-    since:
-      "2020 முதல்",
   },
 
   /* =======================================================
@@ -767,8 +659,6 @@ function ShowroomPage() {
               "
             >
 
-              {/* EYEBROW */}
-
               <p
                 className="
                   mb-5
@@ -785,8 +675,6 @@ function ShowroomPage() {
                 )}
               </p>
 
-              {/* TITLE */}
-
               <h1
                 className="
                   font-serif
@@ -798,16 +686,7 @@ function ShowroomPage() {
                   xl:text-[100px]
                 "
               >
-                {language === "ta" ? (
-                  <>
-                    எங்கள்
-                    <br />
-                    <span className="italic">
-                      ஷோரூம்
-                    </span>
-                  </>
-                ) : (
-                  <>
+                
                     {language === "fr" ? (
                       <>
                         Notre
@@ -841,11 +720,9 @@ function ShowroomPage() {
                         </span>
                       </>
                     )}
-                  </>
-                )}
+                
+                )
               </h1>
-
-              {/* DIVIDER */}
 
               <div className="my-9 flex items-center gap-4">
 
@@ -856,8 +733,6 @@ function ShowroomPage() {
                 <span className="h-px w-16 bg-[#a87850]" />
 
               </div>
-
-              {/* DESCRIPTION */}
 
               <p
                 className="
@@ -874,8 +749,6 @@ function ShowroomPage() {
                   translations.description,
                 )}
               </p>
-
-              {/* APPOINTMENT */}
 
               <Link
                 to={appointmentPath}
@@ -1037,8 +910,6 @@ function ShowroomPage() {
             "
           >
 
-            {/* IMAGE */}
-
             <motion.div
               initial={{
                 opacity: 0,
@@ -1077,8 +948,6 @@ function ShowroomPage() {
                 />
 
               </div>
-
-              {/* SINCE BADGE */}
 
               <div
                 className="
@@ -1127,8 +996,6 @@ function ShowroomPage() {
               </div>
 
             </motion.div>
-
-            {/* CONTENT */}
 
             <motion.div
               initial={{
@@ -1186,8 +1053,6 @@ function ShowroomPage() {
                 {translations.experienceTitle}
               </h2>
 
-              {/* DIVIDER */}
-
               <div className="my-8 flex items-center gap-3">
 
                 <span className="h-px w-14 bg-[#a87850]" />
@@ -1197,8 +1062,6 @@ function ShowroomPage() {
                 <span className="h-px w-14 bg-[#a87850]" />
 
               </div>
-
-              {/* STORY */}
 
               <div
                 className="
@@ -1224,8 +1087,6 @@ function ShowroomPage() {
                 </p>
 
               </div>
-
-              {/* ARRANGE VISIT */}
 
               <Link
                 to={appointmentPath}
@@ -1309,8 +1170,6 @@ function ShowroomPage() {
             "
           >
 
-            {/* IMAGE */}
-
             <img
               src="/images/showroom3.png"
               alt={translations.stepTitle}
@@ -1323,8 +1182,6 @@ function ShowroomPage() {
                 object-center
               "
             />
-
-            {/* EDITORIAL GRADIENT */}
 
             <div
               className="
@@ -1349,10 +1206,6 @@ function ShowroomPage() {
               "
             />
 
-            {/* =================================================
-                LEFT CONTENT
-            ================================================= */}
-
             <div
               className="
                 relative
@@ -1371,8 +1224,6 @@ function ShowroomPage() {
             >
 
               <div className="max-w-135">
-
-                {/* LABEL */}
 
                 <motion.p
                   initial={{
@@ -1401,8 +1252,6 @@ function ShowroomPage() {
                 >
                   {translations.stepInside}
                 </motion.p>
-
-                {/* DIVIDER */}
 
                 <motion.div
                   initial={{
@@ -1446,8 +1295,6 @@ function ShowroomPage() {
 
                 </motion.div>
 
-                {/* MAIN TITLE */}
-
                 <motion.h2
                   initial={{
                     opacity: 0,
@@ -1484,8 +1331,6 @@ function ShowroomPage() {
                   {translations.stepTitle}
                 </motion.h2>
 
-                {/* COLLECTIONS */}
-
                 <motion.p
                   initial={{
                     opacity: 0,
@@ -1515,8 +1360,6 @@ function ShowroomPage() {
                   {translations.stepSubtitle}
                 </motion.p>
 
-                {/* SMALL DIVIDER */}
-
                 <motion.div
                   initial={{
                     opacity: 0,
@@ -1542,8 +1385,6 @@ function ShowroomPage() {
                     bg-[#b17b4d]
                   "
                 />
-
-                {/* DESCRIPTION */}
 
                 <motion.p
                   initial={{
@@ -1573,10 +1414,6 @@ function ShowroomPage() {
                 >
                   {translations.stepDescription}
                 </motion.p>
-
-                {/* =================================================
-                    GOOGLE MAPS CTA
-                ================================================= */}
 
                 <motion.a
                   href={GOOGLE_MAPS_URL}
@@ -1643,8 +1480,6 @@ function ShowroomPage() {
 
             </div>
 
-            {/* FRAME */}
-
             <div
               className="
                 pointer-events-none
@@ -1656,8 +1491,6 @@ function ShowroomPage() {
                 lg:inset-9
               "
             />
-
-            {/* LOCATION */}
 
             <div
               className="
@@ -1707,8 +1540,6 @@ function ShowroomPage() {
       >
 
         <div className="mx-auto max-w-345">
-
-          {/* HEADING */}
 
           <motion.div
             initial={{
@@ -1772,8 +1603,6 @@ function ShowroomPage() {
             </div>
 
           </motion.div>
-
-          {/* INFORMATION + MAP */}
 
           <div
             className="
@@ -1862,6 +1691,7 @@ function ShowroomPage() {
 
                   <div
                     className="
+                      group
                       flex
                       h-11
                       w-11
@@ -1871,12 +1701,22 @@ function ShowroomPage() {
                       border
                       border-[#b89a7d]/40
                       text-[#8e6848]
+                      transition-all
+                      duration-300
+                      hover:border-[#74533C]/60
+                      hover:bg-[#FBF8F3]
                     "
                   >
 
                     <MapPin
                       size={19}
                       strokeWidth={1.3}
+                      className="
+                        transition-transform
+                        duration-300
+                        ease-out
+                        group-hover:scale-125
+                      "
                     />
 
                   </div>
@@ -1916,6 +1756,7 @@ function ShowroomPage() {
 
                   <div
                     className="
+                      group
                       flex
                       h-11
                       w-11
@@ -1925,12 +1766,22 @@ function ShowroomPage() {
                       border
                       border-[#b89a7d]/40
                       text-[#8e6848]
+                      transition-all
+                      duration-300
+                      hover:border-[#74533C]/60
+                      hover:bg-[#FBF8F3]
                     "
                   >
 
                     <Phone
                       size={18}
                       strokeWidth={1.3}
+                      className="
+                        transition-transform
+                        duration-300
+                        ease-out
+                        group-hover:scale-125
+                      "
                     />
 
                   </div>
@@ -1971,6 +1822,7 @@ function ShowroomPage() {
 
                   <div
                     className="
+                      group
                       flex
                       h-11
                       w-11
@@ -1980,12 +1832,22 @@ function ShowroomPage() {
                       border
                       border-[#b89a7d]/40
                       text-[#8e6848]
+                      transition-all
+                      duration-300
+                      hover:border-[#74533C]/60
+                      hover:bg-[#FBF8F3]
                     "
                   >
 
                     <Mail
                       size={18}
                       strokeWidth={1.3}
+                      className="
+                        transition-transform
+                        duration-300
+                        ease-out
+                        group-hover:scale-125
+                      "
                     />
 
                   </div>
@@ -2109,8 +1971,6 @@ function ShowroomPage() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
 
-              {/* MAP LABEL */}
-
               <div
                 className="
                   pointer-events-none
@@ -2212,8 +2072,6 @@ function ShowroomPage() {
           "
         >
 
-          {/* EYEBROW */}
-
           <p
             className="
               mb-5
@@ -2225,8 +2083,6 @@ function ShowroomPage() {
           >
             {translations.appointmentEyebrow}
           </p>
-
-          {/* TITLE */}
 
           <h2
             className="
@@ -2250,8 +2106,6 @@ function ShowroomPage() {
 
           </h2>
 
-          {/* DIVIDER */}
-
           <div
             className="
               mx-auto
@@ -2271,8 +2125,6 @@ function ShowroomPage() {
 
           </div>
 
-          {/* DESCRIPTION */}
-
           <p
             className="
               mx-auto
@@ -2286,8 +2138,6 @@ function ShowroomPage() {
           >
             {translations.appointmentDescription}
           </p>
-
-          {/* BUTTON */}
 
           <Link
             to={appointmentPath}

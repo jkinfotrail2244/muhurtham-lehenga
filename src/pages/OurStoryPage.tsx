@@ -16,7 +16,6 @@ import { useEffect } from "react";
 
 const supportedLanguages = [
   "en",
-  "ta",
   "fr",
   "de",
   "it",
@@ -53,7 +52,6 @@ function OurStoryPage() {
      KEEP I18NEXT IN SYNC WITH URL
 
      /en/our-story
-     /ta/our-story
      /fr/our-story
      /de/our-story
      /it/our-story
@@ -99,13 +97,6 @@ function OurStoryPage() {
 
   /* ==========================================================
      BRAND NAME
-
-     IMPORTANT:
-     The previous version had "Muhurtham Collection" hard-coded.
-
-     Therefore changing the language could never change it.
-
-     We intentionally make the brand display language-aware.
   ========================================================== */
 
   const brandCollectionName: Record<
@@ -113,7 +104,6 @@ function OurStoryPage() {
     string
   > = {
     en: "Muhurtham Collection",
-    ta: "முகூர்த்தம் கலெக்ஷன்",
     fr: "Collection Muhurtham",
     de: "Muhurtham Kollektion",
     it: "Collezione Muhurtham",
@@ -128,7 +118,6 @@ function OurStoryPage() {
     string
   > = {
     en: "Muhurtham",
-    ta: "முகூர்த்தம்",
     fr: "Muhurtham",
     de: "Muhurtham",
     it: "Muhurtham",
@@ -136,11 +125,6 @@ function OurStoryPage() {
 
   /* ==========================================================
      FOUNDER NAME
-
-     Proper names are normally not translated.
-
-     However, because you specifically want Tamil script,
-     Tamil gets a Tamil-script version.
   ========================================================== */
 
   const founderName: Record<
@@ -148,7 +132,6 @@ function OurStoryPage() {
     string
   > = {
     en: "Kavisha Kamalanathan",
-    ta: "கவிஷா கமலாநாதன்",
     fr: "Kavisha Kamalanathan",
     de: "Kavisha Kamalanathan",
     it: "Kavisha Kamalanathan",
@@ -344,9 +327,11 @@ function OurStoryPage() {
 
           {/* THREE PILLARS */}
 
-          <div className="mt-20 grid gap-px overflow-hidden border border-black/7 bg-black/7 md:grid-cols-3">
+          <div className="mt-20 grid gap-px overflow-visible border border-black/7 bg-black/7 md:grid-cols-3">
 
-            {/* CONSULTATIONS */}
+            {/* =================================================
+                PERSONALIZED CONSULTATIONS
+            ================================================= */}
 
             <motion.div
               initial={{
@@ -363,20 +348,77 @@ function OurStoryPage() {
               transition={{
                 duration: 0.7,
               }}
-              className="bg-ivory px-7 py-10 text-center sm:px-10"
+              whileHover={{
+                scale: 1.035,
+                backgroundColor: "#F3E8DE",
+                transition: {
+                  duration: 0.4,
+                  ease: "easeOut",
+                },
+              }}
+              className="
+                group
+                relative
+                z-0
+                cursor-pointer
+                select-none
+                bg-ivory
+                px-7
+                py-10
+                text-center
+                transition-shadow
+                duration-500
+                hover:z-10
+                hover:shadow-[0_15px_40px_rgba(61,43,32,0.08)]
+                sm:px-10
+              "
             >
 
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-brown/30">
+              <div
+                className="
+                  mx-auto
+                  flex
+                  h-12
+                  w-12
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-brown/30
+                  transition-all
+                  duration-400
+                  group-hover:scale-110
+                  group-hover:border-[#A87850]
+                  group-hover:bg-[#A87850]/10
+                "
+              >
 
                 <Heart
                   size={20}
                   strokeWidth={1}
-                  className="text-brown"
+                  className="
+                    text-brown
+                    transition-all
+                    duration-400
+                    group-hover:scale-110
+                    group-hover:text-[#A87850]
+                  "
                 />
 
               </div>
 
-              <h3 className="mt-6 whitespace-pre-line font-display text-2xl">
+              <h3
+                className="
+                  mt-6
+                  whitespace-pre-line
+                  font-display
+                  text-[27px]
+                  leading-[1.08]
+                  transition-colors
+                  duration-400
+                  group-hover:text-[#8E5B3C]
+                "
+              >
                 {text(
                   "pillars.consultations.title",
                   "Personalized\nConsultations",
@@ -392,7 +434,9 @@ function OurStoryPage() {
 
             </motion.div>
 
-            {/* UNIQUE COLLECTION */}
+            {/* =================================================
+                A UNIQUE COLLECTION
+            ================================================= */}
 
             <motion.div
               initial={{
@@ -410,20 +454,77 @@ function OurStoryPage() {
                 duration: 0.7,
                 delay: 0.1,
               }}
-              className="bg-ivory px-7 py-10 text-center sm:px-10"
+              whileHover={{
+                scale: 1.035,
+                backgroundColor: "#F1E7D5",
+                transition: {
+                  duration: 0.4,
+                  ease: "easeOut",
+                },
+              }}
+              className="
+                group
+                relative
+                z-0
+                cursor-pointer
+                select-none
+                bg-ivory
+                px-7
+                py-10
+                text-center
+                transition-shadow
+                duration-500
+                hover:z-10
+                hover:shadow-[0_15px_40px_rgba(61,43,32,0.08)]
+                sm:px-10
+              "
             >
 
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-brown/30">
+              <div
+                className="
+                  mx-auto
+                  flex
+                  h-12
+                  w-12
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-brown/30
+                  transition-all
+                  duration-400
+                  group-hover:scale-110
+                  group-hover:border-[#A17B4F]
+                  group-hover:bg-[#A17B4F]/10
+                "
+              >
 
                 <Diamond
                   size={20}
                   strokeWidth={1}
-                  className="text-brown"
+                  className="
+                    text-brown
+                    transition-all
+                    duration-400
+                    group-hover:scale-110
+                    group-hover:text-[#A17B4F]
+                  "
                 />
 
               </div>
 
-              <h3 className="mt-6 whitespace-pre-line font-display text-2xl">
+              <h3
+                className="
+                  mt-6
+                  whitespace-pre-line
+                  font-display
+                  text-[27px]
+                  leading-[1.08]
+                  transition-colors
+                  duration-400
+                  group-hover:text-[#A17B4F]
+                "
+              >
                 {text(
                   "pillars.collection.title",
                   "A Unique\nCollection",
@@ -439,7 +540,9 @@ function OurStoryPage() {
 
             </motion.div>
 
-            {/* VISION */}
+            {/* =================================================
+                OUR VISION
+            ================================================= */}
 
             <motion.div
               initial={{
@@ -457,20 +560,77 @@ function OurStoryPage() {
                 duration: 0.7,
                 delay: 0.2,
               }}
-              className="bg-ivory px-7 py-10 text-center sm:px-10"
+              whileHover={{
+                scale: 1.035,
+                backgroundColor: "#EEE1DC",
+                transition: {
+                  duration: 0.4,
+                  ease: "easeOut",
+                },
+              }}
+              className="
+                group
+                relative
+                z-0
+                cursor-pointer
+                select-none
+                bg-ivory
+                px-7
+                py-10
+                text-center
+                transition-shadow
+                duration-500
+                hover:z-10
+                hover:shadow-[0_15px_40px_rgba(61,43,32,0.08)]
+                sm:px-10
+              "
             >
 
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-brown/30">
+              <div
+                className="
+                  mx-auto
+                  flex
+                  h-12
+                  w-12
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-brown/30
+                  transition-all
+                  duration-400
+                  group-hover:scale-110
+                  group-hover:border-[#9B665D]
+                  group-hover:bg-[#9B665D]/10
+                "
+              >
 
                 <Sparkles
                   size={20}
                   strokeWidth={1}
-                  className="text-brown"
+                  className="
+                    text-brown
+                    transition-all
+                    duration-400
+                    group-hover:scale-110
+                    group-hover:text-[#9B665D]
+                  "
                 />
 
               </div>
 
-              <h3 className="mt-6 whitespace-pre-line font-display text-2xl">
+              <h3
+                className="
+                  mt-6
+                  whitespace-pre-line
+                  font-display
+                  text-[27px]
+                  leading-[1.08]
+                  transition-colors
+                  duration-400
+                  group-hover:text-[#9B665D]
+                "
+              >
                 {text(
                   "pillars.vision.title",
                   "Our\nVision",
@@ -725,21 +885,6 @@ function OurStoryPage() {
                 )}
               </p>
 
-              {/* =================================================
-                  FOUNDER NAME
-
-                  FIXED:
-                  Previously hard-coded:
-                  Kavisha Kamalanathan
-
-                  Now:
-                  English  -> Kavisha Kamalanathan
-                  Tamil    -> கவிஷா கமலாநாதன்
-                  French   -> Kavisha Kamalanathan
-                  German   -> Kavisha Kamalanathan
-                  Italian  -> Kavisha Kamalanathan
-              ================================================= */}
-
               <h3 className="luxury-heading mt-5 text-4xl sm:text-5xl">
                 {founderName[language]}
               </h3>
@@ -777,8 +922,6 @@ function OurStoryPage() {
                     "“Every celebration deserves something unforgettable.”",
                   )}
                 </p>
-
-                {/* FOUNDER NAME UNDER QUOTE */}
 
                 <p className="mt-3 text-[8px] uppercase tracking-[0.25em] text-brown">
                   {founderName[language]}
@@ -822,7 +965,9 @@ function OurStoryPage() {
 
           <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
-            {/* AUTHENTICITY */}
+            {/* =================================================
+                AUTHENTICITY
+            ================================================= */}
 
             <motion.div
               initial={{
@@ -839,16 +984,55 @@ function OurStoryPage() {
               transition={{
                 duration: 0.6,
               }}
-              className="text-center"
+              whileHover={{
+                scale: 1.035,
+                backgroundColor: "#E9E9DD",
+                transition: {
+                  duration: 0.4,
+                  ease: "easeOut",
+                },
+              }}
+              className="
+                group
+                relative
+                cursor-pointer
+                select-none
+                rounded-sm
+                px-5
+                py-6
+                text-center
+                transition-shadow
+                duration-500
+                hover:z-10
+                hover:shadow-[0_15px_40px_rgba(61,43,32,0.08)]
+              "
             >
 
               <Leaf
                 size={25}
                 strokeWidth={1}
-                className="mx-auto text-brown"
+                className="
+                  mx-auto
+                  text-brown
+                  transition-all
+                  duration-500
+                  ease-out
+                  group-hover:scale-125
+                  group-hover:text-[#6F7255]
+                "
               />
 
-              <h3 className="mt-5 font-display text-2xl">
+              <h3
+                className="
+                  mt-5
+                  font-display
+                  text-[27px]
+                  leading-[1.08]
+                  transition-colors
+                  duration-500
+                  group-hover:text-[#6F7255]
+                "
+              >
                 {text(
                   "promise.authenticity.title",
                   "Authenticity",
@@ -864,7 +1048,9 @@ function OurStoryPage() {
 
             </motion.div>
 
-            {/* EXCLUSIVITY */}
+            {/* =================================================
+                EXCLUSIVITY
+            ================================================= */}
 
             <motion.div
               initial={{
@@ -882,16 +1068,55 @@ function OurStoryPage() {
                 duration: 0.6,
                 delay: 0.1,
               }}
-              className="text-center"
+              whileHover={{
+                scale: 1.035,
+                backgroundColor: "#F1E7D5",
+                transition: {
+                  duration: 0.4,
+                  ease: "easeOut",
+                },
+              }}
+              className="
+                group
+                relative
+                cursor-pointer
+                select-none
+                rounded-sm
+                px-5
+                py-6
+                text-center
+                transition-shadow
+                duration-500
+                hover:z-10
+                hover:shadow-[0_15px_40px_rgba(61,43,32,0.08)]
+              "
             >
 
               <Diamond
                 size={25}
                 strokeWidth={1}
-                className="mx-auto text-brown"
+                className="
+                  mx-auto
+                  text-brown
+                  transition-all
+                  duration-500
+                  ease-out
+                  group-hover:scale-125
+                  group-hover:text-[#A17B4F]
+                "
               />
 
-              <h3 className="mt-5 font-display text-2xl">
+              <h3
+                className="
+                  mt-5
+                  font-display
+                  text-[27px]
+                  leading-[1.08]
+                  transition-colors
+                  duration-500
+                  group-hover:text-[#A17B4F]
+                "
+              >
                 {text(
                   "promise.exclusivity.title",
                   "Exclusivity",
@@ -907,7 +1132,9 @@ function OurStoryPage() {
 
             </motion.div>
 
-            {/* PERSONAL SERVICE */}
+            {/* =================================================
+                PERSONAL SERVICE
+            ================================================= */}
 
             <motion.div
               initial={{
@@ -925,16 +1152,55 @@ function OurStoryPage() {
                 duration: 0.6,
                 delay: 0.2,
               }}
-              className="text-center"
+              whileHover={{
+                scale: 1.035,
+                backgroundColor: "#EEE1DC",
+                transition: {
+                  duration: 0.4,
+                  ease: "easeOut",
+                },
+              }}
+              className="
+                group
+                relative
+                cursor-pointer
+                select-none
+                rounded-sm
+                px-5
+                py-6
+                text-center
+                transition-shadow
+                duration-500
+                hover:z-10
+                hover:shadow-[0_15px_40px_rgba(61,43,32,0.08)]
+              "
             >
 
               <Heart
                 size={25}
                 strokeWidth={1}
-                className="mx-auto text-brown"
+                className="
+                  mx-auto
+                  text-brown
+                  transition-all
+                  duration-500
+                  ease-out
+                  group-hover:scale-125
+                  group-hover:text-[#9B665D]
+                "
               />
 
-              <h3 className="mt-5 font-display text-2xl">
+              <h3
+                className="
+                  mt-5
+                  font-display
+                  text-[27px]
+                  leading-[1.08]
+                  transition-colors
+                  duration-500
+                  group-hover:text-[#9B665D]
+                "
+              >
                 {text(
                   "promise.personalService.title",
                   "Personal Service",
@@ -950,7 +1216,9 @@ function OurStoryPage() {
 
             </motion.div>
 
-            {/* TIMELESS ELEGANCE */}
+            {/* =================================================
+                TIMELESS ELEGANCE
+            ================================================= */}
 
             <motion.div
               initial={{
@@ -968,16 +1236,55 @@ function OurStoryPage() {
                 duration: 0.6,
                 delay: 0.3,
               }}
-              className="text-center"
+              whileHover={{
+                scale: 1.035,
+                backgroundColor: "#E9E1DC",
+                transition: {
+                  duration: 0.4,
+                  ease: "easeOut",
+                },
+              }}
+              className="
+                group
+                relative
+                cursor-pointer
+                select-none
+                rounded-sm
+                px-5
+                py-6
+                text-center
+                transition-shadow
+                duration-500
+                hover:z-10
+                hover:shadow-[0_15px_40px_rgba(61,43,32,0.08)]
+              "
             >
 
               <Sparkles
                 size={25}
                 strokeWidth={1}
-                className="mx-auto text-brown"
+                className="
+                  mx-auto
+                  text-brown
+                  transition-all
+                  duration-500
+                  ease-out
+                  group-hover:scale-125
+                  group-hover:text-[#876552]
+                "
               />
 
-              <h3 className="mt-5 font-display text-2xl">
+              <h3
+                className="
+                  mt-5
+                  font-display
+                  text-[27px]
+                  leading-[1.08]
+                  transition-colors
+                  duration-500
+                  group-hover:text-[#876552]
+                "
+              >
                 {text(
                   "promise.timelessElegance.title",
                   "Timeless Elegance",
@@ -999,259 +1306,278 @@ function OurStoryPage() {
 
       </section>
 
-    {/* =====================================================
-    FINAL CTA
-===================================================== */}
+      {/* =====================================================
+          FINAL CTA
+      ===================================================== */}
 
-<section className="bg-ink px-6 py-24 text-white sm:py-28 lg:py-32">
+      <section className="bg-ink px-6 py-24 text-white sm:py-28 lg:py-32">
 
-  <div className="page-container">
+        <div className="page-container">
 
-    <motion.div
-      initial={{
-        opacity: 0,
-        y: 25,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-      }}
-      transition={{
-        duration: 0.8,
-      }}
-      className="text-center"
-    >
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 25,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
+            className="text-center"
+          >
 
-      {/* =================================================
-          EYEBROW
-      ================================================= */}
+            {/* =================================================
+                EYEBROW
+            ================================================= */}
 
-      <p
-        className="
-          text-[9px]
-          font-medium
-          uppercase
-          tracking-[0.32em]
-          text-[#C8B09B]!
-        "
-      >
-        {text(
-          "cta.eyebrow",
-          "YOUR MUHURTHAM",
-        )}
-      </p>
+            <p
+              className="
+                text-[9px]
+                font-medium
+                uppercase
+                tracking-[0.32em]
+                text-[#C8B09B]!
+              "
+            >
+              {text(
+                "cta.eyebrow",
+                "YOUR MUHURTHAM",
+              )}
+            </p>
 
-      {/* =================================================
-          CTA TITLE
-          IMPORTANT:
-          !text-center prevents luxury-heading from
-          overriding the alignment.
-      ================================================= */}
+            {/* =================================================
+                CTA TITLE
+            ================================================= */}
 
-     <div className="flex w-full flex-col items-center">
-  <h2
-    className="
-      mx-auto
-      mt-5
-      w-full
-      max-w-4xl
-      text-center
-      font-display
-      text-4xl
-      font-normal
-      leading-[1.05]
-      tracking-normal
-      text-white!
-      sm:text-5xl
-      lg:text-6xl
-    "
-  >
-    {text("cta.title", "Your celebration\nbegins here.").split("\n").map(
-      (line, index) => (
-        <span key={index} className="block text-center">
-          {line}
-        </span>
-      ),
-    )}
-  </h2>
-</div>
+            <div className="flex w-full flex-col items-center">
 
-      {/* =================================================
-          DESCRIPTION
-      ================================================= */}
+              <h2
+                className="
+                  mx-auto
+                  mt-5
+                  w-full
+                  max-w-4xl
+                  text-center
+                  font-display
+                  text-4xl
+                  font-normal
+                  leading-[1.05]
+                  tracking-normal
+                  text-white!
+                  sm:text-5xl
+                  lg:text-6xl
+                "
+              >
 
-      <p
-        className="
-          mx-auto
-          mt-6
-          max-w-xl
-          text-center
-          text-sm
-          leading-7
-          text-white/70!
-        "
-      >
-        {text(
-          "cta.description",
-          "Discover a collection thoughtfully created for life's most meaningful celebrations.",
-        )}
-      </p>
+                {text(
+                  "cta.title",
+                  "Your celebration\nbegins here.",
+                )
+                  .split("\n")
+                  .map(
+                    (
+                      line,
+                      index,
+                    ) => (
+                      <span
+                        key={index}
+                        className="block text-center"
+                      >
+                        {line}
+                      </span>
+                    ),
+                  )}
 
-      {/* =================================================
-          BUTTONS
-      ================================================= */}
+              </h2>
 
-      <div
-        className="
-          mt-9
-          flex
-          flex-col
-          items-center
-          justify-center
-          gap-3
-          sm:flex-row
-        "
-      >
+            </div>
 
-        {/* LEHENGAS */}
+            {/* =================================================
+                DESCRIPTION
+            ================================================= */}
 
-        <Link
-          to={getPath("lehengas")}
-          className="
-            group
-            inline-flex
-            items-center
-            justify-center
-            gap-5
-            border
-            border-brown
-            px-7
-            py-4
-            text-[8px]
-            font-medium
-            uppercase
-            tracking-[0.25em]
-            text-white!
-            transition-all
-            duration-500
-            hover:bg-brown
-            hover:text-white!
-          "
-        >
-          {text(
-            "cta.exploreLehengas",
-            "Explore Lehengas",
-          )}
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-xl
+                text-center
+                text-sm
+                leading-7
+                text-white/70!
+              "
+            >
+              {text(
+                "cta.description",
+                "Discover a collection thoughtfully created for life's most meaningful celebrations.",
+              )}
+            </p>
 
-          <ArrowUpRight
-            size={14}
-            strokeWidth={1}
-            className="
-              text-white!
-              transition-transform
-              duration-500
-              group-hover:translate-x-1
-              group-hover:-translate-y-1
-            "
-          />
-        </Link>
+            {/* =================================================
+                BUTTONS
+            ================================================= */}
 
-        {/* SHERWANIS */}
+            <div
+              className="
+                mt-9
+                flex
+                flex-col
+                items-center
+                justify-center
+                gap-3
+                sm:flex-row
+              "
+            >
 
-        <Link
-          to={getPath("sherwanis")}
-          className="
-            group
-            inline-flex
-            items-center
-            justify-center
-            gap-5
-            border
-            border-brown
-            px-7
-            py-4
-            text-[8px]
-            font-medium
-            uppercase
-            tracking-[0.25em]
-            text-white!
-            transition-all
-            duration-500
-            hover:bg-brown
-            hover:text-white!
-          "
-        >
-          {text(
-            "cta.exploreSherwanis",
-            "Explore Sherwanis",
-          )}
+              {/* LEHENGAS */}
 
-          <ArrowUpRight
-            size={14}
-            strokeWidth={1}
-            className="
-              text-white!
-              transition-transform
-              duration-500
-              group-hover:translate-x-1
-              group-hover:-translate-y-1
-            "
-          />
-        </Link>
+              <Link
+                to={getPath("lehengas")}
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  justify-center
+                  gap-5
+                  border
+                  border-brown
+                  px-7
+                  py-4
+                  text-[8px]
+                  font-medium
+                  uppercase
+                  tracking-[0.25em]
+                  text-white!
+                  transition-all
+                  duration-500
+                  hover:bg-brown
+                  hover:text-white!
+                "
+              >
 
-        {/* APPOINTMENT */}
+                {text(
+                  "cta.exploreLehengas",
+                  "Explore Lehengas",
+                )}
 
-        <Link
-          to={getPath("appointment")}
-          className="
-            group
-            inline-flex
-            items-center
-            justify-center
-            gap-5
-            border
-            border-brown
-            px-7
-            py-4
-            text-[8px]
-            font-medium
-            uppercase
-            tracking-[0.25em]
-            text-white!
-            transition-all
-            duration-500
-            hover:bg-brown
-            hover:text-white!
-          "
-        >
-          {text(
-            "cta.bookAppointment",
-            "Book an Appointment",
-          )}
+                <ArrowUpRight
+                  size={14}
+                  strokeWidth={1}
+                  className="
+                    text-white!
+                    transition-transform
+                    duration-500
+                    group-hover:translate-x-1
+                    group-hover:-translate-y-1
+                  "
+                />
 
-          <ArrowUpRight
-            size={14}
-            strokeWidth={1}
-            className="
-              text-white!
-              transition-transform
-              duration-500
-              group-hover:translate-x-1
-              group-hover:-translate-y-1
-            "
-          />
-        </Link>
+              </Link>
 
-      </div>
+              {/* SHERWANIS */}
 
-    </motion.div>
+              <Link
+                to={getPath("sherwanis")}
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  justify-center
+                  gap-5
+                  border
+                  border-brown
+                  px-7
+                  py-4
+                  text-[8px]
+                  font-medium
+                  uppercase
+                  tracking-[0.25em]
+                  text-white!
+                  transition-all
+                  duration-500
+                  hover:bg-brown
+                  hover:text-white!
+                "
+              >
 
-  </div>
+                {text(
+                  "cta.exploreSherwanis",
+                  "Explore Sherwanis",
+                )}
 
-</section>
+                <ArrowUpRight
+                  size={14}
+                  strokeWidth={1}
+                  className="
+                    text-white!
+                    transition-transform
+                    duration-500
+                    group-hover:translate-x-1
+                    group-hover:-translate-y-1
+                  "
+                />
+
+              </Link>
+
+              {/* APPOINTMENT */}
+
+              <Link
+                to={getPath("appointment")}
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  justify-center
+                  gap-5
+                  border
+                  border-brown
+                  px-7
+                  py-4
+                  text-[8px]
+                  font-medium
+                  uppercase
+                  tracking-[0.25em]
+                  text-white!
+                  transition-all
+                  duration-500
+                  hover:bg-brown
+                  hover:text-white!
+                "
+              >
+
+                {text(
+                  "cta.bookAppointment",
+                  "Book an Appointment",
+                )}
+
+                <ArrowUpRight
+                  size={14}
+                  strokeWidth={1}
+                  className="
+                    text-white!
+                    transition-transform
+                    duration-500
+                    group-hover:translate-x-1
+                    group-hover:-translate-y-1
+                  "
+                />
+
+              </Link>
+
+            </div>
+
+          </motion.div>
+
+        </div>
+
+      </section>
+
     </main>
   );
 }

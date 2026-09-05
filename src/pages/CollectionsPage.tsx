@@ -9,7 +9,6 @@ import { useTranslation } from "react-i18next";
 
 type SupportedLanguage =
   | "en"
-  | "ta"
   | "fr"
   | "de"
   | "it";
@@ -126,7 +125,6 @@ function resolveLanguage(
 
   if (
     firstSegment === "en" ||
-    firstSegment === "ta" ||
     firstSegment === "fr" ||
     firstSegment === "de" ||
     firstSegment === "it"
@@ -246,82 +244,6 @@ const pageFallbacks: Record<
 
     appointmentButton:
       "Book an Appointment",
-  },
-
-  /* =======================================================
-     TAMIL
-  ======================================================= */
-
-  ta: {
-    eyebrow:
-      "முகூர்த்தம் ஆடைத் தொகுப்பு",
-
-    title:
-      "ஆடைத் தொகுப்புகள்",
-
-    description:
-      "காலத்தால் அழியாத பாரம்பரியத்தையும் நவீன நேர்த்தியையும் இணைக்கும் இந்திய விழாக்கால ஆடைகளின் சிறப்பாகத் தேர்ந்தெடுக்கப்பட்ட தொகுப்பு.",
-
-    exploreCollections:
-      "தொகுப்புகளைப் பார்க்க",
-
-    curatedEyebrow:
-      "தேர்ந்தெடுக்கப்பட்ட வகைகள்",
-
-    curatedTitle:
-      "ஒவ்வொரு விழாவிற்கும் பார்க்க",
-
-    main: {
-      lehengas: {
-        title: "லெஹங்காக்கள்",
-
-        description:
-          "மறக்க முடியாத ஒவ்வொரு கொண்டாட்டத்திற்கும் காலத்தால் அழியாத வடிவங்கள், நுணுக்கமான எம்பிராய்டரி மற்றும் சிறந்த கைவினைத்திறன்.",
-      },
-
-      sherwanis: {
-        title: "ஷெர்வானிகள்",
-
-        description:
-          "நவீன மணமகனுக்காக நேர்த்தியான பாரம்பரிய தையல், நுணுக்கமான கைவினைத்திறன் மற்றும் உயர்ந்த பாணியுடன் உருவாக்கப்பட்டவை.",
-      },
-
-      sarees: {
-        title: "புடவைகள்",
-
-        description:
-          "திருமணங்கள் மற்றும் மறக்க முடியாத கொண்டாட்டங்களுக்காக நேர்த்தியான அணிதல், ஆடம்பரமான துணிகள் மற்றும் காலத்தால் அழியாத இந்திய கைவினைத்திறன்.",
-      },
-    },
-
-    categories: {
-      bridalLehengas:
-        "மணமகள் லெஹங்காக்கள்",
-
-      occasionLehengas:
-        "விழா லெஹங்காக்கள்",
-
-      groomSherwanis:
-        "மணமகன் ஷெர்வானிகள்",
-
-      occasionSherwanis:
-        "விழா ஷெர்வானிகள்",
-
-      bridalSarees:
-        "மணமகள் புடவைகள்",
-    },
-
-    explore:
-      "பார்க்க",
-
-    appointmentEyebrow:
-      "உங்கள் முகூர்த்தம்",
-
-    appointmentTitle:
-      "உங்கள் சிறப்பான தருணத்திற்காக உருவாக்கப்பட்ட ஆடையைத் தேர்ந்தெடுக்குங்கள்.",
-
-    appointmentButton:
-      "சந்திப்பு முன்பதிவு செய்யுங்கள்",
   },
 
   /* =======================================================
@@ -575,7 +497,6 @@ function CollectionsPage() {
 
      This ensures:
 
-     /ta/collections -> Tamil
      /fr/collections -> French
      /de/collections -> German
      /it/collections -> Italian

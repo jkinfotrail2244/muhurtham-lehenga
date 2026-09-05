@@ -5,14 +5,12 @@ import en from "./locales/en.json";
 import de from "./locales/de.json";
 import fr from "./locales/fr.json";
 import it from "./locales/it.json";
-import ta from "./locales/ta.json";
 
 export const supportedLanguages = {
   en: "English",
   de: "Deutsch",
   fr: "Français",
   it: "Italiano",
-  ta: "தமிழ்",
 } as const;
 
 export type LanguageCode = keyof typeof supportedLanguages;
@@ -29,9 +27,6 @@ const resources = {
   },
   it: {
     translation: it,
-  },
-  ta: {
-    translation: ta,
   },
 };
 

@@ -18,7 +18,6 @@ import { useTranslation } from "react-i18next";
 
 const supportedLanguages = [
   "en",
-  "ta",
   "fr",
   "de",
   "it",
@@ -75,7 +74,6 @@ const weekDays = [
   {
     key: "mon",
     en: "MON",
-    ta: "திங்",
     fr: "LUN",
     de: "MO",
     it: "LUN",
@@ -83,7 +81,6 @@ const weekDays = [
   {
     key: "tue",
     en: "TUE",
-    ta: "செவ்",
     fr: "MAR",
     de: "DI",
     it: "MAR",
@@ -91,7 +88,6 @@ const weekDays = [
   {
     key: "wed",
     en: "WED",
-    ta: "புத",
     fr: "MER",
     de: "MI",
     it: "MER",
@@ -99,7 +95,6 @@ const weekDays = [
   {
     key: "thu",
     en: "THU",
-    ta: "வியா",
     fr: "JEU",
     de: "DO",
     it: "GIO",
@@ -107,7 +102,6 @@ const weekDays = [
   {
     key: "fri",
     en: "FRI",
-    ta: "வெள்",
     fr: "VEN",
     de: "FR",
     it: "VEN",
@@ -115,7 +109,6 @@ const weekDays = [
   {
     key: "sat",
     en: "SAT",
-    ta: "சனி",
     fr: "SAM",
     de: "SA",
     it: "SAB",
@@ -123,7 +116,6 @@ const weekDays = [
   {
     key: "sun",
     en: "SUN",
-    ta: "ஞாயி",
     fr: "DIM",
     de: "SO",
     it: "DOM",
@@ -140,12 +132,6 @@ type TranslationDictionary = {
 
 /* ============================================================
    COMPLETE APPOINTMENT TRANSLATIONS
-
-   These translations are intentionally kept inside this page
-   as a guaranteed fallback.
-
-   This prevents English text from appearing when one of the
-   JSON translation files is missing an appointment key.
 ============================================================ */
 
 const appointmentTranslations: Record<
@@ -254,118 +240,6 @@ const appointmentTranslations: Record<
     "confirmation.titleLine2": "to welcoming you.",
     "confirmation.message":
       "Thank you, {{name}}. Your appointment request has been received. Our team will contact you shortly to confirm your private consultation.",
-  },
-
-  /* ==========================================================
-     TAMIL
-  ========================================================== */
-
-  ta: {
-    "header.eyebrow": "உங்கள் முகூர்த்தம்",
-    "header.titleLine1": "உங்கள்",
-    "header.titleLine2": "வருகையை பதிவு செய்யுங்கள்",
-    "header.subtitle":
-      "எங்கள் ஷோரூமில் உங்களுக்கென ஒரு நேரத்தை முன்பதிவு செய்யுங்கள்.",
-
-    "progress.step": "படி",
-    "progress.of": "மொத்தம்",
-
-    "step1.eyebrow": "முதல் படி",
-    "step1.title": "சேவையைத் தேர்ந்தெடுக்கவும்",
-
-    "step2.eyebrow": "இரண்டாம் படி",
-    "step2.title": "தேதி மற்றும் நேரத்தைத் தேர்ந்தெடுக்கவும்",
-
-    "step3.eyebrow": "மூன்றாம் படி",
-    "step3.title": "உங்கள் விவரங்கள்",
-
-    "services.bridal.label": "மணப்பெண்",
-    "services.bridal.title": "மணப்பெண் ஆலோசனை",
-    "services.bridal.description":
-      "எங்கள் மணப்பெண் லெஹங்கா தொகுப்புகள், அலங்காரத் தேர்வுகள் மற்றும் திருமணத் தேவைகள் குறித்து உங்களுக்கென வழங்கப்படும் தனிப்பட்ட ஆலோசனை.",
-
-    "services.groom.label": "மணமகன்",
-    "services.groom.title": "மணமகன் ஆலோசனை",
-    "services.groom.description":
-      "நவீன மணமகனுக்காக வடிவமைக்கப்பட்ட ஷெர்வானிகள், திருமண ஆடைகள் மற்றும் அலங்காரத் தேர்வுகளை அறிந்துகொள்ளுங்கள்.",
-
-    "services.bridal-groom.label": "மணப்பெண் & மணமகன்",
-    "services.bridal-groom.title":
-      "மணப்பெண் மற்றும் மணமகன் ஆலோசனை",
-    "services.bridal-groom.description":
-      "மணப்பெண் மற்றும் மணமகன் இருவருக்குமான முழுமையான ஆலோசனை, உங்கள் திருமணக் கொண்டாட்டத்திற்கேற்ப கவனமாகத் தயாரிக்கப்படுகிறது.",
-
-    "services.fitting.label": "தனிப்பட்ட",
-    "services.fitting.title": "தனிப்பட்ட சந்திப்பு",
-    "services.fitting.description":
-      "ஏற்கனவே தேர்ந்தெடுத்துள்ள முகூர்த்தம் கலெக்ஷன் ஆடைக்கான தனிப்பட்ட பொருத்தம், மாற்றங்கள் மற்றும் இறுதி திருத்தங்களுக்கான சந்திப்பு.",
-
-    "calendar.previousMonth": "முந்தைய மாதம்",
-    "calendar.nextMonth": "அடுத்த மாதம்",
-    "calendar.closed": "மூடப்பட்டது",
-
-    "calendar.legend.selected": "தேர்ந்தெடுக்கப்பட்டது",
-    "calendar.legend.available": "கிடைக்கும்",
-    "calendar.legend.unavailable": "கிடைக்காது",
-
-    "time.available": "கிடைக்கும் நேரங்கள்",
-
-    "selection.title": "உங்கள் தேர்வு",
-    "selection.selectDate": "தேதியைத் தேர்ந்தெடுக்கவும்",
-
-    "form.fullName.label": "முழுப் பெயர்",
-    "form.fullName.placeholder":
-      "உங்கள் முழுப் பெயரை உள்ளிடவும்",
-
-    "form.email.label": "மின்னஞ்சல் முகவரி",
-    "form.email.placeholder":
-      "you@example.com",
-
-    "form.phone.label": "தொலைபேசி எண்",
-    "form.phone.placeholder":
-      "+41 79 930 32 37",
-
-    "form.message.label": "கூடுதல் தேவைகள்",
-    "form.message.placeholder":
-      "உங்கள் வருகைக்காக நாங்கள் தயார் செய்ய வேண்டிய ஏதேனும் விஷயங்களைத் தெரிவிக்கவும்...",
-
-    "summary.title": "சந்திப்பு சுருக்கம்",
-    "summary.service": "சேவை",
-    "summary.date": "தேதி",
-    "summary.time": "நேரம்",
-
-    "navigation.back": "பின்செல்",
-    "navigation.next": "அடுத்த படி",
-    "navigation.confirm": "முன்பதிவை உறுதிப்படுத்தவும்",
-
-    "image.privateAtelier": "தனிப்பட்ட அட்லியர்",
-    "image.cardTitleLine1": "தனிப்பட்ட",
-    "image.cardTitleLine2": "அட்லியர்",
-    "image.cardDescription":
-      "எங்கள் மணப்பெண் ஸ்டைலிஸ்ட்களுடன் அமைதியான மற்றும் ஆடம்பரமான சூழலில் ஒருவருக்கொருவர் வழங்கப்படும் தனிப்பட்ட ஆலோசனையை அனுபவியுங்கள்.",
-    "image.mobileDescription":
-      "உங்கள் கொண்டாட்டத்தை மையமாகக் கொண்டு வடிவமைக்கப்பட்ட தனிப்பட்ட ஆலோசனை.",
-
-    "images.mainAlt":
-      "முகூர்த்தம் கலெக்ஷன் மணப்பெண் சந்திப்பு ஷோரூம்",
-    "images.mobileAlt":
-      "முகூர்த்தம் கலெக்ஷன் தனிப்பட்ட மணப்பெண் ஆலோசனை",
-
-    "bottom.titleLine1":
-      "உங்கள் கொண்டாட்டம் தொடங்குவது",
-    "bottom.titleLine2":
-      "ஒரு உரையாடலுடன்.",
-    "bottom.description":
-      "சுவிட்சர்லாந்தின் டாக்மர்செல்லனில் உள்ள எங்கள் ஷோரூமிற்கு வருகை தந்து, இந்திய மற்றும் தமிழ் திருமண ஆடைகளின் கவனமாகத் தேர்ந்தெடுக்கப்பட்ட உலகை அனுபவியுங்கள்.",
-
-    "confirmation.eyebrow":
-      "சந்திப்பு கோரிக்கை பெறப்பட்டது",
-    "confirmation.titleLine1":
-      "உங்களை வரவேற்க",
-    "confirmation.titleLine2":
-      "நாங்கள் ஆவலுடன் காத்திருக்கிறோம்.",
-    "confirmation.message":
-      "நன்றி, {{name}}. உங்கள் சந்திப்பு கோரிக்கை பெறப்பட்டுள்ளது. உங்கள் தனிப்பட்ட ஆலோசனையை உறுதிப்படுத்த எங்கள் குழு விரைவில் உங்களைத் தொடர்புகொள்ளும்.",
   },
 
   /* ==========================================================
@@ -849,11 +723,6 @@ function AppointmentPage() {
 
   /* ==========================================================
      GUARANTEED TRANSLATION HELPER
-
-     IMPORTANT:
-     This no longer falls back to English.
-
-     Every supported language has its own complete dictionary.
   ========================================================== */
 
   const text = (
@@ -875,7 +744,6 @@ function AppointmentPage() {
     string
   > = {
     en: "en-US",
-    ta: "ta-LK",
     fr: "fr-FR",
     de: "de-DE",
     it: "it-IT",
@@ -892,7 +760,6 @@ function AppointmentPage() {
     string
   > = {
     en: "Muhurtham Collection",
-    ta: "முகூர்த்தம் கலெக்ஷன்",
     fr: "Collection Muhurtham",
     de: "Muhurtham Kollektion",
     it: "Collezione Muhurtham",
@@ -903,7 +770,6 @@ function AppointmentPage() {
     string
   > = {
     en: "Muhurtham",
-    ta: "முகூர்த்தம்",
     fr: "Muhurtham",
     de: "Muhurtham",
     it: "Muhurtham",
@@ -1508,6 +1374,10 @@ function AppointmentPage() {
                       </h2>
                     </div>
 
+                    {/* =================================================
+                        SERVICE CARDS
+                    ================================================= */}
+
                     <div className="space-y-4">
                       {services.map(
                         (service) => {
@@ -1516,7 +1386,7 @@ function AppointmentPage() {
                             service.id;
 
                           return (
-                            <button
+                            <motion.button
                               key={service.id}
                               type="button"
                               onClick={() =>
@@ -1524,50 +1394,144 @@ function AppointmentPage() {
                                   service.id,
                                 )
                               }
-                              className={`group w-full border p-5 text-left transition-all duration-300 sm:p-6 ${
+                              whileHover={{
+                                scale: 1.025,
+                                backgroundColor:
+                                  "#F0E1CF",
+                                borderColor:
+                                  "#9A6A3F",
+                              }}
+                              whileTap={{
+                                scale: 0.995,
+                              }}
+                              transition={{
+                                duration: 0.3,
+                                ease: "easeOut",
+                              }}
+                              className={`group relative w-full select-none overflow-hidden border p-5 text-left sm:p-6 ${
                                 active
                                   ? "border-[#8d6038] bg-[#f3e9dc]"
-                                  : "border-[#d9d0c6] bg-transparent hover:border-[#a8896c] hover:bg-[#f8f4ee]"
+                                  : "border-[#d9d0c6] bg-transparent"
                               }`}
                             >
-                              <div className="flex items-start justify-between gap-5">
+                              {/* SUBTLE HOVER OVERLAY */}
+
+                              <motion.span
+                                initial={{
+                                  opacity: 0,
+                                }}
+                                whileHover={{
+                                  opacity: 1,
+                                }}
+                                transition={{
+                                  duration: 0.3,
+                                }}
+                                className="pointer-events-none absolute inset-0 bg-linear-to-r from-[#b98b61]/8 via-transparent to-[#b98b61]/5"
+                              />
+
+                              <div className="relative z-10 flex items-start justify-between gap-5">
+
+                                {/* CONTENT */}
+
                                 <div>
                                   <div className="mb-2 flex items-center gap-3">
-                                    <span className="text-[9px] uppercase tracking-[0.25em] text-[#80644c]">
+                                    <span className="text-[9px] uppercase tracking-[0.25em] text-[#80644c] transition-colors duration-300 group-hover:text-[#6f472c]">
                                       {getServiceLabel(
                                         service.id,
                                       )}
                                     </span>
 
                                     {active && (
-                                      <span className="h-1.5 w-1.5 rounded-full bg-[#8d6038]" />
+                                      <motion.span
+                                        initial={{
+                                          scale: 0,
+                                          opacity: 0,
+                                        }}
+                                        animate={{
+                                          scale: 1,
+                                          opacity: 1,
+                                        }}
+                                        className="h-1.5 w-1.5 rounded-full bg-[#8d6038]"
+                                      />
                                     )}
                                   </div>
 
-                                  <h3 className="font-serif text-xl sm:text-2xl">
+                                  {/* TITLE */}
+
+                                  <motion.h3
+                                    animate={{
+                                      color: active
+                                        ? "#68472E"
+                                        : "#171514",
+                                    }}
+                                    whileHover={{
+                                      color: "#6F472C",
+                                      fontWeight: 500,
+                                    }}
+                                    transition={{
+                                      duration: 0.25,
+                                    }}
+                                    className={`font-serif text-xl transition-all duration-300 sm:text-2xl ${
+                                      active
+                                        ? "font-medium"
+                                        : "font-normal"
+                                    }`}
+                                  >
                                     {getServiceTitle(
                                       service.id,
                                     )}
-                                  </h3>
+                                  </motion.h3>
 
-                                  <p className="mt-2 max-w-142.5 text-sm leading-6 text-[#69615a]">
+                                  {/* DESCRIPTION */}
+
+                                  <p className="mt-2 max-w-142.5 text-sm leading-6 text-[#69615a] transition-colors duration-300 group-hover:text-[#5f4a38]">
                                     {getServiceDescription(
                                       service.id,
                                     )}
                                   </p>
                                 </div>
 
-                                <div
-                                  className={`mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border ${
+                                {/* CHECK CIRCLE */}
+
+                                <motion.div
+                                  animate={{
+                                    scale: active
+                                      ? 1.05
+                                      : 1,
+                                    backgroundColor:
+                                      active
+                                        ? "#8d6038"
+                                        : "rgba(0,0,0,0)",
+                                    borderColor:
+                                      active
+                                        ? "#8d6038"
+                                        : "#b9aaa0",
+                                  }}
+                                  whileHover={{
+                                    scale: 1.16,
+                                    backgroundColor:
+                                      "#8d6038",
+                                    borderColor:
+                                      "#8d6038",
+                                    color: "#ffffff",
+                                  }}
+                                  transition={{
+                                    duration: 0.3,
+                                    ease: "easeOut",
+                                  }}
+                                  className={`mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 ${
                                     active
-                                      ? "border-[#8d6038] bg-[#8d6038] text-white"
-                                      : "border-[#b9aaa0] text-transparent"
+                                      ? "text-white"
+                                      : "text-transparent"
                                   }`}
                                 >
-                                  <Check size={13} />
-                                </div>
+                                  <Check
+                                    size={13}
+                                    strokeWidth={1.8}
+                                  />
+                                </motion.div>
                               </div>
-                            </button>
+                            </motion.button>
                           );
                         },
                       )}

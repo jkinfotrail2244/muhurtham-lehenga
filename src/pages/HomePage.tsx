@@ -19,7 +19,6 @@ import HeroSection from "../components/home/HeroSection";
 
 const supportedLanguages = [
   "en",
-  "ta",
   "fr",
   "de",
   "it",

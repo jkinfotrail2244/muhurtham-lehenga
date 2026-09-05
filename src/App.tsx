@@ -29,9 +29,53 @@ import Header from "./components/layout/Header";
    SUPPORTED LANGUAGES
 ============================================================ */
 
-const languages = ["en", "de", "fr", "it", "ta"] as const;
+const languages = ["en", "de", "fr", "it"] as const;
 
 type Language = (typeof languages)[number];
+
+/* ============================================================
+   SCROLL TO TOP
+============================================================ */
+
+/*
+ * Whenever the route changes, start the new page at the top.
+ *
+ * This prevents a problem where:
+ *
+ * Home
+ *   ↓ user scrolls to bottom
+ *   ↓ clicks Showroom
+ * Showroom opens at the same scroll position
+ *
+ * Instead:
+ *
+ * Home
+ *   ↓ click Showroom
+ * Showroom always opens from the top.
+ */
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    /*
+     * Prevent the browser from restoring the previous
+     * scroll position automatically.
+     */
+    window.history.scrollRestoration = "manual";
+
+    /*
+     * Always start the newly opened route at the top.
+     */
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
+  }, [pathname]);
+
+  return null;
+}
 
 /* ============================================================
    APP CONTENT
@@ -56,9 +100,9 @@ function AppContent() {
              ↓
        /en
 
-       /ta/collections
+       /fr/collections
              ↓
-       /ta
+       /fr
 
      Normal React Router navigation is NOT affected.
 
@@ -117,6 +161,15 @@ function AppContent() {
   return (
     <>
       {/* =====================================================
+          GLOBAL SCROLL MANAGEMENT
+
+          This must be outside Routes so it works for
+          every page in the website.
+      ===================================================== */}
+
+      <ScrollToTop />
+
+      {/* =====================================================
           GLOBAL LOADING SCREEN
       ===================================================== */}
 
@@ -141,7 +194,6 @@ function AppContent() {
       ===================================================== */}
 
       <Routes>
-
         {/* ===================================================
             ROOT
 
@@ -167,14 +219,13 @@ function AppContent() {
             key={language}
             path={`/${language}`}
           >
-
             {/* ===============================================
                 HOME
+
                 /en
                 /de
                 /fr
                 /it
-                /ta
             =============================================== */}
 
             <Route
@@ -367,7 +418,6 @@ function AppContent() {
                 <NotFoundPage />
               }
             />
-
           </Route>
         ))}
 
@@ -381,7 +431,6 @@ function AppContent() {
             <NotFoundPage />
           }
         />
-
       </Routes>
     </>
   );

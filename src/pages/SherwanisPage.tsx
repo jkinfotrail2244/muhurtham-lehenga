@@ -23,7 +23,6 @@ type Category =
 
 type SupportedLanguage =
   | "en"
-  | "ta"
   | "fr"
   | "de"
   | "it";
@@ -133,7 +132,6 @@ const categoryFallbacks: Record<
 > = {
   all: {
     en: "All",
-    ta: "அனைத்தும்",
     fr: "Tous",
     de: "Alle",
     it: "Tutti",
@@ -141,7 +139,6 @@ const categoryFallbacks: Record<
 
   groom: {
     en: "Groom",
-    ta: "மணமகன்",
     fr: "Marié",
     de: "Bräutigam",
     it: "Sposo",
@@ -149,7 +146,6 @@ const categoryFallbacks: Record<
 
   occasion: {
     en: "Occasion",
-    ta: "விழா",
     fr: "Cérémonie",
     de: "Anlass",
     it: "Occasione",
@@ -158,9 +154,7 @@ const categoryFallbacks: Record<
 
 /* ============================================================
    PRODUCT TRANSLATION FALLBACKS
-============================================================ */
-
-const productFallbacks: Record<
+============================================================ */const productFallbacks: Record<
   string,
   {
     title: Record<SupportedLanguage, string>;
@@ -174,7 +168,6 @@ const productFallbacks: Record<
   ivoryHeritage: {
     title: {
       en: "Ivory Heritage",
-      ta: "ஐவரி ஹெரிடேஜ்",
       fr: "Héritage Ivoire",
       de: "Elfenbein Heritage",
       it: "Eredità d'Avorio",
@@ -182,7 +175,6 @@ const productFallbacks: Record<
 
     category: {
       en: "Groom",
-      ta: "மணமகன்",
       fr: "Marié",
       de: "Bräutigam",
       it: "Sposo",
@@ -190,7 +182,6 @@ const productFallbacks: Record<
 
     description: {
       en: "A refined expression of timeless elegance.",
-      ta: "காலத்தால் அழியாத நேர்த்தியின் நுட்பமான வெளிப்பாடு.",
       fr: "Une expression raffinée d'une élégance intemporelle.",
       de: "Ein raffinierter Ausdruck zeitloser Eleganz.",
       it: "Una raffinata espressione di eleganza senza tempo.",
@@ -200,7 +191,6 @@ const productFallbacks: Record<
   royalSand: {
     title: {
       en: "Royal Sand",
-      ta: "ராயல் சாண்ட்",
       fr: "Sable Royal",
       de: "Royal Sand",
       it: "Sabbia Reale",
@@ -208,7 +198,6 @@ const productFallbacks: Record<
 
     category: {
       en: "Groom",
-      ta: "மணமகன்",
       fr: "Marié",
       de: "Bräutigam",
       it: "Sposo",
@@ -216,7 +205,6 @@ const productFallbacks: Record<
 
     description: {
       en: "Warm sand tones for sophisticated celebrations.",
-      ta: "சிறப்பான விழாக்களுக்கான மென்மையான மணல் நிறத் தோற்றம்.",
       fr: "Des tons sable chaleureux pour des célébrations sophistiquées.",
       de: "Warme Sandtöne für stilvolle Feierlichkeiten.",
       it: "Calde tonalità sabbia per celebrazioni sofisticate.",
@@ -226,7 +214,6 @@ const productFallbacks: Record<
   midnightEmbroidery: {
     title: {
       en: "Midnight Embroidery",
-      ta: "மிட்நைட் எம்பிராய்டரி",
       fr: "Broderie Bleu Nuit",
       de: "Mitternachtsstickerei",
       it: "Ricamo Mezzanotte",
@@ -234,7 +221,6 @@ const productFallbacks: Record<
 
     category: {
       en: "Groom",
-      ta: "மணமகன்",
       fr: "Marié",
       de: "Bräutigam",
       it: "Sposo",
@@ -242,7 +228,6 @@ const productFallbacks: Record<
 
     description: {
       en: "Deep tones with considered embroidered detail.",
-      ta: "நுட்பமான எம்பிராய்டரி அலங்காரத்துடன் கூடிய ஆழமான நிறங்கள்.",
       fr: "Des tons profonds rehaussés de détails brodés raffinés.",
       de: "Tiefe Farbtöne mit sorgfältig ausgearbeiteten Stickdetails.",
       it: "Tonalità profonde con raffinati dettagli ricamati.",
@@ -252,7 +237,6 @@ const productFallbacks: Record<
   champagneClassic: {
     title: {
       en: "Champagne Classic",
-      ta: "சாம்பெயின் கிளாசிக்",
       fr: "Champagne Classique",
       de: "Champagner Klassik",
       it: "Champagne Classico",
@@ -260,7 +244,6 @@ const productFallbacks: Record<
 
     category: {
       en: "Occasion",
-      ta: "விழா",
       fr: "Cérémonie",
       de: "Anlass",
       it: "Occasione",
@@ -268,7 +251,6 @@ const productFallbacks: Record<
 
     description: {
       en: "A warm champagne expression for elegant evenings.",
-      ta: "நேர்த்தியான மாலை நிகழ்வுகளுக்கான மென்மையான சாம்பெயின் நிறத் தோற்றம்.",
       fr: "Une expression champagne chaleureuse pour les soirées élégantes.",
       de: "Ein warmer Champagnerton für elegante Abende.",
       it: "Una calda tonalità champagne per serate eleganti.",
@@ -278,7 +260,6 @@ const productFallbacks: Record<
   regalIvory: {
     title: {
       en: "Regal Ivory",
-      ta: "ரீகல் ஐவரி",
       fr: "Ivoire Royal",
       de: "Königliches Elfenbein",
       it: "Avorio Regale",
@@ -286,7 +267,6 @@ const productFallbacks: Record<
 
     category: {
       en: "Groom",
-      ta: "மணமகன்",
       fr: "Marié",
       de: "Bräutigam",
       it: "Sposo",
@@ -294,7 +274,6 @@ const productFallbacks: Record<
 
     description: {
       en: "Traditional detailing with contemporary refinement.",
-      ta: "நவீன நேர்த்தியுடன் இணைந்த பாரம்பரிய அலங்காரம்.",
       fr: "Des détails traditionnels avec une sophistication contemporaine.",
       de: "Traditionelle Details mit zeitgemäßer Raffinesse.",
       it: "Dettagli tradizionali con raffinatezza contemporanea.",
@@ -304,7 +283,6 @@ const productFallbacks: Record<
   mochaTextured: {
     title: {
       en: "Mocha Textured",
-      ta: "மோக்கா டெக்ஸ்சர்ட்",
       fr: "Texture Moka",
       de: "Mokka Textur",
       it: "Texture Moka",
@@ -312,7 +290,6 @@ const productFallbacks: Record<
 
     category: {
       en: "Occasion",
-      ta: "விழா",
       fr: "Cérémonie",
       de: "Anlass",
       it: "Occasione",
@@ -320,7 +297,6 @@ const productFallbacks: Record<
 
     description: {
       en: "Rich mocha tones with understated texture.",
-      ta: "நுட்பமான துணி அமைப்புடன் கூடிய செழுமையான மோக்கா நிறங்கள்.",
       fr: "Des tons moka riches avec une texture subtile.",
       de: "Satte Mokkatöne mit dezenter Textur.",
       it: "Ricche tonalità moka con una texture discreta.",
@@ -330,7 +306,6 @@ const productFallbacks: Record<
   classicBeige: {
     title: {
       en: "Classic Beige",
-      ta: "கிளாசிக் பேஜ்",
       fr: "Beige Classique",
       de: "Klassisches Beige",
       it: "Beige Classico",
@@ -338,7 +313,6 @@ const productFallbacks: Record<
 
     category: {
       en: "Occasion",
-      ta: "விழா",
       fr: "Cérémonie",
       de: "Anlass",
       it: "Occasione",
@@ -346,7 +320,6 @@ const productFallbacks: Record<
 
     description: {
       en: "Quietly luxurious tailoring for every occasion.",
-      ta: "ஒவ்வொரு விழாவிற்கும் ஏற்ற அமைதியான ஆடம்பரத் தையல்.",
       fr: "Une coupe subtilement luxueuse pour chaque occasion.",
       de: "Dezent luxuriöse Schneiderkunst für jeden Anlass.",
       it: "Una sartoria discretamente lussuosa per ogni occasione.",
@@ -356,7 +329,6 @@ const productFallbacks: Record<
   royalCharcoal: {
     title: {
       en: "Royal Charcoal",
-      ta: "ராயல் சார்கோல்",
       fr: "Charbon Royal",
       de: "Royal Anthrazit",
       it: "Carbone Reale",
@@ -364,7 +336,6 @@ const productFallbacks: Record<
 
     category: {
       en: "Groom",
-      ta: "மணமகன்",
       fr: "Marié",
       de: "Bräutigam",
       it: "Sposo",
@@ -372,14 +343,12 @@ const productFallbacks: Record<
 
     description: {
       en: "A commanding silhouette for the modern groom.",
-      ta: "நவீன மணமகனுக்காக உருவாக்கப்பட்ட கம்பீரமான தோற்றம்.",
       fr: "Une silhouette affirmée pour le marié moderne.",
       de: "Eine ausdrucksstarke Silhouette für den modernen Bräutigam.",
       it: "Una silhouette decisa per lo sposo moderno.",
     },
   },
 };
-
 /* ============================================================
    PAGE FALLBACK TRANSLATIONS
 ============================================================ */
@@ -447,40 +416,6 @@ const pageFallbacks: Record<
     emptyEyebrow: "Collection",
     emptyTitle: "No pieces found",
     viewAll: "View All Sherwanis",
-  },
-
-  ta: {
-    eyebrow: "முகூர்த்தம் ஷெர்வானி தொகுப்பு",
-    title: "ஷெர்வானிகள்",
-    description:
-      "கைவினைத்திறன், தனித்துவம் மற்றும் காலத்தால் அழியாத நேர்த்திக்காகத் தேர்ந்தெடுக்கப்பட்ட சிறப்பான இந்திய ஷெர்வானிகளின் தொகுப்பு.",
-
-    filter: "வடிகட்டி",
-    sort: "வரிசைப்படுத்து",
-
-    newest: "புதிய வரவுகள்",
-    oldest: "பழையவை",
-    featured: "சிறப்புத் தேர்வுகள்",
-
-    pieces: "தயாரிப்புகள்",
-    featuredBadge: "சிறப்புத் தேர்வு",
-    view: "பார்க்க",
-
-    philosophy: "முகூர்த்தம் தத்துவம்",
-    philosophyTitle:
-      "விழாவைத் தாண்டியும் நிலைத்திருக்கும் நேர்த்தி.",
-    philosophyDescription:
-      "ஒவ்வொரு ஆடையும் நுணுக்கம், அளவுத்தன்மை மற்றும் காலத்தால் அழியாத இந்திய கைவினைத்திறனை மதித்து தேர்ந்தெடுக்கப்படுகிறது — இன்று நேர்த்தியாகவும் நாளை நினைவாகவும் இருக்கும் ஒரு தொகுப்பை உருவாக்குகிறது.",
-
-    appointmentEyebrow: "உங்கள் முகூர்த்தம்",
-    appointmentTitle:
-      "உங்கள் சிறப்பான தருணத்திற்காக உருவாக்கப்பட்ட ஆடையைத் தேர்ந்தெடுக்குங்கள்.",
-    appointmentButton:
-      "சந்திப்பு முன்பதிவு செய்யுங்கள்",
-
-    emptyEyebrow: "தொகுப்பு",
-    emptyTitle: "தயாரிப்புகள் எதுவும் இல்லை",
-    viewAll: "அனைத்து ஷெர்வானிகளையும் பார்க்க",
   },
 
   fr: {
@@ -599,7 +534,6 @@ function resolveLanguage(
 
   if (
     firstSegment === "en" ||
-    firstSegment === "ta" ||
     firstSegment === "fr" ||
     firstSegment === "de" ||
     firstSegment === "it"

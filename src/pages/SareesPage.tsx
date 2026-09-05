@@ -75,7 +75,6 @@ type SareeCategory =
 
 type SupportedLanguage =
   | "en"
-  | "ta"
   | "fr"
   | "de"
   | "it";
@@ -86,7 +85,6 @@ type SupportedLanguage =
 
 const supportedLanguages: SupportedLanguage[] = [
   "en",
-  "ta",
   "fr",
   "de",
   "it",
@@ -111,7 +109,6 @@ const categories: {
 
     fallback: {
       en: "All",
-      ta: "அனைத்தும்",
       fr: "Tous",
       de: "Alle",
       it: "Tutti",
@@ -125,7 +122,6 @@ const categories: {
 
     fallback: {
       en: "Bridal",
-      ta: "மணப்பெண் புடவை",
       fr: "Mariage",
       de: "Braut",
       it: "Sposa",
@@ -139,7 +135,6 @@ const categories: {
 
     fallback: {
       en: "Occasion",
-      ta: "விழா புடவை",
       fr: "Cérémonie",
       de: "Anlass",
       it: "Occasione",
@@ -166,7 +161,6 @@ const productFallbacks: Record<
   royalRed: {
     title: {
       en: "Royal Red",
-      ta: "ராயல் ரெட்",
       fr: "Rouge Royal",
       de: "Königliches Rot",
       it: "Rosso Reale",
@@ -174,7 +168,6 @@ const productFallbacks: Record<
 
     eyebrow: {
       en: "Bridal Saree",
-      ta: "மணப்பெண் புடவை",
       fr: "Sari de mariage",
       de: "Braut-Sari",
       it: "Sari da sposa",
@@ -182,7 +175,6 @@ const productFallbacks: Record<
 
     color: {
       en: "Rich Red",
-      ta: "ஆழமான சிவப்பு",
       fr: "Rouge profond",
       de: "Tiefrot",
       it: "Rosso intenso",
@@ -190,7 +182,6 @@ const productFallbacks: Record<
 
     description: {
       en: "A timeless bridal saree celebrating traditional Indian elegance.",
-      ta: "பாரம்பரிய இந்திய நேர்த்தியை வெளிப்படுத்தும் காலத்தால் அழியாத மணப்பெண் புடவை.",
       fr: "Un sari de mariage intemporel célébrant l'élégance traditionnelle indienne.",
       de: "Ein zeitloser Braut-Sari, der traditionelle indische Eleganz zelebriert.",
       it: "Un sari da sposa senza tempo che celebra l'eleganza tradizionale indiana.",
@@ -200,7 +191,6 @@ const productFallbacks: Record<
   ivoryGold: {
     title: {
       en: "Ivory Gold",
-      ta: "ஐவரி கோல்ட்",
       fr: "Ivoire Doré",
       de: "Elfenbein Gold",
       it: "Avorio Dorato",
@@ -208,7 +198,6 @@ const productFallbacks: Record<
 
     eyebrow: {
       en: "Bridal Saree",
-      ta: "மணப்பெண் புடவை",
       fr: "Sari de mariage",
       de: "Braut-Sari",
       it: "Sari da sposa",
@@ -216,7 +205,6 @@ const productFallbacks: Record<
 
     color: {
       en: "Ivory Gold",
-      ta: "ஐவரி தங்கம்",
       fr: "Ivoire doré",
       de: "Elfenbein Gold",
       it: "Avorio dorato",
@@ -224,7 +212,6 @@ const productFallbacks: Record<
 
     description: {
       en: "An elegant ivory saree enriched with subtle golden detailing.",
-      ta: "மென்மையான தங்க அலங்காரங்களால் சிறப்பிக்கப்பட்ட நேர்த்தியான ஐவரி புடவை.",
       fr: "Un sari ivoire élégant rehaussé de délicats détails dorés.",
       de: "Ein eleganter Elfenbein-Sari mit feinen goldenen Details.",
       it: "Un elegante sari avorio impreziosito da delicati dettagli dorati.",
@@ -234,7 +221,6 @@ const productFallbacks: Record<
   blushRose: {
     title: {
       en: "Blush Rose",
-      ta: "ப்ளஷ் ரோஸ்",
       fr: "Rose Poudré",
       de: "Blush Rose",
       it: "Rosa Cipria",
@@ -242,7 +228,6 @@ const productFallbacks: Record<
 
     eyebrow: {
       en: "Occasion Saree",
-      ta: "விழா புடவை",
       fr: "Sari de cérémonie",
       de: "Sari für besondere Anlässe",
       it: "Sari da occasione",
@@ -250,7 +235,6 @@ const productFallbacks: Record<
 
     color: {
       en: "Blush Rose",
-      ta: "மென்மையான ரோஸ்",
       fr: "Rose poudré",
       de: "Blush Rose",
       it: "Rosa cipria",
@@ -258,7 +242,6 @@ const productFallbacks: Record<
 
     description: {
       en: "A romantic saree combining delicate colour with refined detailing.",
-      ta: "மென்மையான நிறத்தையும் நுட்பமான அலங்காரத்தையும் இணைக்கும் காதல் உணர்வுள்ள புடவை.",
       fr: "Un sari romantique associant une couleur délicate à des détails raffinés.",
       de: "Ein romantischer Sari mit zarter Farbgebung und raffinierten Details.",
       it: "Un romantico sari che combina colori delicati e dettagli raffinati.",
@@ -268,7 +251,6 @@ const productFallbacks: Record<
   emeraldGrace: {
     title: {
       en: "Emerald Grace",
-      ta: "எமரால்ட் கிரேஸ்",
       fr: "Grâce Émeraude",
       de: "Smaragd Eleganz",
       it: "Grazia Smeraldo",
@@ -276,7 +258,6 @@ const productFallbacks: Record<
 
     eyebrow: {
       en: "Occasion Saree",
-      ta: "விழா புடவை",
       fr: "Sari de cérémonie",
       de: "Sari für besondere Anlässe",
       it: "Sari da occasione",
@@ -284,7 +265,6 @@ const productFallbacks: Record<
 
     color: {
       en: "Emerald",
-      ta: "மரகத பச்சை",
       fr: "Émeraude",
       de: "Smaragdgrün",
       it: "Smeraldo",
@@ -292,7 +272,6 @@ const productFallbacks: Record<
 
     description: {
       en: "A rich emerald saree designed around graceful draping and craftsmanship.",
-      ta: "நேர்த்தியான அணிதல் மற்றும் கைவினைத்திறனை மையமாகக் கொண்டு உருவாக்கப்பட்ட மரகத பச்சை புடவை.",
       fr: "Un sari émeraude riche conçu autour d'un drapé gracieux et d'un savoir-faire raffiné.",
       de: "Ein satter Smaragd-Sari, der auf anmutigem Drapieren und handwerklicher Kunst basiert.",
       it: "Un ricco sari color smeraldo progettato attorno a un drappeggio elegante e a una raffinata lavorazione artigianale.",
@@ -302,7 +281,6 @@ const productFallbacks: Record<
   champagneDrape: {
     title: {
       en: "Champagne Drape",
-      ta: "சாம்பெயின் டிரேப்",
       fr: "Drapé Champagne",
       de: "Champagner Drapierung",
       it: "Drappeggio Champagne",
@@ -310,7 +288,6 @@ const productFallbacks: Record<
 
     eyebrow: {
       en: "Occasion Saree",
-      ta: "விழா புடவை",
       fr: "Sari de cérémonie",
       de: "Sari für besondere Anlässe",
       it: "Sari da occasione",
@@ -318,7 +295,6 @@ const productFallbacks: Record<
 
     color: {
       en: "Champagne",
-      ta: "சாம்பெயின்",
       fr: "Champagne",
       de: "Champagner",
       it: "Champagne",
@@ -326,7 +302,6 @@ const productFallbacks: Record<
 
     description: {
       en: "A luminous champagne saree combining understated luxury and elegance.",
-      ta: "அமைதியான ஆடம்பரத்தையும் நேர்த்தியையும் இணைக்கும் ஒளிரும் சாம்பெயின் புடவை.",
       fr: "Un sari champagne lumineux alliant luxe discret et élégance.",
       de: "Ein leuchtender Champagner-Sari, der dezente Luxusästhetik und Eleganz verbindet.",
       it: "Un luminoso sari champagne che combina lusso discreto ed eleganza.",
@@ -336,7 +311,6 @@ const productFallbacks: Record<
   midnightBlue: {
     title: {
       en: "Midnight Blue",
-      ta: "மிட்நைட் ப்ளூ",
       fr: "Bleu Nuit",
       de: "Mitternachtsblau",
       it: "Blu Notte",
@@ -344,7 +318,6 @@ const productFallbacks: Record<
 
     eyebrow: {
       en: "Occasion Saree",
-      ta: "விழா புடவை",
       fr: "Sari de cérémonie",
       de: "Sari für besondere Anlässe",
       it: "Sari da occasione",
@@ -352,7 +325,6 @@ const productFallbacks: Record<
 
     color: {
       en: "Midnight Blue",
-      ta: "மிட்நைட் நீலம்",
       fr: "Bleu nuit",
       de: "Mitternachtsblau",
       it: "Blu notte",
@@ -360,7 +332,6 @@ const productFallbacks: Record<
 
     description: {
       en: "A deep blue saree bringing dramatic colour to evening celebrations.",
-      ta: "மாலை நேர விழாக்களுக்கு அழுத்தமான நிறத்தை வழங்கும் ஆழமான நீல புடவை.",
       fr: "Un sari bleu profond apportant une couleur saisissante aux célébrations du soir.",
       de: "Ein tiefblauer Sari, der Abendfeiern eine ausdrucksstarke Farbe verleiht.",
       it: "Un sari blu intenso che dona un tocco deciso alle celebrazioni serali.",
@@ -399,22 +370,6 @@ const pageFallbacks: Record<
     appointmentButton:
       "Book an Appointment",
     empty: "No pieces found",
-  },
-
-  ta: {
-    eyebrow: "முகூர்த்தம் தொகுப்பு",
-    title: "புடவைகள்",
-    description:
-      "பாரம்பரிய இந்திய கைவினைத்திறன், காலத்தால் அழியாத நிறங்கள் மற்றும் நேர்த்தியான அணிதலைக் கொண்ட மணப்பெண் மற்றும் விழா புடவைகளின் சிறப்பான தொகுப்பை கண்டறியுங்கள்.",
-    pieces: "தயாரிப்புகள்",
-    viewDetails: "விவரங்களைப் பார்க்க",
-    appointmentEyebrow:
-      "உங்கள் முகூர்த்தம்",
-    appointmentTitle:
-      "உங்கள் சிறப்பான தருணத்திற்காக உருவாக்கப்பட்ட புடவையைத் தேர்ந்தெடுக்குங்கள்.",
-    appointmentButton:
-      "சந்திப்பு முன்பதிவு செய்யுங்கள்",
-    empty: "தயாரிப்புகள் எதுவும் இல்லை",
   },
 
   fr: {

@@ -128,7 +128,6 @@ const featureDescriptionText = (
 
 const SUPPORTED_LANGUAGES = [
   "en",
-  "ta",
   "de",
   "fr",
   "it",
@@ -2103,68 +2102,6 @@ function CollectionDetailPage() {
         "Hello Muhurtham Collection, I am interested in this piece.",
     },
 
-    ta: {
-      visitInstagram:
-        "எங்கள் Instagram-ஐப் பார்வையிடுங்கள்",
-      shareProduct:
-        "எங்கள் Instagram-ஐப் பார்வையிடுங்கள்",
-      exploreLehengas:
-        "லெஹங்காக்களைப் பார்வையிடுங்கள்",
-      exploreSherwanis:
-        "ஷெர்வானிகளைப் பார்வையிடுங்கள்",
-      exploreSarees:
-        "சேலைகளைப் பார்வையிடுங்கள்",
-      exploreCollection:
-        "தொகுப்பைப் பார்வையிடுங்கள்",
-      productDetails:
-        "தயாரிப்பு விவரங்கள்",
-      contactStylist:
-        "எங்கள் ஸ்டைலிஸ்ட்டைத் தொடர்புகொள்ளுங்கள்",
-      stylistDescription:
-        "அளவு, ஸ்டைலிங், நிற ஒருங்கிணைப்பு மற்றும் சந்திப்பு கிடைப்பது குறித்து எங்கள் ஸ்டைலிஸ்ட் குழு உங்களுக்கு உதவ முடியும்.",
-      bookAppointment:
-        "சந்திப்பை முன்பதிவு செய்யுங்கள்",
-      productDeclaration:
-        "தயாரிப்பு தகவல்",
-      productDeclarationText:
-        "ஒவ்வொரு Muhurtham ஆடையும் கவனமாக உருவாக்கப்பட்ட விழாக்கால ஆடை வடிவமைப்பாக வழங்கப்படுகிறது. கைவினைத்திறனின் இயல்பான பகுதியாக எம்பிராய்டரி, துணியின் அமைப்பு மற்றும் இறுதித் தோற்றத்தில் சிறிய வேறுபாடுகள் இருக்கலாம்.",
-      chatWhatsapp:
-        "WhatsApp மூலம் எங்களைத் தொடர்புகொள்ளுங்கள்",
-      category: "வகை",
-      reference: "குறிப்பு",
-      collection: "தொகுப்பு",
-      backToLehengas:
-        "லெஹங்காக்களுக்குத் திரும்பவும்",
-      backToSherwanis:
-        "ஷெர்வானிகளுக்குத் திரும்பவும்",
-      backToSarees:
-        "சேலைகளுக்குத் திரும்பவும்",
-      backToCollections:
-        "தொகுப்புகளுக்குத் திரும்பவும்",
-      backToCollection:
-        "தொகுப்புக்குத் திரும்பவும்",
-      viewImage:
-        "படத்தைப் பார்க்கவும்",
-      nextImage:
-        "அடுத்த படம்",
-      previousImage:
-        "முந்தைய படம்",
-      zoomImage:
-        "படத்தை பெரிதாக்கவும்",
-      imagePreview:
-        "பட முன்னோட்டம்",
-      close:
-        "மூடவும்",
-      pieceNotFound:
-        "தயாரிப்பு கிடைக்கவில்லை",
-      requestedPieceNotFound:
-        "நீங்கள் கோரிய தொகுப்பு தயாரிப்பைக் கண்டறிய முடியவில்லை.",
-      instagram:
-        "Instagram",
-      whatsappMessage:
-        "வணக்கம் Muhurtham Collection, இந்த ஆடையில் எனக்கு ஆர்வம் உள்ளது. மேலும் விவரங்களைத் தெரிவிக்கவும்.",
-    },
-
     de: {
       visitInstagram:
         "Besuchen Sie unser Instagram",
@@ -2985,7 +2922,7 @@ function CollectionDetailPage() {
 
                   {imageCount >
                     1 && (
-                    <div className="absolute bottom-5 left-5 flex gap-2">
+                    <div className="absolute top-5 right-5 flex gap-2">
                       <button
                         type="button"
                         onClick={
