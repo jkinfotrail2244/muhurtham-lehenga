@@ -9,6 +9,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import HeroSection from "../components/home/HeroSection";
 
@@ -26,6 +27,26 @@ const supportedLanguages = [
 
 type SupportedLanguage =
   (typeof supportedLanguages)[number];
+
+/* ============================================================
+   SECTION FADE ANIMATION
+============================================================ */
+
+const sectionReveal = {
+  hidden: {
+    opacity: 0,
+    y: 36,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.9,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
 /* ============================================================
    HOME PAGE
@@ -183,11 +204,6 @@ function HomePage() {
 
       {/* =====================================================
           HERO
-          
-          IMPORTANT:
-          HeroSection contains the actual hero heading and
-          subtitle. The scoped CSS below forces the hero
-          heading to white and the subtitle to warm beige.
       ===================================================== */}
 
       <div className="muhurtham-home-hero">
@@ -208,9 +224,19 @@ function HomePage() {
 
       {/* =====================================================
           INTRODUCTION
+          FADE ON SCROLL
       ===================================================== */}
 
-      <section className="relative overflow-hidden bg-[#FBF8F3]">
+      <motion.section
+        variants={sectionReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.16,
+        }}
+        className="relative overflow-hidden bg-[#FBF8F3]"
+      >
 
         <div className="mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-12 lg:py-32">
 
@@ -273,13 +299,23 @@ function HomePage() {
 
         </div>
 
-      </section>
+      </motion.section>
 
       {/* =====================================================
           COLLECTION CATEGORIES
+          FADE ON SCROLL
       ===================================================== */}
 
-      <section className="bg-white">
+      <motion.section
+        variants={sectionReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.16,
+        }}
+        className="bg-white"
+      >
 
         <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12 lg:py-28">
 
@@ -504,13 +540,23 @@ function HomePage() {
 
         </div>
 
-      </section>
+      </motion.section>
 
       {/* =====================================================
           STORY SECTION
+          FADE ON SCROLL
       ===================================================== */}
 
-      <section className="overflow-hidden bg-[#F5EFE8]">
+      <motion.section
+        variants={sectionReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.16,
+        }}
+        className="overflow-hidden bg-[#F5EFE8]"
+      >
 
         <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
 
@@ -612,13 +658,23 @@ function HomePage() {
 
         </div>
 
-      </section>
+      </motion.section>
 
       {/* =====================================================
           PHILOSOPHY
+          FADE ON SCROLL
       ===================================================== */}
 
-      <section className="bg-[#FBF8F3]">
+      <motion.section
+        variants={sectionReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.16,
+        }}
+        className="bg-[#FBF8F3]"
+      >
 
         <div className="mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-12 lg:py-32">
 
@@ -667,13 +723,23 @@ function HomePage() {
 
         </div>
 
-      </section>
+      </motion.section>
 
       {/* =====================================================
           FEATURED PRODUCTS
+          FADE ON SCROLL
       ===================================================== */}
 
-      <section className="bg-white">
+      <motion.section
+        variants={sectionReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.16,
+        }}
+        className="bg-white"
+      >
 
         <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12 lg:py-28">
 
@@ -882,13 +948,23 @@ function HomePage() {
 
         </div>
 
-      </section>
+      </motion.section>
 
       {/* =====================================================
           SHOWROOM / APPOINTMENT
+          FADE ON SCROLL
       ===================================================== */}
 
-      <section className="relative overflow-hidden bg-[#1C1917]">
+      <motion.section
+        variants={sectionReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.16,
+        }}
+        className="relative overflow-hidden bg-[#1C1917]"
+      >
 
         <div className="mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-12 lg:py-32">
 
@@ -966,13 +1042,23 @@ function HomePage() {
 
         </div>
 
-      </section>
+      </motion.section>
 
       {/* =====================================================
           FINAL CTA
+          FADE ON SCROLL
       ===================================================== */}
 
-      <section className="bg-[#FBF8F3]">
+      <motion.section
+        variants={sectionReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.16,
+        }}
+        className="bg-[#FBF8F3]"
+      >
 
         <div className="mx-auto max-w-5xl px-6 py-24 text-center sm:px-8 lg:py-32">
 
@@ -1033,7 +1119,7 @@ function HomePage() {
 
         </div>
 
-      </section>
+      </motion.section>
 
     </main>
   );
