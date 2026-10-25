@@ -1,0 +1,458 @@
+/* ============================================================
+   MUHURTHAM COLLECTION
+   ADMIN AVAILABILITY MANAGEMENT
+============================================================ */
+
+.mc-availability-page {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.mc-avail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 10px 0 24px;
+}
+
+.mc-avail-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #a07639;
+  font: 700 11px/1.5 Arial, sans-serif;
+  letter-spacing: 2.4px;
+}
+
+.mc-avail-header h1 {
+  margin: 8px 0 6px;
+  color: #172b23;
+  font: normal clamp(32px, 3.2vw, 46px)/1.1 Georgia, "Times New Roman", serif;
+  letter-spacing: -0.5px;
+}
+
+.mc-avail-header p {
+  color: #797d76;
+  font-size: 15px;
+}
+
+/* ============================================================
+   KPI STATS
+============================================================ */
+
+.mc-avail-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.mc-avail-stat-card {
+  padding: 16px 18px;
+  border: 1px solid #e7d3ae;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #fffefa, #faf4e9);
+  box-shadow: 0 6px 16px rgba(80, 55, 18, 0.05);
+}
+
+.mc-avail-stat-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #e8d5ae;
+  background: #f9f0db;
+  color: #9f7532;
+  margin-bottom: 8px;
+}
+
+.mc-avail-stat-card span {
+  font-size: 13px;
+  color: #4c4f46;
+  font-weight: 500;
+}
+
+.mc-avail-stat-card strong {
+  display: block;
+  font: normal 30px/1.1 Georgia, serif;
+  color: #003e2d;
+  margin-top: 4px;
+}
+
+.mc-avail-stat-card small {
+  color: #8c8d86;
+  font-size: 11px;
+}
+
+/* ============================================================
+   TWO COLUMN WORKSPACE
+============================================================ */
+
+.mc-avail-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.9fr);
+  gap: 22px;
+}
+
+/* ============================================================
+   CALENDAR PANEL
+============================================================ */
+
+.mc-avail-calendar-panel {
+  border: 1px solid #e7d3ae;
+  border-radius: 16px;
+  background: #fffefa;
+  box-shadow: 0 8px 22px rgba(71, 49, 18, 0.06);
+  padding: 22px;
+}
+
+.mc-avail-cal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.mc-avail-cal-title h2 {
+  font: normal 23px Georgia, serif;
+  color: #173b2c;
+  margin: 0;
+}
+
+.mc-avail-cal-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mc-avail-cal-btn {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e4d5be;
+  border-radius: 8px;
+  background: #fffaf0;
+  color: #725b38;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mc-avail-cal-btn:hover {
+  background: #f4ebd7;
+}
+
+/* CALENDAR GRID */
+
+.mc-avail-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.mc-avail-weekday {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8c7650;
+  padding: 8px 0;
+}
+
+.mc-avail-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.mc-avail-day-cell {
+  aspect-ratio: 1 / 1;
+  min-height: 72px;
+  border: 1px solid #ede1cb;
+  border-radius: 10px;
+  background: #fffdf8;
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.mc-avail-day-cell:hover {
+  border-color: #cda96d;
+  background: #fff9ee;
+  transform: translateY(-1px);
+}
+
+.mc-avail-day-cell.selected {
+  border-color: #004d39;
+  box-shadow: 0 0 0 2px #004d39;
+  background: #fbf6ec;
+}
+
+.mc-avail-day-cell.other-month {
+  opacity: 0.35;
+}
+
+.mc-avail-day-cell.blocked {
+  background: #fcf1ef;
+  border-color: #f1c7bf;
+}
+
+.mc-avail-day-cell.fully-booked {
+  background: #fdf5ea;
+  border-color: #ebcf9b;
+}
+
+.mc-avail-day-num {
+  font-family: Georgia, serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #21382d;
+}
+
+.mc-avail-day-tag {
+  font-size: 9px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mc-tag-blocked {
+  background: #f9ded7;
+  color: #9c3f2d;
+}
+
+.mc-tag-closed {
+  background: #ede8dc;
+  color: #79766d;
+}
+
+.mc-tag-full {
+  background: #f7e6ca;
+  color: #8c6328;
+}
+
+.mc-tag-available {
+  background: #e9f4ed;
+  color: #206d45;
+}
+
+/* ============================================================
+   DAY INSPECTOR SIDEBAR
+============================================================ */
+
+.mc-avail-inspector {
+  border: 1px solid #e7d3ae;
+  border-radius: 16px;
+  background: #fffefa;
+  box-shadow: 0 8px 22px rgba(71, 49, 18, 0.06);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mc-avail-inspector-header {
+  border-bottom: 1px solid #eedec3;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+
+.mc-avail-inspector-header h3 {
+  font: normal 22px Georgia, serif;
+  color: #153c2c;
+  margin: 4px 0 2px;
+}
+
+.mc-avail-inspector-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 9px;
+  margin-bottom: 18px;
+}
+
+.mc-avail-status-open {
+  background: #eff7f2;
+  border: 1px solid #c2e1cd;
+  color: #1e6d42;
+}
+
+.mc-avail-status-blocked {
+  background: #fff2ee;
+  border: 1px solid #f2c7bd;
+  color: #9c412f;
+}
+
+.mc-avail-btn-toggle-block {
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.mc-btn-block {
+  background: #a13d2a;
+  border: 1px solid #8e3524;
+  color: #fff8f6;
+}
+.mc-btn-block:hover {
+  background: #b54732;
+}
+
+.mc-btn-unblock {
+  background: #004d39;
+  border: 1px solid #003e2e;
+  color: #fff9ea;
+}
+.mc-btn-unblock:hover {
+  background: #006349;
+}
+
+/* SLOTS LIST */
+
+.mc-avail-slots-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6a573d;
+  margin-bottom: 10px;
+}
+
+.mc-avail-slots-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.mc-avail-slot-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border: 1px solid #edd5b8;
+  border-radius: 9px;
+  background: #fffdf9;
+  transition: all 0.2s ease;
+}
+
+.mc-avail-slot-row.blocked {
+  background: #fbf2f0;
+  border-color: #f1cfc8;
+}
+
+.mc-avail-slot-row.full {
+  background: #fbf6ec;
+  border-color: #e8d0a3;
+}
+
+.mc-avail-slot-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #1f372a;
+}
+
+.mc-avail-slot-capacity {
+  font-size: 11px;
+  color: #7f7464;
+}
+
+.mc-avail-slot-toggle {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid #d7c5a9;
+  background: #fbf5eb;
+  color: #6d5b40;
+  cursor: pointer;
+}
+
+.mc-avail-slot-toggle:hover {
+  background: #f1e7d4;
+}
+
+/* CAPACITY CONTROLS CARD */
+
+.mc-avail-capacity-card {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: 1px solid #e7d8c0;
+  border-radius: 11px;
+  background: #fbf7ee;
+}
+
+.mc-avail-capacity-card label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #2b4537;
+  margin-bottom: 6px;
+}
+
+.mc-avail-capacity-card select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #dac6a3;
+  border-radius: 7px;
+  background: #fffdfa;
+  color: #264233;
+  font-size: 13px;
+  outline: 0;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+============================================================ */
+
+@media (max-width: 1100px) {
+  .mc-avail-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mc-avail-workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .mc-avail-stats {
+    grid-template-columns: 1fr;
+  }
+  .mc-avail-day-cell {
+    min-height: 52px;
+    padding: 4px;
+  }
+  .mc-avail-day-num {
+    font-size: 12px;
+  }
+  .mc-avail-day-tag {
+    display: none;
+  }
+}

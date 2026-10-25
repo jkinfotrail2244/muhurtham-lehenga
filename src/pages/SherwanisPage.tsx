@@ -11,6 +11,10 @@ import {
 import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import {
+  usePublishedProducts,
+  getProductSlug,
+} from "../admin/services/productService";
 
 /* ============================================================
    TYPES
@@ -33,94 +37,17 @@ type SortOption =
   | "featured";
 
 type Sherwani = {
-  id: number;
+  id: number | string;
   number: string;
-  translationKey: string;
+  translationKey?: string;
   slug: string;
   category: Exclude<Category, "all">;
   image: string;
   featured?: boolean;
+  name: string;
+  description: string;
+  price?: number;
 };
-
-/* ============================================================
-   SHERWANI DATA
-============================================================ */
-
-const sherwanis: Sherwani[] = [
-  {
-    id: 1,
-    number: "01",
-    translationKey: "ivoryHeritage",
-    slug: "ivory-heritage",
-    category: "groom",
-    image: "/images/sherwani-1.png",
-    featured: true,
-  },
-
-  {
-    id: 2,
-    number: "02",
-    translationKey: "royalSand",
-    slug: "royal-sand",
-    category: "groom",
-    image: "/images/sherwani-2.png",
-    featured: true,
-  },
-
-  {
-    id: 3,
-    number: "03",
-    translationKey: "midnightEmbroidery",
-    slug: "midnight-embroidery",
-    category: "groom",
-    image: "/images/sherwani-3.png",
-  },
-
-  {
-    id: 4,
-    number: "04",
-    translationKey: "champagneClassic",
-    slug: "champagne-classic",
-    category: "occasion",
-    image: "/images/sherwani-4.png",
-  },
-
-  {
-    id: 5,
-    number: "05",
-    translationKey: "regalIvory",
-    slug: "regal-ivory",
-    category: "groom",
-    image: "/images/sherwani-5.png",
-  },
-
-  {
-    id: 6,
-    number: "06",
-    translationKey: "mochaTextured",
-    slug: "mocha-textured",
-    category: "occasion",
-    image: "/images/sherwani-6.png",
-  },
-
-  {
-    id: 7,
-    number: "07",
-    translationKey: "classicBeige",
-    slug: "classic-beige",
-    category: "occasion",
-    image: "/images/sherwani-7.png",
-  },
-
-  {
-    id: 8,
-    number: "08",
-    translationKey: "royalCharcoal",
-    slug: "royal-charcoal",
-    category: "groom",
-    image: "/images/sherwani-8.png",
-  },
-];
 
 /* ============================================================
    CATEGORY FALLBACKS
@@ -640,6 +567,45 @@ function SherwanisPage() {
   };
 
   /* ==========================================================
+     PUBLISHED SHERWANIS
+  ========================================================== */
+
+  const publishedProducts = usePublishedProducts("sherwanis");
+
+  const sherwanis: Sherwani[] = useMemo(() => {
+    return publishedProducts.map((p, index) => {
+      const slug = getProductSlug(p);
+      const isOccasion = p.category.toLowerCase().includes("occasion");
+      const category: Exclude<Category, "all"> = isOccasion
+        ? "occasion"
+        : "groom";
+
+      let translationKey: string | undefined = undefined;
+      if (slug === "ivory-heritage") translationKey = "ivoryHeritage";
+      else if (slug === "royal-sand") translationKey = "royalSand";
+      else if (slug === "midnight-embroidery") translationKey = "midnightEmbroidery";
+      else if (slug === "champagne-classic") translationKey = "champagneClassic";
+      else if (slug === "regal-ivory") translationKey = "regalIvory";
+      else if (slug === "mocha-textured") translationKey = "mochaTextured";
+      else if (slug === "classic-beige") translationKey = "classicBeige";
+      else if (slug === "royal-charcoal") translationKey = "royalCharcoal";
+
+      return {
+        id: p.id,
+        number: String(index + 1).padStart(2, "0"),
+        translationKey,
+        slug,
+        category,
+        image: p.image || "/images/sherwani-1.png",
+        featured: p.featured,
+        name: p.name,
+        description: p.description,
+        price: p.price,
+      };
+    });
+  }, [publishedProducts]);
+
+  /* ==========================================================
      FILTER + SORT
   ========================================================== */
 
@@ -666,7 +632,7 @@ function SherwanisPage() {
     }
 
     return items;
-  }, [activeCategory, sortBy]);
+  }, [activeCategory, sherwanis, sortBy]);
 
   return (
     <main className="min-h-screen bg-ivory text-ink">
@@ -1108,34 +1074,30 @@ function SherwanisPage() {
               {filteredSherwanis.map(
                 (item, index) => {
 
-                  const product =
-                    productFallbacks[
-                      item.translationKey
-                    ];
+                  const product = item.translationKey
+                    ? productFallbacks[item.translationKey]
+                    : undefined;
 
-                  const productName =
-                    translate(
-                      `products.${item.translationKey}.title`,
-                      product.title[
-                        language
-                      ],
-                    );
+                  const productName = item.translationKey && product
+                    ? translate(
+                        `products.${item.translationKey}.title`,
+                        product.title[language] || item.name,
+                      )
+                    : item.name;
 
-                  const productCategory =
-                    translate(
-                      `products.${item.translationKey}.category`,
-                      product.category[
-                        language
-                      ],
-                    );
+                  const productCategory = item.translationKey && product
+                    ? translate(
+                        `products.${item.translationKey}.category`,
+                        product.category[language] || item.category,
+                      )
+                    : item.category.toUpperCase();
 
-                  const productDescription =
-                    translate(
-                      `products.${item.translationKey}.description`,
-                      product.description[
-                        language
-                      ],
-                    );
+                  const productDescription = item.translationKey && product
+                    ? translate(
+                        `products.${item.translationKey}.description`,
+                        product.description[language] || item.description,
+                      )
+                    : item.description;
 
                   return (
                     <motion.article

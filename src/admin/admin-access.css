@@ -1,0 +1,966 @@
+/* src/admin/admin-access.css */
+
+/* =========================================
+   BASE
+========================================= */
+
+.ml-login,
+.ml-login *,
+.ml-login *::before,
+.ml-login *::after {
+  box-sizing: border-box;
+}
+
+.ml-login {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: 58.4% 41.6%;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: #f6eedf;
+  color: #10382c;
+  font: 14px/1.5 Arial, Helvetica, sans-serif;
+}
+
+.ml-login h1,
+.ml-login h2,
+.ml-login p {
+  margin: 0;
+}
+
+.ml-login a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ml-login button,
+.ml-login input {
+  font: inherit;
+}
+
+.ml-login button {
+  cursor: pointer;
+}
+
+.ml-login a:focus-visible,
+.ml-login button:focus-visible,
+.ml-login input:focus-visible {
+  outline: 2px solid #b88b3c;
+  outline-offset: 3px;
+}
+
+.ml-login .ml-botanical {
+  display: none;
+}
+
+/* =========================================
+   LEFT PANEL
+========================================= */
+
+.ml-brand-panel {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 8% 0%,
+      rgba(42, 113, 80, 0.42),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 28% 76%,
+      rgba(0, 49, 31, 0.35),
+      transparent 66%
+    ),
+    linear-gradient(125deg, #043526, #001f16 75%);
+}
+
+.ml-brand-panel::before {
+  content: none;
+}
+
+.ml-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.ml-photo > path {
+  stroke-width: 9px;
+  filter: drop-shadow(-2px 0 2px rgba(173, 114, 26, 0.35));
+}
+
+.ml-brand-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+  height: 100%;
+  margin-left: 7.4%;
+  padding: 10.5dvh 0;
+}
+
+.ml-logo {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: clamp(12px, 1.2vw, 21px);
+  color: #fffdf3 !important;
+  font: 700 clamp(17px, 1.8vw, 31px)/1.15 Georgia, serif;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.ml-monogram {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: clamp(46px, 4.8vw, 82px);
+  height: clamp(52px, 5vw, 86px);
+  border: 1px solid #dfbd75;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #073a29, #002318);
+  color: #f1d58e;
+  font: 400 clamp(34px, 3.5vw, 60px)/1 Georgia, serif;
+}
+
+.ml-logo small {
+  display: block;
+  margin-top: 9px;
+  color: #f4f1e6;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(9px, 0.95vw, 16px);
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+
+.ml-story {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 4dvh;
+}
+
+.ml-eyebrow {
+  font-size: clamp(10px, 0.85vw, 14px);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 3px;
+}
+
+.ml-story .ml-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ecd18b;
+}
+
+.ml-story .ml-eyebrow::after {
+  content: "";
+  width: clamp(24px, 3.5vw, 60px);
+  height: 2px;
+  background: #d4ab55;
+}
+
+.ml-story h1 {
+  margin: 2.7dvh 0 0;
+  color: #fffef6;
+  font: 400 clamp(29px, min(4.05vw, 7.1dvh), 70px)/1.01
+    Georgia, "Times New Roman", serif;
+  letter-spacing: -1.8px;
+  text-transform: none;
+}
+
+.ml-story h1 span {
+  color: #eec16a;
+}
+
+.ml-gold-rule {
+  display: block;
+  flex-shrink: 0;
+  width: 58px;
+  height: 2px;
+  margin: 3dvh 0 2.5dvh;
+  background: linear-gradient(90deg, #f2d48a, #bd8d38);
+}
+
+.ml-story-description {
+  color: #edf0e6;
+  font-size: clamp(11px, 1.15vw, 20px);
+  line-height: 1.6;
+}
+
+.ml-features {
+  display: flex;
+  width: 100%;
+  margin-top: 4.5dvh;
+}
+
+.ml-features > div {
+  flex: 1;
+  min-width: 0;
+  padding-right: 10px;
+}
+
+.ml-features > div + div {
+  padding-left: clamp(12px, 1.5vw, 26px);
+  border-left: 1px solid rgba(221, 186, 103, 0.32);
+}
+
+.ml-feature-icon {
+  display: grid;
+  place-items: center;
+  width: clamp(38px, 4.1vw, 71px);
+  height: clamp(38px, 4.1vw, 71px);
+  margin-bottom: 9px;
+  border: 1px solid #bd964b;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #103a28, #01281c);
+  color: #f3d482;
+}
+
+.ml-feature-icon svg {
+  width: 43%;
+  height: 43%;
+  stroke-width: 1.7;
+}
+
+.ml-features p {
+  color: #fbf8ed;
+  font-size: clamp(10px, 1.05vw, 18px);
+  line-height: 1.5;
+}
+
+.ml-brand-footer {
+  display: none;
+}
+
+/* =========================================
+   RIGHT PANEL
+========================================= */
+
+.ml-form-panel {
+  --lotus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 36' fill='none' stroke='%23ad731e' stroke-width='1.3'%3E%3Cpath d='M20 30C12 23 13 13 20 4C27 13 28 23 20 30ZM20 30C7 27 5 17 6 11C16 13 20 20 20 30ZM20 30C33 27 35 17 34 11C24 13 20 20 20 30ZM20 30C10 34 4 28 1 22C10 20 17 24 20 30ZM20 30C30 34 36 28 39 22C30 20 23 24 20 30Z'/%3E%3C/svg%3E");
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  padding: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 30% 15%, #fffaf0, transparent 70%),
+    linear-gradient(125deg, #eee0c6, #fbf6e9 55%, #ead8b7);
+}
+
+/* Gold decoration stays near the outside edge. */
+
+.ml-form-panel::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -10%;
+  right: -86%;
+  width: 100%;
+  height: 125%;
+  border: 3px solid #c89336;
+  border-radius: 48%;
+  transform: rotate(8deg);
+  box-shadow:
+    -3px 0 0 #fff0c7,
+    -6px 0 0 #b77f26,
+    -10px 0 0 #e6bd6b,
+    -14px 0 0 rgba(255, 242, 207, 0.8);
+  pointer-events: none;
+}
+
+.ml-form-panel::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 28px;
+  width: 1px;
+  background: rgba(255, 253, 233, 0.85);
+  box-shadow: 9px 0 0 rgba(190, 148, 71, 0.18);
+  pointer-events: none;
+}
+
+/* =========================================
+   CARD — CONTROLLED PROPORTIONS
+========================================= */
+
+.ml-card {
+  position: relative;
+  width: min(100%, 63dvh);
+  max-width: 594px;
+  padding:
+    clamp(25px, 4dvh, 42px)
+    clamp(24px, 4.3dvh, 43px)
+    clamp(23px, 3.8dvh, 38px);
+  border: 1px solid #c99845;
+  border-radius: 34px;
+  background:
+    radial-gradient(ellipse at 40% 10%, #fffdf8, transparent 75%),
+    linear-gradient(135deg, #fcf9ef, #f3eddf);
+  box-shadow:
+    0 20px 32px rgba(130, 86, 17, 0.2),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.ml-lock-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(54px, 8.5dvh, 82px);
+  height: clamp(54px, 8.5dvh, 82px);
+  margin: 0 auto clamp(15px, 2.5dvh, 25px);
+  border: 1px solid #dfb46a;
+  border-radius: 50%;
+  outline: 1px solid #ecd2a1;
+  outline-offset: 5px;
+  background: linear-gradient(145deg, #fff9e9, #f1e2c3);
+  color: #875714;
+  box-shadow:
+    0 4px 12px rgba(151, 103, 24, 0.12),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.65);
+}
+
+.ml-lock-icon svg {
+  width: 44%;
+  height: 44%;
+  stroke-width: 2.1;
+}
+
+.ml-lock-icon::before,
+.ml-lock-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: clamp(40px, 9dvh, 94px);
+  height: 1px;
+}
+
+.ml-lock-icon::before {
+  right: calc(100% + 22px);
+  background: linear-gradient(90deg, transparent, #b37c2d);
+}
+
+.ml-lock-icon::after {
+  left: calc(100% + 22px);
+  background: linear-gradient(90deg, #b37c2d, transparent);
+}
+
+.ml-card > .ml-eyebrow {
+  color: #a66c20;
+  text-align: center;
+  font-size: clamp(11px, 1.4dvh, 14px);
+  letter-spacing: 4px;
+}
+
+.ml-card h2 {
+  margin: 10px 0 8px;
+  color: #062e24;
+  text-align: center;
+  font: 400 clamp(34px, 5.6dvh, 55px)/1.1 Georgia, serif;
+  letter-spacing: -1.5px;
+  text-transform: none;
+}
+
+.ml-intro {
+  color: #738087;
+  text-align: center;
+  font-size: clamp(12px, 1.75dvh, 17px);
+  line-height: 1.5;
+}
+
+/* =========================================
+   LOTUS AND FORM
+========================================= */
+
+.ml-card form {
+  position: relative;
+  margin-top: clamp(12px, 2dvh, 20px);
+  padding-top: clamp(31px, 4.5dvh, 43px);
+}
+
+.ml-card form::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 15%;
+  width: 70%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    #dfc393,
+    #a57124 39%,
+    transparent 39%,
+    transparent 61%,
+    #a57124 61%,
+    #dfc393
+  );
+}
+
+.ml-card form::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 34px;
+  height: 29px;
+  transform: translateX(-50%);
+  background: var(--lotus) center / contain no-repeat;
+  pointer-events: none;
+}
+
+.ml-field {
+  margin-bottom: clamp(14px, 2.1dvh, 22px);
+}
+
+.ml-field label {
+  display: block;
+  margin-bottom: 7px;
+  color: #12382d;
+  font-size: clamp(12px, 1.6dvh, 15px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.ml-input {
+  position: relative;
+}
+
+.ml-input::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 6px;
+  bottom: 6px;
+  left: 7px;
+  width: 37px;
+  border: 1px solid #efdcba;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #faf1df, #f4e7cc);
+  pointer-events: none;
+}
+
+.ml-input input {
+  display: block;
+  width: 100%;
+  height: clamp(44px, 5.8dvh, 57px);
+  margin: 0;
+  padding: 0 42px 59px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 59px;
+  border: 1px solid #dfc29a;
+  border-radius: 11px;
+  background: linear-gradient(115deg, #fffdfa, #fbfaf7);
+  color: #143a2e;
+  font-size: clamp(13px, 1.6dvh, 15px);
+  line-height: normal;
+  box-shadow: 0 3px 5px rgba(146, 102, 28, 0.05);
+}
+
+.ml-input input::placeholder {
+  color: #7e8a97;
+  opacity: 1;
+}
+
+.ml-input input:focus {
+  border-color: #b58332;
+  box-shadow: 0 0 0 3px rgba(181, 131, 50, 0.1);
+}
+
+.ml-input-icon {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 16px;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  color: #986116;
+  stroke-width: 1.8;
+  pointer-events: none;
+}
+
+.ml-eye {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: #986116;
+}
+
+.ml-eye svg {
+  width: 21px;
+  height: 21px;
+}
+
+.ml-eye:hover {
+  background: #f6eddc;
+}
+
+/* =========================================
+   OPTIONS AND SUBMIT
+========================================= */
+
+.ml-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: clamp(17px, 2.7dvh, 27px);
+  color: #123c2f;
+  font-size: clamp(11px, 1.55dvh, 15px);
+}
+
+.ml-remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+}
+
+.ml-remember input {
+  appearance: none;
+  display: grid;
+  place-content: center;
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+  margin: 0;
+  border: 1px solid #285347;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.ml-remember input::before {
+  content: "";
+  width: 8px;
+  height: 5px;
+  margin-top: -2px;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transform: rotate(-45deg) scale(0);
+}
+
+.ml-remember input:checked {
+  background: #174637;
+}
+
+.ml-remember input:checked::before {
+  transform: rotate(-45deg) scale(1);
+}
+
+.ml-forgot {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #885715;
+  font-size: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ml-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  min-height: clamp(48px, 6.7dvh, 66px);
+  padding: 11px 14px;
+  border: 2px solid #c3943d;
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse at top left, #174e38, transparent 68%),
+    linear-gradient(115deg, #052f22, #002317);
+  color: #fffdf5;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: clamp(18px, 2.3dvh, 22px);
+  font-weight: 400;
+  line-height: 1.25;
+  box-shadow:
+    0 10px 16px rgba(143, 93, 14, 0.24),
+    inset 0 0 0 1px rgba(255, 232, 174, 0.18);
+}
+
+.ml-submit svg {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  color: #efce7b;
+  stroke-width: 1.7;
+}
+
+.ml-submit:hover {
+  background: #12452f;
+}
+
+.ml-message {
+  margin-bottom: 10px !important;
+  padding: 8px 10px;
+  border: 1px solid #dfc69e;
+  border-radius: 7px;
+  background: #f7ebd7;
+  color: #804a2b;
+  font-size: 11px;
+}
+
+/* =========================================
+   BACK LINK
+========================================= */
+
+.ml-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: clamp(23px, 3.5dvh, 35px);
+  padding: 0 8px;
+}
+
+.ml-back::before,
+.ml-back > span {
+  content: "";
+  flex: 1;
+  min-width: 10px;
+  height: 1px;
+  background: #c5a46c;
+}
+
+.ml-back a {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+  color: #123c2e;
+  font-size: clamp(12px, 1.6dvh, 15px);
+}
+
+.ml-back a svg {
+  color: #1b503b;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .ml-login {
+    position: relative;
+    inset: auto;
+    display: block;
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .ml-brand-content {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 20px 24px;
+  }
+
+  .ml-story,
+  .ml-photo {
+    display: none;
+  }
+
+  .ml-logo {
+    font-size: 19px;
+  }
+
+  .ml-monogram {
+    width: 44px;
+    height: 50px;
+    font-size: 34px;
+  }
+
+  .ml-logo small {
+    margin-top: 5px;
+    font-size: 9px;
+  }
+
+  .ml-form-panel {
+    min-height: calc(100dvh - 90px);
+    padding: 28px 16px;
+  }
+
+  .ml-card {
+    width: 100%;
+    max-width: 480px;
+    padding: 32px 24px;
+    border-radius: 28px;
+  }
+
+  .ml-card h2 {
+    font-size: 36px;
+  }
+
+  .ml-intro,
+  .ml-field label,
+  .ml-options {
+    font-size: 13px;
+  }
+
+  .ml-input input {
+    height: 49px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 901px) and (max-height: 650px) {
+  .ml-form-panel {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .ml-card {
+    width: 100%;
+    max-width: 440px;
+    flex-shrink: 0;
+  }
+
+  .ml-brand-content {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .ml-features {
+    display: none;
+  }
+}
+
+/* =========================================
+   DASHBOARD SESSION BAR
+========================================= */
+
+.mc-admin-session,
+.mc-admin-session * {
+  box-sizing: border-box;
+}
+
+.mc-admin-session {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 24px;
+  border-bottom: 1px solid #e2dfd2;
+  background: #f4eee0;
+  color: #5b563f;
+  font: 12px/1.5 Arial, Helvetica, sans-serif;
+}
+
+.mc-admin-session button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border: 1px solid #cfc6af;
+  border-radius: 7px;
+  background: #fff;
+  color: #314d3e;
+  font: inherit;
+  cursor: pointer;
+}
+
+.mc-admin-access .mc-admin-notice {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .mc-admin-session {
+    padding: 10px 16px;
+  }
+
+  .mc-admin-session-note {
+    display: none;
+  }
+}
+
+/* =========================================
+   BACK LINK — PREMIUM GOLDEN HOVER
+========================================= */
+
+.ml-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: clamp(23px, 3.5dvh, 35px);
+  padding: 0 8px;
+}
+
+/* Decorative lines on both sides */
+
+.ml-back::before,
+.ml-back > span {
+  content: "";
+  flex: 1;
+  min-width: 10px;
+  height: 1px;
+  background: #c5a46c;
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Back to website link */
+
+.ml-back a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 10px;
+
+  color: #123c2e;
+  font-size: clamp(12px, 1.6dvh, 15px);
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    color 0.4s ease,
+    text-shadow 0.4s ease;
+}
+
+/* =========================================
+   TWO-SIDED UNDERLINE ANIMATION
+========================================= */
+
+/* Left and right halves start invisible */
+
+.ml-back a::before,
+.ml-back a::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #a9711d,
+    #edc773,
+    #c28a2d
+  );
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 0 6px rgba(211, 155, 52, 0.45),
+    0 0 12px rgba(211, 155, 52, 0.2);
+
+  pointer-events: none;
+
+  transition:
+    width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Underline begins from the left */
+
+.ml-back a::before {
+  left: 0;
+}
+
+/* Underline begins from the right */
+
+.ml-back a::after {
+  right: 0;
+}
+
+/* =========================================
+   GOLDEN TEXT GLOW ON HOVER
+========================================= */
+
+.ml-back a:hover,
+.ml-back a:focus-visible {
+  color: #b47b25;
+
+  text-shadow:
+    0 0 5px rgba(226, 171, 68, 0.6),
+    0 0 12px rgba(226, 171, 68, 0.4),
+    0 0 22px rgba(226, 171, 68, 0.2);
+}
+
+/* Both underline halves grow toward center */
+
+.ml-back a:hover::before,
+.ml-back a:hover::after,
+.ml-back a:focus-visible::before,
+.ml-back a:focus-visible::after {
+  width: 50%;
+}
+
+/* =========================================
+   ARROW GLOW AND MOVEMENT
+========================================= */
+
+.ml-back a svg {
+  color: #1b503b;
+
+  transform: translateX(0);
+
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+.ml-back a:hover svg,
+.ml-back a:focus-visible svg {
+  color: #b47b25;
+
+  transform: translateX(-5px);
+
+  filter:
+    drop-shadow(0 0 4px rgba(220, 159, 54, 0.7))
+    drop-shadow(0 0 9px rgba(220, 159, 54, 0.3));
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ml-back a,
+  .ml-back a::before,
+  .ml-back a::after,
+  .ml-back a svg {
+    transition: none;
+  }
+}

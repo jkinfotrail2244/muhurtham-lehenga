@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft,
@@ -11,6 +11,19 @@ import {
 } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+
+import {
+  createAppointment,
+  useAppointments,
+  type Appointment as StoredAppointment,
+} from "../admin/service/appointmentService";
+
+import {
+  useAvailability,
+  isDateBlocked,
+  isDayOfWeekOpen,
+  getSlotsForDate,
+} from "../admin/service/availabilityService";
 
 /* ============================================================
    SUPPORTED LANGUAGES
@@ -51,19 +64,6 @@ const services: Service[] = [
   {
     id: "fitting",
   },
-];
-
-/* ============================================================
-   TIME SLOTS
-============================================================ */
-
-const timeSlots = [
-  "10:00 AM",
-  "11:30 AM",
-  "1:00 PM",
-  "2:30 PM",
-  "3:30 PM",
-  "5:00 PM",
 ];
 
 /* ============================================================
@@ -833,6 +833,54 @@ function AppointmentPage() {
     setConfirmed,
   ] = useState<boolean>(false);
 
+  const [
+    bookedAppointment,
+    setBookedAppointment,
+  ] = useState<StoredAppointment | null>(null);
+
+  const [
+    submitting,
+    setSubmitting,
+  ] = useState<boolean>(false);
+
+  const [
+    bookingError,
+    setBookingError,
+  ] = useState<string | null>(null);
+
+  // Subscribe to availability and appointments
+  const availability = useAvailability();
+  const appointments = useAppointments();
+
+  const toDateKey = (date: Date): string => {
+    return [
+      date.getFullYear(),
+      String(date.getMonth() + 1).padStart(2, "0"),
+      String(date.getDate()).padStart(2, "0"),
+    ].join("-");
+  };
+
+  const selectedDateKey = selectedDate ? toDateKey(selectedDate) : "";
+
+  /* ==========================================================
+     SLOTS FOR SELECTED DATE
+  ========================================================== */
+
+  const slotList = useMemo(() => {
+    if (!selectedDateKey) return [];
+    return getSlotsForDate(selectedDateKey, appointments, availability);
+  }, [selectedDateKey, availability, appointments]);
+
+  const effectiveSelectedTime = useMemo(() => {
+    if (slotList.length === 0) return selectedTime;
+    const currentValid = slotList.find(
+      (s) => s.time === selectedTime && s.isAvailable,
+    );
+    if (currentValid) return selectedTime;
+    const firstAvail = slotList.find((s) => s.isAvailable);
+    return firstAvail ? firstAvail.time : selectedTime;
+  }, [slotList, selectedTime]);
+
   /* ==========================================================
      SELECTED SERVICE
   ========================================================== */
@@ -926,18 +974,24 @@ function AppointmentPage() {
       return false;
     }
 
-    /*
-     * Sunday is closed.
-     */
-    if (date.getDay() === 0) {
+    // Check weekday open/closed configured in Availability
+    if (!isDayOfWeekOpen(date.getDay())) {
       return false;
     }
 
-    return true;
+    const iso = toDateKey(date);
+    // Check specific date blocked
+    if (isDateBlocked(iso)) {
+      return false;
+    }
+
+    // Check if slots are all blocked or full
+    const daySlots = getSlotsForDate(iso, appointments, availability);
+    return daySlots.some((slot) => slot.isAvailable);
   };
 
   /* ==========================================================
-     NEXT STEP
+     NEXT STEP & FORM SUBMISSION
   ========================================================== */
 
   const goNext = () => {
@@ -960,9 +1014,56 @@ function AppointmentPage() {
 
     if (
       step === 3 &&
-      canContinueStepThree
+      canContinueStepThree &&
+      selectedDate
     ) {
-      setConfirmed(true);
+      setBookingError(null);
+      setSubmitting(true);
+      try {
+        const iso = toDateKey(selectedDate);
+        if (isDateBlocked(iso, availability) || !isDayOfWeekOpen(selectedDate.getDay(), availability)) {
+          setBookingError(
+            "The selected date is no longer available. Please select another date.",
+          );
+          setSubmitting(false);
+          return;
+        }
+
+        const currentSlots = getSlotsForDate(iso, appointments, availability);
+        const targetSlot = currentSlots.find((s) => s.time === effectiveSelectedTime);
+        if (!targetSlot || !targetSlot.isAvailable) {
+          setBookingError(
+            targetSlot?.reason ||
+              "The selected time slot is unavailable. Please select another time.",
+          );
+          setSubmitting(false);
+          return;
+        }
+
+        const res = createAppointment({
+          customer: formData.fullName.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          service: selectedServiceData
+            ? getServiceTitle(selectedServiceData.id)
+            : "Bridal consultation",
+          date: iso,
+          time: effectiveSelectedTime,
+          notes: formData.message.trim() || undefined,
+        });
+
+        if (res.success && res.appointment) {
+          setBookedAppointment(res.appointment);
+          setConfirmed(true);
+        } else {
+          setBookingError(res.error || "Unable to save appointment. Please try again.");
+        }
+      } catch (err) {
+        console.error("Booking error:", err);
+        setBookingError("Unable to save appointment. Please try again.");
+      } finally {
+        setSubmitting(false);
+      }
     }
   };
 
@@ -1106,6 +1207,22 @@ function AppointmentPage() {
               )}
             </p>
 
+            {/* REFERENCE BADGE */}
+
+            {bookedAppointment && (
+              <div className="mx-auto mt-6 inline-flex flex-col items-center gap-1 border border-[#c5a278] bg-[#fbf5eb] px-7 py-3">
+                <span className="text-[9px] uppercase tracking-[0.25em] text-[#946a43]">
+                  Booking Reference Number
+                </span>
+                <strong className="font-mono text-xl font-bold tracking-widest text-[#1e4a36]">
+                  {bookedAppointment.id}
+                </strong>
+                <span className="text-[10px] text-[#6b6257]">
+                  Status: <span className="font-semibold text-[#8c6039]">{bookedAppointment.status}</span>
+                </span>
+              </div>
+            )}
+
             {/* SUMMARY */}
 
             <div className="mx-auto mt-10 max-w-125 border border-[#d8cec1] bg-[#fbf9f5] p-7 text-left">
@@ -1116,6 +1233,20 @@ function AppointmentPage() {
               </p>
 
               <div className="space-y-4 text-sm">
+                {/* REFERENCE */}
+
+                {bookedAppointment && (
+                  <div className="flex justify-between gap-5 border-b border-[#e4ddd4] pb-3">
+                    <span className="text-[#817970]">
+                      Booking Reference
+                    </span>
+
+                    <span className="font-mono font-bold text-[#1e4a36]">
+                      {bookedAppointment.id}
+                    </span>
+                  </div>
+                )}
+
                 {/* SERVICE */}
 
                 <div className="flex justify-between gap-5 border-b border-[#e4ddd4] pb-3">
@@ -1159,7 +1290,7 @@ function AppointmentPage() {
 
                 {/* TIME */}
 
-                <div className="flex justify-between gap-5">
+                <div className="flex justify-between gap-5 border-b border-[#e4ddd4] pb-3">
                   <span className="text-[#817970]">
                     {text(
                       "summary.time",
@@ -1168,6 +1299,18 @@ function AppointmentPage() {
 
                   <span>
                     {selectedTime}
+                  </span>
+                </div>
+
+                {/* GUEST DETAILS */}
+
+                <div className="flex justify-between gap-5">
+                  <span className="text-[#817970]">
+                    Guest
+                  </span>
+
+                  <span className="text-right">
+                    {formData.fullName} ({formData.phone})
                   </span>
                 </div>
               </div>
@@ -1805,28 +1948,53 @@ function AppointmentPage() {
                         </div>
 
                         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                          {timeSlots.map(
-                            (time) => {
+                          {slotList.map(
+                            (slotItem) => {
+                              const time = slotItem.time;
                               const active =
-                                selectedTime ===
+                                effectiveSelectedTime ===
                                 time;
+                              const isSlotDisabled = !slotItem.isAvailable;
 
                               return (
                                 <button
                                   key={time}
                                   type="button"
+                                  disabled={isSlotDisabled}
                                   onClick={() =>
                                     setSelectedTime(
                                       time,
                                     )
                                   }
-                                  className={`border px-4 py-4 text-sm transition-all duration-300 ${
-                                    active
-                                      ? "border-[#8c6039] bg-[#f1e5d7] text-[#68472e]"
+                                  title={
+                                    slotItem.isBlockedByAdmin
+                                      ? "Time slot blocked by showroom"
+                                      : slotItem.isCapacityReached
+                                      ? "Time slot fully booked"
+                                      : "Available"
+                                  }
+                                  className={`flex flex-col items-center justify-center border px-4 py-3.5 text-sm transition-all duration-300 ${
+                                    isSlotDisabled
+                                      ? "cursor-not-allowed border-[#e8dfd6] bg-[#fbf8f5] text-[#b8aca1] opacity-60"
+                                      : active
+                                      ? "border-[#8c6039] bg-[#f1e5d7] font-medium text-[#68472e]"
                                       : "border-[#d8cec4] hover:border-[#a78668]"
                                   }`}
                                 >
-                                  {time}
+                                  <span>{time}</span>
+                                  {slotItem.isBlockedByAdmin ? (
+                                    <span className="mt-1 text-[8px] uppercase tracking-wider text-[#b04533]">
+                                      Blocked
+                                    </span>
+                                  ) : slotItem.isCapacityReached ? (
+                                    <span className="mt-1 text-[8px] uppercase tracking-wider text-[#9f5533]">
+                                      Fully Booked
+                                    </span>
+                                  ) : (
+                                    <span className="mt-1 text-[8px] tracking-wider text-[#697d70]">
+                                      Available
+                                    </span>
+                                  )}
                                 </button>
                               );
                             },
@@ -1862,7 +2030,7 @@ function AppointmentPage() {
                           <>
                             {" "}
                             ·{" "}
-                            {selectedTime}
+                            {effectiveSelectedTime}
                           </>
                         )}
                       </p>
@@ -1906,6 +2074,12 @@ function AppointmentPage() {
                         )}
                       </h2>
                     </div>
+
+                    {bookingError && (
+                      <div className="mb-6 border border-[#e2a89c] bg-[#fff5f3] px-5 py-3 text-sm text-[#a03823]">
+                        {bookingError}
+                      </div>
+                    )}
 
                     <div className="space-y-7">
 
@@ -2107,7 +2281,7 @@ function AppointmentPage() {
                           </span>
 
                           <span className="mt-1 block font-serif">
-                            {selectedTime}
+                            {effectiveSelectedTime}
                           </span>
                         </div>
                       </div>
@@ -2146,12 +2320,14 @@ function AppointmentPage() {
                 type="button"
                 onClick={goNext}
                 disabled={
+                  submitting ||
                   (step === 2 &&
                     !selectedDate) ||
                   (step === 3 &&
                     !canContinueStepThree)
                 }
                 className={`group flex items-center gap-5 px-7 py-4 text-[9px] uppercase tracking-[0.27em] transition-all duration-300 ${
+                  submitting ||
                   (step === 2 &&
                     !selectedDate) ||
                   (step === 3 &&
@@ -2161,9 +2337,11 @@ function AppointmentPage() {
                 }`}
               >
                 {step === 3
-                  ? text(
-                      "navigation.confirm",
-                    )
+                  ? submitting
+                    ? "Submitting..."
+                    : text(
+                        "navigation.confirm",
+                      )
                   : text(
                       "navigation.next",
                     )}

@@ -11,6 +11,10 @@ import {
 import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import {
+  usePublishedProducts,
+  getProductSlug,
+} from "../admin/services/productService";
 
 /* ============================================================
    TYPES
@@ -33,54 +37,17 @@ type SortOption =
   | "featured";
 
 type Lehenga = {
-  id: number;
+  id: number | string;
   number: string;
-  translationKey: string;
+  translationKey?: string;
   slug: string;
   category: Exclude<Category, "all">;
   image: string;
   featured?: boolean;
+  name: string;
+  description: string;
+  price?: number;
 };
-
-/* ============================================================
-   LEHENGA DATA
-============================================================ */
-
-const lehengas: Lehenga[] = [
-  {
-    id: 1,
-    number: "01",
-    translationKey: "royalMaroon",
-    slug: "royal-maroon",
-    category: "bridal",
-    image: "/images/lehenga-bridal.png",
-    featured: true,
-  },
-  {
-    id: 2,
-    number: "02",
-    translationKey: "ivoryGarden",
-    slug: "ivory-garden",
-    category: "bridal",
-    image: "/images/lehenga-collection.png",
-  },
-  {
-    id: 3,
-    number: "03",
-    translationKey: "blushPink",
-    slug: "blush-pink",
-    category: "occasion",
-    image: "/images/lehenga-occasion.png",
-  },
-  {
-    id: 4,
-    number: "04",
-    translationKey: "goldenTissue",
-    slug: "golden-tissue",
-    category: "occasion",
-    image: "/images/lehenga-wedding.png",
-  },
-];
 
 /* ============================================================
    CATEGORY FALLBACK TRANSLATIONS
@@ -512,6 +479,41 @@ function LehengasPage() {
   };
 
   /* ==========================================================
+     PUBLISHED LEHENGAS
+  ========================================================== */
+
+  const publishedProducts = usePublishedProducts("lehengas");
+
+  const lehengas: Lehenga[] = useMemo(() => {
+    return publishedProducts.map((p, index) => {
+      const slug = getProductSlug(p);
+      const isOccasion = p.category.toLowerCase().includes("occasion");
+      const category: Exclude<Category, "all"> = isOccasion
+        ? "occasion"
+        : "bridal";
+
+      let translationKey: string | undefined = undefined;
+      if (slug === "royal-maroon") translationKey = "royalMaroon";
+      else if (slug === "ivory-garden") translationKey = "ivoryGarden";
+      else if (slug === "blush-pink") translationKey = "blushPink";
+      else if (slug === "golden-tissue") translationKey = "goldenTissue";
+
+      return {
+        id: p.id,
+        number: String(index + 1).padStart(2, "0"),
+        translationKey,
+        slug,
+        category,
+        image: p.image || "/images/lehenga-bridal.png",
+        featured: p.featured,
+        name: p.name,
+        description: p.description,
+        price: p.price,
+      };
+    });
+  }, [publishedProducts]);
+
+  /* ==========================================================
      FILTER + SORT
   ========================================================== */
 
@@ -538,7 +540,7 @@ function LehengasPage() {
     }
 
     return items;
-  }, [activeCategory, sortBy]);
+  }, [activeCategory, lehengas, sortBy]);
 
   return (
     <main className="min-h-screen bg-ivory text-ink">
@@ -979,33 +981,33 @@ function LehengasPage() {
                 (item, index) => {
 
                   const product =
-                    productFallbacks[
-                      item.translationKey
-                    ];
+                    item.translationKey
+                      ? productFallbacks[item.translationKey]
+                      : undefined;
 
                   const productName =
-                    translate(
-                      `products.${item.translationKey}.title`,
-                      product.title[
-                        language
-                      ],
-                    );
+                    item.translationKey && product
+                      ? translate(
+                          `products.${item.translationKey}.title`,
+                          product.title[language] || item.name,
+                        )
+                      : item.name;
 
                   const productCategory =
-                    translate(
-                      `products.${item.translationKey}.category`,
-                      product.category[
-                        language
-                      ],
-                    );
+                    item.translationKey && product
+                      ? translate(
+                          `products.${item.translationKey}.category`,
+                          product.category[language] || item.category,
+                        )
+                      : item.category.toUpperCase();
 
                   const productDescription =
-                    translate(
-                      `products.${item.translationKey}.description`,
-                      product.description[
-                        language
-                      ],
-                    );
+                    item.translationKey && product
+                      ? translate(
+                          `products.${item.translationKey}.description`,
+                          product.description[language] || item.description,
+                        )
+                      : item.description;
 
                   return (
                     <motion.article

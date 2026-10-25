@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import LanguageSwitcher from "../navigation/LanguageSwitcher";
 import MegaMenu from "../navigation/MegaMenu";
 import MobileMenu from "./MobileMenu";
 
@@ -352,11 +351,6 @@ function Header() {
                 strokeWidth={1.25}
               />
             </button>
-
-            {/* LANGUAGE */}
-
-            <LanguageSwitcher />
-
           </div>
         </div>
 
@@ -534,10 +528,6 @@ function Header() {
                 strokeWidth={1.2}
               />
             </button>
-
-            {/* LANGUAGE */}
-
-            <LanguageSwitcher />
 
             {/* CLOSE */}
 

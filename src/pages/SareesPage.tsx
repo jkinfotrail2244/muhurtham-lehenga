@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { ArrowUpRight } from "lucide-react";
 import {
   Link,
@@ -6,63 +7,10 @@ import {
 } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-
-/* ============================================================
-   SAREE DATA
-
-   IMPORTANT:
-   ------------------------------------------------------------
-   Only permanent product data lives here.
-
-   Customer-facing text MUST NOT be stored here.
-
-   All text is loaded from the selected language JSON file.
-============================================================ */
-
-const sarees = [
-  {
-    slug: "royal-red",
-    translationKey: "royalRed",
-    category: "bridal",
-    number: "01",
-    image: "/images/saree-1.png",
-  },
-  {
-    slug: "ivory-gold",
-    translationKey: "ivoryGold",
-    category: "bridal",
-    number: "02",
-    image: "/images/saree-2.png",
-  },
-  {
-    slug: "blush-rose",
-    translationKey: "blushRose",
-    category: "occasion",
-    number: "03",
-    image: "/images/saree-3.png",
-  },
-  {
-    slug: "emerald-grace",
-    translationKey: "emeraldGrace",
-    category: "occasion",
-    number: "04",
-    image: "/images/saree-4.png",
-  },
-  {
-    slug: "champagne-drape",
-    translationKey: "champagneDrape",
-    category: "occasion",
-    number: "05",
-    image: "/images/saree-5.png",
-  },
-  {
-    slug: "midnight-blue",
-    translationKey: "midnightBlue",
-    category: "occasion",
-    number: "06",
-    image: "/images/saree-6.png",
-  },
-] as const;
+import {
+  usePublishedProducts,
+  getProductSlug,
+} from "../admin/services/productService";
 
 /* ============================================================
    TYPES
@@ -72,6 +20,18 @@ type SareeCategory =
   | "all"
   | "bridal"
   | "occasion";
+
+type SareeItem = {
+  id: string | number;
+  slug: string;
+  translationKey?: string;
+  category: SareeCategory;
+  number: string;
+  image: string;
+  name: string;
+  description: string;
+  price?: number;
+};
 
 type SupportedLanguage =
   | "en"
@@ -523,17 +483,55 @@ function SareesPage() {
   };
 
   /* ==========================================================
+     PUBLISHED SAREES
+  ========================================================== */
+
+  const publishedProducts = usePublishedProducts("sarees");
+
+  const sarees: SareeItem[] = useMemo(() => {
+    return publishedProducts.map((p, index) => {
+      const slug = getProductSlug(p);
+      const isBridal =
+        p.category.toLowerCase().includes("bridal") ||
+        p.name.toLowerCase().includes("royal red") ||
+        p.name.toLowerCase().includes("ivory gold");
+      const category: SareeCategory = isBridal ? "bridal" : "occasion";
+
+      let translationKey: string | undefined = undefined;
+      if (slug === "royal-red") translationKey = "royalRed";
+      else if (slug === "ivory-gold") translationKey = "ivoryGold";
+      else if (slug === "blush-rose") translationKey = "blushRose";
+      else if (slug === "emerald-grace") translationKey = "emeraldGrace";
+      else if (slug === "champagne-drape") translationKey = "champagneDrape";
+      else if (slug === "midnight-blue") translationKey = "midnightBlue";
+
+      return {
+        id: p.id,
+        slug,
+        translationKey,
+        category,
+        number: String(index + 1).padStart(2, "0"),
+        image: p.image || "/images/saree-1.png",
+        name: p.name,
+        description: p.description,
+        price: p.price,
+      };
+    });
+  }, [publishedProducts]);
+
+  /* ==========================================================
      FILTER PRODUCTS
   ========================================================== */
 
-  const filteredSarees =
-    activeCategory === "all"
+  const filteredSarees = useMemo(() => {
+    return activeCategory === "all"
       ? sarees
       : sarees.filter(
           (saree) =>
             saree.category ===
             activeCategory,
         );
+  }, [activeCategory, sarees]);
 
   /* ==========================================================
      PAGE TRANSLATIONS
@@ -877,42 +875,42 @@ function SareesPage() {
           {filteredSarees.map(
             (saree, index) => {
 
-              const product =
-                productFallbacks[
-                  saree.translationKey
-                ];
+              const product = saree.translationKey
+                ? productFallbacks[saree.translationKey]
+                : undefined;
 
-              const productName =
-                translate(
-                  `products.${saree.translationKey}.title`,
-                  product.title[
-                    language
-                  ],
-                );
+              const productName = saree.translationKey && product
+                ? translate(
+                    `products.${saree.translationKey}.title`,
+                    product.title[language] || saree.name,
+                  )
+                : saree.name;
 
-              const productEyebrow =
-                translate(
-                  `products.${saree.translationKey}.eyebrow`,
-                  product.eyebrow[
-                    language
-                  ],
-                );
+              const productEyebrow = saree.translationKey && product
+                ? translate(
+                    `products.${saree.translationKey}.eyebrow`,
+                    product.eyebrow[language] ||
+                      (saree.category === "bridal"
+                        ? "Bridal Saree"
+                        : "Occasion Saree"),
+                  )
+                : saree.category === "bridal"
+                  ? "Bridal Saree"
+                  : "Occasion Saree";
 
-              const productColor =
-                translate(
-                  `products.${saree.translationKey}.color`,
-                  product.color[
-                    language
-                  ],
-                );
+              const productColor = saree.translationKey && product
+                ? translate(
+                    `products.${saree.translationKey}.color`,
+                    product.color[language] || "",
+                  )
+                : "";
 
-              const productDescription =
-                translate(
-                  `products.${saree.translationKey}.description`,
-                  product.description[
-                    language
-                  ],
-                );
+              const productDescription = saree.translationKey && product
+                ? translate(
+                    `products.${saree.translationKey}.description`,
+                    product.description[language] || saree.description,
+                  )
+                : saree.description;
 
               return (
                 <motion.div

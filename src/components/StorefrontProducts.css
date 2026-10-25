@@ -1,0 +1,429 @@
+
+/* ==========================================
+   MUHURTHAM CUSTOMER PRODUCT CATALOGUE
+========================================== */
+
+.msw-products,
+.msw-products *,
+.msw-products *::before,
+.msw-products *::after {
+  box-sizing: border-box;
+}
+
+.msw-products {
+  width: 100%;
+  padding: 55px clamp(20px, 5vw, 88px);
+  background: #fff;
+  color: #2b211d;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.msw-products-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.msw-products-eyebrow {
+  color: #a47b5c;
+  font: 11px/1.5 Arial, sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.msw-products-heading h2 {
+  margin: 10px 0 8px;
+  font-size: clamp(30px, 3vw, 48px);
+  font-weight: 400;
+  letter-spacing: -0.8px;
+}
+
+.msw-products-heading p {
+  margin: 0;
+  color: #837b74;
+  font: 14px/1.6 Arial, sans-serif;
+}
+
+.msw-products-count {
+  color: #948279;
+  white-space: nowrap;
+  font: 12px Arial, sans-serif;
+}
+
+/* ==========================================
+   PRODUCT GRID
+========================================== */
+
+.msw-products-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    4,
+    minmax(0, 1fr)
+  );
+  gap: 25px;
+}
+
+.msw-product-card {
+  min-width: 0;
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.msw-product-photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: #f0e9e0;
+  cursor: pointer;
+}
+
+.msw-product-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.msw-product-card:hover .msw-product-photo img {
+  transform: scale(1.045);
+}
+
+.msw-product-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+  color: #a58d78;
+  background: linear-gradient(
+    145deg,
+    #e9dfd4,
+    #f7f2eb
+  );
+}
+
+.msw-product-placeholder small {
+  font: 10px Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+.msw-product-featured {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  z-index: 2;
+  padding: 9px 11px;
+  background: rgba(255, 255, 255, 0.93);
+  color: #50392b;
+  font: 9px Arial, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+/* ==========================================
+   PRODUCT INFORMATION
+========================================== */
+
+.msw-product-content {
+  padding: 18px 0 10px;
+}
+
+.msw-product-category {
+  color: #97847a;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.msw-product-content h3 {
+  margin: 8px 0;
+  color: #2e2520;
+  font: normal 21px/1.3 Georgia, serif;
+}
+
+.msw-product-price {
+  margin: 11px 0 16px;
+  color: #4a3c34;
+  font-size: 16px;
+}
+
+.msw-product-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 0 5px;
+  border: 0;
+  border-bottom: 1px solid #795d50;
+  background: transparent;
+  color: #42352c;
+  cursor: pointer;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 1.4px;
+}
+
+.msw-product-view:hover {
+  color: #a2775a;
+  border-color: #a2775a;
+}
+
+/* ==========================================
+   PRODUCT DETAILS MODAL
+========================================== */
+
+.msw-product-overlay {
+  position: fixed;
+  z-index: 200;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(17, 15, 13, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.msw-product-dialog {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44% 56%;
+  width: min(850px, 100%);
+  max-height: 90dvh;
+  overflow: auto;
+  background: #fff;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.24);
+}
+
+.msw-product-close {
+  position: absolute;
+  z-index: 3;
+  top: 15px;
+  right: 15px;
+  display: grid;
+  place-items: center;
+  width: 37px;
+  height: 37px;
+  border: 1px solid #e7ddd4;
+  border-radius: 50%;
+  background: #fff;
+  color: #342820;
+  cursor: pointer;
+}
+
+.msw-product-dialog-photo {
+  min-height: 440px;
+  background: #f0e7dd;
+}
+
+.msw-product-dialog-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.msw-product-dialog-content {
+  align-self: center;
+  padding: 55px 45px;
+}
+
+.msw-product-dialog-content h2 {
+  margin: 13px 0;
+  font: normal 36px/1.2 Georgia, serif;
+}
+
+.msw-product-dialog-price {
+  margin: 0 0 23px;
+  font-size: 20px;
+}
+
+.msw-product-dialog-content > p:not(
+  .msw-product-dialog-price
+) {
+  color: #766c65;
+  font: 14px/1.8 Arial, sans-serif;
+}
+
+.msw-product-availability {
+  display: block;
+  margin-top: 25px;
+  color: #416450;
+  font: 12px Arial, sans-serif;
+}
+
+.msw-product-done {
+  margin-top: 25px;
+  padding: 14px 20px;
+  border: 1px solid #352c25;
+  background: transparent;
+  color: #352c25;
+  font: 11px Arial, sans-serif;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+}
+
+.msw-product-done:hover {
+  background: #352c25;
+  color: #fff;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1100px) {
+  .msw-products-grid {
+    grid-template-columns: repeat(
+      3,
+      minmax(0, 1fr)
+    );
+  }
+}
+
+@media (max-width: 760px) {
+  .msw-products {
+    padding: 40px 20px;
+  }
+
+  .msw-products-grid {
+    grid-template-columns: repeat(
+      2,
+      minmax(0, 1fr)
+    );
+    gap: 15px;
+  }
+
+  .msw-product-content h3 {
+    font-size: 17px;
+  }
+
+  .msw-products-heading h2 {
+    font-size: 32px;
+  }
+
+  .msw-product-dialog {
+    grid-template-columns: 1fr;
+  }
+
+  .msw-product-dialog-photo {
+    min-height: 0;
+    height: 290px;
+  }
+
+  .msw-product-dialog-content {
+    padding: 28px;
+  }
+
+  .msw-product-dialog-content h2 {
+    font-size: 29px;
+  }
+}
+
+@media (max-width: 420px) {
+  .msw-products-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .msw-product-photo {
+    aspect-ratio: 3 / 4;
+  }
+
+  .msw-product-content h3 {
+    font-size: 15px;
+  }
+
+  .msw-product-price {
+    font-size: 14px;
+  }
+
+  .msw-product-view {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .msw-products *,
+  .msw-products *::before,
+  .msw-products *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ==========================================
+   PROMOTIONAL OFFERS & DISCOUNT BADGES
+========================================== */
+
+.msw-product-offer-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 9px;
+  background: linear-gradient(135deg, #184a36, #0e3022);
+  color: #f7e6c4;
+  border: 1px solid #d4af37;
+  border-radius: 9999px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.msw-product-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 6px 0 10px;
+}
+
+.msw-price-discounted {
+  color: #173b2c !important;
+  font-weight: 700;
+}
+
+.msw-price-original {
+  color: #9c958e;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  text-decoration: line-through;
+}
+
+.msw-product-dialog-price-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 16px;
+}
+
+.msw-offer-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  background: #fbf5eb;
+  border: 1px solid #dfc79b;
+  color: #8c6039;
+  border-radius: 9999px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+

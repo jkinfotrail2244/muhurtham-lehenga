@@ -23,12 +23,24 @@ import {
 
 import {
   useState,
+  useMemo,
   type CSSProperties,
   type ReactNode,
   type SyntheticEvent,
 } from "react";
 
 import { useTranslation } from "react-i18next";
+import {
+  useProducts,
+  getProductSlug,
+  slugify,
+} from "../admin/services/productService";
+
+import {
+  getBestOfferForProduct,
+  formatOfferDiscount,
+  useOffers,
+} from "../admin/service/offerService";
 
 /* ============================================================
    TYPES
@@ -2334,6 +2346,25 @@ function CollectionDetailPage() {
      FIND CURRENT PRODUCT
   ========================================================== */
 
+  const allProducts = useProducts();
+
+  const liveProduct = useMemo(() => {
+    if (!slug) return null;
+    const cleanSlug = slug.toLowerCase();
+    return (
+      allProducts.find((p) => {
+        return (
+          p.id.toLowerCase() === cleanSlug ||
+          p.sku.toLowerCase() === cleanSlug ||
+          getProductSlug(p) === cleanSlug ||
+          slugify(p.name) === cleanSlug
+        );
+      }) ?? null
+    );
+  }, [allProducts, slug]);
+
+  useOffers(); // Subscribe reactively to live offers
+
   let detail: ProductConfig | null =
     null;
 
@@ -2362,6 +2393,73 @@ function CollectionDetailPage() {
     detail =
       collections[slug] ??
       null;
+  }
+
+  /* Dynamically construct detail from shared products if not in static records */
+  if (!detail && liveProduct && liveProduct.active && liveProduct.stock > 0) {
+    const isSaree =
+      isSareeProduct ||
+      liveProduct.category.toLowerCase().includes("saree") ||
+      liveProduct.name.toLowerCase().includes("saree");
+    const isSherwani =
+      isSherwaniProduct ||
+      liveProduct.category.toLowerCase().includes("sherwani") ||
+      liveProduct.category.toLowerCase().includes("menswear") ||
+      liveProduct.name.toLowerCase().includes("sherwani");
+
+    const categoryType: ProductCategory = isSaree
+      ? "Saree"
+      : isSherwani
+        ? "Sherwani"
+        : "Lehenga";
+    const productType: ProductType = isSaree
+      ? "saree"
+      : isSherwani
+        ? "sherwani"
+        : "lehenga";
+    const backPath = isSaree ? "sarees" : isSherwani ? "sherwanis" : "lehengas";
+    const backLabelKey = isSaree
+      ? "common.backToSarees"
+      : isSherwani
+        ? "common.backToSherwanis"
+        : "common.backToLehengas";
+    const explorePath = backPath;
+    const exploreLabelKey = isSaree
+      ? "common.exploreSarees"
+      : isSherwani
+        ? "common.exploreSherwanis"
+        : "common.exploreLehengas";
+
+    const defaultImage = isSaree
+      ? "/images/saree-1.png"
+      : isSherwani
+        ? "/images/sherwani-1.png"
+        : "/images/lehenga-bridal.png";
+
+    detail = {
+      titleKey: liveProduct.name,
+      eyebrowKey: liveProduct.category,
+      descriptionKey: liveProduct.description,
+      longDescriptionKey: liveProduct.description,
+      images: liveProduct.image ? [liveProduct.image] : [defaultImage],
+      number: liveProduct.sku,
+      category: categoryType,
+      type: productType,
+      backLabelKey,
+      backPath,
+      exploreLabelKey,
+      explorePath,
+      detailKeys: [],
+      accent: isSaree ? "#8F3B3B" : isSherwani ? "#806657" : "#8F3B3B",
+      accentLight: "#F5E5E2",
+      accentDark: "#652727",
+      background: "#FBF7F3",
+      features: [
+        { icon: "leaf", featureKey: "premiumQuality" },
+        { icon: "diamond", featureKey: "exquisiteCraftsmanship" },
+        { icon: "sparkles", featureKey: "timelessElegance" },
+      ],
+    };
   }
 
   /* ==========================================================
@@ -2910,17 +3008,17 @@ function CollectionDetailPage() {
      PRODUCT TITLE
   ========================================================== */
 
+  const resolvedTitle =
+    detail.type === "collection" && slug
+      ? getCollectionName(slug, detail.titleKey)
+      : getProductName(slug || "", detail.titleKey);
+
   const title =
-    detail.type === "collection" &&
-    slug
-      ? getCollectionName(
-          slug,
-          detail.titleKey,
-        )
-      : getProductName(
-          slug || "",
-          detail.titleKey,
-        );
+    resolvedTitle && resolvedTitle !== detail.titleKey
+      ? resolvedTitle
+      : liveProduct
+        ? liveProduct.name
+        : resolvedTitle || detail.titleKey;
 
   /* ==========================================================
      TRANSLATED CONTENT
@@ -2929,13 +3027,13 @@ function CollectionDetailPage() {
   const eyebrow =
     translateString(
       detail.eyebrowKey,
-      detail.category,
+      liveProduct ? liveProduct.category : detail.category,
     );
 
   const description =
     translateString(
       detail.descriptionKey,
-      "",
+      liveProduct ? liveProduct.description : "",
     );
 
   const longDescription =
@@ -3569,6 +3667,39 @@ function CollectionDetailPage() {
               <h1 className="mt-6 max-w-2xl font-display text-4xl leading-[1.12] text-ink transition-transform duration-700 hover:translate-x-0.5 sm:text-5xl lg:text-[52px]">
                 {title}
               </h1>
+
+              {/* PRICE & DISCOUNT */}
+              {liveProduct && liveProduct.price > 0 && (() => {
+                const deal = getBestOfferForProduct(liveProduct.id, liveProduct.price);
+                const money = (val: number) =>
+                  new Intl.NumberFormat("en-LK", {
+                    style: "currency",
+                    currency: "LKR",
+                    maximumFractionDigits: 0,
+                  }).format(val);
+
+                return (
+                  <div className="mt-4 flex flex-wrap items-baseline gap-3">
+                    {deal ? (
+                      <>
+                        <span className="font-serif text-2xl font-bold tracking-tight text-[#173b2c]">
+                          {money(deal.finalPrice)}
+                        </span>
+                        <span className="font-serif text-base text-black/40 line-through">
+                          {money(liveProduct.price)}
+                        </span>
+                        <span className="inline-flex items-center gap-1 rounded-full border border-[#c89e65] bg-[#faf3e7] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#8b5c2a]">
+                          ✦ {formatOfferDiscount(deal.offer)}
+                        </span>
+                      </>
+                    ) : (
+                      <span className="font-serif text-2xl font-bold tracking-tight text-[#173b2c]">
+                        {money(liveProduct.price)}
+                      </span>
+                    )}
+                  </div>
+                );
+              })()}
 
               {/* DECORATIVE LINE */}
 

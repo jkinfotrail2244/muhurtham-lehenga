@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import StorefrontProducts from "../components/StorefrontProducts";
 
 /* =========================================================
    TYPES
@@ -1383,6 +1384,18 @@ function CollectionsPage() {
         </div>
 
       </section>
+
+      {/* =====================================================
+          STOREFRONT PRODUCTS COLLECTION
+      ===================================================== */}
+
+      <StorefrontProducts
+        collection="collections"
+        heading={translate(
+          "collections.exploreCollections",
+          fallback.exploreCollections,
+        )}
+      />
 
       {/* =====================================================
           APPOINTMENT CTA

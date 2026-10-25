@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { lazy, Suspense, useEffect, useRef } from "react";
 import {
   Navigate,
   Route,
@@ -24,49 +24,20 @@ import NotFoundPage from "./pages/NotFoundPage";
 
 import LanguageSync from "./components/navigation/LanguageSync";
 import Header from "./components/layout/Header";
+import AnnouncementTicker from "./components/layout/AnnouncementTicker";
 
-/* ============================================================
-   SUPPORTED LANGUAGES
-============================================================ */
+const AdminAccess = lazy(() => import("./admin/AdminAccess"));
 
 const languages = ["en", "de", "fr", "it"] as const;
 
 type Language = (typeof languages)[number];
 
-/* ============================================================
-   SCROLL TO TOP
-============================================================ */
-
-/*
- * Whenever the route changes, start the new page at the top.
- *
- * This prevents a problem where:
- *
- * Home
- *   ↓ user scrolls to bottom
- *   ↓ clicks Showroom
- * Showroom opens at the same scroll position
- *
- * Instead:
- *
- * Home
- *   ↓ click Showroom
- * Showroom always opens from the top.
- */
-
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    /*
-     * Prevent the browser from restoring the previous
-     * scroll position automatically.
-     */
     window.history.scrollRestoration = "manual";
 
-    /*
-     * Always start the newly opened route at the top.
-     */
     window.scrollTo({
       top: 0,
       left: 0,
@@ -77,41 +48,15 @@ function ScrollToTop() {
   return null;
 }
 
-/* ============================================================
-   APP CONTENT
-============================================================ */
-
 function AppContent() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  /*
-   * Prevent the refresh redirect from running more than once
-   * during the initial application load.
-   */
   const refreshChecked = useRef(false);
 
-  /* ==========================================================
-     REFRESH → LANGUAGE HOME
-
-     On an actual browser refresh:
-
-       /en/sherwanis
-             ↓
-       /en
-
-       /fr/collections
-             ↓
-       /fr
-
-     Normal React Router navigation is NOT affected.
-
-       /en
-        ↓ click Collections
-       /en/collections
-
-     remains /en/collections.
-  ========================================================== */
+  const isAdminRoute =
+    location.pathname.toLowerCase() === "/admin" ||
+    location.pathname.toLowerCase().startsWith("/admin/");
 
   useEffect(() => {
     if (refreshChecked.current) {
@@ -120,23 +65,19 @@ function AppContent() {
 
     refreshChecked.current = true;
 
-    const navigationEntry =
-      performance.getEntriesByType("navigation")[0] as
-        | PerformanceNavigationTiming
-        | undefined;
+    if (isAdminRoute) {
+      return;
+    }
 
-    /*
-     * Only perform the redirect when the browser
-     * navigation was an actual reload.
-     */
+    const navigationEntry = performance.getEntriesByType(
+      "navigation",
+    )[0] as PerformanceNavigationTiming | undefined;
+
     if (navigationEntry?.type !== "reload") {
       return;
     }
 
-    const pathParts = location.pathname
-      .split("/")
-      .filter(Boolean);
-
+    const pathParts = location.pathname.split("/").filter(Boolean);
     const currentLanguage = pathParts[0];
 
     const language: Language = languages.includes(
@@ -147,303 +88,93 @@ function AppContent() {
 
     const homePath = `/${language}`;
 
-    /*
-     * If the user refreshed a deeper page,
-     * return to the language home page.
-     */
     if (location.pathname !== homePath) {
-      navigate(homePath, {
-        replace: true,
-      });
+      navigate(homePath, { replace: true });
     }
-  }, [location.pathname, navigate]);
+  }, [isAdminRoute, location.pathname, navigate]);
 
   return (
     <>
-      {/* =====================================================
-          GLOBAL SCROLL MANAGEMENT
-
-          This must be outside Routes so it works for
-          every page in the website.
-      ===================================================== */}
-
       <ScrollToTop />
 
-      {/* =====================================================
-          GLOBAL LOADING SCREEN
-      ===================================================== */}
-
-      <LoadingScreen />
-
-      {/* =====================================================
-          GLOBAL LANGUAGE SYNCHRONIZATION
-      ===================================================== */}
-
-      <LanguageSync />
-
-      {/* =====================================================
-          GLOBAL HEADER
-
-          Header is available throughout the website.
-      ===================================================== */}
-
-      <Header />
-
-      {/* =====================================================
-          ROUTES
-      ===================================================== */}
+      {!isAdminRoute && (
+        <>
+          <LoadingScreen />
+          <LanguageSync />
+          <Header />
+          <AnnouncementTicker />
+        </>
+      )}
 
       <Routes>
-        {/* ===================================================
-            ROOT
-
-            / → /en
-        =================================================== */}
-
         <Route
-          path="/"
+          path="/admin/*"
           element={
-            <Navigate
-              to="/en"
-              replace
-            />
+            <Suspense
+              fallback={
+                <div role="status" style={{ padding: 32 }}>
+                  Loading admin workspace…
+                </div>
+              }
+            >
+              <AdminAccess />
+            </Suspense>
           }
         />
 
-        {/* ===================================================
-            LANGUAGE ROUTES
-        =================================================== */}
+        <Route path="/" element={<Navigate to="/en" replace />} />
 
         {languages.map((language) => (
-          <Route
-            key={language}
-            path={`/${language}`}
-          >
-            {/* ===============================================
-                HOME
+          <Route key={language} path={`/${language}`}>
+            <Route index element={<HomePage />} />
 
-                /en
-                /de
-                /fr
-                /it
-            =============================================== */}
-
-            <Route
-              index
-              element={<HomePage />}
-            />
-
-            {/* ===============================================
-                LEHENGAS
-            =============================================== */}
-
-            {/* Main Lehenga Catalogue */}
-
-            <Route
-              path="lehengas"
-              element={
-                <LehengasPage />
-              }
-            />
-
-            {/* Lehenga Bridal Category */}
-
-            <Route
-              path="lehengas/bridal"
-              element={
-                <LehengasPage />
-              }
-            />
-
-            {/* Lehenga Occasion Category */}
-
-            <Route
-              path="lehengas/occasion"
-              element={
-                <LehengasPage />
-              }
-            />
-
-            {/* Individual Lehenga */}
-
+            <Route path="lehengas" element={<LehengasPage />} />
+            <Route path="lehengas/bridal" element={<LehengasPage />} />
+            <Route path="lehengas/occasion" element={<LehengasPage />} />
             <Route
               path="lehengas/:slug"
-              element={
-                <CollectionDetailPage />
-              }
+              element={<CollectionDetailPage />}
             />
 
-            {/* ===============================================
-                SAREES
-            =============================================== */}
-
-            {/* Main Saree Catalogue */}
-
-            <Route
-              path="sarees"
-              element={
-                <SareesPage />
-              }
-            />
-
-            {/* Bridal Sarees */}
-
-            <Route
-              path="sarees/bridal"
-              element={
-                <SareesPage />
-              }
-            />
-
-            {/* Occasion Sarees */}
-
-            <Route
-              path="sarees/occasion"
-              element={
-                <SareesPage />
-              }
-            />
-
-            {/* Individual Saree */}
-
+            <Route path="sarees" element={<SareesPage />} />
+            <Route path="sarees/bridal" element={<SareesPage />} />
+            <Route path="sarees/occasion" element={<SareesPage />} />
             <Route
               path="sarees/:slug"
-              element={
-                <CollectionDetailPage />
-              }
+              element={<CollectionDetailPage />}
             />
 
-            {/* ===============================================
-                SHERWANIS
-            =============================================== */}
-
-            {/* Main Sherwani Catalogue */}
-
-            <Route
-              path="sherwanis"
-              element={
-                <SherwanisPage />
-              }
-            />
-
-            {/* Groom Sherwanis */}
-
-            <Route
-              path="sherwanis/groom"
-              element={
-                <SherwanisPage />
-              }
-            />
-
-            {/* Occasion Sherwanis */}
-
+            <Route path="sherwanis" element={<SherwanisPage />} />
+            <Route path="sherwanis/groom" element={<SherwanisPage />} />
             <Route
               path="sherwanis/occasion"
-              element={
-                <SherwanisPage />
-              }
+              element={<SherwanisPage />}
             />
-
-            {/* Individual Sherwani */}
-
             <Route
               path="sherwanis/:slug"
-              element={
-                <CollectionDetailPage />
-              }
+              element={<CollectionDetailPage />}
             />
 
-            {/* ===============================================
-                COLLECTIONS
-            =============================================== */}
-
-            {/* Main Collections Page */}
-
-            <Route
-              path="collections"
-              element={
-                <CollectionsPage />
-              }
-            />
-
-            {/* Individual Collection */}
-
+            <Route path="collections" element={<CollectionsPage />} />
             <Route
               path="collections/:slug"
-              element={
-                <CollectionDetailPage />
-              }
+              element={<CollectionDetailPage />}
             />
 
-            {/* ===============================================
-                OUR STORY
-            =============================================== */}
+            <Route path="our-story" element={<OurStoryPage />} />
+            <Route path="showroom" element={<ShowroomPage />} />
+            <Route path="appointment" element={<AppointmentPage />} />
 
-            <Route
-              path="our-story"
-              element={
-                <OurStoryPage />
-              }
-            />
-
-            {/* ===============================================
-                SHOWROOM
-            =============================================== */}
-
-            <Route
-              path="showroom"
-              element={
-                <ShowroomPage />
-              }
-            />
-
-            {/* ===============================================
-                APPOINTMENT
-            =============================================== */}
-
-            <Route
-              path="appointment"
-              element={
-                <AppointmentPage />
-              }
-            />
-
-            {/* ===============================================
-                LANGUAGE-SPECIFIC 404
-            =============================================== */}
-
-            <Route
-              path="*"
-              element={
-                <NotFoundPage />
-              }
-            />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         ))}
 
-        {/* ===================================================
-            GLOBAL 404
-        =================================================== */}
-
-        <Route
-          path="*"
-          element={
-            <NotFoundPage />
-          }
-        />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );
 }
 
-/* ============================================================
-   APP
-============================================================ */
-
-function App() {
-  return (
-    <AppContent />
-  );
+export default function App() {
+  return <AppContent />;
 }
-
-export default App;

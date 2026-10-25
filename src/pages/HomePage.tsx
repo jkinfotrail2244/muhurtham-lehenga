@@ -8,10 +8,15 @@ import {
   Link,
   useLocation,
 } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { motion, type Variants } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import HeroSection from "../components/home/HeroSection";
+import {
+  usePublishedProducts,
+  getProductSlug,
+  getProductCollectionPath,
+} from "../admin/services/productService";
 
 /* ============================================================
    SUPPORTED LANGUAGES
@@ -352,6 +357,37 @@ function HomePage() {
               ? "மணமகன் தொகுப்பு"
               : "Groom Edit",
     );
+
+  /* ==========================================================
+     PUBLISHED PRODUCTS FROM SHARED SOURCE
+  ========================================================== */
+
+  const publishedProducts = usePublishedProducts("all");
+
+  const featuredProducts = useMemo(() => {
+    const featured = publishedProducts.filter((product) => product.featured);
+    if (featured.length >= 3) {
+      return featured.slice(0, 3);
+    }
+    const remaining = publishedProducts.filter((product) => !product.featured);
+    return [...featured, ...remaining].slice(0, 3);
+  }, [publishedProducts]);
+
+  const getFeaturedDisplayTitle = (product: { name: string }) => {
+    const n = product.name.toLowerCase();
+    if (n.includes("royal red")) return royalRedName;
+    if (n.includes("royal maroon")) return royalMaroonName;
+    if (n.includes("ivory heritage")) return ivoryHeritageName;
+    return product.name;
+  };
+
+  const getFeaturedDisplayCategory = (product: { category: string; name: string }) => {
+    const n = product.name.toLowerCase();
+    if (n.includes("royal red")) return royalRedCategory;
+    if (n.includes("royal maroon")) return royalMaroonCategory;
+    if (n.includes("ivory heritage")) return ivoryHeritageCategory;
+    return product.category;
+  };
 
   /* ============================================================
      MAIN PAGE
@@ -938,163 +974,63 @@ function HomePage() {
           </div>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {featuredProducts.map((product, index) => {
+              const collectionPath = getProductCollectionPath(product);
+              const slug = getProductSlug(product);
+              const number = String(index + 1).padStart(2, "0");
+              const tagLabel =
+                collectionPath === "sarees"
+                  ? sareeLabel
+                  : collectionPath === "sherwanis"
+                    ? sherwaniLabel
+                    : lehengaLabel;
+              const title = getFeaturedDisplayTitle(product);
+              const category = getFeaturedDisplayCategory(product);
 
-            {/* =================================================
-                ROYAL RED
-            ================================================= */}
+              return (
+                <Link
+                  key={product.id}
+                  to={localizedPath(`/${collectionPath}/${slug}`)}
+                  className="group"
+                >
+                  <div className="relative aspect-4/5 overflow-hidden bg-[#E8DDD1]">
+                    {product.image ? (
+                      <img
+                        src={product.image}
+                        alt={title}
+                        className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.035]"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center bg-[#E8DDD1] text-black/40">
+                        <span className="text-[10px] uppercase tracking-widest">
+                          MUHURTHAM COLLECTION
+                        </span>
+                      </div>
+                    )}
 
-            <Link
-              to={localizedPath(
-                "/sarees/royal-red",
-              )}
-              className="group"
-            >
+                    <div className="absolute left-5 top-5 bg-white/90 px-3 py-2 backdrop-blur">
+                      <span className="text-[8px] uppercase tracking-[0.18em] text-black/55">
+                        {tagLabel} · {number}
+                      </span>
+                    </div>
 
-              <div className="relative aspect-4/5 overflow-hidden bg-[#E8DDD1]">
+                    <div className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black! opacity-0 shadow-lg transition-all duration-500 group-hover:opacity-100">
+                      <ArrowUpRight size={15} strokeWidth={1} />
+                    </div>
+                  </div>
 
-                <img
-                  src="/images/saree-1.png"
-                  alt={royalRedName}
-                  className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.035]"
-                />
+                  <div className="pt-5">
+                    <p className="text-[8px] uppercase tracking-[0.22em] text-black/40">
+                      {category}
+                    </p>
 
-                <div className="absolute left-5 top-5 bg-white/90 px-3 py-2 backdrop-blur">
-
-                  <span className="text-[8px] uppercase tracking-[0.18em] text-black/55">
-                    {sareeLabel} · 01
-                  </span>
-
-                </div>
-
-                <div className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black! opacity-0 shadow-lg transition-all duration-500 group-hover:opacity-100">
-
-                  <ArrowUpRight
-                    size={15}
-                    strokeWidth={1}
-                  />
-
-                </div>
-
-              </div>
-
-              <div className="pt-5">
-
-                <p className="text-[8px] uppercase tracking-[0.22em] text-black/40">
-                  {royalRedCategory}
-                </p>
-
-                <h3 className="mt-2 font-display text-2xl text-[#181615]!">
-                  {royalRedName}
-                </h3>
-
-              </div>
-
-            </Link>
-
-            {/* =================================================
-                ROYAL MAROON
-            ================================================= */}
-
-            <Link
-              to={localizedPath(
-                "/lehengas/royal-maroon",
-              )}
-              className="group"
-            >
-
-              <div className="relative aspect-4/5 overflow-hidden bg-[#E8DDD1]">
-
-                <img
-                  src="/images/lehenga-bridal.png"
-                  alt={royalMaroonName}
-                  className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.035]"
-                />
-
-                <div className="absolute left-5 top-5 bg-white/90 px-3 py-2 backdrop-blur">
-
-                  <span className="text-[8px] uppercase tracking-[0.18em] text-black/55">
-                    {lehengaLabel} · 01
-                  </span>
-
-                </div>
-
-                <div className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black! opacity-0 shadow-lg transition-all duration-500 group-hover:opacity-100">
-
-                  <ArrowUpRight
-                    size={15}
-                    strokeWidth={1}
-                  />
-
-                </div>
-
-              </div>
-
-              <div className="pt-5">
-
-                <p className="text-[8px] uppercase tracking-[0.22em] text-black/40">
-                  {royalMaroonCategory}
-                </p>
-
-                <h3 className="mt-2 font-display text-2xl text-[#181615]!">
-                  {royalMaroonName}
-                </h3>
-
-              </div>
-
-            </Link>
-
-            {/* =================================================
-                IVORY HERITAGE
-            ================================================= */}
-
-            <Link
-              to={localizedPath(
-                "/sherwanis/ivory-heritage",
-              )}
-              className="group"
-            >
-
-              <div className="relative aspect-4/5 overflow-hidden bg-[#E8DDD1]">
-
-                <img
-                  src="/images/sherwani-1.png"
-                  alt={ivoryHeritageName}
-                  className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.035]"
-                />
-
-                <div className="absolute left-5 top-5 bg-white/90 px-3 py-2 backdrop-blur">
-
-                  <span className="text-[8px] uppercase tracking-[0.18em] text-black/55">
-                    {sherwaniLabel} · 01
-                  </span>
-
-                </div>
-
-                <div className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black! opacity-0 shadow-lg transition-all duration-500 group-hover:opacity-100">
-
-                  <ArrowUpRight
-                    size={15}
-                    strokeWidth={1}
-                  />
-
-                </div>
-
-              </div>
-
-              <div className="pt-5">
-
-                <p className="text-[8px] uppercase tracking-[0.22em] text-black/40">
-                  {ivoryHeritageCategory}
-                </p>
-
-                <h3 className="mt-2 font-display text-2xl text-[#181615]!">
-                  {ivoryHeritageName}
-                </h3>
-
-              </div>
-
-            </Link>
-
+                    <h3 className="mt-2 font-display text-2xl text-[#181615]!">
+                      {title}
+                    </h3>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
 
           <div className="mt-12 flex justify-center">
